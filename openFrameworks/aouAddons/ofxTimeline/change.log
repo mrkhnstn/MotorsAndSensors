@@ -1,0 +1,5 @@
+TODO:
+- ability to remove events
+- better gui system, maybe a custom gui control
+- detect changes in the timeline automatically, maybe using ofxSimpleGuiValueControl?
+

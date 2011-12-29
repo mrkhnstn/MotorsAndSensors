@@ -1,0 +1,10 @@
+<controls>
+    <SliderFloat_angleN>
+        <name>angleN</name>
+        <value>0.068891</value>
+    </SliderFloat_angleN>
+    <SliderFloat_angleNSpeed>
+        <name>angleNSpeed</name>
+        <value>0.002941</value>
+    </SliderFloat_angleNSpeed>
+</controls>

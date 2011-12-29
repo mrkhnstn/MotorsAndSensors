@@ -1,0 +1,50 @@
+<controls>
+    <Button_save_settings>
+        <name>save settings</name>
+        <value>0</value>
+    </Button_save_settings>
+    <Toggle_auto_save>
+        <name>auto save</name>
+        <value>1</value>
+    </Toggle_auto_save>
+    <ComboBox_display_priority>
+        <name>display priority</name>
+        <value>0</value>
+    </ComboBox_display_priority>
+    <Button_collapse_all>
+        <name>collapse all [t]</name>
+        <value>0</value>
+    </Button_collapse_all>
+    <Button_open_all>
+        <name>open all [T]</name>
+        <value>0</value>
+    </Button_open_all>
+    <ComboBox_display_mode1>
+        <name>display mode</name>
+        <value>1</value>
+    </ComboBox_display_mode1>
+    <SliderFloat_x>
+        <name>x</name>
+        <value>5.000000</value>
+    </SliderFloat_x>
+    <SliderFloat_y>
+        <name>y</name>
+        <value>5.000000</value>
+    </SliderFloat_y>
+    <SliderInt_columns>
+        <name>columns</name>
+        <value>4</value>
+    </SliderInt_columns>
+    <SliderInt_rows>
+        <name>rows</name>
+        <value>24</value>
+    </SliderInt_rows>
+    <Button_reset>
+        <name>reset</name>
+        <value>0</value>
+    </Button_reset>
+    <Toggle_draw_boundaries>
+        <name>draw boundaries</name>
+        <value>0</value>
+    </Toggle_draw_boundaries>
+</controls>

@@ -1,0 +1,69 @@
+ofxSimpleGuiToo changelog
+
+TODOs
+--------------------
+- a time based graph control that can for example visualize perlin noise
+- a range control (two sliders)
+- non boundary sliders similar to the draggable number boxes in max msp
+- increment / decrement for 2d slider
+- a file selection combo box
+- advanced and basic flag per control >> switching the gui between basic and advanced mode hides or displays controls
+
+- text input is still flaky, especially in terms of deselecting and cursor functionality
+- auto save doesn't work on text input
+
+
+modifications by Mark 27/02/2011
+--------------------
+- fixed problem with keyboard shortcuts (e.g. right arrow triggered fullscreen 'f' keyboard shortcut)
+- fixed problem with adding several controls with same name to the same page (now the keys get automatically incremented)
+
+
+modifications by Mark 22/01/2011
+--------------------
+- added text input control
+- added new keyboard shortcut functionality used in conjunction with buttons >> addButton(name, keyboardShortcut, listener, method)
+- enable / disable keyboard shortcuts (mainly for disabling other shortcuts while using text input)
+- added default "Keyboard Shortcuts" page (all buttons with keyboard shortcuts will also be added to this page. Mainly to check any overlapping keyboard shortcuts)
+
+modifications by Mark
+--------------------
+- changed appearance here and there
+- keyboard editing of slider values (rightmouse click to toggle keyboard editing, slightly rudimentary at the moment)
+- added debug controls just to display variables without being able to change them
+- added shift increment to sliders (larger increment)
+- changed sizing and colouring of slider2d
+- disable saving to xml using includeInXml flag (on by default)
+
+
+v1.3
+--------------------
+- page::saveToXML() pushed the <controls> tag so control::saveToXML() didn't need to check that tag, 
+  whereas page::loadFromXML() didn't push the <controls> tag so control::loadFromXML() did.
+  Wasn't consistent so now all controls can assume that we are already inside the <controls> tag.
+- fixed keyboard support (any control which the mouse is hovering over, now receives the events:
+     keyPressed(int key), keyReleased(int key), onKeyUp(), onKeyDown(), onKeyLeft(), onKeyRight(), onKeyEnter()
+  
+v1.2
+--------------------
+- lots of thing, can't remember. whoops.
+
+
+v1.1	07/04/2009
+--------------------
+- changed license to revised BSD (a lot more more permissive than GPL)
+
+
+v1.0
+--------------------
+- initial version
+- changes from original ofxSimpleGui
+	- added pages (tabs), controls are added to pages
+	- when controls reach bottom of page (customizable using page.height property) controls flow to the right
+	- ability to customize spacing / sizes / colors etc. using a configuration class
+	- everything on a grid
+	- addFrame has been renamed to addContent and manages any class type which extends ofBaseDraws
+	- saved in xml using 'keys', so you can add/remove/rename/reorder controls and still load values correctly
+	- option to backup save
+	- all controls inherit from ofxMSAInteractiveObject (for simpler event management)
+	

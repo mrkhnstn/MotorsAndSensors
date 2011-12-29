@@ -1,0 +1,25 @@
+# Mac OS X cruft
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.user
+.DS_Store
+
+build/
+*.app
+*.app/*
+
+# Windows cruft
+*.suo
+*.ncb
+*.sdf
+Debug/
+Release/
+openFrameworksCompiled/
+apps/kacare/TestBed_CV/bin/data/output/frames/*.*
+*.bak
+/apps/kacare/TestBed_Factoids/bin/data/output/frames/*.*
+.com.apple.timemachine.supported
+kinect.kct
+
+/apps/selfridges/SelfridgesInteractive/bin/data/img.png

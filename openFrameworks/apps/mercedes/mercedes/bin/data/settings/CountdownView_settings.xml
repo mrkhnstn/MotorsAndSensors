@@ -1,0 +1,34 @@
+<controls>
+    <SliderFloat_instructionSprite_x>
+        <name>instructionSprite_x</name>
+        <value>100.000000</value>
+    </SliderFloat_instructionSprite_x>
+    <SliderFloat_instructionSprite_y>
+        <name>instructionSprite_y</name>
+        <value>100.000000</value>
+    </SliderFloat_instructionSprite_y>
+    <SliderFloat_instructionSprite_w>
+        <name>instructionSprite_w</name>
+        <value>880.000000</value>
+    </SliderFloat_instructionSprite_w>
+    <SliderFloat_instructionSprite_h>
+        <name>instructionSprite_h</name>
+        <value>200.000000</value>
+    </SliderFloat_instructionSprite_h>
+    <SliderFloat_progressMsgSprite_x>
+        <name>progressMsgSprite_x</name>
+        <value>290.000000</value>
+    </SliderFloat_progressMsgSprite_x>
+    <SliderFloat_progressMsgSprite_y>
+        <name>progressMsgSprite_y</name>
+        <value>720.000000</value>
+    </SliderFloat_progressMsgSprite_y>
+    <SliderFloat_progressMsgSprite_w>
+        <name>progressMsgSprite_w</name>
+        <value>500.000000</value>
+    </SliderFloat_progressMsgSprite_w>
+    <SliderFloat_progressMsgSprite_h>
+        <name>progressMsgSprite_h</name>
+        <value>500.000000</value>
+    </SliderFloat_progressMsgSprite_h>
+</controls>

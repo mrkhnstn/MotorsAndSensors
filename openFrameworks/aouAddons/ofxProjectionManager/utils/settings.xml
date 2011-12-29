@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<pattrstorage name = "settings">
+	<slot number = "1">
+		<pattr name = "ip" value = "127.0.0.3" />
+		<pattr name = "minAnalogVal" value = "0.192" />
+		<pattr name = "port" value = "7777" />
+		<pattr name = "preset" value = "Render Client 2" />
+	</slot>
+	<slot number = "2">
+		<pattr name = "ip" value = "192.168.1.94" />
+		<pattr name = "minAnalogVal" value = "0.192" />
+		<pattr name = "port" value = "7777" />
+		<pattr name = "preset" value = "CENTRE" />
+	</slot>
+	<slot number = "3">
+		<pattr name = "ip" value = "127.0.0.1" />
+		<pattr name = "minAnalogVal" value = "0.196" />
+		<pattr name = "port" value = "7777" />
+		<pattr name = "preset" value = "Render Client #3" />
+	</slot>
+	<slot number = "4">
+		<pattr name = "ip" value = "127.0.0.1" />
+		<pattr name = "minAnalogVal" value = "0.192" />
+		<pattr name = "port" value = "7777" />
+		<pattr name = "preset" value = "localhost" />
+	</slot>
+</pattrstorage>
+
