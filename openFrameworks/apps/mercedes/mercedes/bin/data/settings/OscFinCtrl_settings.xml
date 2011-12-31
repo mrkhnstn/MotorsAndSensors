@@ -1,6 +1,6 @@
 <controls>
     <SliderInt_sendFreqMs>
         <name>sendFreqMs</name>
-        <value>89</value>
+        <value>25</value>
     </SliderInt_sendFreqMs>
 </controls>

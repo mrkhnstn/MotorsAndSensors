@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842D7D2414ACEB5D0060DFF3 /* Sensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */; };
+		842D7D2714ACEB650060DFF3 /* SensorCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */; };
+		842D7DD014AF4EE70060DFF3 /* ofx3DGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DC614AF4EE70060DFF3 /* ofx3DGraphics.cpp */; };
+		842D7DD114AF4EE70060DFF3 /* ofxCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DC914AF4EE70060DFF3 /* ofxCamera.cpp */; };
+		842D7DD214AF4EE70060DFF3 /* ofxLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DCC14AF4EE70060DFF3 /* ofxLight.cpp */; };
+		842D7DD814AF691A0060DFF3 /* ThreeDTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DD714AF691A0060DFF3 /* ThreeDTest.cpp */; };
 		8439581214A61C100092E501 /* MercedesApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581114A61C100092E501 /* MercedesApp.cpp */; };
 		8439581714A61CA30092E501 /* FinCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581614A61CA30092E501 /* FinCtrl.cpp */; };
 		8439581B14A61D7D0092E501 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581A14A61D7D0092E501 /* Constants.cpp */; };
@@ -160,6 +166,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		842D7D2214ACEB5D0060DFF3 /* Sensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sensor.h; sourceTree = "<group>"; };
+		842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sensor.cpp; sourceTree = "<group>"; };
+		842D7D2514ACEB650060DFF3 /* SensorCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorCtrl.h; sourceTree = "<group>"; };
+		842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SensorCtrl.cpp; sourceTree = "<group>"; };
+		842D7DC214AF4EE70060DFF3 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
+		842D7DC314AF4EE70060DFF3 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
+		842D7DC414AF4EE70060DFF3 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		842D7DC614AF4EE70060DFF3 /* ofx3DGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofx3DGraphics.cpp; sourceTree = "<group>"; };
+		842D7DC714AF4EE70060DFF3 /* ofx3DGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx3DGraphics.h; sourceTree = "<group>"; };
+		842D7DC814AF4EE70060DFF3 /* ofx3DUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofx3DUtils.h; sourceTree = "<group>"; };
+		842D7DC914AF4EE70060DFF3 /* ofxCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxCamera.cpp; sourceTree = "<group>"; };
+		842D7DCA14AF4EE70060DFF3 /* ofxCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxCamera.h; sourceTree = "<group>"; };
+		842D7DCB14AF4EE70060DFF3 /* ofxEasyCam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxEasyCam.h; sourceTree = "<group>"; };
+		842D7DCC14AF4EE70060DFF3 /* ofxLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxLight.cpp; sourceTree = "<group>"; };
+		842D7DCD14AF4EE70060DFF3 /* ofxLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxLight.h; sourceTree = "<group>"; };
+		842D7DD614AF691A0060DFF3 /* ThreeDTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeDTest.h; sourceTree = "<group>"; };
+		842D7DD714AF691A0060DFF3 /* ThreeDTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ThreeDTest.cpp; sourceTree = "<group>"; };
 		8439581014A61C100092E501 /* MercedesApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MercedesApp.h; sourceTree = "<group>"; };
 		8439581114A61C100092E501 /* MercedesApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MercedesApp.cpp; sourceTree = "<group>"; };
 		8439581514A61CA30092E501 /* FinCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinCtrl.h; sourceTree = "<group>"; };
@@ -460,6 +483,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842D7DBF14AF4EE70060DFF3 /* ofx3DUtils */ = {
+			isa = PBXGroup;
+			children = (
+				842D7DC014AF4EE70060DFF3 /* example */,
+				842D7DC414AF4EE70060DFF3 /* install.xml */,
+				842D7DC514AF4EE70060DFF3 /* src */,
+			);
+			name = ofx3DUtils;
+			path = ../../../addons/ofx3DUtils;
+			sourceTree = SOURCE_ROOT;
+		};
+		842D7DC014AF4EE70060DFF3 /* example */ = {
+			isa = PBXGroup;
+			children = (
+				842D7DC214AF4EE70060DFF3 /* testApp.cpp */,
+				842D7DC314AF4EE70060DFF3 /* testApp.h */,
+			);
+			path = example;
+			sourceTree = "<group>";
+		};
+		842D7DC514AF4EE70060DFF3 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				842D7DC614AF4EE70060DFF3 /* ofx3DGraphics.cpp */,
+				842D7DC714AF4EE70060DFF3 /* ofx3DGraphics.h */,
+				842D7DC814AF4EE70060DFF3 /* ofx3DUtils.h */,
+				842D7DC914AF4EE70060DFF3 /* ofxCamera.cpp */,
+				842D7DCA14AF4EE70060DFF3 /* ofxCamera.h */,
+				842D7DCB14AF4EE70060DFF3 /* ofxEasyCam.h */,
+				842D7DCC14AF4EE70060DFF3 /* ofxLight.cpp */,
+				842D7DCD14AF4EE70060DFF3 /* ofxLight.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		842D7DD514AF68FC0060DFF3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8439593F14A68F8B0092E501 /* SerialTest.h */,
+				8439594014A68F8B0092E501 /* SerialTest.cpp */,
+				842D7DD614AF691A0060DFF3 /* ThreeDTest.h */,
+				842D7DD714AF691A0060DFF3 /* ThreeDTest.cpp */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 		843958DA14A6878A0092E501 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +581,7 @@
 		847D5BF312DE391800B2FC48 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				842D7DBF14AF4EE70060DFF3 /* ofx3DUtils */,
 				84E277631493C5570087D410 /* ofxTextSuite */,
 				84E276FE1493C4F10087D410 /* ofxMSAInteractiveObject */,
 				84E2770D1493C4F10087D410 /* ofxSimpleGuiToo */,
@@ -1108,6 +1178,7 @@
 		84EF61D71495259F0053194F /* src */ = {
 			isa = PBXGroup;
 			children = (
+				842D7DD514AF68FC0060DFF3 /* Tests */,
 				84EF61EA149525B60053194F /* main.cpp */,
 				8439581014A61C100092E501 /* MercedesApp.h */,
 				8439581114A61C100092E501 /* MercedesApp.cpp */,
@@ -1129,8 +1200,10 @@
 				84B5477714A1E0BD007ABAF8 /* Coords.h */,
 				84B5477814A1E0BD007ABAF8 /* Coords.cpp */,
 				84EF6215149526910053194F /* UI */,
-				8439593F14A68F8B0092E501 /* SerialTest.h */,
-				8439594014A68F8B0092E501 /* SerialTest.cpp */,
+				842D7D2214ACEB5D0060DFF3 /* Sensor.h */,
+				842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */,
+				842D7D2514ACEB650060DFF3 /* SensorCtrl.h */,
+				842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1586,6 +1659,12 @@
 				843958D614A683B30092E501 /* Scene.cpp in Sources */,
 				843958DD14A6879C0092E501 /* TestScene1.cpp in Sources */,
 				8439594114A68F8B0092E501 /* SerialTest.cpp in Sources */,
+				842D7D2414ACEB5D0060DFF3 /* Sensor.cpp in Sources */,
+				842D7D2714ACEB650060DFF3 /* SensorCtrl.cpp in Sources */,
+				842D7DD014AF4EE70060DFF3 /* ofx3DGraphics.cpp in Sources */,
+				842D7DD114AF4EE70060DFF3 /* ofxCamera.cpp in Sources */,
+				842D7DD214AF4EE70060DFF3 /* ofxLight.cpp in Sources */,
+				842D7DD814AF691A0060DFF3 /* ThreeDTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

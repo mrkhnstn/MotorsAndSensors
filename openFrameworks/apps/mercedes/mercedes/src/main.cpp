@@ -6,6 +6,9 @@
 #include "OscFinCtrl.h"
 #include "SceneCtrl.h"
 #include "SerialTest.h"
+#include "SensorCtrl.h"
+#include "ofxOscManager.h"
+#include "ThreeDTest.h"
 
 
 int main( ){
@@ -21,15 +24,29 @@ int main( ){
 	testBed.dataFolder = "../../../data/";
 	testBed.logLevel = 0;	
 
+	/*
+	testBed.addTestObject(*Singleton<ofxOscManager>::instance());
+	Singleton<ofxOscManager>::instance()->port = 3334;
+	
 	testBed.addTestObject(*Singleton<FinCtrl>::instance());
 	testBed.addTestObject(*Singleton<OscFinCtrl>::instance());
 	testBed.addTestObject(*Singleton<SceneCtrl>::instance());
-	testBed.addTestObject(*Singleton<SerialTest>::instance());
+	//testBed.addTestObject(*Singleton<SerialTest>::instance());
+	testBed.addTestObject(*Singleton<SensorCtrl>::instance());
+	*/
+	
+	ThreeDTest threeDTest;
+	testBed.addTestObject(threeDTest);
+	
 	
 	ofRunApp(&testBed);
-
+	
+	/*
 	delete Singleton<FinCtrl>::instance();
 	delete Singleton<OscFinCtrl>::instance();
 	delete Singleton<SceneCtrl>::instance();
-	delete Singleton<SerialTest>::instance();
+	delete Singleton<SensorCtrl>::instance();
+	delete Singleton<ofxOscManager>::instance();
+	//delete Singleton<SerialTest>::instance();
+	*/
 }

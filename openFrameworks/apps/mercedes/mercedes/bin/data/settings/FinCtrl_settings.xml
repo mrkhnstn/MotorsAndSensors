@@ -1,10 +1,10 @@
 <controls>
     <SliderInt_servoMin>
         <name>servoMin</name>
-        <value>550</value>
+        <value>1100</value>
     </SliderInt_servoMin>
     <SliderInt_servoMax>
         <name>servoMax</name>
-        <value>2300</value>
+        <value>1900</value>
     </SliderInt_servoMax>
 </controls>

@@ -9,8 +9,6 @@
  */
 
 #include "Includes.h"
-
-#include "Includes.h"
 #include "FinCtrl.h"
 #include "ofxOsc.h"
 

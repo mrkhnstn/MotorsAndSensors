@@ -47,7 +47,7 @@ public:
 	ofxVec3f getEye();
 	ofxVec3f getUp();
 
-protected:
+//protected:
 	ofxVec3f posCoord;
 	ofxVec3f eyeCoord;
 	ofxVec3f upVec;

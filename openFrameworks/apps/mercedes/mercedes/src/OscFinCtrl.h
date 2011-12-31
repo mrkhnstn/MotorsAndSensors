@@ -26,7 +26,7 @@ public:
 		oscSender.setup("127.0.0.1", 3333);
 		finCtrl = Singleton<FinCtrl>::instance();
 		
-		sendFreqMs = 20;
+		sendFreqMs = 200;
 		nextSendTime = ofGetElapsedTimeMillis() + sendFreqMs;
 		
 		setupSD84Modes();
@@ -44,27 +44,15 @@ public:
 			int numSendChannels = 18;
 			
 			ofxOscMessage m;
-			m.setAddress("/sendRaw");
+			m.setAddress("/servo");
 			m.addIntArg(0);		// bank
-			
-			m.addIntArg(170);	// sync 1
-			m.addIntArg(160);	// sync 2
-			m.addIntArg(85);	// sync 3
-			
-			m.addIntArg(1);		// 0x01 SET_SERVO
-			m.addIntArg(1);		// from channel
-			m.addIntArg(numSendChannels*2); //num of bytes (2 bytes per channel)
 			
 			for (int i=0; i<numSendChannels; i++) {
 				
 				Fin& fin = *finCtrl->fins[i];
 				int servoVal = ofMap(fin.angleN, 0, 1, finCtrl->servoMin, finCtrl->servoMax, true);
+				m.addIntArg(servoVal);
 				
-				int lowByte = servoVal & 255;
-				int highByte = (servoVal >> 8) & 255;
-				
-				m.addIntArg(lowByte);
-				m.addIntArg(highByte);
 			}
 			
 			oscSender.sendMessage(m);
