@@ -44,32 +44,52 @@ public:
 		ofPushStyle();
 		ofPushMatrix();
 		
-		ofRotate(posAngle, 0, 0, 1);
+		ofRotate(posAngle, 0, 1, 0);
 		
 		
 		ofPushMatrix();
 		ofTranslate(constants->cylinderRadius, 0, 0); // move from cylinder centre by cylinder radius
 		
-		ofRotate(ofMap(angleN, 0, 1, -90, 90, true), 0, 0, 1); // rotate fin around its own z axis
+		ofRotate(ofMap(angleN, 0, 1, -90, 90, true), 0, 1, 0); // rotate fin around its own z axis
 		
 		ofSetColor(255, 255, 255);
 		ofFill();
 		ofSetLineWidth(0);
 		
+		// draw circle on null plane
+		ofPushMatrix();
+		ofRotate(90, 1, 0, 0);
 		ofCircle(0, 0, 2);
+		ofPopMatrix();
 		
+		// draw lines on null plane
 		ofSetLineWidth(1);
-		
-		ofSetColor(255, 255, 255);
-		ofLine(-0.5*constants->finWidth, -1, 0.5*constants->finWidth, -1);
+		ofSetColor(0, 0, 255);
+		ofxLine(-0.5*constants->finWidth, 0, 1, 0.5*constants->finWidth, 0, 1);
 		ofSetColor(255, 0, 0);
-		ofLine(-0.5*constants->finWidth, 1, 0.5*constants->finWidth, 1);
+		ofxLine(-0.5*constants->finWidth, 0, -1, 0.5*constants->finWidth, 0, -1);
+		ofSetLineWidth(0);
+		
+		// draw boxes
+		ofPushMatrix();
+		ofSetColor(0, 0, 255);
+		ofTranslate(0, 75, 1);
+		ofScale(20, 150, 2);
+		ofxBox(0, 0, 0, 1);
+		ofPopMatrix();
+		
+		ofPushMatrix();
+		ofSetColor(255, 0, 0);
+		ofTranslate(0, 75, -1);
+		ofScale(20, 150, 2);
+		ofxBox(0, 0, 0, 1);
+		ofPopMatrix();
 		
 		ofPopMatrix();
 		
 		ofSetColor(255, 255, 255);
 		ofTranslate(constants->cylinderRadius-20, 0, 0);
-		ofDrawBitmapString(ofToString(index), 0, 0);
+		//ofDrawBitmapString(ofToString(index), 0, 0); //TODO: fix in 3D
 		
 		ofPopMatrix();
 		ofPopStyle();

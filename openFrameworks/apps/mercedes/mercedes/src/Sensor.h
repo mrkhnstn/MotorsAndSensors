@@ -34,10 +34,10 @@ public:
 		ofPushStyle();
 		ofPushMatrix();
 		
-		ofRotate(posAngle, 0, 0, 1);
+		ofRotate(posAngle, 0, 1, 0);
 		
 		ofPushMatrix();
-		ofTranslate(constants->cylinderRadius + 30, 0, 0); // move from cylinder centre by cylinder radius
+		ofTranslate(constants->cylinderRadius + 10, 0, 0); // move from cylinder centre by cylinder radius
 
 		ofSetColor(255, 255, 0);
 		ofNoFill();
@@ -45,7 +45,7 @@ public:
 		
 		for(int i=0; i<5; i++){
 			ofPushMatrix();
-			ofRotate(-12.5 + i * 5., 0, 0, 1);
+			ofRotate(-12.5 + i * 5., 0, 1, 0);
 			int* temp = rawValues[i];
 			ofLine(0, 0, *temp, 0);
 			ofPopMatrix();
@@ -53,8 +53,8 @@ public:
 		ofPopMatrix();
 		
 		ofSetColor(255, 255, 255);
-		ofTranslate(constants->cylinderRadius+20, 0, 0);
-		ofDrawBitmapString(ofToString(index), 0, 0);
+		ofTranslate(constants->cylinderRadius+10, 0, 0);
+		//ofDrawBitmapString(ofToString(index), 0, 0); //TODO: fix in 3D
 		
 		ofPopMatrix();
 		ofPopStyle();

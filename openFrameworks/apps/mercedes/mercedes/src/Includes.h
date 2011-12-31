@@ -8,6 +8,8 @@
  */
 
 #include "ofxBaseObject.h"
+#include "ofxBaseContainer.h"
 #include "ofxTimeline.h"
 #include "Singleton.h"
 #include "Constants.h"
+#include "ofx3DUtils.h"

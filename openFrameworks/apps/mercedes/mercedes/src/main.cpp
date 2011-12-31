@@ -19,7 +19,7 @@ int main( ){
 	
 	ofxTestBed testBed;
 	testBed.fps = 60;
-	testBed.vSync = false;
+	testBed.vSync = true;
 	testBed.settingsFolder = "settings/";
 	testBed.dataFolder = "../../../data/";
 	testBed.logLevel = 0;	
@@ -35,10 +35,11 @@ int main( ){
 	testBed.addTestObject(*Singleton<SensorCtrl>::instance());
 	*/
 	
-	ThreeDTest threeDTest;
-	testBed.addTestObject(threeDTest);
+	//ThreeDTest threeDTest;
+	//testBed.addTestObject(threeDTest);
 	
-	
+	MercedesApp mercedesApp;
+	testBed.addTestObject(mercedesApp);
 	ofRunApp(&testBed);
 	
 	/*

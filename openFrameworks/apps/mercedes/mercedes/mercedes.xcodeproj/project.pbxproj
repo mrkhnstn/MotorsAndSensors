@@ -64,6 +64,7 @@
 		84A3C40012DF424C00DC1D7B /* ofxTCPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C3F912DF424C00DC1D7B /* ofxTCPManager.cpp */; };
 		84A3C40112DF424C00DC1D7B /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C3FB12DF424C00DC1D7B /* ofxTCPServer.cpp */; };
 		84A3C40212DF424C00DC1D7B /* ofxUDPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C3FD12DF424C00DC1D7B /* ofxUDPManager.cpp */; };
+		84B310FC14AF77F600B74EA3 /* ofxBaseContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */; };
 		84B5476F14A1DDFA007ABAF8 /* UIElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B5476E14A1DDFA007ABAF8 /* UIElement.cpp */; };
 		84B5477914A1E0BD007ABAF8 /* Coords.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B5477814A1E0BD007ABAF8 /* Coords.cpp */; };
 		84E160C412DF50F000D6E27D /* ImageUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E160BE12DF50F000D6E27D /* ImageUtil.cpp */; };
@@ -336,6 +337,8 @@
 		84A3C3FD12DF424C00DC1D7B /* ofxUDPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUDPManager.cpp; sourceTree = "<group>"; };
 		84A3C3FE12DF424C00DC1D7B /* ofxUDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUDPManager.h; sourceTree = "<group>"; };
 		84B280E014A61B7B007CEC59 /* MercedesInteractiveDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercedesInteractiveDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B310FA14AF77F600B74EA3 /* ofxBaseContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseContainer.h; sourceTree = "<group>"; };
+		84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseContainer.cpp; sourceTree = "<group>"; };
 		84B5476D14A1DDFA007ABAF8 /* UIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIElement.h; sourceTree = "<group>"; };
 		84B5476E14A1DDFA007ABAF8 /* UIElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIElement.cpp; sourceTree = "<group>"; };
 		84B5477714A1E0BD007ABAF8 /* Coords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coords.h; sourceTree = "<group>"; };
@@ -646,6 +649,8 @@
 			children = (
 				847D5CF212DE3AF600B2FC48 /* ofxBaseObject.cpp */,
 				847D5CF312DE3AF600B2FC48 /* ofxBaseObject.h */,
+				84B310FA14AF77F600B74EA3 /* ofxBaseContainer.h */,
+				84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1178,8 +1183,9 @@
 		84EF61D71495259F0053194F /* src */ = {
 			isa = PBXGroup;
 			children = (
-				842D7DD514AF68FC0060DFF3 /* Tests */,
 				84EF61EA149525B60053194F /* main.cpp */,
+				84EF61F8149525E10053194F /* Includes.h */,
+				84EF61F9149525E10053194F /* Includes.cpp */,
 				8439581014A61C100092E501 /* MercedesApp.h */,
 				8439581114A61C100092E501 /* MercedesApp.cpp */,
 				8439581914A61D7D0092E501 /* Constants.h */,
@@ -1195,15 +1201,12 @@
 				843958D414A683B30092E501 /* Scene.h */,
 				843958D514A683B30092E501 /* Scene.cpp */,
 				843958DA14A6878A0092E501 /* Scenes */,
-				84EF61F8149525E10053194F /* Includes.h */,
-				84EF61F9149525E10053194F /* Includes.cpp */,
-				84B5477714A1E0BD007ABAF8 /* Coords.h */,
-				84B5477814A1E0BD007ABAF8 /* Coords.cpp */,
-				84EF6215149526910053194F /* UI */,
-				842D7D2214ACEB5D0060DFF3 /* Sensor.h */,
-				842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */,
 				842D7D2514ACEB650060DFF3 /* SensorCtrl.h */,
 				842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */,
+				842D7D2214ACEB5D0060DFF3 /* Sensor.h */,
+				842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */,
+				842D7DD514AF68FC0060DFF3 /* Tests */,
+				84EF6215149526910053194F /* UI */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1211,6 +1214,8 @@
 		84EF6215149526910053194F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84B5477714A1E0BD007ABAF8 /* Coords.h */,
+				84B5477814A1E0BD007ABAF8 /* Coords.cpp */,
 				84B5476D14A1DDFA007ABAF8 /* UIElement.h */,
 				84B5476E14A1DDFA007ABAF8 /* UIElement.cpp */,
 				844C422114A22CF20081F0D4 /* UIContainer.h */,
@@ -1665,6 +1670,7 @@
 				842D7DD114AF4EE70060DFF3 /* ofxCamera.cpp in Sources */,
 				842D7DD214AF4EE70060DFF3 /* ofxLight.cpp in Sources */,
 				842D7DD814AF691A0060DFF3 /* ThreeDTest.cpp in Sources */,
+				84B310FC14AF77F600B74EA3 /* ofxBaseContainer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,6 @@ class ThreeDTest : public ofxBaseObject {
 public:
 	
 	ofxCamera camera;
-	
 	ofxVec3f cameraPos;
 	ofxVec3f cameraEye;
 	

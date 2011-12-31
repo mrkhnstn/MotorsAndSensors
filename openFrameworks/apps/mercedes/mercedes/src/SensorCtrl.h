@@ -74,13 +74,13 @@ public:
 	
 	void draw(){
 		
-		ofPushMatrix();
-		ofTranslate(ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0);
+		//ofPushMatrix();
+		//ofTranslate(ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0);
 		
 		for(int i=0; i<sensors.size(); i++)
 			sensors[i]->draw();
 		
-		ofPopMatrix();
+		//ofPopMatrix();
 	}
 	
 	void handleOscMessage(ofxOscMessage& message){

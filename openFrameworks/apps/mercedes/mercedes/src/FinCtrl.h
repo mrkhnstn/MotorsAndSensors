@@ -105,11 +105,11 @@ public:
 	
 	void draw(){
 		
-		ofPushMatrix();
-		ofTranslate(ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0);
+		//ofPushMatrix();
+		//ofTranslate(ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0);
 		for (int i=0; i<Singleton<Constants>::instance()->numFins; i++) {
 			fins[i]->draw();
 		}
-		ofPopMatrix();
+		//ofPopMatrix();
 	}
 };
