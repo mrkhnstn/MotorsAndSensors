@@ -69,9 +69,6 @@ public:
 	}
 	
 	void postGUI(){
-		//cameraPos = camera.getPosition();
-		//cameraEye = camera.getEye();
-		
 		ofxBaseContainer::postGUI();
 	}
 	
@@ -79,7 +76,7 @@ public:
 	
 	void draw(){
 		
-				
+		// update camera
 		camera.lerpPosition(cameraPos, 0.1);
 		camera.lerpEye(cameraEye, 0.1);
 		

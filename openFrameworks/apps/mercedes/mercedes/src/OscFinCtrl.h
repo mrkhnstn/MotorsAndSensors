@@ -25,15 +25,12 @@ public:
 	void setup(){
 		oscSender.setup("127.0.0.1", 3333);
 		finCtrl = Singleton<FinCtrl>::instance();
-		
 		sendFreqMs = 200;
 		nextSendTime = ofGetElapsedTimeMillis() + sendFreqMs;
-		
-		setupSD84Modes();
 	}
 	
 	void setupGUI(){
-		gui.page(1).addPageShortcut(gui.addPage("OscFinCtrl"));
+		gui.page("FinCtrl").addPageShortcut(gui.addPage("OscFinCtrl"));
 		gui.addSlider("sendFreqMs",sendFreqMs,10,200);
 	}
 	
@@ -60,34 +57,5 @@ public:
 			nextSendTime = ofGetElapsedTimeMillis() + sendFreqMs;
 		}
 	}
-	
-	// set all channels on all servo related SD84s to SERVO_MODE
-	void setupSD84Modes(){
-		
-		for (int i=0; i<4; i++) {
-			
-			ofxOscMessage m;
-			m.setAddress("/sendRaw");
-			m.addIntArg(i); // bank
-			
-			m.addIntArg(170); // sync 1
-			m.addIntArg(160);
-			m.addIntArg(85);
-			
-			m.addIntArg(4); // 0x04 SET_MODE
-			m.addIntArg(1); // from channel 1
-			m.addIntArg(84); // set all to servo
-			
-			for(int i=0; i<84; i++)
-			{
-				m.addIntArg(25); // SERVO_MODE (25)
-			}
-			
-			oscSender.sendMessage(m);
-			
-		}
-	}
-	
-	
 	
 };

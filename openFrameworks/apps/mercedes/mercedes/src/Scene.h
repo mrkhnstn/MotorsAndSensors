@@ -16,10 +16,12 @@ class Scene : public ofxBaseObject {
 public:
 	
 	FinCtrl* finCtrl;
+	Constants* constants;
 	
 	virtual void setup(){
 		name = "Scene";
 		finCtrl = Singleton<FinCtrl>::instance();
+		constants = Singleton<Constants>::instance();
 	}
 	
 	virtual void setupGUI(){}

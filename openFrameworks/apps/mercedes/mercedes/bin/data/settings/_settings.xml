@@ -27,28 +27,12 @@
         <name>FinCtrl</name>
         <value>0</value>
     </Button_FinCtrl>
-    <Button_Fins_0-17>
-        <name>Fins_0-17</name>
+    <Button_Scenes>
+        <name>Scenes</name>
         <value>0</value>
-    </Button_Fins_0-17>
-    <Button_Fins_18-35>
-        <name>Fins_18-35</name>
+    </Button_Scenes>
+    <Button_Sensors>
+        <name>Sensors</name>
         <value>0</value>
-    </Button_Fins_18-35>
-    <Button_Fins_36-53>
-        <name>Fins_36-53</name>
-        <value>0</value>
-    </Button_Fins_36-53>
-    <Button_Fins_54-71>
-        <name>Fins_54-71</name>
-        <value>0</value>
-    </Button_Fins_54-71>
-    <Button_OscFinCtrl>
-        <name>OscFinCtrl</name>
-        <value>0</value>
-    </Button_OscFinCtrl>
-    <Button_TestScene1>
-        <name>TestScene1</name>
-        <value>0</value>
-    </Button_TestScene1>
+    </Button_Sensors>
 </controls>

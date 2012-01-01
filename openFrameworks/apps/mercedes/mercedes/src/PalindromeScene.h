@@ -1,9 +1,9 @@
 #pragma once
 /*
- *  TestScene1.h
+ *  PalindromeScene.h
  *  mercedes
  *
- *  Created by Mark Hauenstein on 24/12/2011.
+ *  Created by Mark Hauenstein on 31/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
  *
  */
@@ -13,16 +13,16 @@
 /*
  this scene moves all fins in a palindrome fashion (back and forth) using a global speed
  */
-class TestScene1 : public Scene {
+class PalindromeScene : public Scene {
 public:
-
+	
 	float angleN;
 	float angleNSpeed;
 	float dir;
 	
 	void setup(){
 		Scene::setup();
-		name = "TestScene1";
+		name = "PalindromeScene";
 		
 		angleN = 0;
 		angleNSpeed = 0;

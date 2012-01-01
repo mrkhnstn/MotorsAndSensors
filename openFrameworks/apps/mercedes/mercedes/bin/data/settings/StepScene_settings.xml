@@ -1,0 +1,10 @@
+<controls>
+    <SliderFloat_interval>
+        <name>interval</name>
+        <value>2.000000</value>
+    </SliderFloat_interval>
+    <SliderInt_state>
+        <name>state</name>
+        <value>2</value>
+    </SliderInt_state>
+</controls>

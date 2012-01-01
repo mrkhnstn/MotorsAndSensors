@@ -11,6 +11,10 @@
 #include "Includes.h"
 #include "Scene.h"
 
+#include "IdleScene.h"
+#include "PalindromeScene.h"
+#include "StepScene.h"
+#include "SimpleInteractiveScene.h"
 #include "TestScene1.h"
 
 class SceneCtrl : public ofxBaseObject {
@@ -21,12 +25,14 @@ public:
 	
 	int currentSceneId;
 	
-	TestScene1 testScene;
-	
 	void setup(){
 		
 		//add scenes
-		scenes.push_back(&testScene);
+		scenes.push_back(new IdleScene());
+		scenes.push_back(new PalindromeScene());
+		scenes.push_back(new StepScene());
+		scenes.push_back(new SimpleInteractiveScene());
+		//scenes.push_back(new TestScene1());
 		
 		for(int i=0; i<scenes.size(); i++)
 			scenes[i]->setup();
@@ -35,6 +41,15 @@ public:
 	}
 	
 	void setupGUI(){
+		gui.page(1).addPageShortcut(gui.addPage("Scenes"));
+		
+		// add a combox for manual scene selection
+		string names[scenes.size()];
+		for(int i=0; i<scenes.size(); i++){
+			names[i] = scenes[i]->name;
+		}
+		gui.addComboBox("scene", currentSceneId, scenes.size(), names);
+		
 		for(int i=0; i<scenes.size(); i++)
 			scenes[i]->setupGUI();
 	}
@@ -54,6 +69,13 @@ public:
 		//for(int i=0; i<scenes.size(); i++)
 		//	scenes[i]->draw();
 		getCurrentScene().draw();
+	}
+	
+	void exit(){
+		for (int i=0; i<scenes.size(); i++) {
+			delete scenes[i];
+		}
+		scenes.clear();
 	}
 	
 	Scene& getCurrentScene(){

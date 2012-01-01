@@ -9,3 +9,8 @@
 
 #include "Sensor.h"
 
+bool Sensor::doDraw = true;
+bool Sensor::doDrawRays = true;
+bool Sensor::doDrawHitPoints = true;
+bool Sensor::doDrawLabels = false;
+float Sensor::userInProximityDistance = 150;
