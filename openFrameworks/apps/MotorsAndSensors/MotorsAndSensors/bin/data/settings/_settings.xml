@@ -1,0 +1,38 @@
+<controls>
+    <Button_Keyboard_Shortcuts>
+        <name>Keyboard Shortcuts</name>
+        <value>1</value>
+    </Button_Keyboard_Shortcuts>
+    <Button_GUI>
+        <name>GUI</name>
+        <value>0</value>
+    </Button_GUI>
+    <Button_toggle_fullscreen>
+        <name>toggle fullscreen [f]</name>
+        <value>0</value>
+    </Button_toggle_fullscreen>
+    <Toggle_hide_cursor>
+        <name>hide cursor</name>
+        <value>0</value>
+    </Toggle_hide_cursor>
+    <Button_toggle_cursor>
+        <name>toggle cursor [m]</name>
+        <value>0</value>
+    </Button_toggle_cursor>
+    <Button_3D>
+        <name>3D</name>
+        <value>0</value>
+    </Button_3D>
+    <Button_MotorCtrl>
+        <name>MotorCtrl</name>
+        <value>0</value>
+    </Button_MotorCtrl>
+    <Button_Scenes>
+        <name>Scenes</name>
+        <value>0</value>
+    </Button_Scenes>
+    <Button_Sensors>
+        <name>Sensors</name>
+        <value>0</value>
+    </Button_Sensors>
+</controls>

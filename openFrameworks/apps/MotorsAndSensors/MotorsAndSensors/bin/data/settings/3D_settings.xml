@@ -1,0 +1,34 @@
+<controls>
+    <SliderFloat_cylinder_rotation>
+        <name>cylinder_rotation</name>
+        <value>257.647064</value>
+    </SliderFloat_cylinder_rotation>
+    <SliderFloat_camera_x>
+        <name>camera_x</name>
+        <value>0.000000</value>
+    </SliderFloat_camera_x>
+    <SliderFloat_camera_y>
+        <name>camera_y</name>
+        <value>447.058838</value>
+    </SliderFloat_camera_y>
+    <SliderFloat_camera_z>
+        <name>camera_z</name>
+        <value>643.137207</value>
+    </SliderFloat_camera_z>
+    <SliderFloat_eye_x>
+        <name>eye_x</name>
+        <value>0.000000</value>
+    </SliderFloat_eye_x>
+    <SliderFloat_eye_y>
+        <name>eye_y</name>
+        <value>0.000000</value>
+    </SliderFloat_eye_y>
+    <SliderFloat_eye_z>
+        <name>eye_z</name>
+        <value>0.000000</value>
+    </SliderFloat_eye_z>
+    <Toggle_verbose>
+        <name>verbose</name>
+        <value>0</value>
+    </Toggle_verbose>
+</controls>
