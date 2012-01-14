@@ -1,0 +1,21 @@
+Partlist
+
+Exported from IR_daisy_link_v2.sch at 14/01/2012 11:47
+
+EAGLE Version 5.11.0 Copyright (c) 1988-2010 CadSoft
+
+Part         Value            Device           Package              Library         Sheet
+
+A1           RJ45-8PTH        RJ45-8PTH        RJ45-8               SparkFun        1
+A2           RJ45-8PTH        RJ45-8PTH        RJ45-8               SparkFun        1
+ANALOG_ID    M08X2            M08X2            2X8                  SparkFun        1
+B1           RJ45-8PTH        RJ45-8PTH        RJ45-8               SparkFun        1
+B2           RJ45-8PTH        RJ45-8PTH        RJ45-8               SparkFun        1
+C1           10uF             CAP_POLPTH2      CPOL-RADIAL-10UF-25V SparkFun        1
+R1           10K              RESISTOR1206     1206                 SparkFun        1
+R2           TRIMPOT-PTH-KNOB TRIMPOT-PTH-KNOB 3386U                SparkFun        1
+U$1          LM358            LM358            DIP08                SparkFun        1
+VCC_AMP_SLCT M04X2            M04X2            2X4                  SparkFun        1
+X1           53261-09         53261-09         53261-09             con-molex       1
+X2           53048-09         53048-09         53048-09             con-molex       1
+X3           EXT_PWR          MPT2             2POL254              con-phoenix-254 1

@@ -1,23 +1,23 @@
 <controls>
     <SliderInt_raw_8-40>
         <name>raw_8-40</name>
-        <value>0</value>
+        <value>141</value>
     </SliderInt_raw_8-40>
     <SliderInt_raw_8-41>
         <name>raw_8-41</name>
-        <value>0</value>
+        <value>142</value>
     </SliderInt_raw_8-41>
     <SliderInt_raw_8-42>
         <name>raw_8-42</name>
-        <value>0</value>
+        <value>140</value>
     </SliderInt_raw_8-42>
     <SliderInt_raw_8-43>
         <name>raw_8-43</name>
-        <value>0</value>
+        <value>143</value>
     </SliderInt_raw_8-43>
     <SliderInt_raw_8-44>
         <name>raw_8-44</name>
-        <value>0</value>
+        <value>145</value>
     </SliderInt_raw_8-44>
     <SliderInt_raw_9-45>
         <name>raw_9-45</name>
@@ -77,78 +77,78 @@
     </SliderInt_raw_11-58>
     <SliderFloat_distance_8-40>
         <name>distance_8-40</name>
-        <value>300.000000</value>
+        <value>58.000000</value>
     </SliderFloat_distance_8-40>
     <SliderFloat_distance_8-41>
         <name>distance_8-41</name>
-        <value>300.000000</value>
+        <value>57.666668</value>
     </SliderFloat_distance_8-41>
     <SliderFloat_distance_8-42>
         <name>distance_8-42</name>
-        <value>300.000000</value>
+        <value>58.333332</value>
     </SliderFloat_distance_8-42>
     <SliderFloat_distance_8-43>
         <name>distance_8-43</name>
-        <value>300.000000</value>
+        <value>57.000000</value>
     </SliderFloat_distance_8-43>
     <SliderFloat_distance_8-44>
         <name>distance_8-44</name>
-        <value>300.000000</value>
+        <value>56.333332</value>
     </SliderFloat_distance_8-44>
     <SliderFloat_distance_9-45>
         <name>distance_9-45</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_9-45>
     <SliderFloat_distance_9-46>
         <name>distance_9-46</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_9-46>
     <SliderFloat_distance_9-47>
         <name>distance_9-47</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_9-47>
     <SliderFloat_distance_9-48>
         <name>distance_9-48</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_9-48>
     <SliderFloat_distance_9-49>
         <name>distance_9-49</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_9-49>
     <SliderFloat_distance_10-50>
         <name>distance_10-50</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_10-50>
     <SliderFloat_distance_10-51>
         <name>distance_10-51</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_10-51>
     <SliderFloat_distance_10-52>
         <name>distance_10-52</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_10-52>
     <SliderFloat_distance_10-53>
         <name>distance_10-53</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_10-53>
     <SliderFloat_distance_10-54>
         <name>distance_10-54</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_10-54>
     <SliderFloat_distance_11-55>
         <name>distance_11-55</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_11-55>
     <SliderFloat_distance_11-56>
         <name>distance_11-56</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_11-56>
     <SliderFloat_distance_11-57>
         <name>distance_11-57</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_11-57>
     <SliderFloat_distance_11-58>
         <name>distance_11-58</name>
-        <value>300.000000</value>
+        <value>100.000000</value>
     </SliderFloat_distance_11-58>
 </controls>

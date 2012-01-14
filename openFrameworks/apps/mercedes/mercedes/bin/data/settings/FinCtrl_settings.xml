@@ -1,15 +1,15 @@
 <controls>
     <SliderInt_servoMin>
         <name>servoMin</name>
-        <value>1100</value>
+        <value>620</value>
     </SliderInt_servoMin>
     <SliderInt_servoMax>
         <name>servoMax</name>
-        <value>1900</value>
+        <value>2300</value>
     </SliderInt_servoMax>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
-        <value>0.401765</value>
+        <value>0.100000</value>
     </SliderFloat_servoMaxSpeed>
     <Toggle_draw>
         <name>draw</name>
@@ -25,7 +25,7 @@
     </Toggle_draw2D>
     <Toggle_drawLabels>
         <name>drawLabels</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_drawLabels>
     <ColorPicker_backColorLow>
         <name>backColorLow</name>

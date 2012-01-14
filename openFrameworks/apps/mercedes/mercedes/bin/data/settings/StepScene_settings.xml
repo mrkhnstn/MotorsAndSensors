@@ -5,6 +5,6 @@
     </SliderFloat_interval>
     <SliderInt_state>
         <name>state</name>
-        <value>2</value>
+        <value>0</value>
     </SliderInt_state>
 </controls>

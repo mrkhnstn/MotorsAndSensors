@@ -13,4 +13,8 @@ bool Sensor::doDraw = true;
 bool Sensor::doDrawRays = true;
 bool Sensor::doDrawHitPoints = true;
 bool Sensor::doDrawLabels = false;
-float Sensor::userInProximityDistance = 150;
+bool Sensor::doDrawSensorThreshold = false;
+float Sensor::userInProximityDistance = 230;
+
+bool Sensor::doStaticInit = true;
+ofTrueTypeFont Sensor::font;

@@ -12,6 +12,7 @@
 #include "Includes.h"
 #include "Sensor.h"
 #include "ofxOscManager.h"
+#include "AverageF.h"
 
 #define SENSOR_BANKS_NUM	4
 #define SENSORS_PER_BANK	9
@@ -29,6 +30,7 @@ public:
 	Constants* constants;
 
 	int rawValues[TOTAL_RAYS];			// raw 10-bit analog reading from sensors
+	AverageF averageValues[TOTAL_RAYS];
 	float distanceValues[TOTAL_RAYS];	// distance reading of each sensor in cm converted from rawValues
 	float distanceLUT[1024];			// look up table used to convert rawValues into distanceValues;
 	
@@ -41,15 +43,14 @@ public:
 		Singleton<ofxOscManager>::instance()->registerInterest(*this,"/adc");
 		
 		// calculate look up table
-		// TODO: use graph from spec sheet
-		for (int i=0; i<1024; i++) {
-			distanceLUT[i] = ofMap(i, 60, 470, 300, 0, true);
-		}
+		updateLUT();
+		
 		
 		for(int i=0; i<TOTAL_RAYS; i++)
 		{
 			rawValues[i] = 0;
 			distanceValues[i] = SENSOR_MAX_DISTANCE;
+			averageValues[i].setSize(3);
 		}
 		
 		int bank = 0;
@@ -75,13 +76,29 @@ public:
 		}
 	}
 	
+	void updateLUT(){
+		// TODO: visualize against spec sheet graph		
+		float minDistance = 40;
+		float maxDistance = 300;
+		float deltaDistance = maxDistance - minDistance;
+		float _pow = 3;
+		
+		for (int i=0; i<1024; i++){
+			float n = ofMap(i, 60, 470, 1, 0, true);
+			float m = pow(n,_pow);
+			distanceLUT[i] = (int)ofMap(m, 0, 1, minDistance, maxDistance, true);
+		}
+	}
+	
 	void setupGUI(){
 		gui.page(1).addPageShortcut(gui.addPage("Sensors"));
+		gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
 		gui.addTitle("drawing");
 		gui.addToggle("doDraw", Sensor::doDraw);
 		gui.addToggle("doDrawRays", Sensor::doDrawRays);
 		gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
 		gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
+		gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
 		
 		int min = 0;
 		int max = 19;
@@ -124,12 +141,28 @@ public:
 	
 	void updateDistanceValues(){
 		for (int i=0; i<TOTAL_RAYS; i++) {
+			
 			int lookupValue = ofClamp(rawValues[i], 0, 1023);
-			distanceValues[i] = distanceLUT[lookupValue];
+			averageValues[i].addValue(distanceLUT[lookupValue]);
+			distanceValues[i] = averageValues[i].getAverage();
 		}
 	}
 	
 	void draw(){
+		
+		if(Sensor::doDrawSensorThreshold){
+			ofPushStyle();
+			ofPushMatrix();
+			ofSetColor(128,128,128);
+			ofSetLineWidth(1);
+			ofNoFill();
+			ofRotate(90, 1, 0, 0);
+			ofSetCircleResolution(72);
+			ofCircle(0, 0, constants->cylinderRadius + Sensor::userInProximityDistance + 25);
+			ofPopMatrix();
+			ofPopStyle();
+		}
+		
 		for(int i=0; i<sensors.size(); i++)
 			sensors[i]->draw();
 	}

@@ -26,7 +26,11 @@ public:
 	ofxLight globalLight;
 	ofxLight directionalLight;
 	
+	float cylinderRotation; //TODO: should be in Constants
+	
 	void setup(){
+		cylinderRotation = 0;
+		
 		camera.setOrigin(OF_ORIGIN_ZERO);
 		camera.perspective();
 		camera.position();
@@ -55,6 +59,8 @@ public:
 	void setupGUI(){
 		
 		gui.page(1).addPageShortcut(gui.addPage("3D"));
+		
+		gui.addSlider("cylinder_rotation",cylinderRotation,0,360);
 		
 		gui.addTitle("camera");
 		gui.addSlider("camera_x",cameraPos.x,-1000,1000);
@@ -86,7 +92,7 @@ public:
 		ofxLightsOn();
 		
 		ofPushMatrix();
-		
+		ofRotate(cylinderRotation, 0, 1, 0);
 		ofxBaseContainer::draw();
 		
 		ofPopMatrix();

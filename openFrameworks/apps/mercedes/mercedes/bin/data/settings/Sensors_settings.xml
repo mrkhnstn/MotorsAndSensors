@@ -1,4 +1,8 @@
 <controls>
+    <SliderFloat_userInProximityDistance>
+        <name>userInProximityDistance</name>
+        <value>49.686275</value>
+    </SliderFloat_userInProximityDistance>
     <Toggle_doDraw>
         <name>doDraw</name>
         <value>1</value>
@@ -13,8 +17,12 @@
     </Toggle_doDrawHitPoints>
     <Toggle_doDrawLabels>
         <name>doDrawLabels</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDrawLabels>
+    <Toggle_doDrawSensorThreshold>
+        <name>doDrawSensorThreshold</name>
+        <value>1</value>
+    </Toggle_doDrawSensorThreshold>
     <Button_SensorRays_0-18>
         <name>SensorRays_0-18</name>
         <value>0</value>

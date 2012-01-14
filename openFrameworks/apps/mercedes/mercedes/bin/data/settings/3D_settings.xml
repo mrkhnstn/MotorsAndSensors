@@ -1,15 +1,19 @@
 <controls>
+    <SliderFloat_cylinder_rotation>
+        <name>cylinder_rotation</name>
+        <value>273.176453</value>
+    </SliderFloat_cylinder_rotation>
     <SliderFloat_camera_x>
         <name>camera_x</name>
         <value>0.000000</value>
     </SliderFloat_camera_x>
     <SliderFloat_camera_y>
         <name>camera_y</name>
-        <value>423.529419</value>
+        <value>1000.000000</value>
     </SliderFloat_camera_y>
     <SliderFloat_camera_z>
         <name>camera_z</name>
-        <value>847.058716</value>
+        <value>258.823486</value>
     </SliderFloat_camera_z>
     <SliderFloat_eye_x>
         <name>eye_x</name>

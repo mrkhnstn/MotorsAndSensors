@@ -25,7 +25,11 @@ ofColor Fin::frontColorLow;		// front side color of fin when NO user in proximit
 ofColor Fin::backColorHigh;		// back side color of fin when user in proximity
 ofColor Fin::frontColorHigh;	// front side color of fin when user in proximity
 
+
 float Fin::sensorAngleRange = 10; 
+
+bool Fin::doStaticInit = true;
+ofTrueTypeFont Fin::font;
 
 void Fin::updateSensors(){
 	sensors.clear();
@@ -35,8 +39,8 @@ void Fin::updateSensors(){
 		minAngle += 360;
 	
 	float maxAngle = posAngle + 0.5 * sensorAngleRange;
-	if(minAngle > 360)
-		minAngle -= 360;
+	if(maxAngle >= 360)
+		maxAngle -= 360;
 	
 	Singleton<SensorCtrl>::instance()->getSensorsBetweenAngles(sensors,minAngle,maxAngle);
 }

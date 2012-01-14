@@ -25,6 +25,7 @@
 		843A0DD412E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DD312E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp */; };
 		843A0DDD12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */; };
 		843A0E2E12E844A1002F69D7 /* BaseObjectTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */; };
+		844709EC14B38F6900E74FF8 /* AverageF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844709EB14B38F6900E74FF8 /* AverageF.cpp */; };
 		844C422314A22CF20081F0D4 /* UIContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844C422214A22CF20081F0D4 /* UIContainer.cpp */; };
 		846339DE12E0BDD40041F43E /* ofxTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339DD12E0BDD40041F43E /* ofxTimeline.cpp */; };
 		846339E112E0BDE30041F43E /* ofxTimelineEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339E012E0BDE30041F43E /* ofxTimelineEvent.cpp */; };
@@ -212,6 +213,8 @@
 		843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscReceiveValueFloat.cpp; sourceTree = "<group>"; };
 		843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseObjectTest.cpp; sourceTree = "<group>"; };
 		843A0E2D12E844A1002F69D7 /* BaseObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObjectTest.h; sourceTree = "<group>"; };
+		844709EA14B38F6900E74FF8 /* AverageF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageF.h; sourceTree = "<group>"; };
+		844709EB14B38F6900E74FF8 /* AverageF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AverageF.cpp; sourceTree = "<group>"; };
 		844C422114A22CF20081F0D4 /* UIContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIContainer.h; sourceTree = "<group>"; };
 		844C422214A22CF20081F0D4 /* UIContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIContainer.cpp; sourceTree = "<group>"; };
 		846339DC12E0BDD40041F43E /* ofxTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimeline.h; sourceTree = "<group>"; };
@@ -340,7 +343,7 @@
 		84A3C3FC12DF424C00DC1D7B /* ofxTCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPServer.h; sourceTree = "<group>"; };
 		84A3C3FD12DF424C00DC1D7B /* ofxUDPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUDPManager.cpp; sourceTree = "<group>"; };
 		84A3C3FE12DF424C00DC1D7B /* ofxUDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUDPManager.h; sourceTree = "<group>"; };
-		84B280E014A61B7B007CEC59 /* MercedesInteractive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercedesInteractive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B280E014A61B7B007CEC59 /* MercedesInteractiveDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercedesInteractiveDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B310FA14AF77F600B74EA3 /* ofxBaseContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseContainer.h; sourceTree = "<group>"; };
 		84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseContainer.cpp; sourceTree = "<group>"; };
 		84B3118C14AF8E2A00B74EA3 /* IdleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdleScene.h; sourceTree = "<group>"; };
@@ -1086,6 +1089,8 @@
 				842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */,
 				842D7D2514ACEB650060DFF3 /* SensorCtrl.h */,
 				842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */,
+				844709EA14B38F6900E74FF8 /* AverageF.h */,
+				844709EB14B38F6900E74FF8 /* AverageF.cpp */,
 			);
 			name = Sensors;
 			path = ..;
@@ -1456,7 +1461,7 @@
 				847D5BF312DE391800B2FC48 /* addons */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE0360E8CC5DE009D7055 /* libs */,
-				84B280E014A61B7B007CEC59 /* MercedesInteractive.app */,
+				84B280E014A61B7B007CEC59 /* MercedesInteractiveDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1563,7 +1568,7 @@
 			);
 			name = MercedesInteractive;
 			productName = myOFApp;
-			productReference = 84B280E014A61B7B007CEC59 /* MercedesInteractive.app */;
+			productReference = 84B280E014A61B7B007CEC59 /* MercedesInteractiveDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1720,6 +1725,7 @@
 				84B311CF14AF901A00B74EA3 /* PalindromeScene.cpp in Sources */,
 				84B311E314AF91B100B74EA3 /* StepScene.cpp in Sources */,
 				84B312C314B0B70500B74EA3 /* SimpleInteractiveScene.cpp in Sources */,
+				844709EC14B38F6900E74FF8 /* AverageF.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

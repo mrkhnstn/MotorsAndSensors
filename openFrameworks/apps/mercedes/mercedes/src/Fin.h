@@ -35,6 +35,9 @@ public:
 	static bool doDraw2D;	// draw 2d on null plane
 	static bool doDrawLabels; // draw ids of each fin
 	
+	static bool doStaticInit;
+	static ofTrueTypeFont font;
+	
 	static ofColor backColorLow;	// back side color of fin when NO user in proximity
 	static ofColor frontColorLow;	// front side color of fin when NO user in proximity
 	
@@ -52,6 +55,12 @@ public:
 	
 	void setup(){
 		constants = Singleton<Constants>::instance();
+		
+		if(doStaticInit)
+		{
+			font.loadFont("fonts/Hlcb____.ttf",12,true,true,true);
+			doStaticInit = false;
+		}
 		
 		posAngle = index * 360 / constants->numFins;
 		angleN = 0.5;
@@ -143,12 +152,23 @@ public:
 		
 		}
 		
+		
+		
 		ofPopMatrix();
 		
 		if(doDrawLabels){
+			ofPushMatrix();
 			ofSetColor(255, 255, 255);
-			ofTranslate(constants->cylinderRadius-20, 0, 0);
+			ofTranslate(constants->cylinderRadius, 150 + 10, 0);
+			ofRotate(180, 0, 0, 1);
+			ofRotate(90, 0, 1, 0);
+			ofScale(0.5, 0.5, 0.5);
+			glDisable(GL_DEPTH_TEST);
+			ofRectangle rect = font.getStringBoundingBox(ofToString(index), 0, 0);
+			font.drawString(ofToString(index), -rect.width * 0.5, rect.height * 0.5);
+			glEnable(GL_DEPTH_TEST);
 			//ofDrawBitmapString(ofToString(index), 0, 0); //TODO: fix in 3D
+			ofPopMatrix();
 		}
 		
 		ofPopMatrix();

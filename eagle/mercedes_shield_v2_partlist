@@ -1,0 +1,58 @@
+Partlist
+
+Exported from mercedes_shield_v2_gp.sch at 14/01/2012 12:45
+
+EAGLE Version 5.11.0 Copyright (c) 1988-2010 CadSoft
+
+Part          Value              Device             Package               Library         Sheet
+
+A0-8          RJ45-8PTH          RJ45-8PTH          RJ45-8                SparkFun        1
+A8-15         RJ45-8PTH          RJ45-8PTH          RJ45-8                SparkFun        1
+ADCH                             PINHD-1X8          1X08                  pinhead         1
+ADCL                             PINHD-1X8          1X08                  pinhead         1
+C17           100UF              CAP_POLPTH1        CPOL-RADIAL-100UF-25V SparkFun        1
+C18           10uF               CAP_POLPTH2        CPOL-RADIAL-10UF-25V  SparkFun        1
+D1            1N4001             DIODESMA           SMA-DIODE             SparkFun        1
+GPIO2                            PINHD-1X8          1X08                  pinhead         1
+IC1                              V_REG_78XXSINK     TO220-IGO             SparkFun        1
+IR_PWR_SELECT M04X2              M04X2              2X4                   SparkFun        1
+J1            POWER_JACKPTH_LOCK POWER_JACKPTH_LOCK POWER_JACK_PTH_LOCK   SparkFun        1
+POWER                            PINHD-1X6          1X06                  pinhead         1
+PWMH                             PINHD-1X8          1X08                  pinhead         1
+R1            4.7K               RESISTORPTH-1/4W   AXIAL-0.4             SparkFun        1
+RESET                            10-XX              B3F-10XX              switch-omron    1
+S24                              M03PTH             1X03                  SparkFun        1
+S25                              M03PTH             1X03                  SparkFun        1
+S26                              M03PTH             1X03                  SparkFun        1
+S27                              M03PTH             1X03                  SparkFun        1
+S30                              M03PTH             1X03                  SparkFun        1
+S31                              M03PTH             1X03                  SparkFun        1
+S32                              M03PTH             1X03                  SparkFun        1
+S33                              M03PTH             1X03                  SparkFun        1
+S36                              M03PTH             1X03                  SparkFun        1
+S37                              M03PTH             1X03                  SparkFun        1
+S38                              M03PTH             1X03                  SparkFun        1
+S39                              M03PTH             1X03                  SparkFun        1
+S42                              M03PTH             1X03                  SparkFun        1
+S43                              M03PTH             1X03                  SparkFun        1
+S44                              M03PTH             1X03                  SparkFun        1
+S45                              M03PTH             1X03                  SparkFun        1
+S48                              M03PTH             1X03                  SparkFun        1
+S49                              M03PTH             1X03                  SparkFun        1
+S50                              M03PTH             1X03                  SparkFun        1
+S51                              M03PTH             1X03                  SparkFun        1
+U$3           RJ45-8PTH          RJ45-8PTH          RJ45-8                SparkFun        1
+U$4           RJ45-8PTH          RJ45-8PTH          RJ45-8                SparkFun        1
+UDN2981                          ULN2803DIP         DIL18                 SparkFun        1
+X1            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X2            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X3            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X4            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X5            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X6            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X7            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X8            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X9            MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+X10           MKDSN1,5/2-5,08    MKDSN1,5/2-5,08    MKDSN1,5/2-5,08       con-phoenix-508 1
+XIOH                             PINHD-2X8          2X08                  pinhead         1
+XIOL                             PINHD-2X8          2X08                  pinhead         1
