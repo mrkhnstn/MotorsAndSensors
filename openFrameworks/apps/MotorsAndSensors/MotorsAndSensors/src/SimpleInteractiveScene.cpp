@@ -1,6 +1,6 @@
 /*
  *  SimpleInteractiveScene.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 01/01/2012.
  *  Copyright 2012 __MyCompanyName__. All rights reserved.

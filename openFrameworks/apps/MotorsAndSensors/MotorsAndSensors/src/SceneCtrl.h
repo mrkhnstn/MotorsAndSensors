@@ -1,7 +1,7 @@
 #pragma once
 /*
  *  SceneCtrl.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -11,19 +11,12 @@
 #include "Includes.h"
 #include "Scene.h"
 
-#include "IdleScene.h"
-#include "PalindromeScene.h"
-#include "StepScene.h"
-#include "SimpleInteractiveScene.h"
-#include "TestScene1.h"
-
-#define NUM_PLAYLIST_ITEMS		10
+#define NUM_IDLE_ITEMS		10
 #define NUM_INTERACTIVE_ITEMS	3
 
-#define SCENE_CTRL_IDLE			0 // don't update any scene
-#define SCENE_CTRL_PLAYLIST		1 // iterate through playlist scenes
-#define SCENE_CTRL_INTERACTIVE	2 // iterate through interactive scenes
-#define SCENE_CTRL_MANUAL		3 // only play current scene
+#define SCENE_CTRL_IDLE		0 // iterate through idleList scenes
+#define SCENE_CTRL_INTERACTIVE	1 // iterate through interactive scenes
+#define SCENE_CTRL_MANUAL		2 // only play current scene
 
 class SceneCtrl : public ofxBaseObject {
 
@@ -31,12 +24,17 @@ public:
 	
 	vector<Scene*> scenes;
 	
-	int playlist[NUM_PLAYLIST_ITEMS]; // contains the ids of scenes to playback in a loop when there is no user interaction
-	int playlistIndex;
-	int interactivePlaylist[NUM_INTERACTIVE_ITEMS]; // contains the ids of scenes to use when there is user interaction
+	int idleList[NUM_IDLE_ITEMS]; // contains the ids of scenes to playback in a loop when there is no user interaction
+	int idleListPos;
 	
-	int currentSceneId; // currently active scene
-	int mode; // see SCENE_CTRL_IDLE, SCENE_CTRL_PLAYLIST, SCENE_CTRL_INTERACTIVE, SCENE_CTRL_MANUAL
+	int interactiveList[NUM_INTERACTIVE_ITEMS]; // contains the ids of scenes to use when there is user interaction
+	int interactiveListPos;
+	
+	int currentSceneId;		// currently active scene
+	int _currentSceneId;	// currently active scene used by gui
+	
+	int mode;				// see SCENE_CTRL_IDLE, SCENE_CTRL_INTERACTIVE, SCENE_CTRL_MANUAL
+	int _mode;				// mode used by gui
 	
 	void setup();
 	void setupGUI();
@@ -47,5 +45,9 @@ public:
 	
 	Scene& getCurrentScene();
 	void setCurrentScene(int sceneId);
+	void startNextInteractiveScene();
+	void startNextIdleScene();
+	void setMode(int newMode);
+	
 
 };

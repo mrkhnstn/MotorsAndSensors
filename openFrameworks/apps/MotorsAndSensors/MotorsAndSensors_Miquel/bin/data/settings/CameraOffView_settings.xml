@@ -1,0 +1,34 @@
+<controls>
+    <SliderFloat_cameraOnButton_x>
+        <name>cameraOnButton_x</name>
+        <value>415.000000</value>
+    </SliderFloat_cameraOnButton_x>
+    <SliderFloat_cameraOnButton_y>
+        <name>cameraOnButton_y</name>
+        <value>1750.000000</value>
+    </SliderFloat_cameraOnButton_y>
+    <SliderFloat_cameraOnButton_w>
+        <name>cameraOnButton_w</name>
+        <value>250.000000</value>
+    </SliderFloat_cameraOnButton_w>
+    <SliderFloat_cameraOnButton_h>
+        <name>cameraOnButton_h</name>
+        <value>100.000000</value>
+    </SliderFloat_cameraOnButton_h>
+    <SliderFloat_cameraOffSprite_x>
+        <name>cameraOffSprite_x</name>
+        <value>780.000000</value>
+    </SliderFloat_cameraOffSprite_x>
+    <SliderFloat_cameraOffSprite_y>
+        <name>cameraOffSprite_y</name>
+        <value>0.000000</value>
+    </SliderFloat_cameraOffSprite_y>
+    <SliderFloat_cameraOffSprite_w>
+        <name>cameraOffSprite_w</name>
+        <value>300.000000</value>
+    </SliderFloat_cameraOffSprite_w>
+    <SliderFloat_cameraOffSprite_h>
+        <name>cameraOffSprite_h</name>
+        <value>100.000000</value>
+    </SliderFloat_cameraOffSprite_h>
+</controls>

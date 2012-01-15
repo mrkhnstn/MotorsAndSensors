@@ -1,0 +1,22 @@
+<controls>
+    <SliderFloat_angle>
+        <name>angle</name>
+        <value>0.000000</value>
+    </SliderFloat_angle>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>106.235291</value>
+    </SliderFloat_velocity>
+    <ComboBox_angleMode>
+        <name>angleMode</name>
+        <value>4</value>
+    </ComboBox_angleMode>
+    <SliderInt_motorSelected>
+        <name>motorSelected</name>
+        <value>55</value>
+    </SliderInt_motorSelected>
+    <Toggle_highlightSelectedMotor>
+        <name>highlightSelectedMotor</name>
+        <value>1</value>
+    </Toggle_highlightSelectedMotor>
+</controls>

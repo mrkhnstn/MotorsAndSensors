@@ -1,7 +1,7 @@
 #pragma once
 /*
  *  MotorsAndSensors.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -27,10 +27,12 @@ public:
 	ofxLight directionalLight;
 	float cylinderRotation;
 	
+	ofColor bgColor;
+	
 	void setup();
 	void setupGUI();
 	void postGUI();
-	// void udpate(); // see ofxBaseContainer update
+	// void update(); // see ofxBaseContainer update
 	void draw();
 	void exit();
 	

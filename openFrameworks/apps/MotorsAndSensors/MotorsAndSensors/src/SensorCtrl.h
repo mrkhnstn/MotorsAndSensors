@@ -2,7 +2,7 @@
 
 /*
  *  SensorCtrl.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 29/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -26,8 +26,6 @@
 class SensorCtrl : public ofxBaseObject, ofxOscHandler {
 
 public:
-	
-	Constants* constants;
 
 	int rawValues[TOTAL_RAYS];			// raw 10-bit analog reading from sensors
 	AverageF averageValues[TOTAL_RAYS];

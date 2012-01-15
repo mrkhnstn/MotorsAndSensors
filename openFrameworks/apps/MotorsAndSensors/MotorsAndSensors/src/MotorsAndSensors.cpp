@@ -1,6 +1,6 @@
 /*
  *  MotorsAndSensors.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -23,9 +23,8 @@ void MotorsAndSensors::setup(){
 	
 	addObject(*Singleton<MotorCtrl>::instance());
 	addObject(*Singleton<OscMotorCtrl>::instance());
-	addObject(*Singleton<SceneCtrl>::instance());
-	//addObject(*Singleton<SerialTest>::instance());
 	addObject(*Singleton<SensorCtrl>::instance());
+	addObject(*Singleton<SceneCtrl>::instance());
 	
 	// setup 3d scene
 	ofxMaterialSpecular(120, 120, 120); //how much specular light will be reflect by the surface
@@ -39,8 +38,11 @@ void MotorsAndSensors::setup(){
 
 void MotorsAndSensors::setupGUI(){
 	
+	ofxBaseContainer::setupGUI();
+	
 	gui.page(1).addPageShortcut(gui.addPage("3D"));
 	
+	gui.addColorPicker("bg_color", &bgColor.r, false, true);
 	gui.addSlider("cylinder_rotation",cylinderRotation,0,360);
 	
 	gui.addTitle("camera");
@@ -52,7 +54,7 @@ void MotorsAndSensors::setupGUI(){
 	gui.addSlider("eye_y",cameraEye.y,-1000,1000);
 	gui.addSlider("eye_z",cameraEye.z,-1000,1000);
 	
-	ofxBaseContainer::setupGUI();
+
 }
 
 void MotorsAndSensors::postGUI(){
@@ -62,6 +64,8 @@ void MotorsAndSensors::postGUI(){
 // void MotorsAndSensors::udpate(); // see ofxBaseContainer update
 
 void MotorsAndSensors::draw(){
+	
+	ofBackground(bgColor.r, bgColor.g, bgColor.b);
 	
 	// update camera
 	camera.lerpPosition(cameraPos, 0.1);

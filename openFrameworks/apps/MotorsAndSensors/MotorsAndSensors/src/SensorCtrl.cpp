@@ -1,6 +1,6 @@
 /*
  *  SensorCtrl.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 29/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -10,8 +10,6 @@
 #include "SensorCtrl.h"
 
 void SensorCtrl::setup(){
-	
-	constants = Singleton<Constants>::instance();
 	
 	Singleton<ofxOscManager>::instance()->registerInterest(*this,"/adc");
 	
@@ -28,7 +26,7 @@ void SensorCtrl::setup(){
 	
 	int bank = 0;
 	int ch = 0;
-	for (int i=0; i<constants->numSensors; i++) {
+	for (int i=0; i<Sensor::numSensors; i++) {
 		Sensor* sensor = new Sensor();
 		sensor->index = i;
 		sensor->setup();
@@ -65,17 +63,12 @@ void SensorCtrl::updateLUT(){
 
 void SensorCtrl::setupGUI(){
 	gui.page(1).addPageShortcut(gui.addPage("Sensors"));
-	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
-	gui.addTitle("drawing");
-	gui.addToggle("doDraw", Sensor::doDraw);
-	gui.addToggle("doDrawRays", Sensor::doDrawRays);
-	gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
-	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
-	gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
 	
+	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
+
+	gui.addTitle("sensors");
 	int min = 0;
 	int max = 19;
-	
 	while (min < TOTAL_RAYS) {
 		gui.page("Sensors").addPageShortcut(gui.addPage("SensorRays_"+ofToString(min)+"-"+ofToString(max-1)));
 		gui.addTitle("raw");
@@ -94,13 +87,26 @@ void SensorCtrl::setupGUI(){
 		max += 20;
 	}
 	
-	
-	
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->setupGUI();
+	
+	gui.setPage("Sensors");
+	gui.addTitle("drawing");
+	gui.addToggle("doDraw", Sensor::doDraw);
+	gui.addToggle("doDrawRays", Sensor::doDrawRays);
+	gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
+	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
+	gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
 }
 
 void SensorCtrl::postGUI(){
+
+	for(int i=0; i<TOTAL_RAYS; i++)
+	{
+		rawValues[i] = 0;
+		distanceValues[i] = SENSOR_MAX_DISTANCE;
+	}
+	
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->postGUI();
 }
@@ -131,7 +137,7 @@ void SensorCtrl::draw(){
 		ofNoFill();
 		ofRotate(90, 1, 0, 0);
 		ofSetCircleResolution(72);
-		ofCircle(0, 0, constants->cylinderRadius + Sensor::userInProximityDistance + 25);
+		ofCircle(0, 0, Sensor::distanceToCentre + Sensor::userInProximityDistance + 25);
 		ofPopMatrix();
 		ofPopStyle();
 	}

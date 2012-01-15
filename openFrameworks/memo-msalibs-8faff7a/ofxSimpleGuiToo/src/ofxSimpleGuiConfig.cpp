@@ -99,7 +99,7 @@ ofxSimpleGuiConfig::ofxSimpleGuiConfig() {
 	
 	fullColor			= 0xaaaaaa;
 	fullOverColor		= 0xffffff;
-	fullActiveColor		= 0x881818;
+	fullActiveColor		= 0x181881;
 	emptyColor			= 0x333333;
 	
 	borderColor			= 0x333333;

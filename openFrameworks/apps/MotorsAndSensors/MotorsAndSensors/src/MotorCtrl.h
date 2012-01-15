@@ -1,7 +1,7 @@
 #pragma once
 /*
  *  MotorCtrl.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -13,8 +13,6 @@
 
 class MotorCtrl : public ofxBaseObject {
 public:
-	
-	Constants* constants;
 	
 	vector<Motor*> motors;
 	

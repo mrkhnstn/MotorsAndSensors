@@ -1,0 +1,18 @@
+<controls>
+    <SliderFloat_recIconSprite_x>
+        <name>recIconSprite_x</name>
+        <value>780.000000</value>
+    </SliderFloat_recIconSprite_x>
+    <SliderFloat_recIconSprite_y>
+        <name>recIconSprite_y</name>
+        <value>0.000000</value>
+    </SliderFloat_recIconSprite_y>
+    <SliderFloat_recIconSprite_w>
+        <name>recIconSprite_w</name>
+        <value>300.000000</value>
+    </SliderFloat_recIconSprite_w>
+    <SliderFloat_recIconSprite_h>
+        <name>recIconSprite_h</name>
+        <value>100.000000</value>
+    </SliderFloat_recIconSprite_h>
+</controls>

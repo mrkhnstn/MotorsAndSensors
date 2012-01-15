@@ -1,0 +1,10 @@
+<controls>
+    <SliderFloat_angle>
+        <name>angle</name>
+        <value>132.452057</value>
+    </SliderFloat_angle>
+    <SliderFloat_angleSpeed>
+        <name>angleSpeed</name>
+        <value>0.645098</value>
+    </SliderFloat_angleSpeed>
+</controls>

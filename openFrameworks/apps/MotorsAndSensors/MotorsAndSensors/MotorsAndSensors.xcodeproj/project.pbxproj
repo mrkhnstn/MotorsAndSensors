@@ -15,17 +15,14 @@
 		842D7DD814AF691A0060DFF3 /* ThreeDTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DD714AF691A0060DFF3 /* ThreeDTest.cpp */; };
 		8439581214A61C100092E501 /* MotorsAndSensors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581114A61C100092E501 /* MotorsAndSensors.cpp */; };
 		8439581714A61CA30092E501 /* MotorCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581614A61CA30092E501 /* MotorCtrl.cpp */; };
-		8439581B14A61D7D0092E501 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581A14A61D7D0092E501 /* Constants.cpp */; };
 		8439581E14A61DD80092E501 /* Motor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439581D14A61DD80092E501 /* Motor.cpp */; };
 		8439587214A673260092E501 /* OscMotorCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439587114A673260092E501 /* OscMotorCtrl.cpp */; };
 		843958C814A682AE0092E501 /* SceneCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843958C714A682AE0092E501 /* SceneCtrl.cpp */; };
 		843958D614A683B30092E501 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843958D514A683B30092E501 /* Scene.cpp */; };
-		843958DD14A6879C0092E501 /* TestScene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843958DC14A6879C0092E501 /* TestScene1.cpp */; };
 		8439594114A68F8B0092E501 /* SerialTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8439594014A68F8B0092E501 /* SerialTest.cpp */; };
 		843A0DD412E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DD312E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp */; };
 		843A0DDD12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */; };
 		843A0E2E12E844A1002F69D7 /* BaseObjectTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */; };
-		844709EC14B38F6900E74FF8 /* AverageF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 844709EB14B38F6900E74FF8 /* AverageF.cpp */; };
 		846339DE12E0BDD40041F43E /* ofxTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339DD12E0BDD40041F43E /* ofxTimeline.cpp */; };
 		846339E112E0BDE30041F43E /* ofxTimelineEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339E012E0BDE30041F43E /* ofxTimelineEvent.cpp */; };
 		84633A0812E0C4270041F43E /* ofxTimelineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84633A0712E0C4270041F43E /* ofxTimelineTest.cpp */; };
@@ -53,6 +50,9 @@
 		847D5DC812DE3AF600B2FC48 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D9512DE3AF600B2FC48 /* ofxCvImage.cpp */; };
 		847D5DC912DE3AF600B2FC48 /* ofxCvShortImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D9812DE3AF600B2FC48 /* ofxCvShortImage.cpp */; };
 		847D5DCA12DE3AF600B2FC48 /* ofxThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D9F12DE3AF600B2FC48 /* ofxThread.cpp */; };
+		847F718314C31EEF009BE563 /* ExampleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F718214C31EEF009BE563 /* ExampleScene.cpp */; };
+		847F724E14C33892009BE563 /* AverageF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F724C14C33892009BE563 /* AverageF.cpp */; };
+		847F731314C33D3D009BE563 /* BlankScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 847F731214C33D3D009BE563 /* BlankScene.cpp */; };
 		849EEF8D12E5AC89007A8058 /* ofxOscHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849EEF8B12E5AC89007A8058 /* ofxOscHandler.cpp */; };
 		849EEF9012E5AD19007A8058 /* ofxOscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849EEF8F12E5AD19007A8058 /* ofxOscManager.cpp */; };
 		849EEF9312E5AE25007A8058 /* ofxOscObjectsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 849EEF9212E5AE25007A8058 /* ofxOscObjectsTest.cpp */; };
@@ -189,8 +189,6 @@
 		8439581114A61C100092E501 /* MotorsAndSensors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorsAndSensors.cpp; sourceTree = "<group>"; };
 		8439581514A61CA30092E501 /* MotorCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotorCtrl.h; sourceTree = "<group>"; };
 		8439581614A61CA30092E501 /* MotorCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MotorCtrl.cpp; sourceTree = "<group>"; };
-		8439581914A61D7D0092E501 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		8439581A14A61D7D0092E501 /* Constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Constants.cpp; sourceTree = "<group>"; };
 		8439581C14A61DD80092E501 /* Motor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motor.h; sourceTree = "<group>"; };
 		8439581D14A61DD80092E501 /* Motor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Motor.cpp; sourceTree = "<group>"; };
 		8439587014A673260092E501 /* OscMotorCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscMotorCtrl.h; sourceTree = "<group>"; };
@@ -199,8 +197,6 @@
 		843958C714A682AE0092E501 /* SceneCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneCtrl.cpp; sourceTree = "<group>"; };
 		843958D414A683B30092E501 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		843958D514A683B30092E501 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
-		843958DB14A6879C0092E501 /* TestScene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScene1.h; sourceTree = "<group>"; };
-		843958DC14A6879C0092E501 /* TestScene1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene1.cpp; sourceTree = "<group>"; };
 		8439593F14A68F8B0092E501 /* SerialTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialTest.h; sourceTree = "<group>"; };
 		8439594014A68F8B0092E501 /* SerialTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SerialTest.cpp; sourceTree = "<group>"; };
 		843A0DD212E72FFD002F69D7 /* ofxOscReceiveValueBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscReceiveValueBase.h; sourceTree = "<group>"; };
@@ -209,8 +205,6 @@
 		843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscReceiveValueFloat.cpp; sourceTree = "<group>"; };
 		843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseObjectTest.cpp; sourceTree = "<group>"; };
 		843A0E2D12E844A1002F69D7 /* BaseObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObjectTest.h; sourceTree = "<group>"; };
-		844709EA14B38F6900E74FF8 /* AverageF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AverageF.h; sourceTree = "<group>"; };
-		844709EB14B38F6900E74FF8 /* AverageF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AverageF.cpp; sourceTree = "<group>"; };
 		846339DC12E0BDD40041F43E /* ofxTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimeline.h; sourceTree = "<group>"; };
 		846339DD12E0BDD40041F43E /* ofxTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTimeline.cpp; sourceTree = "<group>"; };
 		846339DF12E0BDE30041F43E /* ofxTimelineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimelineEvent.h; sourceTree = "<group>"; };
@@ -309,6 +303,12 @@
 		847D5D9D12DE3AF600B2FC48 /* Instructions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Instructions.txt; sourceTree = "<group>"; };
 		847D5D9F12DE3AF600B2FC48 /* ofxThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxThread.cpp; sourceTree = "<group>"; };
 		847D5DA012DE3AF600B2FC48 /* ofxThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxThread.h; sourceTree = "<group>"; };
+		847F718114C31EEF009BE563 /* ExampleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleScene.h; sourceTree = "<group>"; };
+		847F718214C31EEF009BE563 /* ExampleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExampleScene.cpp; sourceTree = "<group>"; };
+		847F724C14C33892009BE563 /* AverageF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AverageF.cpp; path = src/AverageF.cpp; sourceTree = "<group>"; };
+		847F724D14C33892009BE563 /* AverageF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AverageF.h; path = src/AverageF.h; sourceTree = "<group>"; };
+		847F731114C33D3D009BE563 /* BlankScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankScene.h; sourceTree = "<group>"; };
+		847F731214C33D3D009BE563 /* BlankScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BlankScene.cpp; sourceTree = "<group>"; };
 		849EEF8B12E5AC89007A8058 /* ofxOscHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscHandler.cpp; sourceTree = "<group>"; };
 		849EEF8C12E5AC89007A8058 /* ofxOscHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscHandler.h; sourceTree = "<group>"; };
 		849EEF8E12E5AD19007A8058 /* ofxOscManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxOscManager.h; sourceTree = "<group>"; };
@@ -538,11 +538,11 @@
 		843958DA14A6878A0092E501 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				84B3128F14B0A76A00B74EA3 /* CustomScenes */,
 				843958D414A683B30092E501 /* Scene.h */,
 				843958D514A683B30092E501 /* Scene.cpp */,
 				843958C614A682AE0092E501 /* SceneCtrl.h */,
 				843958C714A682AE0092E501 /* SceneCtrl.cpp */,
+				84B3128F14B0A76A00B74EA3 /* CustomScenes */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1077,8 +1077,8 @@
 				842D7D2314ACEB5D0060DFF3 /* Sensor.cpp */,
 				842D7D2514ACEB650060DFF3 /* SensorCtrl.h */,
 				842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */,
-				844709EA14B38F6900E74FF8 /* AverageF.h */,
-				844709EB14B38F6900E74FF8 /* AverageF.cpp */,
+				847F724C14C33892009BE563 /* AverageF.cpp */,
+				847F724D14C33892009BE563 /* AverageF.h */,
 			);
 			name = Sensors;
 			path = ..;
@@ -1087,14 +1087,16 @@
 		84B3128F14B0A76A00B74EA3 /* CustomScenes */ = {
 			isa = PBXGroup;
 			children = (
+				847F731114C33D3D009BE563 /* BlankScene.h */,
+				847F731214C33D3D009BE563 /* BlankScene.cpp */,
+				847F718114C31EEF009BE563 /* ExampleScene.h */,
+				847F718214C31EEF009BE563 /* ExampleScene.cpp */,
 				84B3118C14AF8E2A00B74EA3 /* IdleScene.h */,
 				84B3118D14AF8E2A00B74EA3 /* IdleScene.cpp */,
 				84B311CD14AF901A00B74EA3 /* PalindromeScene.h */,
 				84B311CE14AF901A00B74EA3 /* PalindromeScene.cpp */,
 				84B311E114AF91B100B74EA3 /* StepScene.h */,
 				84B311E214AF91B100B74EA3 /* StepScene.cpp */,
-				843958DB14A6879C0092E501 /* TestScene1.h */,
-				843958DC14A6879C0092E501 /* TestScene1.cpp */,
 				84B312C114B0B70500B74EA3 /* SimpleInteractiveScene.h */,
 				84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */,
 			);
@@ -1236,8 +1238,6 @@
 				84EF61EA149525B60053194F /* main.cpp */,
 				8439581014A61C100092E501 /* MotorsAndSensors.h */,
 				8439581114A61C100092E501 /* MotorsAndSensors.cpp */,
-				8439581914A61D7D0092E501 /* Constants.h */,
-				8439581A14A61D7D0092E501 /* Constants.cpp */,
 				843958DA14A6878A0092E501 /* Scenes */,
 				84B3122C14B0970B00B74EA3 /* Sensors */,
 				84B3120E14B096F700B74EA3 /* Motors */,
@@ -1675,12 +1675,10 @@
 				84EF61FA149525E10053194F /* Includes.cpp in Sources */,
 				8439581214A61C100092E501 /* MotorsAndSensors.cpp in Sources */,
 				8439581714A61CA30092E501 /* MotorCtrl.cpp in Sources */,
-				8439581B14A61D7D0092E501 /* Constants.cpp in Sources */,
 				8439581E14A61DD80092E501 /* Motor.cpp in Sources */,
 				8439587214A673260092E501 /* OscMotorCtrl.cpp in Sources */,
 				843958C814A682AE0092E501 /* SceneCtrl.cpp in Sources */,
 				843958D614A683B30092E501 /* Scene.cpp in Sources */,
-				843958DD14A6879C0092E501 /* TestScene1.cpp in Sources */,
 				8439594114A68F8B0092E501 /* SerialTest.cpp in Sources */,
 				842D7D2414ACEB5D0060DFF3 /* Sensor.cpp in Sources */,
 				842D7D2714ACEB650060DFF3 /* SensorCtrl.cpp in Sources */,
@@ -1693,7 +1691,9 @@
 				84B311CF14AF901A00B74EA3 /* PalindromeScene.cpp in Sources */,
 				84B311E314AF91B100B74EA3 /* StepScene.cpp in Sources */,
 				84B312C314B0B70500B74EA3 /* SimpleInteractiveScene.cpp in Sources */,
-				844709EC14B38F6900E74FF8 /* AverageF.cpp in Sources */,
+				847F718314C31EEF009BE563 /* ExampleScene.cpp in Sources */,
+				847F724E14C33892009BE563 /* AverageF.cpp in Sources */,
+				847F731314C33D3D009BE563 /* BlankScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

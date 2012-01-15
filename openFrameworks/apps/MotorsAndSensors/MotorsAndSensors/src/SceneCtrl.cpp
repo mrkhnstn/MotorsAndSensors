@@ -1,6 +1,6 @@
 /*
  *  SceneCtrl.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -9,20 +9,26 @@
 
 #include "SceneCtrl.h"
 
+////////////////////////////////////////////////////////////////
+
 void SceneCtrl::setup(){
-	
-	//add scenes
-	scenes.push_back(new IdleScene());
-	scenes.push_back(new PalindromeScene());
-	scenes.push_back(new StepScene());
-	scenes.push_back(new SimpleInteractiveScene());
-	//scenes.push_back(new TestScene1());
-	
+		
 	for(int i=0; i<scenes.size(); i++)
 		scenes[i]->setup();
 	
 	currentSceneId = 0;
-	playlistIndex = 0;
+	_currentSceneId = 0;
+	
+	mode = SCENE_CTRL_IDLE;
+	_mode = SCENE_CTRL_IDLE;
+	
+	idleListPos = 0;
+	for(int i=0; i<NUM_IDLE_ITEMS; i++)
+		idleList[i] = 0;
+	
+	interactiveListPos = 0;
+	for(int i=0; i<NUM_INTERACTIVE_ITEMS; i++)
+		interactiveList[i] = 0;
 	
 }
 
@@ -35,52 +41,78 @@ void SceneCtrl::setupGUI(){
 		names[i] = scenes[i]->name;
 	}
 	
-	gui.addComboBox("Current_Scene", currentSceneId, scenes.size(), names);
+	gui.addComboBox("Current_Scene", _currentSceneId, scenes.size(), names);
 	
-	gui.addTitle("Playlist");
-	string playlistChoices[scenes.size()+1];
-	playlistChoices[0] = "EMPTY";
+	string modeChoices[3] = {"IDLE","INTERACTIVE","MANUAL"};
+	gui.addComboBox("Current_Mode", _mode, 3, modeChoices);
+	
+	string idleListChoices[scenes.size()+1];
+	idleListChoices[0] = "EMPTY";
 	for(int i=0; i<scenes.size(); i++){
-		playlistChoices[i+1] = scenes[i]->name;
-	}
-	for (int i=0; i<NUM_PLAYLIST_ITEMS; i++) {
-		gui.addComboBox("Scene_"+ofToString(i), playlist[i], scenes.size()+1, playlistChoices);
+		idleListChoices[i+1] = scenes[i]->name;
 	}
 	
 	gui.addTitle("Scenes");
-	
 	for(int i=0; i<scenes.size(); i++)
 		scenes[i]->setupGUI();
+	
+	gui.setPage("Scenes");
+	gui.addTitle("Idle_Playlist").setNewColumn(true);
+	gui.addSlider("Idle_List_Pos", idleListPos, 0, NUM_IDLE_ITEMS-1);
+	for (int i=0; i<NUM_IDLE_ITEMS; i++) {
+		gui.addComboBox("Idle_"+ofToString(i), idleList[i], scenes.size()+1, idleListChoices);
+	}
+	
+	gui.addTitle("Interactive_Playlist").setNewColumn(true);
+	gui.addSlider("Pnteractive_List_Pos", interactiveListPos, 0, NUM_IDLE_ITEMS-1);
+	for (int i=0; i<NUM_INTERACTIVE_ITEMS; i++) {
+		gui.addComboBox("Interactive_"+ofToString(i), interactiveList[i], scenes.size()+1, idleListChoices);
+	}
+	
+	
 }
 
 void SceneCtrl::postGUI(){
 	for(int i=0; i<scenes.size(); i++)
 		scenes[i]->postGUI();
 	
-	mode = SCENE_CTRL_MANUAL; // TODO: change this to SCENE_CTRL_PLAYLIST
+	for(int i=0; i<NUM_IDLE_ITEMS; i++)
+		idleList[i] = ofClamp(idleList[i], 0, scenes.size() + 1);
+	
+	for(int i=0; i<NUM_INTERACTIVE_ITEMS; i++)
+		interactiveList[i] = ofClamp(interactiveList[i], 0, scenes.size() + 1);
+	
+	idleListPos = 0;
+	interactiveListPos = 0;
+	
+	getCurrentScene().start();
 }
 
 void SceneCtrl::update(){
-	if (mode == SCENE_CTRL_IDLE) return;
+	
+	if (_mode != mode) {
+		setMode(_mode);
+	}
+	
+	// check currentSceneId against gui
+	if(_currentSceneId != currentSceneId)
+		setCurrentScene(_currentSceneId);
 	
 	switch (mode) {
-		case SCENE_CTRL_PLAYLIST:
+		case SCENE_CTRL_IDLE:
 			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
-				// find next scene to playback
-				playlistIndex = (playlistIndex + 1) % NUM_PLAYLIST_ITEMS;
-				int whileCounter = 0; // to prevent endless loop if all play items empty
-				while (playlist[playlistIndex] != 0 && whileCounter < NUM_PLAYLIST_ITEMS) {
-					playlistIndex = (playlistIndex + 1) % NUM_PLAYLIST_ITEMS;
-				}
-				
-				if(playlist[playlistIndex] > 0) // if a non empty slot was found
-					setCurrentScene(playlist[playlistIndex]-1); // -1 because 0 corresponds to empty slot so scene ids are offset by 1
+				startNextIdleScene();
 			}
 			break;
 		case SCENE_CTRL_INTERACTIVE:
+			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
+				startNextInteractiveScene();
+			}
+			break;
+		case SCENE_CTRL_MANUAL: // if current scene is not playing (not enabled) then restart it
 			if (!getCurrentScene().enabled) {
-				//
-			}			
+				getCurrentScene().start();
+			}		
 		default:
 			break;
 	}
@@ -89,11 +121,14 @@ void SceneCtrl::update(){
 }
 
 void SceneCtrl::draw(){
-	if (mode == SCENE_CTRL_IDLE) return;
+	ofPushMatrix();
+	ofRotate(-90, 1, 0, 0);
 	getCurrentScene().draw();
+	ofPopMatrix();
 }
 
 void SceneCtrl::exit(){
+	//TODO: this is currently not being called on exiting!!
 	for (int i=0; i<scenes.size(); i++) {
 		delete scenes[i];
 	}
@@ -105,9 +140,54 @@ Scene& SceneCtrl::getCurrentScene(){
 }
 
 void SceneCtrl::setCurrentScene(int sceneId){
-	//if (currentSceneId != sceneId) {
-	//	scenes[currentSceneId]->stop();
-		currentSceneId = sceneId;
-		scenes[currentSceneId]->start();
-	//}
+	getCurrentScene().stop();
+	currentSceneId = sceneId;
+	_currentSceneId = sceneId;
+	getCurrentScene().start();
+}
+
+void SceneCtrl::startNextInteractiveScene(){
+	// find next scene to playback
+	interactiveListPos = (interactiveListPos + 1) % NUM_INTERACTIVE_ITEMS;
+	int whileCounter = 0; // to prevent endless loop if all play items empty
+	
+	while (interactiveList[interactiveListPos] == 0 && whileCounter < NUM_INTERACTIVE_ITEMS) {
+		interactiveListPos = (interactiveListPos + 1) % NUM_INTERACTIVE_ITEMS;
+		whileCounter++;
+	}
+	
+	if(interactiveList[interactiveListPos] > 0) // if a non empty slot was found
+		setCurrentScene(interactiveList[interactiveListPos]-1); // -1 because 0 corresponds to empty slot so scene ids are offset by 1
+}
+
+void SceneCtrl::startNextIdleScene(){
+	// find next scene to playback
+	idleListPos = (idleListPos + 1) % NUM_IDLE_ITEMS;
+	int whileCounter = 0; // to prevent endless loop if all play items empty
+	
+	while (idleList[idleListPos] == 0 && whileCounter < NUM_IDLE_ITEMS) {
+		idleListPos = (idleListPos + 1) % NUM_IDLE_ITEMS;
+		whileCounter++;
+	}
+	
+	if(idleList[idleListPos] > 0) // if a non empty slot was found
+		setCurrentScene(idleList[idleListPos]-1); // -1 because 0 corresponds to empty slot so scene ids are offset by 1
+}
+
+void SceneCtrl::setMode(int newMode){
+	mode = newMode;
+	_mode = newMode;
+	switch (mode) {
+		case SCENE_CTRL_IDLE:
+			startNextIdleScene();
+			break;
+		case SCENE_CTRL_INTERACTIVE:
+			startNextInteractiveScene();
+			break;
+		case SCENE_CTRL_MANUAL:
+			setCurrentScene(currentSceneId); // start current scene if not playing or restart if playing
+			break;
+		default:
+			break;
+	}
 }

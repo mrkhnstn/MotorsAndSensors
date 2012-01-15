@@ -1,6 +1,6 @@
 /*
  *  Sensor.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 29/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -16,6 +16,10 @@ bool Sensor::doDrawLabels = false;
 bool Sensor::doDrawSensorThreshold = false;
 float Sensor::userInProximityDistance = 230;
 
+
+int Sensor::numSensors = 36;
+float Sensor::distanceToCentre = 325;
+
 bool Sensor::doStaticInit = true;
 ofTrueTypeFont Sensor::font;
 
@@ -26,8 +30,7 @@ void Sensor::setup(){
 		doStaticInit = false;
 	}
 	
-	constants = Singleton<Constants>::instance();
-	posAngle = index * 360 / constants->numSensors;
+	posAngle = index * 360 / numSensors;
 	
 	_userInProximity = false;
 }
@@ -59,7 +62,7 @@ void Sensor::draw(){
 	ofRotate(posAngle, 0, 1, 0);
 	
 	ofPushMatrix();
-	ofTranslate(constants->cylinderRadius + 25, 0, 0); // move from cylinder centre by cylinder radius
+	ofTranslate(distanceToCentre + 25, 0, 0); // move from cylinder centre by cylinder radius
 	
 	ofSetColor(255, 255, 255); //TODO: make color variable
 	
@@ -96,7 +99,7 @@ void Sensor::draw(){
 	if(doDrawLabels){
 		ofSetColor(255, 255, 255);
 		ofPushMatrix();
-		ofTranslate(constants->cylinderRadius+15, 0, 0);
+		ofTranslate(distanceToCentre+15, 0, 0);
 		
 		//glDisable(GL_DEPTH_TEST);
 		//ofRotate(180, 0, 0, 1);

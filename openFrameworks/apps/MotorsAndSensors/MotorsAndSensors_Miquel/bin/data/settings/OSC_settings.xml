@@ -1,0 +1,6 @@
+<controls>
+    <Toggle_verbose>
+        <name>verbose</name>
+        <value>0</value>
+    </Toggle_verbose>
+</controls>

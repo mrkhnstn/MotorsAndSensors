@@ -1,6 +1,6 @@
 /*
  *  OscMotorCtrl.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -17,7 +17,8 @@ void OscMotorCtrl::setup(){
 }
 
 void OscMotorCtrl::setupGUI(){
-	gui.page("MotorCtrl").addPageShortcut(gui.addPage("OscMotorCtrl"));
+	gui.setPage("Motors");
+	gui.addTitle("OSC");
 	gui.addSlider("sendFreqMs",sendFreqMs,10,200);
 }
 

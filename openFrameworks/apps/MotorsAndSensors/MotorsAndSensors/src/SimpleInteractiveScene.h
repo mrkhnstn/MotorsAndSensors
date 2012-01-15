@@ -1,7 +1,7 @@
 #pragma once
 /*
  *  SimpleInteractiveScene.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 01/01/2012.
  *  Copyright 2012 __MyCompanyName__. All rights reserved.
@@ -21,20 +21,15 @@ public:
 		name = "SimpleInteractiveScene";
 	}
 	
-	void setupGUI(){
-		gui.page("Scenes").addPageShortcut(gui.addPage(name));
-	}
-	
 	void update(){
-		for (int i=0; i<motorCtrl->motors.size(); i++)
-			if (motorCtrl->motors[i]->userInProximity()) {
-				motorCtrl->motors[i]->setTgtAngleN(0.5);
+		for (int i=0; i<getMotorCount(); i++)
+			if (userInFrontOfMotor(i)) {
+				panelOpen(i);
 			} else {
-				motorCtrl->motors[i]->setTgtAngleN(0);
+				panelFront(i);
 			}
 	}
-	
-	
+
 };
 
 

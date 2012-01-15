@@ -1,6 +1,6 @@
 /*
  *  MotorCtrl.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -11,14 +11,12 @@
 
 void MotorCtrl::setup(){
 	
-	constants = Singleton<Constants>::instance();
-	
 	servoMin = 600;
 	servoMax = 2000;
 	
 	int bank = 0;
 	int ch = 1;
-	for (int i=0; i<constants->numMotors; i++) {
+	for (int i=0; i<Motor::numMotors; i++) {
 		Motor* motor = new Motor();
 		motor->index = i;
 		motor->setup();
@@ -38,29 +36,20 @@ void MotorCtrl::setup(){
 
 void MotorCtrl::setupGUI(){
 	
-	gui.page(1).addPageShortcut(gui.addPage("MotorCtrl"));
+	gui.page(1).addPageShortcut(gui.addPage("Motors"));
+	
 	gui.addTitle("servo limits");
 	gui.addSlider("servoMin", servoMin, 500, 2500);
 	gui.addSlider("servoMax", servoMax, 500, 2500);
 	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,0.1,2);
 	
-	gui.addTitle("drawing");
-	
-	gui.addToggle("draw", Motor::doDraw);
-	gui.addToggle("draw3D", Motor::doDraw3D);
-	gui.addToggle("draw2D", Motor::doDraw2D);
-	gui.addToggle("drawLabels", Motor::doDrawLabels);
-	
-	gui.addColorPicker("backColorLow", &Motor::backColorLow.r, false, true);
-	gui.addColorPicker("frontColorLow", &Motor::frontColorLow.r, false, true);
-	gui.addColorPicker("backColorHigh", &Motor::backColorHigh.r, false, true);
-	gui.addColorPicker("frontColorHigh", &Motor::frontColorHigh.r, false, true);
 	
 	// gui pages for individual elements
+	gui.addTitle("motors");
 	for (int j=0; j<4; j++) {
 		int min = j*18;
 		int max = (j+1)*18;
-		gui.page("MotorCtrl").addPageShortcut(gui.addPage("Motors_"+ofToString(min)+"-"+ofToString(max-1)));
+		gui.page("Motors").addPageShortcut(gui.addPage("Motors_"+ofToString(min)+"-"+ofToString(max-1)));
 		
 		gui.addTitle("angleN");
 		for(int i=min; i<max && i < motors.size(); i++)
@@ -100,6 +89,19 @@ void MotorCtrl::setupGUI(){
 	 motors[i]->setupGUI();
 	 }
 	 */
+	
+	gui.setPage("Motors");
+	gui.addTitle("drawing");
+	
+	gui.addToggle("draw", Motor::doDraw);
+	gui.addToggle("draw3D", Motor::doDraw3D);
+	gui.addToggle("draw2D", Motor::doDraw2D);
+	gui.addToggle("drawLabels", Motor::doDrawLabels);
+	
+	gui.addColorPicker("backColorLow", &Motor::backColorLow.r, false, true);
+	gui.addColorPicker("frontColorLow", &Motor::frontColorLow.r, false, true);
+	gui.addColorPicker("backColorHigh", &Motor::backColorHigh.r, false, true);
+	gui.addColorPicker("frontColorHigh", &Motor::frontColorHigh.r, false, true);
 }
 
 void MotorCtrl::postGUI(){

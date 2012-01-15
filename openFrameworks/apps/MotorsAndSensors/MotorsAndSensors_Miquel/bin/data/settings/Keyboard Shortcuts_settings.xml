@@ -1,0 +1,18 @@
+<controls>
+    <Button_collapse_all>
+        <name>collapse all [t]</name>
+        <value>0</value>
+    </Button_collapse_all>
+    <Button_open_all>
+        <name>open all [T]</name>
+        <value>0</value>
+    </Button_open_all>
+    <Button_toggle_fullscreen>
+        <name>toggle fullscreen [f]</name>
+        <value>0</value>
+    </Button_toggle_fullscreen>
+    <Button_toggle_cursor>
+        <name>toggle cursor [m]</name>
+        <value>0</value>
+    </Button_toggle_cursor>
+</controls>

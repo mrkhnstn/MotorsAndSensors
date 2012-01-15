@@ -1,0 +1,18 @@
+<controls>
+    <SliderFloat_progressMsgSprite_x>
+        <name>progressMsgSprite_x</name>
+        <value>100.000000</value>
+    </SliderFloat_progressMsgSprite_x>
+    <SliderFloat_progressMsgSprite_y>
+        <name>progressMsgSprite_y</name>
+        <value>860.000000</value>
+    </SliderFloat_progressMsgSprite_y>
+    <SliderFloat_progressMsgSprite_w>
+        <name>progressMsgSprite_w</name>
+        <value>880.000000</value>
+    </SliderFloat_progressMsgSprite_w>
+    <SliderFloat_progressMsgSprite_h>
+        <name>progressMsgSprite_h</name>
+        <value>200.000000</value>
+    </SliderFloat_progressMsgSprite_h>
+</controls>

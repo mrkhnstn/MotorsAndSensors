@@ -1,0 +1,14 @@
+<controls>
+    <Button_toggle_fullscreen>
+        <name>toggle fullscreen [f]</name>
+        <value>0</value>
+    </Button_toggle_fullscreen>
+    <Toggle_hide_cursor>
+        <name>hide cursor</name>
+        <value>0</value>
+    </Toggle_hide_cursor>
+    <Button_toggle_cursor>
+        <name>toggle cursor [m]</name>
+        <value>0</value>
+    </Button_toggle_cursor>
+</controls>

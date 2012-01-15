@@ -1,0 +1,18 @@
+<controls>
+    <ComboBox_displayMode>
+        <name>displayMode</name>
+        <value>1</value>
+    </ComboBox_displayMode>
+    <Toggle_doDrawNames>
+        <name>doDrawNames</name>
+        <value>1</value>
+    </Toggle_doDrawNames>
+    <Toggle_doDrawOutlines>
+        <name>doDrawOutlines</name>
+        <value>1</value>
+    </Toggle_doDrawOutlines>
+    <Toggle_doDrawCrosses>
+        <name>doDrawCrosses</name>
+        <value>0</value>
+    </Toggle_doDrawCrosses>
+</controls>

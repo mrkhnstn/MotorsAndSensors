@@ -1,7 +1,7 @@
 #pragma once
 /*
  *  Sensor.h
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 29/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -13,8 +13,6 @@
 class Sensor : public ofxBaseObject {
 
 public:
-	
-	Constants* constants;
 	
 	int		index;
 	float	posAngle;
@@ -30,6 +28,9 @@ public:
 	static bool doDrawHitPoints;
 	static bool doDrawLabels;
 	static bool doDrawSensorThreshold;
+
+	static int numSensors;
+	static float distanceToCentre;
 	
 	static bool doStaticInit;
 	static ofTrueTypeFont font;

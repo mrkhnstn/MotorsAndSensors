@@ -1,0 +1,6 @@
+<controls>
+    <SliderInt_playSubFramesPerFrame>
+        <name>playSubFramesPerFrame</name>
+        <value>4</value>
+    </SliderInt_playSubFramesPerFrame>
+</controls>

@@ -95,13 +95,14 @@ void ofxSimpleGuiToggle::draw(float x, float y) {
 	
 	ofEnableAlphaBlending();
 	ofFill();
-	setFullColor(*value);
+	setTextColor(*value);
 	ofRect(0, 0, height, height);
 	
 	if((*value)) {
-		setTextColor();
-		ofLine(0, 0, height, height);
-		ofLine(height, 0, 0, height);
+		setFullColor(true);
+		ofRect(2, 2, height-4, height-4);
+		//ofLine(0, 0, height, height);
+		//ofLine(height, 0, 0, height);
 	}
 	
 	setTextBGColor();

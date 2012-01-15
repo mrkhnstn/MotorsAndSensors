@@ -18,6 +18,7 @@ void ofxTestBed::setup(){
 	gui.setFolderPath(settingsFolder);
 	//gui.addFPSCounter();
 	//gui.setPage("Keyboard Shortcuts");
+	gui.page(1).addPageShortcut(gui.addPage("App"));
 	gui.addButton("toggle fullscreen", 'f', this, &ofxTestBed::toggleFullscreen);
 	gui.addToggle("hide cursor", noCursor);
 	gui.addButton("toggle cursor", 'm', this, &ofxTestBed::toggleMouse);

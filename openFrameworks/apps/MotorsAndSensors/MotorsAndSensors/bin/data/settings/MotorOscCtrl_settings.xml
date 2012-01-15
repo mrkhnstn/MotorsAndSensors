@@ -1,0 +1,6 @@
+<controls>
+    <SliderInt_sendFreqMs>
+        <name>sendFreqMs</name>
+        <value>200</value>
+    </SliderInt_sendFreqMs>
+</controls>

@@ -1,6 +1,6 @@
 /*
  *  Motor.cpp
- *  mercedes
+ *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 24/12/2011.
  *  Copyright 2011 __MyCompanyName__. All rights reserved.
@@ -13,6 +13,8 @@
 float Motor::elapsedTime = 0;
 float Motor::maxMotorSpeed = 0.3;
 float Motor::maxAngleNSpeed = 1;
+float Motor::distanceToCentre = 300;
+int Motor::numMotors = 72;
 
 bool Motor::doDraw = true;		// global draw flag
 bool Motor::doDraw3D = true;		// draw 3d box
@@ -27,43 +29,24 @@ ofColor Motor::frontColorHigh;	// front side color of motor when user in proximi
 
 
 float Motor::sensorAngleRange = 10; 
+float Motor::panelWidth = 20;
 
 bool Motor::doStaticInit = true;
 ofTrueTypeFont Motor::font;
 
-void Motor::Motor::updateSensors(){
-	sensors.clear();
-	
-	float minAngle = posAngle - 0.5 * sensorAngleRange;
-	if(minAngle < 0)
-		minAngle += 360;
-	
-	float maxAngle = posAngle + 0.5 * sensorAngleRange;
-	if(maxAngle >= 360)
-		maxAngle -= 360;
-	
-	Singleton<SensorCtrl>::instance()->getSensorsBetweenAngles(sensors,minAngle,maxAngle);
-}
 
-void Motor::Motor::updateUserProximity(){
-	_userInProximity = false;
-	for(int i=0; i<sensors.size(); i++)
-		if (sensors[i]->userInProximity()) {
-			_userInProximity = true;
-			break;
-		}
-}
 
 void Motor::setup(){
-	constants = Singleton<Constants>::instance();
-	
 	if(doStaticInit)
 	{
 		font.loadFont("fonts/Hlcb____.ttf",12,true,true,true);
 		doStaticInit = false;
 	}
 	
-	posAngle = index * 360 / constants->numMotors;
+	posAngle = index * 360 / numMotors;
+	pos.x = cosf(ofDegToRad(posAngle))*distanceToCentre;
+	pos.y = sinf(ofDegToRad(posAngle))*distanceToCentre;
+	
 	angleN = 0.5;
 	tgtAngleN = angleN;
 	
@@ -106,7 +89,7 @@ void Motor::draw(){
 	ofRotate(posAngle, 0, 1, 0);
 	
 	ofPushMatrix();
-	ofTranslate(constants->cylinderRadius, 0, 0); // move from cylinder centre by cylinder radius
+	ofTranslate(distanceToCentre, 0, 0); // move from cylinder centre by cylinder radius
 	
 	ofRotate(ofMap(angleN, 0, 1, -90, 90, true), 0, 1, 0); // rotate motor around its own z axis
 	
@@ -125,9 +108,9 @@ void Motor::draw(){
 		// draw lines on null plane
 		ofSetLineWidth(1);
 		setFrontColor();
-		ofxLine(-0.5*constants->motorWidth, 0, 1, 0.5*constants->motorWidth, 0, 1);
+		ofxLine(-0.5*panelWidth, 0, 1, 0.5*panelWidth, 0, 1);
 		setBackColor();
-		ofxLine(-0.5*constants->motorWidth, 0, -1, 0.5*constants->motorWidth, 0, -1);
+		ofxLine(-0.5*panelWidth, 0, -1, 0.5*panelWidth, 0, -1);
 		ofSetLineWidth(0);
 		
 	}
@@ -136,14 +119,14 @@ void Motor::draw(){
 		
 		// draw boxes
 		ofPushMatrix();
-		setFrontColor();
+		setBackColor();
 		ofTranslate(0, 75, 1);
 		ofScale(20, 150, 2);
 		ofxBox(0, 0, 0, 1);
 		ofPopMatrix();
 		
 		ofPushMatrix();
-		setBackColor();
+		setFrontColor();
 		ofTranslate(0, 75, -1);
 		ofScale(20, 150, 2);
 		ofxBox(0, 0, 0, 1);
@@ -158,7 +141,7 @@ void Motor::draw(){
 	if(doDrawLabels){
 		ofPushMatrix();
 		ofSetColor(255, 255, 255);
-		ofTranslate(constants->cylinderRadius, 150 + 10, 0);
+		ofTranslate(distanceToCentre, 150 + 10, 0);
 		ofRotate(180, 0, 0, 1);
 		ofRotate(90, 0, 1, 0);
 		ofScale(0.5, 0.5, 0.5);
@@ -174,8 +157,28 @@ void Motor::draw(){
 	ofPopStyle();
 }
 
-// populates / refreshes the list of sensors to be used for user proximity detection
-void Motor::updateSensors();
+void Motor::updateSensors(){
+	sensors.clear();
+	
+	float minAngle = posAngle - 0.5 * sensorAngleRange;
+	if(minAngle < 0)
+		minAngle += 360;
+	
+	float maxAngle = posAngle + 0.5 * sensorAngleRange;
+	if(maxAngle >= 360)
+		maxAngle -= 360;
+	
+	Singleton<SensorCtrl>::instance()->getSensorsBetweenAngles(sensors,minAngle,maxAngle);
+}
+
+void Motor::updateUserProximity(){
+	_userInProximity = false;
+	for(int i=0; i<sensors.size(); i++)
+		if (sensors[i]->userInProximity()) {
+			_userInProximity = true;
+			break;
+		}
+}
 
 void Motor::setBackColor(){
 	if(userInProximity())
@@ -195,8 +198,6 @@ void Motor::setFrontColor(){
 	}
 }
 
-void Motor::updateUserProximity();
-
 // simple binary way of figuring out whether a user stands in front of this motor
 bool Motor::userInProximity(){
 	return _userInProximity;
@@ -212,6 +213,22 @@ float Motor::getAngleN(){
 
 float Motor::getTgtAngleN(){
 	return tgtAngleN;
+}
+
+void Motor::setAngle(float angle){
+	setTgtAngleN(ofMap(angle, 0, 180, 0, 1, true));
+}
+
+float Motor::getAngle(){
+	return tgtAngleN * 180;
+}
+
+ofxVec2f Motor::getPos(){
+	return pos;
+}
+
+float Motor::getPosAngle(){
+	return posAngle;
 }
 
 void Motor::setTgtAngleN(float f){

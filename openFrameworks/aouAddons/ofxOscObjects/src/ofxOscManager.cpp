@@ -10,14 +10,14 @@
 #include "ofxOscManager.h"
 
 ofxOscManager::ofxOscManager(){
-	name = "ofxOscManager";
+	name = "OSC";
 	enabled = false;
 	port = 3333;
 	verbose = false;
 }
 
 void ofxOscManager::setupGUI(){
-	//gui.addPage(name);
+	gui.page(1).addPageShortcut(gui.addPage(name));
 	gui.addDebug("port",port);
 	gui.addToggle("verbose", verbose);
 }
