@@ -9,6 +9,8 @@
 #include "StepScene.h"
 #include "SimpleInteractiveScene.h"
 #include "ExampleScene.h"
+#include "RotationRangeScene.h"
+#include "WaveScene.h"
 
 int main( ){
 
@@ -32,6 +34,8 @@ int main( ){
 	Scene::add(new StepScene());
 	Scene::add(new SimpleInteractiveScene());
 	Scene::add(new ExampleScene());
+	Scene::add(new RotationRangeScene());
+	Scene::add(new WaveScene());
 	
 	//////////////////////////////////////////////
 	
