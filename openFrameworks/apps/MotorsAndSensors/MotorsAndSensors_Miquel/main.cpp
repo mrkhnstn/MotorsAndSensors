@@ -10,7 +10,8 @@
 #include "SimpleInteractiveScene.h"
 #include "ExampleScene.h"
 #include "RotationRangeScene.h"
-#include "WaveScene.h"
+#include "MovingWaveScene.h"
+#include "SineWaveScene.h"
 
 int main( ){
 
@@ -35,7 +36,8 @@ int main( ){
 	Scene::add(new SimpleInteractiveScene());
 	Scene::add(new ExampleScene());
 	Scene::add(new RotationRangeScene());
-	Scene::add(new WaveScene());
+	Scene::add(new MovingWaveScene());
+	Scene::add(new SineWaveScene());
 	
 	//////////////////////////////////////////////
 	

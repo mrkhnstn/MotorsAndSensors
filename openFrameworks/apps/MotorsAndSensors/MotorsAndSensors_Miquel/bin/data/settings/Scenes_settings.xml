@@ -1,11 +1,11 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>5</value>
+        <value>7</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>
-        <value>0</value>
+        <value>2</value>
     </ComboBox_Current_Mode>
     <Button_IdleScene>
         <name>IdleScene</name>
@@ -31,14 +31,14 @@
         <name>RotationRangeScene</name>
         <value>0</value>
     </Button_RotationRangeScene>
-    <Button_RotationWaveScene>
-        <name>RotationWaveScene</name>
+    <Button_MovingWaveScene>
+        <name>MovingWaveScene</name>
         <value>0</value>
-    </Button_RotationWaveScene>
-    <Button_WaveScene>
-        <name>WaveScene</name>
+    </Button_MovingWaveScene>
+    <Button_SineWaveScene>
+        <name>SineWaveScene</name>
         <value>0</value>
-    </Button_WaveScene>
+    </Button_SineWaveScene>
     <SliderInt_Idle_List_Pos>
         <name>Idle_List_Pos</name>
         <value>0</value>

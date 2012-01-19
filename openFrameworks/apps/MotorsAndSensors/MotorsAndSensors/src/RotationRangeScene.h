@@ -54,7 +54,7 @@ public:
 		string modeChoices[2] = {"NORMAL","ODD_EVEN"};
 		gui.addComboBox("animationMode", animationMode, 2, modeChoices);
 		
-		// Presets
+		// Variable presets
 		gui.addTitle("Variable presets").setNewColumn(true);
 		gui.addButton("Preset 1", setPreset1);
 		gui.addButton("Preset 2", setPreset2);
@@ -117,6 +117,7 @@ public:
 	
 	
 	void setPreset(int presetNum){
+		setPreset1 = setPreset2 = false;
 		switch(presetNum){
 			case 1:
 				minRotation = 75;

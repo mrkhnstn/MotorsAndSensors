@@ -1,6 +1,7 @@
 #pragma once
 /*
- *  WaveScene.h
+ *  MovingWaveScene.h
+ *		This class creates a wave effect animation.
  *
  *  Created by Miquel Lopez on 17/01/12.
  *
@@ -8,10 +9,7 @@
 
 #include "Scene.h"
 
-/*
- This class creates a wave effect animation.
- */
-class WaveScene : public Scene {
+class MovingWaveScene : public Scene {
 	
 public:
 	int direction;			// Two possible states: 1 (increasing) or -1 (decreasing)
@@ -25,16 +23,7 @@ public:
 	
 	void setup(){
 		Scene::setup();
-		name = "WaveScene";
-		
-		initialRotation = 0;
-		maxRotation = 30;
-		animationIndex = 0;
-		velocity = .05;
-		direction = 1;
-		
-		reactiveAngle = 0;
-		maxDistance = 15;
+		name = "MovingWaveScene";
 	}
 	
 	void setupGUI(){
@@ -42,7 +31,7 @@ public:
 		gui.addSlider("initialRotation", initialRotation, 0, 90);
 		gui.addSlider("maxRotation", maxRotation, 0, 180);
 		gui.addSlider("animationIndex", animationIndex, 0, 1);
-		gui.addSlider("velocity", velocity, 0, .05);
+		gui.addSlider("velocity", velocity, 0, .005);
 		
 		gui.addSlider("reactiveAngle", reactiveAngle, 0, 360);
 		gui.addSlider("maxDistance", maxDistance, 0, 45);
@@ -50,6 +39,15 @@ public:
 	
 	void postGUI(){
 		Scene::postGUI();
+		
+		initialRotation = 0;
+		maxRotation = 75;
+		animationIndex = 0;
+		velocity = .001;
+		direction = 1;
+		
+		reactiveAngle = 0;
+		maxDistance = 30;
 	}
 	
 	void start(){

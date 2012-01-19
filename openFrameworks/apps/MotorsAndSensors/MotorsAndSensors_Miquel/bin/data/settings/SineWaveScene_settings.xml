@@ -1,0 +1,38 @@
+<controls>
+    <SliderFloat_animationAngle>
+        <name>animationAngle</name>
+        <value>146.742188</value>
+    </SliderFloat_animationAngle>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>0.500000</value>
+    </SliderFloat_velocity>
+    <SliderFloat_minAngle>
+        <name>minAngle</name>
+        <value>0.000000</value>
+    </SliderFloat_minAngle>
+    <SliderFloat_maxAngle>
+        <name>maxAngle</name>
+        <value>180.000000</value>
+    </SliderFloat_maxAngle>
+    <SliderInt_numWaves>
+        <name>numWaves</name>
+        <value>1</value>
+    </SliderInt_numWaves>
+    <Button_Preset_1>
+        <name>Preset 1</name>
+        <value>0</value>
+    </Button_Preset_1>
+    <Button_Preset_2>
+        <name>Preset 2</name>
+        <value>0</value>
+    </Button_Preset_2>
+    <Button_Preset_3>
+        <name>Preset 3</name>
+        <value>0</value>
+    </Button_Preset_3>
+    <Button_Preset_4>
+        <name>Preset 4</name>
+        <value>0</value>
+    </Button_Preset_4>
+</controls>
