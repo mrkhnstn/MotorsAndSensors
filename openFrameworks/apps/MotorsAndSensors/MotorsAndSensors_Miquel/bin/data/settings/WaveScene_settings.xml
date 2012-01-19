@@ -1,0 +1,26 @@
+<controls>
+    <SliderFloat_initialRotation>
+        <name>initialRotation</name>
+        <value>0.000000</value>
+    </SliderFloat_initialRotation>
+    <SliderFloat_maxRotation>
+        <name>maxRotation</name>
+        <value>35.647060</value>
+    </SliderFloat_maxRotation>
+    <SliderFloat_animationIndex>
+        <name>animationIndex</name>
+        <value>0.776001</value>
+    </SliderFloat_animationIndex>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>0.004000</value>
+    </SliderFloat_velocity>
+    <SliderFloat_reactiveAngle>
+        <name>reactiveAngle</name>
+        <value>279.360321</value>
+    </SliderFloat_reactiveAngle>
+    <SliderFloat_maxDistance>
+        <name>maxDistance</name>
+        <value>22.852942</value>
+    </SliderFloat_maxDistance>
+</controls>

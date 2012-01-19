@@ -1,0 +1,22 @@
+<controls>
+    <SliderFloat_minRotation>
+        <name>minRotation</name>
+        <value>0.000000</value>
+    </SliderFloat_minRotation>
+    <SliderFloat_maxRotation>
+        <name>maxRotation</name>
+        <value>34.235294</value>
+    </SliderFloat_maxRotation>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>0.029608</value>
+    </SliderFloat_velocity>
+    <SliderFloat_animationIndex>
+        <name>animationIndex</name>
+        <value>-0.880209</value>
+    </SliderFloat_animationIndex>
+    <SliderFloat_angle>
+        <name>angle</name>
+        <value>32.184761</value>
+    </SliderFloat_angle>
+</controls>

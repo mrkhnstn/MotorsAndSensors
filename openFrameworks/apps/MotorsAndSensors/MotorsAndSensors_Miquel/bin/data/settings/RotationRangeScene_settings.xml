@@ -1,0 +1,34 @@
+<controls>
+    <SliderFloat_minRotation>
+        <name>minRotation</name>
+        <value>0.000000</value>
+    </SliderFloat_minRotation>
+    <SliderFloat_maxRotation>
+        <name>maxRotation</name>
+        <value>180.000000</value>
+    </SliderFloat_maxRotation>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>0.031961</value>
+    </SliderFloat_velocity>
+    <SliderFloat_animationIndex>
+        <name>animationIndex</name>
+        <value>-0.889887</value>
+    </SliderFloat_animationIndex>
+    <SliderFloat_angle>
+        <name>angle</name>
+        <value>170.089859</value>
+    </SliderFloat_angle>
+    <ComboBox_animationMode>
+        <name>animationMode</name>
+        <value>1</value>
+    </ComboBox_animationMode>
+    <Button_Preset_1>
+        <name>Preset 1</name>
+        <value>0</value>
+    </Button_Preset_1>
+    <Button_Preset_2>
+        <name>Preset 2</name>
+        <value>0</value>
+    </Button_Preset_2>
+</controls>

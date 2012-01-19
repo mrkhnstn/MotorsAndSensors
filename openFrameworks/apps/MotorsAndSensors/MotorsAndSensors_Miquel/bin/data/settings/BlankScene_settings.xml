@@ -1,0 +1,6 @@
+<controls>
+    <SliderFloat_manualAngle>
+        <name>manualAngle</name>
+        <value>0.000000</value>
+    </SliderFloat_manualAngle>
+</controls>

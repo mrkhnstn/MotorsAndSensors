@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11CA6E7814C5E756004233DA /* WaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CA6E7714C5E756004233DA /* WaveScene.cpp */; };
+		11CA6F6814C60461004233DA /* RotationRangeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CA6F6714C60461004233DA /* RotationRangeScene.cpp */; };
 		842D7DD014AF4EE70060DFF3 /* ofx3DGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DC614AF4EE70060DFF3 /* ofx3DGraphics.cpp */; };
 		842D7DD114AF4EE70060DFF3 /* ofxCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DC914AF4EE70060DFF3 /* ofxCamera.cpp */; };
 		842D7DD214AF4EE70060DFF3 /* ofxLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 842D7DCC14AF4EE70060DFF3 /* ofxLight.cpp */; };
@@ -168,6 +170,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11CA6E7614C5E756004233DA /* WaveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveScene.h; sourceTree = "<group>"; };
+		11CA6E7714C5E756004233DA /* WaveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveScene.cpp; sourceTree = "<group>"; };
+		11CA6F6614C60461004233DA /* RotationRangeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationRangeScene.h; sourceTree = "<group>"; };
+		11CA6F6714C60461004233DA /* RotationRangeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotationRangeScene.cpp; sourceTree = "<group>"; };
 		842D7DC214AF4EE70060DFF3 /* testApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testApp.cpp; sourceTree = "<group>"; };
 		842D7DC314AF4EE70060DFF3 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		842D7DC414AF4EE70060DFF3 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
@@ -1002,16 +1008,20 @@
 			children = (
 				847F731A14C33E98009BE563 /* BlankScene.h */,
 				847F731B14C33E98009BE563 /* BlankScene.cpp */,
-				847F72AE14C33B5F009BE563 /* ExampleScene.cpp */,
 				847F72AF14C33B5F009BE563 /* ExampleScene.h */,
-				847F72B214C33B5F009BE563 /* IdleScene.cpp */,
+				847F72AE14C33B5F009BE563 /* ExampleScene.cpp */,
 				847F72B314C33B5F009BE563 /* IdleScene.h */,
-				847F72C114C33B5F009BE563 /* PalindromeScene.cpp */,
+				847F72B214C33B5F009BE563 /* IdleScene.cpp */,
 				847F72C214C33B5F009BE563 /* PalindromeScene.h */,
-				847F72D514C33B5F009BE563 /* SimpleInteractiveScene.cpp */,
+				847F72C114C33B5F009BE563 /* PalindromeScene.cpp */,
 				847F72D614C33B5F009BE563 /* SimpleInteractiveScene.h */,
-				847F72D914C33B5F009BE563 /* StepScene.cpp */,
+				847F72D514C33B5F009BE563 /* SimpleInteractiveScene.cpp */,
 				847F72DA14C33B5F009BE563 /* StepScene.h */,
+				847F72D914C33B5F009BE563 /* StepScene.cpp */,
+				11CA6F6614C60461004233DA /* RotationRangeScene.h */,
+				11CA6F6714C60461004233DA /* RotationRangeScene.cpp */,
+				11CA6E7614C5E756004233DA /* WaveScene.h */,
+				11CA6E7714C5E756004233DA /* WaveScene.cpp */,
 			);
 			name = "Custom Scenes";
 			sourceTree = "<group>";
@@ -1695,6 +1705,8 @@
 				847F72FD14C33B5F009BE563 /* ThreeDTest.cpp in Sources */,
 				847F731C14C33E98009BE563 /* BlankScene.cpp in Sources */,
 				847F735014C34213009BE563 /* main.cpp in Sources */,
+				11CA6E7814C5E756004233DA /* WaveScene.cpp in Sources */,
+				11CA6F6814C60461004233DA /* RotationRangeScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
