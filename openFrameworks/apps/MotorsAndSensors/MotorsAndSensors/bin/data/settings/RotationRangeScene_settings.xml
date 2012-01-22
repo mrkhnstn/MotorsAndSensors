@@ -5,30 +5,30 @@
     </SliderFloat_minRotation>
     <SliderFloat_maxRotation>
         <name>maxRotation</name>
-        <value>115.000000</value>
+        <value>180.000000</value>
     </SliderFloat_maxRotation>
     <SliderFloat_velocity>
         <name>velocity</name>
-        <value>0.002294</value>
+        <value>0.030000</value>
     </SliderFloat_velocity>
-    <SliderFloat_acceleration>
-        <name>acceleration</name>
-        <value>1.000000</value>
-    </SliderFloat_acceleration>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>0.086386</value>
+        <value>0.030000</value>
     </SliderFloat_animationIndex>
     <SliderFloat_angle>
         <name>angle</name>
-        <value>9.934341</value>
+        <value>92.699997</value>
     </SliderFloat_angle>
-    <SliderFloat_maxWaitTime>
-        <name>maxWaitTime</name>
-        <value>0.800000</value>
-    </SliderFloat_maxWaitTime>
-    <Toggle_snoringMode>
-        <name>snoringMode</name>
-        <value>1</value>
-    </Toggle_snoringMode>
+    <ComboBox_animationMode>
+        <name>animationMode</name>
+        <value>0</value>
+    </ComboBox_animationMode>
+    <Button_Preset_1>
+        <name>Preset 1</name>
+        <value>0</value>
+    </Button_Preset_1>
+    <Button_Preset_2>
+        <name>Preset 2</name>
+        <value>0</value>
+    </Button_Preset_2>
 </controls>

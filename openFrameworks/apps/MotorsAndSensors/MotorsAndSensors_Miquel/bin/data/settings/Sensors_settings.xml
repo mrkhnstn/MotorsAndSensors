@@ -3,42 +3,50 @@
         <name>userInProximityDistance</name>
         <value>78.235291</value>
     </SliderFloat_userInProximityDistance>
-    <Button_SensorRays_0-18>
-        <name>SensorRays_0-18</name>
+    <SliderFloat_distanceToCentre>
+        <name>distanceToCentre</name>
+        <value>325.000000</value>
+    </SliderFloat_distanceToCentre>
+    <SliderFloat_angleBetweenRays>
+        <name>angleBetweenRays</name>
+        <value>5.000000</value>
+    </SliderFloat_angleBetweenRays>
+    <Button_Sensors_0-3>
+        <name>Sensors_0-3</name>
         <value>0</value>
-    </Button_SensorRays_0-18>
-    <Button_SensorRays_20-38>
-        <name>SensorRays_20-38</name>
+    </Button_Sensors_0-3>
+    <Button_Sensors_4-7>
+        <name>Sensors_4-7</name>
         <value>0</value>
-    </Button_SensorRays_20-38>
-    <Button_SensorRays_40-58>
-        <name>SensorRays_40-58</name>
+    </Button_Sensors_4-7>
+    <Button_Sensors_8-11>
+        <name>Sensors_8-11</name>
         <value>0</value>
-    </Button_SensorRays_40-58>
-    <Button_SensorRays_60-78>
-        <name>SensorRays_60-78</name>
+    </Button_Sensors_8-11>
+    <Button_Sensors_12-15>
+        <name>Sensors_12-15</name>
         <value>0</value>
-    </Button_SensorRays_60-78>
-    <Button_SensorRays_80-98>
-        <name>SensorRays_80-98</name>
+    </Button_Sensors_12-15>
+    <Button_Sensors_16-19>
+        <name>Sensors_16-19</name>
         <value>0</value>
-    </Button_SensorRays_80-98>
-    <Button_SensorRays_100-118>
-        <name>SensorRays_100-118</name>
+    </Button_Sensors_16-19>
+    <Button_Sensors_20-23>
+        <name>Sensors_20-23</name>
         <value>0</value>
-    </Button_SensorRays_100-118>
-    <Button_SensorRays_120-138>
-        <name>SensorRays_120-138</name>
+    </Button_Sensors_20-23>
+    <Button_Sensors_24-27>
+        <name>Sensors_24-27</name>
         <value>0</value>
-    </Button_SensorRays_120-138>
-    <Button_SensorRays_140-158>
-        <name>SensorRays_140-158</name>
+    </Button_Sensors_24-27>
+    <Button_Sensors_28-31>
+        <name>Sensors_28-31</name>
         <value>0</value>
-    </Button_SensorRays_140-158>
-    <Button_SensorRays_160-178>
-        <name>SensorRays_160-178</name>
+    </Button_Sensors_28-31>
+    <Button_Sensors_32-35>
+        <name>Sensors_32-35</name>
         <value>0</value>
-    </Button_SensorRays_160-178>
+    </Button_Sensors_32-35>
     <Toggle_doDraw>
         <name>doDraw</name>
         <value>0</value>
@@ -55,8 +63,8 @@
         <name>doDrawLabels</name>
         <value>0</value>
     </Toggle_doDrawLabels>
-    <Toggle_doDrawSensorThreshold>
-        <name>doDrawSensorThreshold</name>
-        <value>0</value>
-    </Toggle_doDrawSensorThreshold>
+    <Toggle_drawOnlyInSensorZone>
+        <name>drawOnlyInSensorZone</name>
+        <value>1</value>
+    </Toggle_drawOnlyInSensorZone>
 </controls>

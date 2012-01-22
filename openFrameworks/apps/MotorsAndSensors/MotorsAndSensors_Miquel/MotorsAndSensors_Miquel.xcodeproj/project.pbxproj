@@ -76,6 +76,10 @@
 		84A3C40112DF424C00DC1D7B /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C3FB12DF424C00DC1D7B /* ofxTCPServer.cpp */; };
 		84A3C40212DF424C00DC1D7B /* ofxUDPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84A3C3FD12DF424C00DC1D7B /* ofxUDPManager.cpp */; };
 		84B310FC14AF77F600B74EA3 /* ofxBaseContainer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */; };
+		84CD78F114CCB4320032C8EF /* CvCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78EE14CCB4320032C8EF /* CvCtrl.cpp */; };
+		84CD78F214CCB4320032C8EF /* Coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78F014CCB4320032C8EF /* Coordinates.cpp */; };
+		84CD78F514CCB43E0032C8EF /* SerialTest2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78F414CCB43E0032C8EF /* SerialTest2.cpp */; };
+		84CD78F814CCB4510032C8EF /* InteractiveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78F714CCB4510032C8EF /* InteractiveScene.cpp */; };
 		84E160C412DF50F000D6E27D /* ImageUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E160BE12DF50F000D6E27D /* ImageUtil.cpp */; };
 		84E160C512DF50F000D6E27D /* MathUtil2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E160C012DF50F000D6E27D /* MathUtil2.cpp */; };
 		84E160CA12DF513100D6E27D /* Lerp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E160C912DF513100D6E27D /* Lerp.cpp */; };
@@ -366,6 +370,14 @@
 		84B280E014A61B7B007CEC59 /* MotorsAndSensorsDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotorsAndSensorsDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B310FA14AF77F600B74EA3 /* ofxBaseContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseContainer.h; sourceTree = "<group>"; };
 		84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseContainer.cpp; sourceTree = "<group>"; };
+		84CD78ED14CCB4320032C8EF /* CvCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CvCtrl.h; path = ../MotorsAndSensors/CvCtrl.h; sourceTree = SOURCE_ROOT; };
+		84CD78EE14CCB4320032C8EF /* CvCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CvCtrl.cpp; path = ../MotorsAndSensors/CvCtrl.cpp; sourceTree = SOURCE_ROOT; };
+		84CD78EF14CCB4320032C8EF /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinates.h; path = ../MotorsAndSensors/Coordinates.h; sourceTree = SOURCE_ROOT; };
+		84CD78F014CCB4320032C8EF /* Coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Coordinates.cpp; path = ../MotorsAndSensors/Coordinates.cpp; sourceTree = SOURCE_ROOT; };
+		84CD78F314CCB43E0032C8EF /* SerialTest2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialTest2.h; sourceTree = "<group>"; };
+		84CD78F414CCB43E0032C8EF /* SerialTest2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SerialTest2.cpp; sourceTree = "<group>"; };
+		84CD78F614CCB4510032C8EF /* InteractiveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveScene.h; sourceTree = "<group>"; };
+		84CD78F714CCB4510032C8EF /* InteractiveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteractiveScene.cpp; sourceTree = "<group>"; };
 		84E160BE12DF50F000D6E27D /* ImageUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageUtil.cpp; sourceTree = "<group>"; };
 		84E160BF12DF50F000D6E27D /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
 		84E160C012DF50F000D6E27D /* MathUtil2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MathUtil2.cpp; sourceTree = "<group>"; };
@@ -997,6 +1009,10 @@
 				847F72D214C33B5F009BE563 /* SensorCtrl.h */,
 				847F729C14C33B5F009BE563 /* AverageF.cpp */,
 				847F729D14C33B5F009BE563 /* AverageF.h */,
+				84CD78ED14CCB4320032C8EF /* CvCtrl.h */,
+				84CD78EE14CCB4320032C8EF /* CvCtrl.cpp */,
+				84CD78EF14CCB4320032C8EF /* Coordinates.h */,
+				84CD78F014CCB4320032C8EF /* Coordinates.cpp */,
 			);
 			name = Sensors;
 			sourceTree = "<group>";
@@ -1008,6 +1024,8 @@
 				847F72D414C33B5F009BE563 /* SerialTest.h */,
 				847F72DB14C33B5F009BE563 /* ThreeDTest.cpp */,
 				847F72DC14C33B5F009BE563 /* ThreeDTest.h */,
+				84CD78F314CCB43E0032C8EF /* SerialTest2.h */,
+				84CD78F414CCB43E0032C8EF /* SerialTest2.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1025,6 +1043,8 @@
 				847F72C114C33B5F009BE563 /* PalindromeScene.cpp */,
 				847F72D614C33B5F009BE563 /* SimpleInteractiveScene.h */,
 				847F72D514C33B5F009BE563 /* SimpleInteractiveScene.cpp */,
+				84CD78F614CCB4510032C8EF /* InteractiveScene.h */,
+				84CD78F714CCB4510032C8EF /* InteractiveScene.cpp */,
 				847F72DA14C33B5F009BE563 /* StepScene.h */,
 				847F72D914C33B5F009BE563 /* StepScene.cpp */,
 				11CA6F6614C60461004233DA /* RotationRangeScene.h */,
@@ -1575,7 +1595,6 @@
 			isa = PBXProject;
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "MotorsAndSensors_Miquel" */;
 			compatibilityVersion = "Xcode 2.4";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
@@ -1725,6 +1744,10 @@
 				11CA718314C84FA2004233DA /* SineWaveScene.cpp in Sources */,
 				11CA71FD14C8802C004233DA /* OpenPortionScene.cpp in Sources */,
 				115E14DA14CB1E43002B8C64 /* SnoringScene.cpp in Sources */,
+				84CD78F114CCB4320032C8EF /* CvCtrl.cpp in Sources */,
+				84CD78F214CCB4320032C8EF /* Coordinates.cpp in Sources */,
+				84CD78F514CCB43E0032C8EF /* SerialTest2.cpp in Sources */,
+				84CD78F814CCB4510032C8EF /* InteractiveScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

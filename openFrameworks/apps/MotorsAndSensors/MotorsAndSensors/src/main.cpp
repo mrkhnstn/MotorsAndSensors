@@ -10,6 +10,11 @@
 #include "SimpleInteractiveScene.h"
 #include "ExampleScene.h"
 #include "InteractiveScene.h"
+#include "RotationRangeScene.h"
+#include "MovingWaveScene.h"
+#include "SineWaveScene.h"
+#include "OpenPortionScene.h"
+#include "SnoringScene.h"
 
 #include "SerialTest2.h"
 
@@ -36,6 +41,11 @@ int main( ){
 	Scene::add(new SimpleInteractiveScene());
 	Scene::add(new ExampleScene());
 	Scene::add(new InteractiveScene());
+	Scene::add(new RotationRangeScene());
+	Scene::add(new MovingWaveScene());
+	Scene::add(new SineWaveScene());
+	Scene::add(new OpenPortionScene());
+	Scene::add(new SnoringScene());
 	
 	//////////////////////////////////////////////
 	

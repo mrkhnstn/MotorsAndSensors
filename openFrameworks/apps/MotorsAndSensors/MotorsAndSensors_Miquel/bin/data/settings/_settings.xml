@@ -23,6 +23,10 @@
         <name>Sensors</name>
         <value>0</value>
     </Button_Sensors>
+    <Button_ComputerVision>
+        <name>ComputerVision</name>
+        <value>0</value>
+    </Button_ComputerVision>
     <Button_Scenes>
         <name>Scenes</name>
         <value>0</value>

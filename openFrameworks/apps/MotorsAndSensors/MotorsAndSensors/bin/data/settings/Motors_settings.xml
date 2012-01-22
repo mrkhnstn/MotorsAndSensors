@@ -9,7 +9,7 @@
     </SliderInt_servoMax>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
-        <value>0.300000</value>
+        <value>1.012745</value>
     </SliderFloat_servoMaxSpeed>
     <SliderFloat_distanceToCentre>
         <name>distanceToCentre</name>

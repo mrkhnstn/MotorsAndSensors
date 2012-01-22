@@ -9,7 +9,7 @@
     </SliderFloat_maxRotation>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>0.528997</value>
+        <value>0.016000</value>
     </SliderFloat_animationIndex>
     <SliderFloat_velocity>
         <name>velocity</name>
@@ -17,7 +17,7 @@
     </SliderFloat_velocity>
     <SliderFloat_reactiveAngle>
         <name>reactiveAngle</name>
-        <value>190.438843</value>
+        <value>5.760000</value>
     </SliderFloat_reactiveAngle>
     <SliderFloat_maxDistance>
         <name>maxDistance</name>
