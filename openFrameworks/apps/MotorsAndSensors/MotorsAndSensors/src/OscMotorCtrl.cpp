@@ -35,7 +35,7 @@ void OscMotorCtrl::update(){
 		for (int i=0; i<numSendChannels; i++) {
 			
 			Motor& motor = *motorCtrl->motors[i];
-			int servoVal = ofMap(motor.angleN, 0, 1, motorCtrl->servoMin, motorCtrl->servoMax, true);
+			int servoVal = ofMap(motor.angleN, 0, 1, Motor::pulseMin, Motor::pulseMax, true);
 			m.addIntArg(servoVal);
 			
 		}

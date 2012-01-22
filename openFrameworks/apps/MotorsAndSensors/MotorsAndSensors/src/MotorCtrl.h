@@ -16,8 +16,8 @@ public:
 	
 	vector<Motor*> motors;
 	
-	int servoMin;
-	int servoMax;
+	//int servoMin;
+	//int servoMax;
 	
 	float refTime;
 	
@@ -26,5 +26,6 @@ public:
 	void postGUI();
 	void update();
 	void draw();
+	void draw3d();
 	
 };

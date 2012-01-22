@@ -15,6 +15,7 @@
 #include "SerialTest.h"
 #include "SensorCtrl.h"
 #include "ofxOscManager.h"
+#include "CvCtrl.h"
 
 class MotorsAndSensors : public ofxBaseContainer {
 public:

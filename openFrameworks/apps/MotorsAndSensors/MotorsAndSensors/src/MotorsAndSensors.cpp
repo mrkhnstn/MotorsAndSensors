@@ -24,6 +24,7 @@ void MotorsAndSensors::setup(){
 	addObject(*Singleton<MotorCtrl>::instance());
 	addObject(*Singleton<OscMotorCtrl>::instance());
 	addObject(*Singleton<SensorCtrl>::instance());
+	addObject(*Singleton<CvCtrl>::instance());
 	addObject(*Singleton<SceneCtrl>::instance());
 	
 	// setup 3d scene
@@ -78,8 +79,11 @@ void MotorsAndSensors::draw(){
 	
 	ofPushMatrix();
 	ofRotate(cylinderRotation, 0, 1, 0);
-	ofxBaseContainer::draw();
-	
+	//ofxBaseContainer::draw();
+	Singleton<SensorCtrl>::instance()->draw3d();
+	Singleton<MotorCtrl>::instance()->draw3d();
+	Singleton<SceneCtrl>::instance()->draw3d();
+	Singleton<CvCtrl>::instance()->draw3d();
 	ofPopMatrix();
 	
 	// exit 3D
@@ -87,6 +91,7 @@ void MotorsAndSensors::draw(){
 	camera.remove();
 	glDisable(GL_DEPTH_TEST);
 	
+	ofxBaseContainer::draw();
 }
 
 void MotorsAndSensors::exit(){
@@ -95,5 +100,6 @@ void MotorsAndSensors::exit(){
 	delete Singleton<SceneCtrl>::instance();
 	delete Singleton<SensorCtrl>::instance();
 	delete Singleton<ofxOscManager>::instance();
+	delete Singleton<CvCtrl>::instance();
 	//delete Singleton<SerialTest>::instance();
 }

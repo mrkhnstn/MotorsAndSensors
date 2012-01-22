@@ -11,6 +11,10 @@
         <name>servoMaxSpeed</name>
         <value>0.300000</value>
     </SliderFloat_servoMaxSpeed>
+    <SliderFloat_distanceToCentre>
+        <name>distanceToCentre</name>
+        <value>300.000000</value>
+    </SliderFloat_distanceToCentre>
     <Button_Motors_0-17>
         <name>Motors_0-17</name>
         <value>0</value>

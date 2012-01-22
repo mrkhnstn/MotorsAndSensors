@@ -10,10 +10,6 @@
 #include "MotorCtrl.h"
 
 void MotorCtrl::setup(){
-	
-	servoMin = 600;
-	servoMax = 2000;
-	
 	int bank = 0;
 	int ch = 1;
 	for (int i=0; i<Motor::numMotors; i++) {
@@ -39,10 +35,10 @@ void MotorCtrl::setupGUI(){
 	gui.page(1).addPageShortcut(gui.addPage("Motors"));
 	
 	gui.addTitle("servo limits");
-	gui.addSlider("servoMin", servoMin, 500, 2500);
-	gui.addSlider("servoMax", servoMax, 500, 2500);
+	gui.addSlider("servoMin", Motor::pulseMin, 550, 2350);
+	gui.addSlider("servoMax", Motor::pulseMax, 550, 2350);
 	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,0.1,2);
-	
+	gui.addSlider("distanceToCentre", Motor::distanceToCentre, 270, 350);
 	
 	// gui pages for individual elements
 	gui.addTitle("motors");
@@ -61,6 +57,12 @@ void MotorCtrl::setupGUI(){
 		for(int i=min; i<max && i < motors.size(); i++)
 		{
 			gui.addSlider("tgtAngleN_"+ofToString(i), motors[i]->tgtAngleN, 0, 1);
+		}
+		
+		gui.addTitle("proximityValue").setNewColumn(true);
+		for(int i=min; i<max && i < motors.size(); i++)
+		{
+			gui.addDebug("proximityValue_"+ofToString(i), motors[i]->proximityValue);
 		}
 		
 		/*
@@ -129,7 +131,9 @@ void MotorCtrl::update(){
 	}
 }
 
-void MotorCtrl::draw(){
+void MotorCtrl::draw(){}
+
+void MotorCtrl::draw3d(){
 	for (int i=0; i<motors.size(); i++) {
 		motors[i]->draw();
 	}

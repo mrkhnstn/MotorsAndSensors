@@ -1,12 +1,16 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>1</value>
+        <value>5</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>
-        <value>0</value>
+        <value>1</value>
     </ComboBox_Current_Mode>
+    <SliderFloat_switchToIdleTime>
+        <name>switchToIdleTime</name>
+        <value>30.000000</value>
+    </SliderFloat_switchToIdleTime>
     <Button_IdleScene>
         <name>IdleScene</name>
         <value>0</value>
@@ -27,6 +31,10 @@
         <name>ExampleScene</name>
         <value>0</value>
     </Button_ExampleScene>
+    <Button_InteractiveScene>
+        <name>InteractiveScene</name>
+        <value>0</value>
+    </Button_InteractiveScene>
     <SliderInt_Idle_List_Pos>
         <name>Idle_List_Pos</name>
         <value>0</value>
@@ -37,7 +45,7 @@
     </ComboBox_Idle_0>
     <ComboBox_Idle_1>
         <name>Idle_1</name>
-        <value>3</value>
+        <value>0</value>
     </ComboBox_Idle_1>
     <ComboBox_Idle_2>
         <name>Idle_2</name>
@@ -77,7 +85,7 @@
     </SliderInt_Pnteractive_List_Pos>
     <ComboBox_Interactive_0>
         <name>Interactive_0</name>
-        <value>1</value>
+        <value>6</value>
     </ComboBox_Interactive_0>
     <ComboBox_Interactive_1>
         <name>Interactive_1</name>

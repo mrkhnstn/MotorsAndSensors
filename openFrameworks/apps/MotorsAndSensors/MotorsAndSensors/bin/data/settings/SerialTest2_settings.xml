@@ -1,0 +1,10 @@
+<controls>
+    <SliderInt_sendValue>
+        <name>sendValue</name>
+        <value>688</value>
+    </SliderInt_sendValue>
+    <Toggle_doSend>
+        <name>doSend</name>
+        <value>0</value>
+    </Toggle_doSend>
+</controls>

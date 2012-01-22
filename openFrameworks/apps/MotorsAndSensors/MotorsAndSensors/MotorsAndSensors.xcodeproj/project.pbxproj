@@ -23,6 +23,8 @@
 		843A0DD412E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DD312E72FFD002F69D7 /* ofxOscReceiveValueBase.cpp */; };
 		843A0DDD12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */; };
 		843A0E2E12E844A1002F69D7 /* BaseObjectTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */; };
+		845F19D914C557EA00D9FE66 /* CvCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845F19D814C557EA00D9FE66 /* CvCtrl.cpp */; };
+		845F1AB914C6C53400D9FE66 /* SerialTest2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 845F1AB814C6C53400D9FE66 /* SerialTest2.cpp */; };
 		846339DE12E0BDD40041F43E /* ofxTimeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339DD12E0BDD40041F43E /* ofxTimeline.cpp */; };
 		846339E112E0BDE30041F43E /* ofxTimelineEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846339E012E0BDE30041F43E /* ofxTimelineEvent.cpp */; };
 		84633A0812E0C4270041F43E /* ofxTimelineTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84633A0712E0C4270041F43E /* ofxTimelineTest.cpp */; };
@@ -97,6 +99,8 @@
 		84E2775F1493C4F20087D410 /* ofxSimpleGuiToo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E277431493C4F20087D410 /* ofxSimpleGuiToo.cpp */; };
 		84E277601493C4F20087D410 /* ofxSimpleGuiValueControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E277451493C4F20087D410 /* ofxSimpleGuiValueControl.cpp */; };
 		84E2776F1493C5570087D410 /* ofxTextBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84E2776A1493C5570087D410 /* ofxTextBlock.cpp */; };
+		84EA0CED14CC583A00227101 /* Coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EA0CEC14CC583A00227101 /* Coordinates.cpp */; };
+		84EA0EF414CC996800227101 /* InteractiveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EA0EF314CC996800227101 /* InteractiveScene.cpp */; };
 		84EF61F4149525B60053194F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EF61EA149525B60053194F /* main.cpp */; };
 		84EF61FA149525E10053194F /* Includes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EF61F9149525E10053194F /* Includes.cpp */; };
 		E45BE0AA0E8CC67C009D7055 /* GLee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE0A90E8CC67C009D7055 /* GLee.a */; };
@@ -205,6 +209,10 @@
 		843A0DDC12E730D2002F69D7 /* ofxOscReceiveValueFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxOscReceiveValueFloat.cpp; sourceTree = "<group>"; };
 		843A0E2C12E844A1002F69D7 /* BaseObjectTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseObjectTest.cpp; sourceTree = "<group>"; };
 		843A0E2D12E844A1002F69D7 /* BaseObjectTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObjectTest.h; sourceTree = "<group>"; };
+		845F19D714C557EA00D9FE66 /* CvCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CvCtrl.h; sourceTree = "<group>"; };
+		845F19D814C557EA00D9FE66 /* CvCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CvCtrl.cpp; sourceTree = "<group>"; };
+		845F1AB714C6C53400D9FE66 /* SerialTest2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialTest2.h; sourceTree = "<group>"; };
+		845F1AB814C6C53400D9FE66 /* SerialTest2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SerialTest2.cpp; sourceTree = "<group>"; };
 		846339DC12E0BDD40041F43E /* ofxTimeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimeline.h; sourceTree = "<group>"; };
 		846339DD12E0BDD40041F43E /* ofxTimeline.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTimeline.cpp; sourceTree = "<group>"; };
 		846339DF12E0BDE30041F43E /* ofxTimelineEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTimelineEvent.h; sourceTree = "<group>"; };
@@ -412,6 +420,10 @@
 		84E2776A1493C5570087D410 /* ofxTextBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTextBlock.cpp; sourceTree = "<group>"; };
 		84E2776B1493C5570087D410 /* ofxTextBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextBlock.h; sourceTree = "<group>"; };
 		84E2776C1493C5570087D410 /* ofxTextSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTextSuite.h; sourceTree = "<group>"; };
+		84EA0CEB14CC583A00227101 /* Coordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
+		84EA0CEC14CC583A00227101 /* Coordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinates.cpp; sourceTree = "<group>"; };
+		84EA0EF214CC996800227101 /* InteractiveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveScene.h; sourceTree = "<group>"; };
+		84EA0EF314CC996800227101 /* InteractiveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InteractiveScene.cpp; sourceTree = "<group>"; };
 		84EF61EA149525B60053194F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		84EF61F8149525E10053194F /* Includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Includes.h; sourceTree = "<group>"; };
 		84EF61F9149525E10053194F /* Includes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Includes.cpp; sourceTree = "<group>"; };
@@ -531,6 +543,8 @@
 				8439594014A68F8B0092E501 /* SerialTest.cpp */,
 				842D7DD614AF691A0060DFF3 /* ThreeDTest.h */,
 				842D7DD714AF691A0060DFF3 /* ThreeDTest.cpp */,
+				845F1AB714C6C53400D9FE66 /* SerialTest2.h */,
+				845F1AB814C6C53400D9FE66 /* SerialTest2.cpp */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -1079,6 +1093,10 @@
 				842D7D2614ACEB650060DFF3 /* SensorCtrl.cpp */,
 				847F724C14C33892009BE563 /* AverageF.cpp */,
 				847F724D14C33892009BE563 /* AverageF.h */,
+				845F19D714C557EA00D9FE66 /* CvCtrl.h */,
+				845F19D814C557EA00D9FE66 /* CvCtrl.cpp */,
+				84EA0CEB14CC583A00227101 /* Coordinates.h */,
+				84EA0CEC14CC583A00227101 /* Coordinates.cpp */,
 			);
 			name = Sensors;
 			path = ..;
@@ -1099,6 +1117,8 @@
 				84B311E214AF91B100B74EA3 /* StepScene.cpp */,
 				84B312C114B0B70500B74EA3 /* SimpleInteractiveScene.h */,
 				84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */,
+				84EA0EF214CC996800227101 /* InteractiveScene.h */,
+				84EA0EF314CC996800227101 /* InteractiveScene.cpp */,
 			);
 			name = CustomScenes;
 			sourceTree = "<group>";
@@ -1695,6 +1715,10 @@
 				847F718314C31EEF009BE563 /* ExampleScene.cpp in Sources */,
 				847F724E14C33892009BE563 /* AverageF.cpp in Sources */,
 				847F731314C33D3D009BE563 /* BlankScene.cpp in Sources */,
+				845F19D914C557EA00D9FE66 /* CvCtrl.cpp in Sources */,
+				845F1AB914C6C53400D9FE66 /* SerialTest2.cpp in Sources */,
+				84EA0CED14CC583A00227101 /* Coordinates.cpp in Sources */,
+				84EA0EF414CC996800227101 /* InteractiveScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

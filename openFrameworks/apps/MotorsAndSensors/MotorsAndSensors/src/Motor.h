@@ -20,11 +20,15 @@ public:
 	static float maxMotorSpeed;
 	static float maxAngleNSpeed;
 	
+	static int pulseMin;
+	static int pulseMax;
+	
 	int		index;			// index within motor array
 	float	angleN;			// normalized angle	of motor rotation
 	float	tgtAngleN;
 	float	posAngle;		// position angle calculated out of index and numOfMotors
 	ofxVec2f	pos;		// position of motor in relation centre of cylinder
+	ofxVec2f	cartPos;	// position of motor converted to cartesian system used for cv
 	int		bank;			// SD84 bank
 	int		ch;				// SD84 channel
 	
@@ -55,6 +59,11 @@ public:
 	// all sensors that shall be checked for user proximity detection
 	// gets populated / refreshed using updateSensors() 
 	
+	int proximityValue; // if a user is detected then this value will be incremented otherwise it will be decremented
+	static int maxProximityValue;
+	static int proximityOnThreshold; // if proximity value of sensor is larger then proximityOnThreshold then a user is in proximity
+	bool proximityUpdated;
+	
 	void setup();
 	void setupGUI();
 	void postGUI();
@@ -67,6 +76,12 @@ public:
 	float getPosAngle();
 	
 	bool userInProximity();	// simple binary way of figuring out whether a user stands in front of this motor
+	void incrementProximityValue(int i=1);
+	void decrementProximityValue(int i=1);
+	void userInProximityOn(); // switch on user in proximity
+	void userInProximityOff(); // switch off user in proximity
+	float userInProximityOnTime;
+	float userInproximityOffTime;
 	
 protected:
 	
@@ -74,7 +89,7 @@ protected:
 	void setBackColor();
 	void setFrontColor();
 	void updateUserProximity();
-	void setUserInProximity(bool b);
+	//void setUserInProximity(bool b);
 	float getAngleN();
 	float getTgtAngleN();
 	void setTgtAngleN(float f);

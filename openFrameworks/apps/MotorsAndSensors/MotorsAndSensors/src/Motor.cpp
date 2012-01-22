@@ -9,17 +9,21 @@
 
 #include "Motor.h"
 #include "SensorCtrl.h"
+#include "Coordinates.h"
 
 float Motor::elapsedTime = 0;
 float Motor::maxMotorSpeed = 0.3;
 float Motor::maxAngleNSpeed = 1;
 float Motor::distanceToCentre = 300;
-int Motor::numMotors = 72;
+int	  Motor::numMotors = 72;
 
 bool Motor::doDraw = true;		// global draw flag
 bool Motor::doDraw3D = true;		// draw 3d box
 bool Motor::doDraw2D = false;		// draw 2d on null plane
 bool Motor::doDrawLabels = false; // draw ids of each motor
+
+int Motor::pulseMin = 600;
+int Motor::pulseMax = 2300;
 
 ofColor Motor::backColorLow;		// back side color of motor when NO user in proximity
 ofColor Motor::frontColorLow;		// front side color of motor when NO user in proximity
@@ -34,7 +38,8 @@ float Motor::panelWidth = 20;
 bool Motor::doStaticInit = true;
 ofTrueTypeFont Motor::font;
 
-
+int Motor::maxProximityValue = 30;
+int Motor::proximityOnThreshold = 5;
 
 void Motor::setup(){
 	if(doStaticInit)
@@ -43,7 +48,7 @@ void Motor::setup(){
 		doStaticInit = false;
 	}
 	
-	posAngle = index * 360 / numMotors;
+	posAngle = -index * 360 / numMotors;
 	pos.x = cosf(ofDegToRad(posAngle))*distanceToCentre;
 	pos.y = sinf(ofDegToRad(posAngle))*distanceToCentre;
 	
@@ -54,6 +59,10 @@ void Motor::setup(){
 	
 	bank = 0;
 	ch = 1;
+	
+	proximityValue = 0;
+	userInProximityOnTime = 0;
+	userInproximityOffTime = 0;
 }
 
 void Motor::setupGUI(){
@@ -70,7 +79,9 @@ void Motor::postGUI(){
 
 void Motor::update(){
 	// update users in proximity
-	updateUserProximity();
+	//updateUserProximity(); // outdated
+	
+	cartPos = Coordinates::fromPolar(pos);
 	
 	// limit motor motion to max motor speed
 	float delta = tgtAngleN - angleN;
@@ -86,7 +97,7 @@ void Motor::draw(){
 	ofPushMatrix();
 	
 	// go to position of motor
-	ofRotate(posAngle, 0, 1, 0);
+	ofRotate(-posAngle, 0, 1, 0);
 	
 	ofPushMatrix();
 	ofTranslate(distanceToCentre, 0, 0); // move from cylinder centre by cylinder radius
@@ -112,7 +123,6 @@ void Motor::draw(){
 		setBackColor();
 		ofxLine(-0.5*panelWidth, 0, -1, 0.5*panelWidth, 0, -1);
 		ofSetLineWidth(0);
-		
 	}
 	
 	if (doDraw3D) {
@@ -138,7 +148,9 @@ void Motor::draw(){
 	
 	ofPopMatrix();
 	
-	if(doDrawLabels){
+	
+	
+	if(doDrawLabels && doDraw3D){
 		ofPushMatrix();
 		ofSetColor(255, 255, 255);
 		ofTranslate(distanceToCentre, 150 + 10, 0);
@@ -155,6 +167,16 @@ void Motor::draw(){
 	
 	ofPopMatrix();
 	ofPopStyle();
+	
+	if(doDrawLabels && doDraw2D){
+		ofSetColor(255, 255, 255);
+		ofPushMatrix();
+		ofTranslate(pos.x, 0, pos.y);
+		ofRectangle rect = font.getStringBoundingBox(ofToString(index), 0, 0);
+		ofRotate(90, 1, 0, 0);
+		font.drawString(ofToString(index), -rect.width * 0.5, rect.height * 0.5);
+		ofPopMatrix();
+	}
 }
 
 void Motor::updateSensors(){
@@ -198,14 +220,54 @@ void Motor::setFrontColor(){
 	}
 }
 
+void Motor::incrementProximityValue(int i){
+	proximityValue += i;
+	
+	if(proximityValue >= proximityOnThreshold)
+		if(!_userInProximity){
+			userInProximityOn();
+		}
+	
+	if(proximityValue > maxProximityValue)
+		proximityValue = maxProximityValue;
+}
+
+void Motor::decrementProximityValue(int i){
+	proximityValue -= i;
+	
+	if(proximityValue <= proximityOnThreshold)
+		if(_userInProximity){
+			userInProximityOff();
+		}
+	
+	if(proximityValue < 0)
+		proximityValue = 0;
+}
+
+// switch on user in proximity
+void Motor::userInProximityOn(){
+	_userInProximity = true;
+	userInProximityOnTime = ofGetElapsedTimef();
+	
+} 
+
+// switch off user in proximity
+void Motor::userInProximityOff(){
+	_userInProximity = false;
+	userInproximityOffTime = ofGetElapsedTimef();
+	
+}
+
 // simple binary way of figuring out whether a user stands in front of this motor
 bool Motor::userInProximity(){
 	return _userInProximity;
 }
 
+/*
 void Motor::setUserInProximity(bool b){
 	_userInProximity = b;
 }
+*/
 
 float Motor::getAngleN(){
 	return angleN;

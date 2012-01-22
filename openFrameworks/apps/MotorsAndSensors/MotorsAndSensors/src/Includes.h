@@ -12,3 +12,4 @@
 #include "ofxTimeline.h"
 #include "Singleton.h"
 #include "ofx3DUtils.h"
+#include "ofxVectorMath.h"

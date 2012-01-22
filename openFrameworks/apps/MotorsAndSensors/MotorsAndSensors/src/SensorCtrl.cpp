@@ -11,7 +11,7 @@
 
 void SensorCtrl::setup(){
 	
-	Singleton<ofxOscManager>::instance()->registerInterest(*this,"/adc");
+	Singleton<ofxOscManager>::instance()->registerInterest(*this,SENSOR_OSC_TAG);
 	
 	// calculate look up table
 	updateLUT();
@@ -65,12 +65,17 @@ void SensorCtrl::setupGUI(){
 	gui.page(1).addPageShortcut(gui.addPage("Sensors"));
 	
 	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
-
+	gui.addSlider("distanceToCentre", Sensor::distanceToCentre, 250, 350);
+	gui.addSlider("angleBetweenRays", Sensor::angleBetweenRays, 5, 10);
+	
 	gui.addTitle("sensors");
 	int min = 0;
 	int max = 19;
 	while (min < TOTAL_RAYS) {
-		gui.page("Sensors").addPageShortcut(gui.addPage("SensorRays_"+ofToString(min)+"-"+ofToString(max-1)));
+		int minSensor = (int)floor(min / RAYS_PER_SENSOR);
+		int maxSensor = (int)floor(max / RAYS_PER_SENSOR);
+		
+		gui.page("Sensors").addPageShortcut(gui.addPage("Sensors_"+ofToString(minSensor)+"-"+ofToString(maxSensor)));
 		gui.addTitle("raw");
 		for(int i=min; i<max && i < TOTAL_RAYS; i++)
 		{
@@ -96,7 +101,8 @@ void SensorCtrl::setupGUI(){
 	gui.addToggle("doDrawRays", Sensor::doDrawRays);
 	gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
 	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
-	gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
+	gui.addToggle("drawOnlyInSensorZone", Sensor::drawOnlyInSensorZone);
+	//gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
 }
 
 void SensorCtrl::postGUI(){
@@ -127,8 +133,11 @@ void SensorCtrl::updateDistanceValues(){
 	}
 }
 
-void SensorCtrl::draw(){
+void SensorCtrl::draw(){}
+
+void SensorCtrl::draw3d(){
 	
+	/*
 	if(Sensor::doDrawSensorThreshold){
 		ofPushStyle();
 		ofPushMatrix();
@@ -141,6 +150,7 @@ void SensorCtrl::draw(){
 		ofPopMatrix();
 		ofPopStyle();
 	}
+	*/
 	
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->draw();
@@ -150,11 +160,16 @@ void SensorCtrl::handleOscMessage(ofxOscMessage& message){
 	if (message.getAddress() == SENSOR_OSC_TAG) {
 		//TODO: check number of args
 		
-		int bank = message.getArgAsInt32(0);
+		int bank = message.getArgAsInt32(0); //TODO: set LUT bank via GUI
 		
-		int offset = bank * SENSORS_PER_BANK * RAYS_PER_SENSOR;
+		int offset = bank * RAYS_PER_BANK;
 		int argId = 1;
 		
+		for(int i=0; i<RAYS_PER_BANK; i++){
+			rawValues[offset+i] = message.getArgAsInt32(i+1);
+		}
+		
+		/*
 		for (int led=0; led<RAYS_PER_SENSOR; led++) {
 			for(int sensor=0; sensor<SENSORS_PER_BANK; sensor++)
 			{
@@ -163,7 +178,7 @@ void SensorCtrl::handleOscMessage(ofxOscMessage& message){
 				argId++;
 			}
 		}
-		
+		*/
 	}
 }
 

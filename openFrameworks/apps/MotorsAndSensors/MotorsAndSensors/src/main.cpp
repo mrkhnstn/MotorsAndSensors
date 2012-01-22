@@ -9,6 +9,9 @@
 #include "StepScene.h"
 #include "SimpleInteractiveScene.h"
 #include "ExampleScene.h"
+#include "InteractiveScene.h"
+
+#include "SerialTest2.h"
 
 int main( ){
 
@@ -32,12 +35,16 @@ int main( ){
 	Scene::add(new StepScene());
 	Scene::add(new SimpleInteractiveScene());
 	Scene::add(new ExampleScene());
+	Scene::add(new InteractiveScene());
 	
 	//////////////////////////////////////////////
 	
 	// add the "main app" to the test bed 
 	MotorsAndSensors motorsAndSensors;
 	testBed.addTestObject(motorsAndSensors);
+	
+	//SerialTest2 serialTest2;
+	//testBed.addTestObject(serialTest2);
 
 	ofRunApp(&testBed);
 }

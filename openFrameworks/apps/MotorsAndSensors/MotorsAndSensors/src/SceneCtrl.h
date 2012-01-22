@@ -41,6 +41,7 @@ public:
 	void postGUI();
 	void update();
 	void draw();
+	void draw3d();
 	void exit();
 	
 	Scene& getCurrentScene();
@@ -49,5 +50,9 @@ public:
 	void startNextIdleScene();
 	void setMode(int newMode);
 	
+	bool userInProximity();
+	bool _userInProximity;
+	float lastUserInProximityTime;
+	float switchToIdleTime;
 
 };

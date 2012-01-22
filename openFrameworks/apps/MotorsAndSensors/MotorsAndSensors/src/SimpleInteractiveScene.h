@@ -22,6 +22,7 @@ public:
 	}
 	
 	void update(){
+		Scene::update();
 		for (int i=0; i<getMotorCount(); i++)
 			if (userInFrontOfMotor(i)) {
 				panelOpen(i);

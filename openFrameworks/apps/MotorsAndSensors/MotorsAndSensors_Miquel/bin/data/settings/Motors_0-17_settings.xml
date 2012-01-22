@@ -1,6 +1,7 @@
 <controls>
     <SliderFloat_angleN_0>
         <name>angleN_0</name>
+<<<<<<< HEAD
         <value>0.041519</value>
     </SliderFloat_angleN_0>
     <SliderFloat_angleN_1>
@@ -142,5 +143,148 @@
     <SliderFloat_tgtAngleN_17>
         <name>tgtAngleN_17</name>
         <value>0.039603</value>
+=======
+        <value>0.456863</value>
+    </SliderFloat_angleN_0>
+    <SliderFloat_angleN_1>
+        <name>angleN_1</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_1>
+    <SliderFloat_angleN_2>
+        <name>angleN_2</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_2>
+    <SliderFloat_angleN_3>
+        <name>angleN_3</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_3>
+    <SliderFloat_angleN_4>
+        <name>angleN_4</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_4>
+    <SliderFloat_angleN_5>
+        <name>angleN_5</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_5>
+    <SliderFloat_angleN_6>
+        <name>angleN_6</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_6>
+    <SliderFloat_angleN_7>
+        <name>angleN_7</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_7>
+    <SliderFloat_angleN_8>
+        <name>angleN_8</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_8>
+    <SliderFloat_angleN_9>
+        <name>angleN_9</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_9>
+    <SliderFloat_angleN_10>
+        <name>angleN_10</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_10>
+    <SliderFloat_angleN_11>
+        <name>angleN_11</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_11>
+    <SliderFloat_angleN_12>
+        <name>angleN_12</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_12>
+    <SliderFloat_angleN_13>
+        <name>angleN_13</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_13>
+    <SliderFloat_angleN_14>
+        <name>angleN_14</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_14>
+    <SliderFloat_angleN_15>
+        <name>angleN_15</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_15>
+    <SliderFloat_angleN_16>
+        <name>angleN_16</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_16>
+    <SliderFloat_angleN_17>
+        <name>angleN_17</name>
+        <value>0.456863</value>
+    </SliderFloat_angleN_17>
+    <SliderFloat_tgtAngleN_0>
+        <name>tgtAngleN_0</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_0>
+    <SliderFloat_tgtAngleN_1>
+        <name>tgtAngleN_1</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_1>
+    <SliderFloat_tgtAngleN_2>
+        <name>tgtAngleN_2</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_2>
+    <SliderFloat_tgtAngleN_3>
+        <name>tgtAngleN_3</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_3>
+    <SliderFloat_tgtAngleN_4>
+        <name>tgtAngleN_4</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_4>
+    <SliderFloat_tgtAngleN_5>
+        <name>tgtAngleN_5</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_5>
+    <SliderFloat_tgtAngleN_6>
+        <name>tgtAngleN_6</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_6>
+    <SliderFloat_tgtAngleN_7>
+        <name>tgtAngleN_7</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_7>
+    <SliderFloat_tgtAngleN_8>
+        <name>tgtAngleN_8</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_8>
+    <SliderFloat_tgtAngleN_9>
+        <name>tgtAngleN_9</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_9>
+    <SliderFloat_tgtAngleN_10>
+        <name>tgtAngleN_10</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_10>
+    <SliderFloat_tgtAngleN_11>
+        <name>tgtAngleN_11</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_11>
+    <SliderFloat_tgtAngleN_12>
+        <name>tgtAngleN_12</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_12>
+    <SliderFloat_tgtAngleN_13>
+        <name>tgtAngleN_13</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_13>
+    <SliderFloat_tgtAngleN_14>
+        <name>tgtAngleN_14</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_14>
+    <SliderFloat_tgtAngleN_15>
+        <name>tgtAngleN_15</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_15>
+    <SliderFloat_tgtAngleN_16>
+        <name>tgtAngleN_16</name>
+        <value>0.456863</value>
+    </SliderFloat_tgtAngleN_16>
+    <SliderFloat_tgtAngleN_17>
+        <name>tgtAngleN_17</name>
+        <value>0.456863</value>
+>>>>>>> - new arduino and max patch (v4)
     </SliderFloat_tgtAngleN_17>
 </controls>

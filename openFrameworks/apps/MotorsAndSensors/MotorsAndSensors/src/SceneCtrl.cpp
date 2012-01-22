@@ -30,6 +30,10 @@ void SceneCtrl::setup(){
 	for(int i=0; i<NUM_INTERACTIVE_ITEMS; i++)
 		interactiveList[i] = 0;
 	
+	_userInProximity = false;
+	lastUserInProximityTime = 0;
+	switchToIdleTime = 10;
+	
 }
 
 void SceneCtrl::setupGUI(){
@@ -41,10 +45,14 @@ void SceneCtrl::setupGUI(){
 		names[i] = scenes[i]->name;
 	}
 	
+	
+	
 	gui.addComboBox("Current_Scene", _currentSceneId, scenes.size(), names);
 	
 	string modeChoices[3] = {"IDLE","INTERACTIVE","MANUAL"};
 	gui.addComboBox("Current_Mode", _mode, 3, modeChoices);
+	
+	gui.addSlider("switchToIdleTime", switchToIdleTime, 0, 30);
 	
 	string idleListChoices[scenes.size()+1];
 	idleListChoices[0] = "EMPTY";
@@ -98,8 +106,37 @@ void SceneCtrl::update(){
 	if(_currentSceneId != currentSceneId)
 		setCurrentScene(_currentSceneId);
 	
+	// check user in proximity
+	_userInProximity = false;
+	vector<Motor*>& motors = Singleton<MotorCtrl>::instance()->motors;
+	// reset all motor proximity udpated flag
+	for(int i=0; i<motors.size(); i++){
+		if(motors[i]->userInProximity()){
+			_userInProximity = true;
+			lastUserInProximityTime = ofGetElapsedTimef();
+			break;
+		}
+	}
+	
 	switch (mode) {
 		case SCENE_CTRL_IDLE:
+			// if a user is in proximity then switch to interactive mode
+			if(userInProximity())
+				setMode(SCENE_CTRL_INTERACTIVE);
+			break;
+		case SCENE_CTRL_INTERACTIVE:
+			if(ofGetElapsedTimef() > lastUserInProximityTime + switchToIdleTime){
+				setMode(SCENE_CTRL_IDLE);
+			}
+			break;
+		case SCENE_CTRL_MANUAL: 
+		default:
+			break;
+	}	
+	
+	switch (mode) {
+		case SCENE_CTRL_IDLE:
+			// if a user is in proximity then switch to interactive mode
 			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
 				startNextIdleScene();
 			}
@@ -120,7 +157,9 @@ void SceneCtrl::update(){
 	getCurrentScene().update();
 }
 
-void SceneCtrl::draw(){
+void SceneCtrl::draw(){}
+
+void SceneCtrl::draw3d(){
 	ofPushMatrix();
 	ofRotate(-90, 1, 0, 0);
 	getCurrentScene().draw();
@@ -190,4 +229,8 @@ void SceneCtrl::setMode(int newMode){
 		default:
 			break;
 	}
+}
+
+bool SceneCtrl::userInProximity(){
+	return _userInProximity;
 }
