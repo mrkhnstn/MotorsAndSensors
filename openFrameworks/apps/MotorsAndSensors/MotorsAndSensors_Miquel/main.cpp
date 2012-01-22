@@ -12,6 +12,8 @@
 #include "RotationRangeScene.h"
 #include "MovingWaveScene.h"
 #include "SineWaveScene.h"
+#include "OpenPortionScene.h"
+#include "SnoringScene.h"
 
 int main( ){
 
@@ -38,6 +40,8 @@ int main( ){
 	Scene::add(new RotationRangeScene());
 	Scene::add(new MovingWaveScene());
 	Scene::add(new SineWaveScene());
+	Scene::add(new OpenPortionScene());
+	Scene::add(new SnoringScene());
 	
 	//////////////////////////////////////////////
 	

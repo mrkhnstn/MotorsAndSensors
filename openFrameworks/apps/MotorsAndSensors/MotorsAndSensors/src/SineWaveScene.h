@@ -1,6 +1,7 @@
 #pragma once
 /*
  *  SinWaveScene.h
+ *		This class uses sine trig. function to create a multiple waves animation
  *
  *  Created by Miquel Lopez on 19/01/12.
  *

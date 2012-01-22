@@ -1,0 +1,34 @@
+<controls>
+    <SliderFloat_minRotation>
+        <name>minRotation</name>
+        <value>0.000000</value>
+    </SliderFloat_minRotation>
+    <SliderFloat_maxRotation>
+        <name>maxRotation</name>
+        <value>115.000000</value>
+    </SliderFloat_maxRotation>
+    <SliderFloat_velocity>
+        <name>velocity</name>
+        <value>0.003000</value>
+    </SliderFloat_velocity>
+    <SliderFloat_acceleration>
+        <name>acceleration</name>
+        <value>1.000000</value>
+    </SliderFloat_acceleration>
+    <SliderFloat_animationIndex>
+        <name>animationIndex</name>
+        <value>0.061987</value>
+    </SliderFloat_animationIndex>
+    <SliderFloat_angle>
+        <name>angle</name>
+        <value>7.128498</value>
+    </SliderFloat_angle>
+    <SliderFloat_maxWaitTime>
+        <name>maxWaitTime</name>
+        <value>0.788235</value>
+    </SliderFloat_maxWaitTime>
+    <Toggle_snoringMode>
+        <name>snoringMode</name>
+        <value>0</value>
+    </Toggle_snoringMode>
+</controls>

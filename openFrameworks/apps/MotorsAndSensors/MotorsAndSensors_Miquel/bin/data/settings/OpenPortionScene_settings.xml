@@ -1,0 +1,26 @@
+<controls>
+    <SliderFloat_minAngle>
+        <name>minAngle</name>
+        <value>180.000000</value>
+    </SliderFloat_minAngle>
+    <SliderFloat_maxAngle>
+        <name>maxAngle</name>
+        <value>87.882355</value>
+    </SliderFloat_maxAngle>
+    <SliderFloat_frameDuration>
+        <name>frameDuration</name>
+        <value>0.183039</value>
+    </SliderFloat_frameDuration>
+    <SliderInt_tickCounter>
+        <name>tickCounter</name>
+        <value>2</value>
+    </SliderInt_tickCounter>
+    <ComboBox_possiblePortionsIndex>
+        <name>possiblePortionsIndex</name>
+        <value>9</value>
+    </ComboBox_possiblePortionsIndex>
+    <Button_Preset_1>
+        <name>Preset 1</name>
+        <value>0</value>
+    </Button_Preset_1>
+</controls>
