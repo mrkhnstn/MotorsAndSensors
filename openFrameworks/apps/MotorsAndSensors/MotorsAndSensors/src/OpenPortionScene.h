@@ -21,14 +21,13 @@ public:
 	
 	bool setPreset1, setPreset2, setPreset3, setPreset4;
 	
+	int counter, maxCounter;
+	
 	void setup(){
 		Scene::setup();
 		name = "OpenPortionScene";
 		
-		targetAngle = 0;
-		tickCounter = 1;
-		numPortions = 3;
-		
+		maxCounter = 4;
 		setPreset1 = setPreset2 = setPreset3 = setPreset4 = false;
 	}
 	
@@ -51,6 +50,10 @@ public:
 		//gui.addButton("Preset 2", setPreset2);
 		//gui.addButton("Preset 3", setPreset3);
 		//gui.addButton("Preset 4", setPreset4);
+		
+		gui.addTitle("Playlist variables").setNewColumn(true);
+		gui.addSlider("counter", counter, 0, 100);
+		gui.addSlider("maxCounter", maxCounter, 1, 100);
 	}
 	
 	void postGUI(){
@@ -59,6 +62,12 @@ public:
 	
 	void start(){
 		Scene::start();
+		
+		// Force settings (to be disabled at a later stage)
+		targetAngle = 0;
+		tickCounter = 1;
+		numPortions = 3;
+		counter = 0;
 		
 		startTime = ofGetElapsedTimef();
 		lastTime = ofGetElapsedTimef();
@@ -85,6 +94,12 @@ public:
 			tickCounter++;
 			if( tickCounter > numPortions ){
 				tickCounter = 1;
+				
+				// Scene playlist functionality
+				counter++;
+				if(counter >= maxCounter)
+					stop();
+				
 				if(targetAngle == minAngle){
 					targetAngle = maxAngle;
 				}else{

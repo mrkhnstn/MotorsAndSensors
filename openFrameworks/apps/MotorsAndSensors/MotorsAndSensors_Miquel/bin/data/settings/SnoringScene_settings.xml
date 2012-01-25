@@ -9,7 +9,7 @@
     </SliderFloat_maxRotation>
     <SliderFloat_velocity>
         <name>velocity</name>
-        <value>0.002294</value>
+        <value>0.003000</value>
     </SliderFloat_velocity>
     <SliderFloat_acceleration>
         <name>acceleration</name>
@@ -17,11 +17,11 @@
     </SliderFloat_acceleration>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>0.086386</value>
+        <value>-0.000617</value>
     </SliderFloat_animationIndex>
     <SliderFloat_angle>
         <name>angle</name>
-        <value>9.934341</value>
+        <value>-0.070941</value>
     </SliderFloat_angle>
     <SliderFloat_maxWaitTime>
         <name>maxWaitTime</name>
@@ -31,4 +31,12 @@
         <name>snoringMode</name>
         <value>1</value>
     </Toggle_snoringMode>
+    <SliderInt_counter>
+        <name>counter</name>
+        <value>0</value>
+    </SliderInt_counter>
+    <SliderInt_maxCounter>
+        <name>maxCounter</name>
+        <value>3</value>
+    </SliderInt_maxCounter>
 </controls>

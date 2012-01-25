@@ -18,7 +18,8 @@ public:
 	float minRotation, maxRotation;		// Minimum and maximum rotation
 	float velocity;						// Animations velocity
 	float angle;
-
+	int counter, maxCounter;
+	
 	// Defines the type of animation
 	int animationMode;
 	static const int NORMAL = 0;
@@ -31,16 +32,8 @@ public:
 		Scene::setup();
 		name = "RotationRangeScene";
 		
-		animationIndex = 0;
-		minRotation = 0;
-		maxRotation = 180;
-		velocity = .03;
-		angle = 90;
-		direction = 1;
-		
-		animationMode = NORMAL;
-		setPreset1 = false;
-		setPreset2 = false;
+		counter = 0;
+		maxCounter = 2;
 	}
 	
 	void setupGUI(){
@@ -58,14 +51,32 @@ public:
 		gui.addTitle("Variable presets").setNewColumn(true);
 		gui.addButton("Preset 1", setPreset1);
 		gui.addButton("Preset 2", setPreset2);
+		
+		gui.addTitle("Playlist variables").setNewColumn(true);
+		gui.addSlider("counter", counter, 0, 100);
+		gui.addSlider("maxCounter", maxCounter, 1, 100);
 	}
 	
 	void postGUI(){
 		Scene::postGUI();
+		
+		// Force settings (to be disabled at a later stage)
+		animationIndex = 0;
+		minRotation = 0;
+		maxRotation = 180;
+		velocity = .03;
+		angle = 90;
+		direction = 1;
+		
+		animationMode = NORMAL;
+		setPreset1 = false;
+		setPreset2 = false;
 	}
 	
 	void start(){
 		Scene::start();
+		
+		counter = 0;
 	}
 	
 	void update(){
@@ -83,7 +94,16 @@ public:
 			direction = -1;
 		} else if(animationIndex < -1) {
 			direction = 1;
+			
+			// Every time we complete a cycle we add 1 to the counter (no. cycles = counter)
+			// maxCounter defines how many cycles we'll use before showing the next animation
+			counter++;
 		}
+		
+		
+		// Scene playlist functionality
+		if(counter >= maxCounter)
+			stop();
 		
 		// angle of the motors defined by rotation range (the maximum it rotates from side to side)
 		// and animationIndex (between -1 and 1)

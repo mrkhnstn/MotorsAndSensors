@@ -18,6 +18,7 @@ public:
 	float angle;
 	float oldTime, waitTime, maxWaitTime;
 	bool snoringMode;
+	int counter, maxCounter;
 	
 	// Defines the type of animation
 	int animationMode;
@@ -29,6 +30,8 @@ public:
 		Scene::setup();
 		name = "SnoringScene";
 		
+		counter = 0;
+		maxCounter = 3;
 		oldTime = 0;
 	}
 	
@@ -42,11 +45,16 @@ public:
 		gui.addSlider("angle", angle, 0, 180);
 		gui.addSlider("maxWaitTime", maxWaitTime, 0, 2);
 		gui.addToggle("snoringMode", snoringMode);
+		
+		gui.addTitle("Playlist variables").setNewColumn(true);
+		gui.addSlider("counter", counter, 0, 100);
+		gui.addSlider("maxCounter", maxCounter, 1, 100);
 	}
 	
 	void postGUI(){
 		Scene::postGUI();
 		
+		// Force settings (to be disabled at a later stage)
 		animationIndex = 0;
 		minRotation = 0;
 		maxRotation = 115;
@@ -62,6 +70,8 @@ public:
 	
 	void start(){
 		Scene::start();
+		
+		counter = 0;
 	}
 	
 	void update(){
@@ -119,6 +129,11 @@ public:
 				waitTime = ofGetElapsedTimef()-oldTime;
 				if(waitTime >= maxWaitTime){
 					animationMode = OPENING;
+					
+					// Scene playlist functionality
+					counter++;
+					if(counter >= maxCounter)
+						stop();
 				}
 				break;
 			default:

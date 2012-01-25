@@ -53,23 +53,23 @@
     </SliderFloat_angleN_30>
     <SliderFloat_angleN_31>
         <name>angleN_31</name>
-        <value>0.095536</value>
+        <value>0.000000</value>
     </SliderFloat_angleN_31>
     <SliderFloat_angleN_32>
         <name>angleN_32</name>
-        <value>0.388314</value>
+        <value>0.000000</value>
     </SliderFloat_angleN_32>
     <SliderFloat_angleN_33>
         <name>angleN_33</name>
-        <value>0.348317</value>
+        <value>0.000000</value>
     </SliderFloat_angleN_33>
     <SliderFloat_angleN_34>
         <name>angleN_34</name>
-        <value>0.278873</value>
+        <value>0.000000</value>
     </SliderFloat_angleN_34>
     <SliderFloat_angleN_35>
         <name>angleN_35</name>
-        <value>0.209428</value>
+        <value>0.000000</value>
     </SliderFloat_angleN_35>
     <SliderFloat_tgtAngleN_18>
         <name>tgtAngleN_18</name>
@@ -133,14 +133,14 @@
     </SliderFloat_tgtAngleN_32>
     <SliderFloat_tgtAngleN_33>
         <name>tgtAngleN_33</name>
-        <value>0.353317</value>
+        <value>0.000000</value>
     </SliderFloat_tgtAngleN_33>
     <SliderFloat_tgtAngleN_34>
         <name>tgtAngleN_34</name>
-        <value>0.283873</value>
+        <value>0.000000</value>
     </SliderFloat_tgtAngleN_34>
     <SliderFloat_tgtAngleN_35>
         <name>tgtAngleN_35</name>
-        <value>0.214428</value>
+        <value>0.000000</value>
     </SliderFloat_tgtAngleN_35>
 </controls>

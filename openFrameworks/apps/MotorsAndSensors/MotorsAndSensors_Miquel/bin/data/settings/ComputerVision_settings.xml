@@ -65,7 +65,7 @@
     </SliderFloat_cvMinX>
     <SliderFloat_cvMaxX>
         <name>cvMaxX</name>
-        <value>360.000000</value>
+        <value>256.000000</value>
     </SliderFloat_cvMaxX>
     <SliderFloat_cvMinY>
         <name>cvMinY</name>
@@ -73,7 +73,7 @@
     </SliderFloat_cvMinY>
     <SliderFloat_cvMaxY>
         <name>cvMaxY</name>
-        <value>360.000000</value>
+        <value>256.000000</value>
     </SliderFloat_cvMaxY>
     <SliderFloat_minSensingZone>
         <name>minSensingZone</name>

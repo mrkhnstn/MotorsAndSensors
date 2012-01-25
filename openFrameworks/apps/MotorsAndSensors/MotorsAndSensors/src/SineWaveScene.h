@@ -21,6 +21,8 @@ public:
 	float minAngle, maxAngle;	// Motors rotation will range between minAngle and maxAngle
 	int numWaves;
 	
+	int counter, maxCounter;
+	
 	// List of variable presets
 	bool setPreset1, setPreset2, setPreset3, setPreset4;
 	
@@ -28,17 +30,8 @@ public:
 		Scene::setup();
 		name = "SineWaveScene";
 		
-		animationAngle = 0;
-		direction = 1;
-		velocity = 1;
-		
-		minAngle = 0;
-		maxAngle = 180;
-		numWaves = 1;
-		setPreset1 = false;
-		setPreset2 = false;
-		setPreset3 = false;
-		setPreset4 = false;
+		counter = 0;
+		maxCounter = 3;
 	}
 	
 	void setupGUI(){
@@ -55,14 +48,33 @@ public:
 		gui.addButton("Preset 2", setPreset2);
 		gui.addButton("Preset 3", setPreset3);
 		gui.addButton("Preset 4", setPreset4);
+		
+		gui.addTitle("Playlist variables").setNewColumn(true);
+		gui.addSlider("counter", counter, 0, 100);
+		gui.addSlider("maxCounter", maxCounter, 1, 100);
 	}
 	
 	void postGUI(){
 		Scene::postGUI();
+		
+		// Force settings (to be disabled at a later stage)
+		animationAngle = 0;
+		direction = 1;
+		velocity = 1;
+		
+		minAngle = 0;
+		maxAngle = 180;
+		numWaves = 1;
+		setPreset1 = false;
+		setPreset2 = false;
+		setPreset3 = false;
+		setPreset4 = false;
 	}
 	
 	void start(){
 		Scene::start();
+		
+		counter = 0;
 	}
 	
 	void update(){
@@ -82,8 +94,16 @@ public:
 		
 		// Force animationAngle to remain between 0 and 360 degrees
 		// (for readability purposes only)
-		if (animationAngle > 360)
+		if (animationAngle > 360){
 			animationAngle = animationAngle-360;
+			
+			// Scene playlist functionality
+			counter++;
+			if(counter >= maxCounter)
+				stop();
+		}
+		
+		
 		if (animationAngle < 0)
 			animationAngle = animationAngle+360;
 		

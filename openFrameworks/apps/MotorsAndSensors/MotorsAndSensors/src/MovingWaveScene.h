@@ -17,6 +17,7 @@ public:
 	float initialRotation;	// Rotation when position is 0
 	float maxRotation;		// Maximum rotation (+/-), usually added to initialRotation
 	float velocity;
+	int counter, maxCounter;
 	
 	float reactiveAngle;
 	float maxDistance;
@@ -24,6 +25,9 @@ public:
 	void setup(){
 		Scene::setup();
 		name = "MovingWaveScene";
+		
+		counter = 0;
+		maxCounter = 3;
 	}
 	
 	void setupGUI(){
@@ -35,15 +39,20 @@ public:
 		
 		gui.addSlider("reactiveAngle", reactiveAngle, 0, 360);
 		gui.addSlider("maxDistance", maxDistance, 0, 45);
+		
+		gui.addTitle("Playlist variables").setNewColumn(true);
+		gui.addSlider("counter", counter, 0, 100);
+		gui.addSlider("maxCounter", maxCounter, 1, 100);
 	}
 	
 	void postGUI(){
 		Scene::postGUI();
 		
+		// Force settings (to be disabled at a later stage)
 		initialRotation = 0;
 		maxRotation = 75;
 		animationIndex = 0;
-		velocity = .001;
+		velocity = .002;
 		direction = 1;
 		
 		reactiveAngle = 0;
@@ -52,6 +61,8 @@ public:
 	
 	void start(){
 		Scene::start();
+		
+		counter = 0;
 	}
 	
 	void update(){
@@ -62,7 +73,18 @@ public:
 		animationIndex += direction*velocity;
 		if (animationIndex > 1) {
 			animationIndex = 0;
+			
+			
+			// Scene playlist functionality
+			// Every time we complete de circle we've completed a cycle (no. cycles = counter)
+			// maxCounter defines how many cycles we'll use before showing the next animation
+			counter++;
+			if(counter >= maxCounter)
+				stop();
 		}
+		
+		
+		
 		
 		reactiveAngle = ofMap(animationIndex, 0, 1, 0, 360);
 		float distance = 0;
