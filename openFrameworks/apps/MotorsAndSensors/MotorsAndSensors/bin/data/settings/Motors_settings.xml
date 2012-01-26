@@ -5,11 +5,11 @@
     </SliderInt_servoMin>
     <SliderInt_servoMax>
         <name>servoMax</name>
-        <value>2000</value>
+        <value>2300</value>
     </SliderInt_servoMax>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
-        <value>1.012745</value>
+        <value>0.208039</value>
     </SliderFloat_servoMaxSpeed>
     <SliderFloat_distanceToCentre>
         <name>distanceToCentre</name>
@@ -41,7 +41,7 @@
     </Toggle_draw3D>
     <Toggle_draw2D>
         <name>draw2D</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_draw2D>
     <Toggle_drawLabels>
         <name>drawLabels</name>
@@ -77,6 +77,6 @@
     </ColorPicker_frontColorHigh>
     <SliderInt_sendFreqMs>
         <name>sendFreqMs</name>
-        <value>200</value>
+        <value>30</value>
     </SliderInt_sendFreqMs>
 </controls>

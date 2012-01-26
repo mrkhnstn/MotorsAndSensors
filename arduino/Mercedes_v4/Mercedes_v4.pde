@@ -1,15 +1,17 @@
 #include <Servo.h>
 // configured to work with Arduino Mega 2560
 
-const int bank = 2; // this has to be individually set for each arduino!!
+const int bank = 0; // this has to be individually set for each arduino!!
 const int baudRate = 115200;
 const int numServos = 18;
 const int availServos = 18; // 8 for UNO, 18 for MEGA
 word servoValues[numServos];
-int servoPins[] = {24,25,26,27,30,31,32,33,36,37,38,39,42,43,44,45,48,49}; //50,51 //< extra 2 servo pints
+//int servoPins[] = {24,25,26,27,30,31,32,33,36,37,38,39,42,43,44,45,48,49}; //50,51 //< extra 2 servo pints
+//int servoPins[] = {24,25,26,27,30,31,32,33,36,37,38,39,42,43,44,45,48,49};
+int servoPins[] = {24,26,30,32,36,38,42,44,48,25,27,31,33,37,39,43,45,49};
 
-const word minServoPulse = 500;
-const word maxServoPulse = 2450;
+const word minServoPulse = 550;
+const word maxServoPulse = 2350;
 
 const int availAnalogIns = 9; // 6 for UNO, 9 for MEGA
 const int numAnalogIns = 9;
@@ -31,6 +33,7 @@ int command = 0; // 0: do not return anything // 1: return next set of analog va
 void setup()
 {
   Serial.begin(115200);
+  analogReference(INTERNAL2V56);
   
   // setup IR ranger related pins
   pinMode(irVinPin,OUTPUT);

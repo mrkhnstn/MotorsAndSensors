@@ -28,6 +28,7 @@ public:
 	float		rayCenterDist[5];
 	bool		inSensorZone[5];
 	ofxVec2f	cartRayPos[5]; // cartesian ray position used for cv
+	bool*		rayEnabled[5];
 	
 	static bool doDraw;
 	static bool doDrawRays;

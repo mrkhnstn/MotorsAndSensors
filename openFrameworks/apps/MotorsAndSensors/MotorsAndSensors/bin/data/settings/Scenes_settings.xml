@@ -1,7 +1,7 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>10</value>
+        <value>8</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>

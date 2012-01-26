@@ -13,6 +13,15 @@ void SensorCtrl::setup(){
 	
 	Singleton<ofxOscManager>::instance()->registerInterest(*this,SENSOR_OSC_TAG);
 	
+	minDistance = 40;
+	maxDistance = 300;
+	distancePow = 3;
+	//analogMin = 40;
+	//analogMax = 470;
+	analogMin = 0;
+	analogMax = 1024;
+	bgAdaptFactor = 0.1;
+	
 	// calculate look up table
 	updateLUT();
 	
@@ -20,8 +29,11 @@ void SensorCtrl::setup(){
 	for(int i=0; i<TOTAL_RAYS; i++)
 	{
 		rawValues[i] = 0;
+		adaptedValues[i] = 0;
 		distanceValues[i] = SENSOR_MAX_DISTANCE;
-		averageValues[i].setSize(3);
+		averageValues[i].setSize(1);
+		rayEnabled[i] = true;
+		bgSubtract[i] = 0;
 	}
 	
 	int bank = 0;
@@ -48,16 +60,22 @@ void SensorCtrl::setup(){
 }
 
 void SensorCtrl::updateLUT(){
-	// TODO: visualize against spec sheet graph		
-	float minDistance = 40;
-	float maxDistance = 300;
-	float deltaDistance = maxDistance - minDistance;
-	float _pow = 3;
+	// TODO: visualize against spec sheet graph
 	
-	for (int i=0; i<1024; i++){
-		float n = ofMap(i, 60, 470, 1, 0, true);
-		float m = pow(n,_pow);
-		distanceLUT[i] = (int)ofMap(m, 0, 1, minDistance, maxDistance, true);
+	//float deltaDistance = maxDistance - minDistance;
+	//float _pow = 3;
+	if(doLUT){
+		for (int i=0; i<1024; i++){
+			//float analogMin = 40;
+			//float analogMax = 470;
+			float n = ofMap(i, analogMin, analogMax, 1, 0, true);
+			float m = pow(n,distancePow);
+			distanceLUT[i] = (int)ofMap(m, 0, 1, minDistance, maxDistance, true);
+		}
+	} else {
+		for (int i=0; i<1024; i++) {
+			distanceLUT[i] = (int)ofMap(i, 0, 1024, minDistance, maxDistance, true);
+		}
 	}
 }
 
@@ -67,6 +85,30 @@ void SensorCtrl::setupGUI(){
 	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
 	gui.addSlider("distanceToCentre", Sensor::distanceToCentre, 250, 350);
 	gui.addSlider("angleBetweenRays", Sensor::angleBetweenRays, 5, 10);
+	
+	
+	//gui.page("Sensors").addPageShortcut(gui.addPage("Sensors_Enabled"));
+	gui.addButton("enable all rays", this, &SensorCtrl::enableAllSensors);
+	gui.addButton("disable all rays", this, &SensorCtrl::disableAllSensors);
+	
+	gui.addSlider("analogMin", analogMin, 0, 1024);
+	gui.addSlider("analogMax", analogMax, 0, 1024);
+	
+	gui.addSlider("minDistance", minDistance, 0, 400);
+	gui.addSlider("maxDistance", maxDistance, 0, 400);
+	
+	gui.addSlider("bgAdaptFactor", bgAdaptFactor, 0, 0.1);
+	
+	gui.addSlider("distancePow", distancePow, 1, 5);
+	gui.addToggle("doLUT", doLUT);
+	gui.addToggle("doAveraging", doAveraging);
+	
+	
+	/*
+	for(int i=0; i<sensors.size(); i++){
+		gui.addToggle("sensor_"+ofToString(i), sensors[i]->enabled);
+	}
+	*/
 	
 	gui.addTitle("sensors");
 	int min = 0;
@@ -88,9 +130,17 @@ void SensorCtrl::setupGUI(){
 			int sensor = (int)floor(i / RAYS_PER_SENSOR);
 			gui.addSlider("distance_"+ofToString(sensor) + "-" + ofToString(i), distanceValues[i], 0, 300);
 		}
+		gui.addTitle("enabled").setNewColumn(true);
+		for(int i=min; i<max && i < TOTAL_RAYS; i++)
+		{
+			int sensor = (int)floor(i / RAYS_PER_SENSOR);
+			gui.addToggle("enabled_"+ofToString(sensor) + "-" + ofToString(i), rayEnabled[i]);
+		}
 		min += 20;
 		max += 20;
 	}
+	
+	
 	
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->setupGUI();
@@ -103,6 +153,24 @@ void SensorCtrl::setupGUI(){
 	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
 	gui.addToggle("drawOnlyInSensorZone", Sensor::drawOnlyInSensorZone);
 	//gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
+}
+
+void SensorCtrl::enableAllSensors(ofEventArgs& e){
+	//for (int i=0; i<sensors.size(); i++) {
+//		sensors[i]->enabled = true;
+//	}
+	for (int i=0; i<TOTAL_RAYS; i++) {
+		rayEnabled[i] = true;
+	}
+}
+
+void SensorCtrl::disableAllSensors(ofEventArgs& e){
+	//for (int i=0; i<sensors.size(); i++) {
+//		sensors[i]->enabled = false;
+//	}
+	for (int i=0; i<TOTAL_RAYS; i++) {
+		rayEnabled[i] = false;
+	}
 }
 
 void SensorCtrl::postGUI(){
@@ -118,6 +186,7 @@ void SensorCtrl::postGUI(){
 }
 
 void SensorCtrl::update(){
+	updateLUT();
 	updateDistanceValues();
 	
 	for(int i=0; i<sensors.size(); i++)
@@ -128,8 +197,28 @@ void SensorCtrl::updateDistanceValues(){
 	for (int i=0; i<TOTAL_RAYS; i++) {
 		
 		int lookupValue = ofClamp(rawValues[i], 0, 1023);
-		averageValues[i].addValue(distanceLUT[lookupValue]);
-		distanceValues[i] = averageValues[i].getAverage();
+		
+		float temp = lookupValue - bgSubtract[i];
+		adaptedValues[i] = temp;
+		bgSubtract[i] = bgSubtract[i] * (1-bgAdaptFactor) + lookupValue * bgAdaptFactor;
+		
+		averageValues[i].addValue(temp);
+		
+		if (rayEnabled[i]) {
+			
+			//float temp;
+			if (doAveraging) {
+				distanceValues[i] = distanceLUT[(int)averageValues[i].getAverage()];
+			} else {
+				distanceValues[i] = distanceLUT[lookupValue];
+			}
+
+			//distanceValues[i] = temp - bgSubtract[i];
+			//bgSubtract[i] = bgSubtract[i] * (1-bgAdaptFactor) + temp * bgAdaptFactor;
+		} else {
+			distanceValues[i] = 400; //TODO: exchange with variable
+		}
+		
 	}
 }
 
