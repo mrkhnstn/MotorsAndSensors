@@ -142,6 +142,7 @@ public:
 			case 3: // set all motors to display back panel
 				for(int i=0; i<getMotorCount(); i++)
 					panelBack(i);
+				break;
 			case 4: // animate panels back and forth
 				manualAngle += dir * angleVel * deltaTime;
 				//

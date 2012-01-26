@@ -5,11 +5,11 @@
     </SliderFloat_angle>
     <SliderFloat_velocity>
         <name>velocity</name>
-        <value>106.235291</value>
+        <value>70.941177</value>
     </SliderFloat_velocity>
     <ComboBox_angleMode>
         <name>angleMode</name>
-        <value>4</value>
+        <value>0</value>
     </ComboBox_angleMode>
     <SliderInt_motorSelected>
         <name>motorSelected</name>

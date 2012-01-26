@@ -30,8 +30,22 @@ public:
 
 	int rawValues[TOTAL_RAYS];			// raw 10-bit analog reading from sensors
 	AverageF averageValues[TOTAL_RAYS];
+	float bgSubtract[TOTAL_RAYS];
+	float adaptedValues[TOTAL_RAYS];
 	float distanceValues[TOTAL_RAYS];	// distance reading of each sensor in cm converted from rawValues
+	bool rayEnabled[TOTAL_RAYS];		// if false then disable ray
 	float distanceLUT[1024];			// look up table used to convert rawValues into distanceValues;
+	
+	
+	
+	bool doAveraging;
+	bool doLUT;
+	float minDistance;
+	float maxDistance;
+	float distancePow;
+	float analogMin;
+	float analogMax;
+	float bgAdaptFactor;
 	
 	vector<Sensor*> sensors;
 	
@@ -46,4 +60,7 @@ public:
 	void updateDistanceValues();
 	void handleOscMessage(ofxOscMessage& message);
 	void getSensorsBetweenAngles(vector<Sensor*>& tempSensors, float startAngle, float endAngle);
+	
+	void enableAllSensors(ofEventArgs& e);
+	void disableAllSensors(ofEventArgs& e);
 };

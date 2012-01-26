@@ -1,7 +1,7 @@
 <controls>
     <Toggle_doDraw>
         <name>doDraw</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDraw>
     <SliderFloat_drawScale>
         <name>drawScale</name>
@@ -25,7 +25,7 @@
     </SliderInt_testY>
     <SliderInt_testRadius>
         <name>testRadius</name>
-        <value>5</value>
+        <value>4</value>
     </SliderInt_testRadius>
     <Toggle_doDrawTest>
         <name>doDrawTest</name>
@@ -33,15 +33,15 @@
     </Toggle_doDrawTest>
     <SliderInt_smooth>
         <name>smooth</name>
-        <value>10</value>
+        <value>0</value>
     </SliderInt_smooth>
     <SliderInt_threshold>
         <name>threshold</name>
-        <value>75</value>
+        <value>0</value>
     </SliderInt_threshold>
     <SliderInt_minArea>
         <name>minArea</name>
-        <value>98</value>
+        <value>0</value>
     </SliderInt_minArea>
     <SliderInt_maxArea>
         <name>maxArea</name>
@@ -57,7 +57,7 @@
     </SliderFloat_polarMinRadius>
     <SliderFloat_polarMaxRadius>
         <name>polarMaxRadius</name>
-        <value>450.000000</value>
+        <value>517.647034</value>
     </SliderFloat_polarMaxRadius>
     <SliderFloat_cvMinX>
         <name>cvMinX</name>
@@ -65,7 +65,7 @@
     </SliderFloat_cvMinX>
     <SliderFloat_cvMaxX>
         <name>cvMaxX</name>
-        <value>256.000000</value>
+        <value>512.000000</value>
     </SliderFloat_cvMaxX>
     <SliderFloat_cvMinY>
         <name>cvMinY</name>
@@ -81,14 +81,14 @@
     </SliderFloat_minSensingZone>
     <SliderFloat_maxSensingZone>
         <name>maxSensingZone</name>
-        <value>390.588257</value>
+        <value>480.000000</value>
     </SliderFloat_maxSensingZone>
     <SliderInt_proximityMax>
         <name>proximityMax</name>
-        <value>30</value>
+        <value>35</value>
     </SliderInt_proximityMax>
     <SliderInt_proximityThreshold>
         <name>proximityThreshold</name>
-        <value>15</value>
+        <value>21</value>
     </SliderInt_proximityThreshold>
 </controls>

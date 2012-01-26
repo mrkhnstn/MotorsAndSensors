@@ -1,6 +1,6 @@
 <controls>
     <SliderFloat_closeDelayTime>
         <name>closeDelayTime</name>
-        <value>1.000000</value>
+        <value>0.529412</value>
     </SliderFloat_closeDelayTime>
 </controls>

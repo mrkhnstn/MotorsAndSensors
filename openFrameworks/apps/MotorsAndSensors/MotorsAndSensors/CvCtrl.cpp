@@ -71,8 +71,8 @@ void CvCtrl::setupGUI(){
 	
 	gui.addSlider("cvMinX", Coordinates::cartMinX, 0, 512);
 	gui.addSlider("cvMaxX", Coordinates::cartMaxX, 0, 512);
-	gui.addSlider("cvMinY", Coordinates::cartMinX, 0, 256);
-	gui.addSlider("cvMaxY", Coordinates::cartMaxX, 0, 256);
+	gui.addSlider("cvMinY", Coordinates::cartMinY, 0, 256);
+	gui.addSlider("cvMaxY", Coordinates::cartMaxY, 0, 256);
 	
 	gui.addTitle("sensing zone");
 	gui.addSlider("minSensingZone", Coordinates::minSensingZone, 0, 600);
@@ -96,7 +96,8 @@ void CvCtrl::update(){
 	cvImgFront.set(0);
 	
 	// draw test circle
-	cvCircle(cvImgFront.getCvImage(),cvPoint(testX,testY),testRadius,cvScalar(255),-1,4);
+	if(doDrawTest)
+		cvCircle(cvImgFront.getCvImage(),cvPoint(testX,testY),testRadius,cvScalar(255),-1,4);
 	
 	// draw sensor circles
 	vector<Sensor*>& sensors = Singleton<SensorCtrl>::instance()->sensors;
@@ -105,7 +106,7 @@ void CvCtrl::update(){
 		Sensor& sensor = *sensors[i];
 		for (int j=0; j<5; j++) {
 			ofxVec2f vec = sensor.cartRayPos[j];
-			if(vec.x >= 0 && vec.x < imgW && vec.y >= 0 && vec.y < localMaxSensingZone + 10) // if within img
+			if(vec.x >= 0 && vec.x < imgW && vec.y >= 0 && vec.y < imgH) // if within img
 			{
 				cvCircle(cvImgFront.getCvImage(),cvPoint(vec.x,vec.y),testRadius,cvScalar(255),-1,4);
 			}
@@ -198,7 +199,7 @@ void CvCtrl::draw(){
 		ofDrawBitmapString(ofToString(motor.index), 0, 0);	
 		
 		
-		ofLine(0, 0, 0, motor.proximityValue * proximityScale);
+		//ofLine(0, 0, 0, motor.proximityValue * proximityScale);
 		ofPopMatrix();
 	}
 	ofPopStyle();
@@ -220,6 +221,7 @@ void CvCtrl::draw(){
 	ofPushStyle();	
 	ofSetColor(0, 255, 0);
 	vector<Sensor*>& sensors = Singleton<SensorCtrl>::instance()->sensors;
+	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
 	for(int i=0; i<sensors.size(); i++)
 	{
 		Sensor& sensor = *sensors[i];
@@ -231,7 +233,26 @@ void CvCtrl::draw(){
 		//ofCircle(0,0, 2);
 		//font.drawString(ofToString(sensor.index), -4, -4);
 		ofDrawBitmapString(ofToString(sensor.index), -1, -2);
+		
+		
+		int rayOffset = i * 5;
+		/*
+		ofSetColor(0, 255, 0);
+		for(int j=0; j<5; j++){
+			ofLine(j*3, 0, j*3, sensorCtrl.rawValues[rayOffset+j] / 10);
+		}
+		ofSetColor(0, 255, 255);
+		for(int j=0; j<5; j++){
+			ofLine(j*3+1, 0, j*3+1, sensorCtrl.bgSubtract[rayOffset+j] / 10);
+		}
+		 */
+		ofSetColor(255, 0, 255);
+		for(int j=0; j<5; j++){
+			ofLine(j*3+2, 0, j*3+2, sensorCtrl.adaptedValues[rayOffset+j] / 10);
+		}
 		ofPopMatrix();
+		
+		
 	}
 	ofPopStyle();
 	

@@ -13,11 +13,11 @@
     </SliderFloat_velocity>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>0.030000</value>
+        <value>-0.720000</value>
     </SliderFloat_animationIndex>
     <SliderFloat_angle>
         <name>angle</name>
-        <value>92.699997</value>
+        <value>25.200020</value>
     </SliderFloat_angle>
     <ComboBox_animationMode>
         <name>animationMode</name>
