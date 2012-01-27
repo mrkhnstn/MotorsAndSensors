@@ -26,7 +26,7 @@ int main( ){
 	
 	// setup generic oF environment (see ofxTestBed)
 	ofxTestBed testBed;
-	testBed.fps = 60;
+	testBed.fps = 30;
 	testBed.vSync = true;
 	testBed.settingsFolder = "settings/";
 	testBed.dataFolder = "../../../data/";
@@ -50,11 +50,13 @@ int main( ){
 	//////////////////////////////////////////////
 	
 	// add the "main app" to the test bed 
-	MotorsAndSensors motorsAndSensors;
-	testBed.addTestObject(motorsAndSensors);
+	//MotorsAndSensors motorsAndSensors;
+	testBed.addTestObject(*Singleton<MotorsAndSensors>::instance());
 	
 	//SerialTest2 serialTest2;
 	//testBed.addTestObject(serialTest2);
 
 	ofRunApp(&testBed);
+	
+	delete Singleton<MotorsAndSensors>::instance();
 }

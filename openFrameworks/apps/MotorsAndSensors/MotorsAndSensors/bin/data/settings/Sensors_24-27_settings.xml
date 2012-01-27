@@ -77,154 +77,154 @@
     </SliderInt_raw_27-138>
     <SliderFloat_distance_24-120>
         <name>distance_24-120</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_24-120>
     <SliderFloat_distance_24-121>
         <name>distance_24-121</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_24-121>
     <SliderFloat_distance_24-122>
         <name>distance_24-122</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_24-122>
     <SliderFloat_distance_24-123>
         <name>distance_24-123</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_24-123>
     <SliderFloat_distance_24-124>
         <name>distance_24-124</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_24-124>
     <SliderFloat_distance_25-125>
         <name>distance_25-125</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_25-125>
     <SliderFloat_distance_25-126>
         <name>distance_25-126</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_25-126>
     <SliderFloat_distance_25-127>
         <name>distance_25-127</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_25-127>
     <SliderFloat_distance_25-128>
         <name>distance_25-128</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_25-128>
     <SliderFloat_distance_25-129>
         <name>distance_25-129</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_25-129>
     <SliderFloat_distance_26-130>
         <name>distance_26-130</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_26-130>
     <SliderFloat_distance_26-131>
         <name>distance_26-131</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_26-131>
     <SliderFloat_distance_26-132>
         <name>distance_26-132</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_26-132>
     <SliderFloat_distance_26-133>
         <name>distance_26-133</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_26-133>
     <SliderFloat_distance_26-134>
         <name>distance_26-134</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_26-134>
     <SliderFloat_distance_27-135>
         <name>distance_27-135</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_27-135>
     <SliderFloat_distance_27-136>
         <name>distance_27-136</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_27-136>
     <SliderFloat_distance_27-137>
         <name>distance_27-137</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_27-137>
     <SliderFloat_distance_27-138>
         <name>distance_27-138</name>
-        <value>400.000000</value>
+        <value>0.000000</value>
     </SliderFloat_distance_27-138>
     <Toggle_enabled_24-120>
         <name>enabled_24-120</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_24-120>
     <Toggle_enabled_24-121>
         <name>enabled_24-121</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_24-121>
     <Toggle_enabled_24-122>
         <name>enabled_24-122</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_24-122>
     <Toggle_enabled_24-123>
         <name>enabled_24-123</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_24-123>
     <Toggle_enabled_24-124>
         <name>enabled_24-124</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_24-124>
     <Toggle_enabled_25-125>
         <name>enabled_25-125</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_25-125>
     <Toggle_enabled_25-126>
         <name>enabled_25-126</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_25-126>
     <Toggle_enabled_25-127>
         <name>enabled_25-127</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_25-127>
     <Toggle_enabled_25-128>
         <name>enabled_25-128</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_25-128>
     <Toggle_enabled_25-129>
         <name>enabled_25-129</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_25-129>
     <Toggle_enabled_26-130>
         <name>enabled_26-130</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_26-130>
     <Toggle_enabled_26-131>
         <name>enabled_26-131</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_26-131>
     <Toggle_enabled_26-132>
         <name>enabled_26-132</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_26-132>
     <Toggle_enabled_26-133>
         <name>enabled_26-133</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_26-133>
     <Toggle_enabled_26-134>
         <name>enabled_26-134</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_26-134>
     <Toggle_enabled_27-135>
         <name>enabled_27-135</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_27-135>
     <Toggle_enabled_27-136>
         <name>enabled_27-136</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_27-136>
     <Toggle_enabled_27-137>
         <name>enabled_27-137</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_27-137>
     <Toggle_enabled_27-138>
         <name>enabled_27-138</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_27-138>
 </controls>

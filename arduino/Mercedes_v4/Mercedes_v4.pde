@@ -1,7 +1,7 @@
 #include <Servo.h>
 // configured to work with Arduino Mega 2560
 
-const int bank = 0; // this has to be individually set for each arduino!!
+const int bank = 1; // this has to be individually set for each arduino!!
 const int baudRate = 115200;
 const int numServos = 18;
 const int availServos = 18; // 8 for UNO, 18 for MEGA

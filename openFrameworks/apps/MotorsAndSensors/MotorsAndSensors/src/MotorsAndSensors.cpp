@@ -18,13 +18,19 @@ void MotorsAndSensors::setup(){
 	camera.eye();
 	camera.up();
 	
+	for(int i=0; i<4; i++)
+	{
+		arduinoId[i] = i;
+	}
+	
 	addObject(*Singleton<ofxOscManager>::instance());
 	Singleton<ofxOscManager>::instance()->port = 3334;
 	
-	addObject(*Singleton<MotorCtrl>::instance());
-	addObject(*Singleton<OscMotorCtrl>::instance());
 	addObject(*Singleton<SensorCtrl>::instance());
 	addObject(*Singleton<CvCtrl>::instance());
+	addObject(*Singleton<MotorCtrl>::instance());
+	addObject(*Singleton<OscMotorCtrl>::instance());
+
 	addObject(*Singleton<SceneCtrl>::instance());
 	
 	// setup 3d scene
@@ -40,6 +46,12 @@ void MotorsAndSensors::setup(){
 void MotorsAndSensors::setupGUI(){
 	
 	ofxBaseContainer::setupGUI();
+	
+	gui.page(1).addPageShortcut(gui.addPage("Arduino"));
+	for(int i=0; i<4; i++)
+	{
+		gui.addSlider("bank_"+ofToString(i), arduinoId[i], 0, 10);
+	}
 	
 	gui.page(1).addPageShortcut(gui.addPage("3D"));
 	

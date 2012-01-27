@@ -34,9 +34,12 @@ void MotorCtrl::setupGUI(){
 	
 	gui.page(1).addPageShortcut(gui.addPage("Motors"));
 	
+	gui.addSlider("userOffDelayTime", Motor::userOffDelayTime,0,3);
+	
 	gui.addTitle("servo limits");
 	gui.addSlider("servoMin", Motor::pulseMin, 550, 2350);
 	gui.addSlider("servoMax", Motor::pulseMax, 550, 2350);
+	
 	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,0.1,2);
 	gui.addSlider("distanceToCentre", Motor::distanceToCentre, 270, 350);
 	

@@ -35,10 +35,38 @@
         <name>maxDistance</name>
         <value>272.156860</value>
     </SliderFloat_maxDistance>
+    <SliderFloat_adaptLerpStrength>
+        <name>adaptLerpStrength</name>
+        <value>0.266155</value>
+    </SliderFloat_adaptLerpStrength>
+    <SliderFloat_adjacentLerpStrength>
+        <name>adjacentLerpStrength</name>
+        <value>0.035245</value>
+    </SliderFloat_adjacentLerpStrength>
     <SliderFloat_bgAdaptFactor>
         <name>bgAdaptFactor</name>
-        <value>0.000100</value>
+        <value>0.010000</value>
     </SliderFloat_bgAdaptFactor>
+    <SliderFloat_hitThreshold>
+        <name>hitThreshold</name>
+        <value>94.368629</value>
+    </SliderFloat_hitThreshold>
+    <SliderFloat_hitScoreThreshold>
+        <name>hitScoreThreshold</name>
+        <value>27.076471</value>
+    </SliderFloat_hitScoreThreshold>
+    <SliderFloat_maxHitScore>
+        <name>maxHitScore</name>
+        <value>131.382355</value>
+    </SliderFloat_maxHitScore>
+    <SliderFloat_hitScoreIncFactor>
+        <name>hitScoreIncFactor</name>
+        <value>0.097353</value>
+    </SliderFloat_hitScoreIncFactor>
+    <SliderFloat_hitScoreDecFactor>
+        <name>hitScoreDecFactor</name>
+        <value>0.058529</value>
+    </SliderFloat_hitScoreDecFactor>
     <SliderFloat_distancePow>
         <name>distancePow</name>
         <value>1.000000</value>

@@ -5,16 +5,36 @@
     </Toggle_doDraw>
     <SliderFloat_drawScale>
         <name>drawScale</name>
-        <value>2.702941</value>
+        <value>6.591177</value>
     </SliderFloat_drawScale>
     <SliderFloat_drawX>
         <name>drawX</name>
-        <value>129.505859</value>
+        <value>10.000000</value>
     </SliderFloat_drawX>
     <SliderFloat_drawY>
         <name>drawY</name>
-        <value>9.035278</value>
+        <value>10.000000</value>
     </SliderFloat_drawY>
+    <SliderFloat_rayDrawScale>
+        <name>rayDrawScale</name>
+        <value>1.000000</value>
+    </SliderFloat_rayDrawScale>
+    <Toggle_doDrawRaw>
+        <name>doDrawRaw</name>
+        <value>0</value>
+    </Toggle_doDrawRaw>
+    <Toggle_doDrawBg>
+        <name>doDrawBg</name>
+        <value>0</value>
+    </Toggle_doDrawBg>
+    <Toggle_doDrawAdapter>
+        <name>doDrawAdapter</name>
+        <value>1</value>
+    </Toggle_doDrawAdapter>
+    <Toggle_doDrawHitScore>
+        <name>doDrawHitScore</name>
+        <value>1</value>
+    </Toggle_doDrawHitScore>
     <SliderInt_testX>
         <name>testX</name>
         <value>256</value>

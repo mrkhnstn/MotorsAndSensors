@@ -1,155 +1,155 @@
 <controls>
     <SliderInt_raw_0-0>
         <name>raw_0-0</name>
-        <value>702</value>
+        <value>477</value>
     </SliderInt_raw_0-0>
     <SliderInt_raw_0-1>
         <name>raw_0-1</name>
-        <value>580</value>
+        <value>189</value>
     </SliderInt_raw_0-1>
     <SliderInt_raw_0-2>
         <name>raw_0-2</name>
-        <value>270</value>
+        <value>258</value>
     </SliderInt_raw_0-2>
     <SliderInt_raw_0-3>
         <name>raw_0-3</name>
-        <value>102</value>
+        <value>16</value>
     </SliderInt_raw_0-3>
     <SliderInt_raw_0-4>
         <name>raw_0-4</name>
-        <value>184</value>
+        <value>142</value>
     </SliderInt_raw_0-4>
     <SliderInt_raw_1-5>
         <name>raw_1-5</name>
-        <value>24</value>
+        <value>347</value>
     </SliderInt_raw_1-5>
     <SliderInt_raw_1-6>
         <name>raw_1-6</name>
-        <value>80</value>
+        <value>392</value>
     </SliderInt_raw_1-6>
     <SliderInt_raw_1-7>
         <name>raw_1-7</name>
-        <value>192</value>
+        <value>234</value>
     </SliderInt_raw_1-7>
     <SliderInt_raw_1-8>
         <name>raw_1-8</name>
-        <value>122</value>
+        <value>475</value>
     </SliderInt_raw_1-8>
     <SliderInt_raw_1-9>
         <name>raw_1-9</name>
-        <value>18</value>
+        <value>487</value>
     </SliderInt_raw_1-9>
     <SliderInt_raw_2-10>
         <name>raw_2-10</name>
-        <value>37</value>
+        <value>431</value>
     </SliderInt_raw_2-10>
     <SliderInt_raw_2-11>
         <name>raw_2-11</name>
-        <value>18</value>
+        <value>151</value>
     </SliderInt_raw_2-11>
     <SliderInt_raw_2-12>
         <name>raw_2-12</name>
-        <value>79</value>
+        <value>194</value>
     </SliderInt_raw_2-12>
     <SliderInt_raw_2-13>
         <name>raw_2-13</name>
-        <value>291</value>
+        <value>254</value>
     </SliderInt_raw_2-13>
     <SliderInt_raw_2-14>
         <name>raw_2-14</name>
-        <value>326</value>
+        <value>296</value>
     </SliderInt_raw_2-14>
     <SliderInt_raw_3-15>
         <name>raw_3-15</name>
-        <value>199</value>
+        <value>396</value>
     </SliderInt_raw_3-15>
     <SliderInt_raw_3-16>
         <name>raw_3-16</name>
-        <value>89</value>
+        <value>671</value>
     </SliderInt_raw_3-16>
     <SliderInt_raw_3-17>
         <name>raw_3-17</name>
-        <value>229</value>
+        <value>697</value>
     </SliderInt_raw_3-17>
     <SliderInt_raw_3-18>
         <name>raw_3-18</name>
-        <value>247</value>
+        <value>456</value>
     </SliderInt_raw_3-18>
     <SliderFloat_distance_0-0>
         <name>distance_0-0</name>
-        <value>113.000000</value>
+        <value>0.000071</value>
     </SliderFloat_distance_0-0>
     <SliderFloat_distance_0-1>
         <name>distance_0-1</name>
-        <value>140.000000</value>
+        <value>0.000675</value>
     </SliderFloat_distance_0-1>
     <SliderFloat_distance_0-2>
         <name>distance_0-2</name>
-        <value>210.000000</value>
+        <value>0.001535</value>
     </SliderFloat_distance_0-2>
     <SliderFloat_distance_0-3>
         <name>distance_0-3</name>
-        <value>249.000000</value>
+        <value>0.000163</value>
     </SliderFloat_distance_0-3>
     <SliderFloat_distance_0-4>
         <name>distance_0-4</name>
-        <value>230.000000</value>
+        <value>0.000017</value>
     </SliderFloat_distance_0-4>
     <SliderFloat_distance_1-5>
         <name>distance_1-5</name>
-        <value>266.000000</value>
+        <value>0.000002</value>
     </SliderFloat_distance_1-5>
     <SliderFloat_distance_1-6>
         <name>distance_1-6</name>
-        <value>254.000000</value>
+        <value>0.000002</value>
     </SliderFloat_distance_1-6>
     <SliderFloat_distance_1-7>
         <name>distance_1-7</name>
-        <value>228.000000</value>
+        <value>0.000015</value>
     </SliderFloat_distance_1-7>
     <SliderFloat_distance_1-8>
         <name>distance_1-8</name>
-        <value>244.000000</value>
+        <value>0.000143</value>
     </SliderFloat_distance_1-8>
     <SliderFloat_distance_1-9>
         <name>distance_1-9</name>
-        <value>268.000000</value>
+        <value>0.001349</value>
     </SliderFloat_distance_1-9>
     <SliderFloat_distance_2-10>
         <name>distance_2-10</name>
-        <value>263.000000</value>
+        <value>0.001216</value>
     </SliderFloat_distance_2-10>
     <SliderFloat_distance_2-11>
         <name>distance_2-11</name>
-        <value>268.000000</value>
+        <value>0.000129</value>
     </SliderFloat_distance_2-11>
     <SliderFloat_distance_2-12>
         <name>distance_2-12</name>
-        <value>254.000000</value>
+        <value>0.000016</value>
     </SliderFloat_distance_2-12>
     <SliderFloat_distance_2-13>
         <name>distance_2-13</name>
-        <value>206.000000</value>
+        <value>0.000020</value>
     </SliderFloat_distance_2-13>
     <SliderFloat_distance_2-14>
         <name>distance_2-14</name>
-        <value>198.000000</value>
+        <value>0.000177</value>
     </SliderFloat_distance_2-14>
     <SliderFloat_distance_3-15>
         <name>distance_3-15</name>
-        <value>400.000000</value>
+        <value>0.001668</value>
     </SliderFloat_distance_3-15>
     <SliderFloat_distance_3-16>
         <name>distance_3-16</name>
-        <value>400.000000</value>
+        <value>0.000775</value>
     </SliderFloat_distance_3-16>
     <SliderFloat_distance_3-17>
         <name>distance_3-17</name>
-        <value>400.000000</value>
+        <value>0.004348</value>
     </SliderFloat_distance_3-17>
     <SliderFloat_distance_3-18>
         <name>distance_3-18</name>
-        <value>400.000000</value>
+        <value>0.000657</value>
     </SliderFloat_distance_3-18>
     <Toggle_enabled_0-0>
         <name>enabled_0-0</name>
@@ -213,18 +213,18 @@
     </Toggle_enabled_2-14>
     <Toggle_enabled_3-15>
         <name>enabled_3-15</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_3-15>
     <Toggle_enabled_3-16>
         <name>enabled_3-16</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_3-16>
     <Toggle_enabled_3-17>
         <name>enabled_3-17</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_3-17>
     <Toggle_enabled_3-18>
         <name>enabled_3-18</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_enabled_3-18>
 </controls>

@@ -40,6 +40,7 @@ ofTrueTypeFont Motor::font;
 
 int Motor::maxProximityValue = 30;
 int Motor::proximityOnThreshold = 5;
+float Motor::userOffDelayTime = 2;
 
 void Motor::setup(){
 	if(doStaticInit)
@@ -63,6 +64,23 @@ void Motor::setup(){
 	proximityValue = 0;
 	userInProximityOnTime = 0;
 	userInproximityOffTime = 0;
+	
+	
+	relativePos = index * MOTOR_GAP;// position in relation to rays;
+	float minPos = relativePos - 2 * RAY_GAP;
+	float maxPos = relativePos + 2 * RAY_GAP;
+	
+	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
+	//vector<Sensor*>& sensors = sensorCtrls->sensors;
+	rayIds.clear();
+	for (int i=0; i<TOTAL_RAYS; i++) {
+		if (sensorCtrl.rayPos[i] >= minPos && sensorCtrl.rayPos[i] <= maxPos) {
+			rayIds.push_back(i);
+			ofLog(OF_LOG_VERBOSE, ofToString(index) + ">>" + ofToString(i));
+		}
+	}
+	
+	
 }
 
 void Motor::setupGUI(){
@@ -79,7 +97,7 @@ void Motor::postGUI(){
 
 void Motor::update(){
 	// update users in proximity
-	//updateUserProximity(); // outdated
+	updateUserProximity();
 	
 	cartPos = Coordinates::fromPolar(pos);
 	
@@ -88,6 +106,8 @@ void Motor::update(){
 	float dir = delta < 0 ? -1 : 1;
 	float clampedDelta = dir * ofClamp(abs(delta),0,maxAngleNSpeed * elapsedTime);
 	angleN = angleN + clampedDelta;
+	
+	
 }
 
 void Motor::draw(){
@@ -194,12 +214,31 @@ void Motor::updateSensors(){
 }
 
 void Motor::updateUserProximity(){
-	_userInProximity = false;
+	bool temp = false;
+	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
+	for(int i=0; i<rayIds.size(); i++)
+	{
+		if (sensorCtrl.hit[rayIds[i]]) {
+			temp = true;
+			break;
+		}
+	}
+	
+	if (_userInProximity != temp) {
+		_userInProximity = temp;
+		if (_userInProximity) {
+			userInProximityOnTime = ofGetElapsedTimef();
+		} else {
+			userInproximityOffTime = ofGetElapsedTimef();
+		}
+	}
+	/*
 	for(int i=0; i<sensors.size(); i++)
 		if (sensors[i]->userInProximity()) {
 			_userInProximity = true;
 			break;
 		}
+	*/
 }
 
 void Motor::setBackColor(){
@@ -260,7 +299,11 @@ void Motor::userInProximityOff(){
 
 // simple binary way of figuring out whether a user stands in front of this motor
 bool Motor::userInProximity(){
-	return _userInProximity;
+	if (_userInProximity){
+		return true;
+	} else {
+		return ofGetElapsedTimef() < userInproximityOffTime + userOffDelayTime;
+	}
 }
 
 /*
