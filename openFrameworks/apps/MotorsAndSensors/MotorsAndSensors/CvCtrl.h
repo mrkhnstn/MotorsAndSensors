@@ -20,6 +20,7 @@ public:
 	
 	bool doDraw;
 	float drawScale;
+	float rayDrawScale;
 	float drawX;
 	float drawY;
 	
@@ -37,11 +38,22 @@ public:
 	int testX;
 	int testY;
 	int testRadius;
-	
-	float motorGap; // distance between adjacent motors in cv coordinate system
 
 	float localMinSensingZone;
 	float localMaxSensingZone;
+	
+	bool doDrawRaw;
+	bool doDrawBg;
+	bool doDrawAdapted;
+	bool doDrawHitScore;
+	
+	//
+	float rayGap;
+	float motorGap;
+	float sensorOffset;
+	float sensorGap;
+	float rayOffset;
+
 	
 	ofTrueTypeFont font;
 	

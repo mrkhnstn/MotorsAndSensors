@@ -16,27 +16,47 @@
 class InteractiveScene : public Scene {
 public:
 	
-	float closeDelayTime;
+	//float closeDelayTime;
+	
+	bool doAdjacent;
 	
 	void setup(){
 		Scene::setup();
 		name = "InteractiveScene";
-		closeDelayTime = 3;
+		doAdjacent = false;
+		//closeDelayTime = 3;
 	}
 	
 	void setupGUI(){
 		Scene::setupGUI();
-		gui.addSlider("closeDelayTime",closeDelayTime,0,10);
+		gui.addToggle("doAdjacent", doAdjacent);
+		//gui.addSlider("closeDelayTime",closeDelayTime,0,10);
 	}
 	
 	void update(){
 		Scene::update();
-		for (int i=0; i<getMotorCount(); i++)
-			if (userInFrontOfMotor(i) || ofGetElapsedTimef() < getMotor(i).userInproximityOffTime + closeDelayTime) {
-				panelOpen(i);
-			} else {
-				panelFront(i);
+		if(doAdjacent){
+			for (int i=0; i<getMotorCount(); i++){
+				int left = (i == 0) ? getMotorCount()-1 : i - 1;
+				int right = (i == getMotorCount()-1) ? 0 : i + 1;
+				if(userInFrontOfMotor(i) || userInFrontOfMotor(left) || userInFrontOfMotor(right))
+				{
+					panelOpen(i);
+				} else {
+					panelFront(i);
+				}
 			}
+		} else {
+			for (int i=0; i<getMotorCount(); i++){
+				if(userInFrontOfMotor(i))
+				{
+					panelOpen(i);
+				} else {
+					panelFront(i);
+				}
+			}
+			
+		}
 	}
 	
 };

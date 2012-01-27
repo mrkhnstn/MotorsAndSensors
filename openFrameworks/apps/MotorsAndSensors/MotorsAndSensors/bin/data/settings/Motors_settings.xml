@@ -1,4 +1,8 @@
 <controls>
+    <SliderFloat_userOffDelayTime>
+        <name>userOffDelayTime</name>
+        <value>1.500000</value>
+    </SliderFloat_userOffDelayTime>
     <SliderInt_servoMin>
         <name>servoMin</name>
         <value>600</value>
@@ -9,7 +13,7 @@
     </SliderInt_servoMax>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
-        <value>0.208039</value>
+        <value>1.005294</value>
     </SliderFloat_servoMaxSpeed>
     <SliderFloat_distanceToCentre>
         <name>distanceToCentre</name>

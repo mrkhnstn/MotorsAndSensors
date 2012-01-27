@@ -13,7 +13,7 @@
     </SliderFloat_frameDuration>
     <SliderInt_tickCounter>
         <name>tickCounter</name>
-        <value>2</value>
+        <value>5</value>
     </SliderInt_tickCounter>
     <ComboBox_possiblePortionsIndex>
         <name>possiblePortionsIndex</name>

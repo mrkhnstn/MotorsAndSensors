@@ -8,7 +8,7 @@
     </ColorPicker_bg_color>
     <SliderFloat_cylinder_rotation>
         <name>cylinder_rotation</name>
-        <value>170.117645</value>
+        <value>249.176468</value>
     </SliderFloat_cylinder_rotation>
     <SliderFloat_camera_x>
         <name>camera_x</name>
@@ -16,11 +16,11 @@
     </SliderFloat_camera_x>
     <SliderFloat_camera_y>
         <name>camera_y</name>
-        <value>486.274536</value>
+        <value>219.607788</value>
     </SliderFloat_camera_y>
     <SliderFloat_camera_z>
         <name>camera_z</name>
-        <value>1000.000000</value>
+        <value>564.705811</value>
     </SliderFloat_camera_z>
     <SliderFloat_eye_x>
         <name>eye_x</name>

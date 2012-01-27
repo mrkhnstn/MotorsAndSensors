@@ -15,10 +15,6 @@
         <name>OSC</name>
         <value>0</value>
     </Button_OSC>
-    <Button_Motors>
-        <name>Motors</name>
-        <value>0</value>
-    </Button_Motors>
     <Button_Sensors>
         <name>Sensors</name>
         <value>0</value>
@@ -27,10 +23,18 @@
         <name>ComputerVision</name>
         <value>0</value>
     </Button_ComputerVision>
+    <Button_Motors>
+        <name>Motors</name>
+        <value>0</value>
+    </Button_Motors>
     <Button_Scenes>
         <name>Scenes</name>
         <value>0</value>
     </Button_Scenes>
+    <Button_Arduino>
+        <name>Arduino</name>
+        <value>0</value>
+    </Button_Arduino>
     <Button_3D>
         <name>3D</name>
         <value>0</value>

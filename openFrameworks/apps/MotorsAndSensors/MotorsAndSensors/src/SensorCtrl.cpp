@@ -8,6 +8,7 @@
  */
 
 #include "SensorCtrl.h"
+#include "MotorsAndSensors.h"
 
 void SensorCtrl::setup(){
 	
@@ -21,6 +22,12 @@ void SensorCtrl::setup(){
 	analogMin = 0;
 	analogMax = 1024;
 	bgAdaptFactor = 0.1;
+	_bgAdaptFactor = 1;
+	adaptLerpStrength = 0.1;
+	globalHitThreshold = 512;
+	maxHitScore = 50;
+	hitScoreIncFactor = 0.1;
+	hitScoreDecFactor = 0.1;
 	
 	// calculate look up table
 	updateLUT();
@@ -34,6 +41,10 @@ void SensorCtrl::setup(){
 		averageValues[i].setSize(1);
 		rayEnabled[i] = true;
 		bgSubtract[i] = 0;
+		hitThreshold[i] = globalHitThreshold;
+		hitScore[i] = 0;
+		hit[i] = false;
+		rayPos[i] = RAY_OFFSET + i * RAY_GAP;
 	}
 	
 	int bank = 0;
@@ -59,26 +70,6 @@ void SensorCtrl::setup(){
 	}
 }
 
-void SensorCtrl::updateLUT(){
-	// TODO: visualize against spec sheet graph
-	
-	//float deltaDistance = maxDistance - minDistance;
-	//float _pow = 3;
-	if(doLUT){
-		for (int i=0; i<1024; i++){
-			//float analogMin = 40;
-			//float analogMax = 470;
-			float n = ofMap(i, analogMin, analogMax, 1, 0, true);
-			float m = pow(n,distancePow);
-			distanceLUT[i] = (int)ofMap(m, 0, 1, minDistance, maxDistance, true);
-		}
-	} else {
-		for (int i=0; i<1024; i++) {
-			distanceLUT[i] = (int)ofMap(i, 0, 1024, minDistance, maxDistance, true);
-		}
-	}
-}
-
 void SensorCtrl::setupGUI(){
 	gui.page(1).addPageShortcut(gui.addPage("Sensors"));
 	
@@ -97,7 +88,14 @@ void SensorCtrl::setupGUI(){
 	gui.addSlider("minDistance", minDistance, 0, 400);
 	gui.addSlider("maxDistance", maxDistance, 0, 400);
 	
+	gui.addSlider("adaptLerpStrength", adaptLerpStrength, 0.001, 0.5);
+	gui.addSlider("adjacentLerpStrength", adjLerpStrength, 0.001, 0.5);
 	gui.addSlider("bgAdaptFactor", bgAdaptFactor, 0, 0.1);
+	gui.addSlider("hitThreshold", globalHitThreshold, 0, 1024);
+	gui.addSlider("hitScoreThreshold", globalHitScoreThreshold, 1, 1024);
+	gui.addSlider("maxHitScore", maxHitScore, 1, 1024);
+	gui.addSlider("hitScoreIncFactor", hitScoreIncFactor,0.01,1);
+	gui.addSlider("hitScoreDecFactor", hitScoreDecFactor,0.01,1);
 	
 	gui.addSlider("distancePow", distancePow, 1, 5);
 	gui.addToggle("doLUT", doLUT);
@@ -193,30 +191,87 @@ void SensorCtrl::update(){
 		sensors[i]->update();
 }
 
+void SensorCtrl::updateLUT(){
+	// TODO: visualize against spec sheet graph
+	
+	//float deltaDistance = maxDistance - minDistance;
+	//float _pow = 3;
+	if(doLUT){
+		for (int i=0; i<1024; i++){
+			//float analogMin = 40;
+			//float analogMax = 470;
+			float n = ofMap(i, analogMin, analogMax, 1, 0, true);
+			float m = pow(n,distancePow);
+			distanceLUT[i] = (int)ofMap(m, 0, 1, minDistance, maxDistance, true);
+		}
+	} else {
+		for (int i=0; i<1024; i++) {
+			distanceLUT[i] = (int)ofMap(i, 0, 1024, minDistance, maxDistance, true);
+		}
+	}
+}
+
 void SensorCtrl::updateDistanceValues(){
+	
+	if (_bgAdaptFactor > bgAdaptFactor) {
+		_bgAdaptFactor -= 0.01;
+	} else {
+		_bgAdaptFactor = bgAdaptFactor;
+	}
+	
 	for (int i=0; i<TOTAL_RAYS; i++) {
 		
-		int lookupValue = ofClamp(rawValues[i], 0, 1023);
+		float rawValue = ofClamp(rawValues[i], 0, 1023);
 		
-		float temp = lookupValue - bgSubtract[i];
-		adaptedValues[i] = temp;
-		bgSubtract[i] = bgSubtract[i] * (1-bgAdaptFactor) + lookupValue * bgAdaptFactor;
+		float bgSubValue = rawValue - bgSubtract[i];
+		if(bgSubValue < 0) bgSubValue = 0;
 		
-		averageValues[i].addValue(temp);
+		// lerp adapted value towards bgSubValue
+		int left = (i == 0) ? TOTAL_RAYS-1 : i - 1;
+		int right = (i == TOTAL_RAYS-1) ? 0 : i + 1;
+		adaptedValues[i] = adaptedValues[i] + (bgSubValue-adaptedValues[i])*adaptLerpStrength + (distanceValues[left] - adaptedValues[i])*adjLerpStrength +  (distanceValues[right] - adaptedValues[i])*adjLerpStrength;
+		
+		
+		// dynamically adapt bg values
+		bgSubtract[i] = bgSubtract[i] * (1-_bgAdaptFactor) + rawValue * _bgAdaptFactor;
+		
+		//averageValues[i].addValue(bgSubValue);
 		
 		if (rayEnabled[i]) {
+		
+			distanceValues[i] = adaptedValues[i];
 			
+			hitThreshold[i] = globalHitThreshold;
+			
+			float thresholdDelta = distanceValues[i] - hitThreshold[i];
+			
+			// TODO: implement hit score calculation
+			// depending on amount of thresholdDelta (individual positive, negative)
+			if(thresholdDelta > 0){
+				hitScore[i] = hitScore[i] + thresholdDelta * hitScoreIncFactor;
+			} else {
+				hitScore[i] = hitScore[i] + thresholdDelta * hitScoreDecFactor;
+			}	
+			hitScore[i] = ofClamp(hitScore[i], 0, maxHitScore);
+			
+			hit[i] = hitScore[i] > globalHitScoreThreshold;
+				
+			
+			/*
 			//float temp;
 			if (doAveraging) {
 				distanceValues[i] = distanceLUT[(int)averageValues[i].getAverage()];
 			} else {
-				distanceValues[i] = distanceLUT[lookupValue];
+				distanceValues[i] = distanceLUT[rawValue];
 			}
-
+			*/
+			
 			//distanceValues[i] = temp - bgSubtract[i];
 			//bgSubtract[i] = bgSubtract[i] * (1-bgAdaptFactor) + temp * bgAdaptFactor;
 		} else {
-			distanceValues[i] = 400; //TODO: exchange with variable
+			distanceValues[i] = 0; //TODO: exchange with variable
+			hitScore[i] = 0;
+			hit[i] = false;
 		}
 		
 	}
@@ -249,13 +304,27 @@ void SensorCtrl::handleOscMessage(ofxOscMessage& message){
 	if (message.getAddress() == SENSOR_OSC_TAG) {
 		//TODO: check number of args
 		
-		int bank = message.getArgAsInt32(0); //TODO: set LUT bank via GUI
 		
-		int offset = bank * RAYS_PER_BANK;
-		int argId = 1;
+		int* arduinoId = Singleton<MotorsAndSensors>::instance()->arduinoId;
+		int foundId = -1;
+		int receivedId = message.getArgAsInt32(0);
+		for(int i=0; i<4; i++)
+		{
+			if (arduinoId[i] == receivedId) {
+				foundId = i;
+				break;
+			}
+		}
 		
-		for(int i=0; i<RAYS_PER_BANK; i++){
-			rawValues[offset+i] = message.getArgAsInt32(i+1);
+		if(foundId != -1){
+			int bank = foundId; //TODO: set LUT bank via GUI
+		
+			int offset = bank * RAYS_PER_BANK;
+			int argId = 1;
+		
+			for(int i=0; i<RAYS_PER_BANK; i++){
+				rawValues[offset+i] = message.getArgAsInt32(i+1);
+			}
 		}
 		
 		/*

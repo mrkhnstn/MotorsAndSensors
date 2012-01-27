@@ -19,6 +19,7 @@ public:
 	static float elapsedTime;
 	static float maxMotorSpeed;
 	static float maxAngleNSpeed;
+	static float userOffDelayTime; // time after no user detection to consider user still in proximity (to eliminate flickering)
 	
 	static int pulseMin;
 	static int pulseMax;
@@ -63,6 +64,9 @@ public:
 	static int maxProximityValue;
 	static int proximityOnThreshold; // if proximity value of sensor is larger then proximityOnThreshold then a user is in proximity
 	bool proximityUpdated;
+	
+	float relativePos; // position in relation to rays;
+	vector<int> rayIds;
 	
 	void setup();
 	void setupGUI();

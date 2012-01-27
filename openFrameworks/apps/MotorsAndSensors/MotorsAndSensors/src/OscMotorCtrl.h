@@ -18,7 +18,7 @@ public:
 	
 	ofxOscSender oscSender;
 	MotorCtrl* motorCtrl;
-	
+	int* arduinoId;
 	int sendFreqMs;
 	int nextSendTime; // if ofGetElapsedTimeMillis() > nextSendTime then send motor values to SD84
 	

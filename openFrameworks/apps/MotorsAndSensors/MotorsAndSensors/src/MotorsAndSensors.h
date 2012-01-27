@@ -30,6 +30,8 @@ public:
 	
 	ofColor bgColor;
 	
+	int arduinoId[4]; // used to map arduino ids to banks
+	
 	void setup();
 	void setupGUI();
 	void postGUI();

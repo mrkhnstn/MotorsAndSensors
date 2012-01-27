@@ -8,12 +8,14 @@
  */
 
 #include "OscMotorCtrl.h"
+#include "MotorsAndSensors.h"
 
 void OscMotorCtrl::setup(){
 	oscSender.setup("127.0.0.1", 3333);
 	motorCtrl = Singleton<MotorCtrl>::instance();
 	sendFreqMs = 200;
 	nextSendTime = ofGetElapsedTimeMillis() + sendFreqMs;
+	arduinoId = Singleton<MotorsAndSensors>::instance()->arduinoId;
 }
 
 void OscMotorCtrl::setupGUI(){
@@ -26,21 +28,23 @@ void OscMotorCtrl::update(){
 	
 	if(ofGetElapsedTimeMillis() > nextSendTime){
 		
-		int numSendChannels = 18;
-		
-		ofxOscMessage m;
-		m.setAddress("/servo");
-		m.addIntArg(0);		// bank
-		
-		for (int i=0; i<numSendChannels; i++) {
+			int numSendChannels = 18;
 			
-			Motor& motor = *motorCtrl->motors[i];
-			int servoVal = ofMap(motor.angleN, 0, 1, Motor::pulseMin, Motor::pulseMax, true);
-			m.addIntArg(servoVal);
+			for(int bank=0; bank<4; bank++){
+			ofxOscMessage m;
+			m.setAddress("/servo");
+			m.addIntArg(Singleton<MotorsAndSensors>::instance()->arduinoId[bank]);		// bank
+			//m.addIntArg(4);
+			for (int i=bank*18; i<(bank+1)*18; i++) {
+				
+				Motor& motor = *motorCtrl->motors[i];
+				int servoVal = ofMap(motor.angleN, 0, 1, Motor::pulseMin, Motor::pulseMax, true);
+				m.addIntArg(servoVal);
+				
+			}
 			
+			oscSender.sendMessage(m);
 		}
-		
-		oscSender.sendMessage(m);
 		
 		nextSendTime = ofGetElapsedTimeMillis() + sendFreqMs;
 	}
