@@ -77,78 +77,154 @@
     </SliderInt_raw_35-178>
     <SliderFloat_distance_32-160>
         <name>distance_32-160</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_32-160>
     <SliderFloat_distance_32-161>
         <name>distance_32-161</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_32-161>
     <SliderFloat_distance_32-162>
         <name>distance_32-162</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_32-162>
     <SliderFloat_distance_32-163>
         <name>distance_32-163</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_32-163>
     <SliderFloat_distance_32-164>
         <name>distance_32-164</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_32-164>
     <SliderFloat_distance_33-165>
         <name>distance_33-165</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_33-165>
     <SliderFloat_distance_33-166>
         <name>distance_33-166</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_33-166>
     <SliderFloat_distance_33-167>
         <name>distance_33-167</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_33-167>
     <SliderFloat_distance_33-168>
         <name>distance_33-168</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_33-168>
     <SliderFloat_distance_33-169>
         <name>distance_33-169</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_33-169>
     <SliderFloat_distance_34-170>
         <name>distance_34-170</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_34-170>
     <SliderFloat_distance_34-171>
         <name>distance_34-171</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_34-171>
     <SliderFloat_distance_34-172>
         <name>distance_34-172</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_34-172>
     <SliderFloat_distance_34-173>
         <name>distance_34-173</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_34-173>
     <SliderFloat_distance_34-174>
         <name>distance_34-174</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_34-174>
     <SliderFloat_distance_35-175>
         <name>distance_35-175</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_35-175>
     <SliderFloat_distance_35-176>
         <name>distance_35-176</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_35-176>
     <SliderFloat_distance_35-177>
         <name>distance_35-177</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_35-177>
     <SliderFloat_distance_35-178>
         <name>distance_35-178</name>
-        <value>100.000000</value>
+        <value>40.000000</value>
     </SliderFloat_distance_35-178>
+    <Toggle_enabled_32-160>
+        <name>enabled_32-160</name>
+        <value>1</value>
+    </Toggle_enabled_32-160>
+    <Toggle_enabled_32-161>
+        <name>enabled_32-161</name>
+        <value>1</value>
+    </Toggle_enabled_32-161>
+    <Toggle_enabled_32-162>
+        <name>enabled_32-162</name>
+        <value>1</value>
+    </Toggle_enabled_32-162>
+    <Toggle_enabled_32-163>
+        <name>enabled_32-163</name>
+        <value>1</value>
+    </Toggle_enabled_32-163>
+    <Toggle_enabled_32-164>
+        <name>enabled_32-164</name>
+        <value>1</value>
+    </Toggle_enabled_32-164>
+    <Toggle_enabled_33-165>
+        <name>enabled_33-165</name>
+        <value>1</value>
+    </Toggle_enabled_33-165>
+    <Toggle_enabled_33-166>
+        <name>enabled_33-166</name>
+        <value>1</value>
+    </Toggle_enabled_33-166>
+    <Toggle_enabled_33-167>
+        <name>enabled_33-167</name>
+        <value>1</value>
+    </Toggle_enabled_33-167>
+    <Toggle_enabled_33-168>
+        <name>enabled_33-168</name>
+        <value>1</value>
+    </Toggle_enabled_33-168>
+    <Toggle_enabled_33-169>
+        <name>enabled_33-169</name>
+        <value>1</value>
+    </Toggle_enabled_33-169>
+    <Toggle_enabled_34-170>
+        <name>enabled_34-170</name>
+        <value>1</value>
+    </Toggle_enabled_34-170>
+    <Toggle_enabled_34-171>
+        <name>enabled_34-171</name>
+        <value>1</value>
+    </Toggle_enabled_34-171>
+    <Toggle_enabled_34-172>
+        <name>enabled_34-172</name>
+        <value>1</value>
+    </Toggle_enabled_34-172>
+    <Toggle_enabled_34-173>
+        <name>enabled_34-173</name>
+        <value>1</value>
+    </Toggle_enabled_34-173>
+    <Toggle_enabled_34-174>
+        <name>enabled_34-174</name>
+        <value>1</value>
+    </Toggle_enabled_34-174>
+    <Toggle_enabled_35-175>
+        <name>enabled_35-175</name>
+        <value>1</value>
+    </Toggle_enabled_35-175>
+    <Toggle_enabled_35-176>
+        <name>enabled_35-176</name>
+        <value>1</value>
+    </Toggle_enabled_35-176>
+    <Toggle_enabled_35-177>
+        <name>enabled_35-177</name>
+        <value>1</value>
+    </Toggle_enabled_35-177>
+    <Toggle_enabled_35-178>
+        <name>enabled_35-178</name>
+        <value>1</value>
+    </Toggle_enabled_35-178>
 </controls>

@@ -17,11 +17,11 @@
     </SliderFloat_acceleration>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>-0.000617</value>
+        <value>-0.000645</value>
     </SliderFloat_animationIndex>
     <SliderFloat_angle>
         <name>angle</name>
-        <value>-0.070941</value>
+        <value>-0.074192</value>
     </SliderFloat_angle>
     <SliderFloat_maxWaitTime>
         <name>maxWaitTime</name>
@@ -33,7 +33,7 @@
     </Toggle_snoringMode>
     <SliderInt_counter>
         <name>counter</name>
-        <value>0</value>
+        <value>3</value>
     </SliderInt_counter>
     <SliderInt_maxCounter>
         <name>maxCounter</name>

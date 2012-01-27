@@ -9,11 +9,11 @@
     </SliderFloat_maxAngle>
     <SliderFloat_frameDuration>
         <name>frameDuration</name>
-        <value>0.206176</value>
+        <value>0.854020</value>
     </SliderFloat_frameDuration>
     <SliderInt_tickCounter>
         <name>tickCounter</name>
-        <value>2</value>
+        <value>1</value>
     </SliderInt_tickCounter>
     <ComboBox_possiblePortionsIndex>
         <name>possiblePortionsIndex</name>
@@ -25,10 +25,10 @@
     </Button_Preset_1>
     <SliderInt_counter>
         <name>counter</name>
-        <value>0</value>
+        <value>7</value>
     </SliderInt_counter>
     <SliderInt_maxCounter>
         <name>maxCounter</name>
-        <value>100</value>
+        <value>7</value>
     </SliderInt_maxCounter>
 </controls>

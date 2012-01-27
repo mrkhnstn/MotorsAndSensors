@@ -1,7 +1,7 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>9</value>
+        <value>7</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>
@@ -53,11 +53,11 @@
     </Button_SnoringScene>
     <SliderInt_Idle_List_Pos>
         <name>Idle_List_Pos</name>
-        <value>0</value>
+        <value>1</value>
     </SliderInt_Idle_List_Pos>
     <ComboBox_Idle_0>
         <name>Idle_0</name>
-        <value>10</value>
+        <value>7</value>
     </ComboBox_Idle_0>
     <ComboBox_Idle_1>
         <name>Idle_1</name>
@@ -65,11 +65,11 @@
     </ComboBox_Idle_1>
     <ComboBox_Idle_2>
         <name>Idle_2</name>
-        <value>0</value>
+        <value>9</value>
     </ComboBox_Idle_2>
     <ComboBox_Idle_3>
         <name>Idle_3</name>
-        <value>0</value>
+        <value>10</value>
     </ComboBox_Idle_3>
     <ComboBox_Idle_4>
         <name>Idle_4</name>
