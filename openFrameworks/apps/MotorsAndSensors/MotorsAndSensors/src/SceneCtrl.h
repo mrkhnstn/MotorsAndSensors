@@ -50,6 +50,7 @@ public:
 	void startNextIdleScene();
 	void setMode(int newMode);
 	
+	//void checkUserInProximity();
 	bool userInProximity();
 	bool _userInProximity;
 	float lastUserInProximityTime;

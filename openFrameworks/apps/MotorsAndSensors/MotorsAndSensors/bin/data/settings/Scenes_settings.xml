@@ -1,11 +1,11 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>8</value>
+        <value>5</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>
-        <value>2</value>
+        <value>1</value>
     </ComboBox_Current_Mode>
     <SliderFloat_switchToIdleTime>
         <name>switchToIdleTime</name>

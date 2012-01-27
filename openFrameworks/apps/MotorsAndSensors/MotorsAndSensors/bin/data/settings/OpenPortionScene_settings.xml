@@ -23,4 +23,12 @@
         <name>Preset 1</name>
         <value>0</value>
     </Button_Preset_1>
+    <SliderInt_counter>
+        <name>counter</name>
+        <value>7</value>
+    </SliderInt_counter>
+    <SliderInt_maxCounter>
+        <name>maxCounter</name>
+        <value>4</value>
+    </SliderInt_maxCounter>
 </controls>

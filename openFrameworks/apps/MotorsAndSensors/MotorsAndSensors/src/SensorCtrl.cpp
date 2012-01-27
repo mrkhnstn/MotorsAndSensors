@@ -29,6 +29,19 @@ void SensorCtrl::setup(){
 	hitScoreIncFactor = 0.1;
 	hitScoreDecFactor = 0.1;
 	
+	numOfRaysHit = 0;
+	numOfRaysHitThresh = 3;
+	numOfAdjacentRaysHit = 0;
+	numOfAdjacentRaysHitThresh = 1;
+	
+	numOfRaysHitWindowSize = 30;
+	numOfRaysHitWindow = new int[numOfRaysHitWindowSize];
+	for(int i=0; i<numOfRaysHitWindowSize; i++)
+		numOfRaysHitWindow[i] = 0;
+	numOfRaysHitIndex = 0;
+	numOfRaysHitInWindow = 0;
+	numOfRaysHitInWindowThresh = 10;
+	
 	// calculate look up table
 	updateLUT();
 	
@@ -71,12 +84,20 @@ void SensorCtrl::setup(){
 }
 
 void SensorCtrl::setupGUI(){
+	//TODO: clean up
+	
 	gui.page(1).addPageShortcut(gui.addPage("Sensors"));
 	
+	gui.addDebug("userInProximity", _userInProximity);
+	gui.addSlider("numOfRaysHit",numOfRaysHit,0,128);
+	gui.addSlider("numOfRaysHitThresh",numOfRaysHitThresh,0,128);
+	gui.addSlider("numOfAdjacentRaysHit",numOfAdjacentRaysHit,0,128);
+	gui.addSlider("numOfAdjacentRaysHitThresh",numOfAdjacentRaysHitThresh,0,128);
+	gui.addSlider("numOfRaysHitInWindow",numOfRaysHitInWindow,0,256);
+	gui.addSlider("numOfRaysHitInWindowThresh",numOfRaysHitInWindowThresh,0,256);
 	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
 	gui.addSlider("distanceToCentre", Sensor::distanceToCentre, 250, 350);
 	gui.addSlider("angleBetweenRays", Sensor::angleBetweenRays, 5, 10);
-	
 	
 	//gui.page("Sensors").addPageShortcut(gui.addPage("Sensors_Enabled"));
 	gui.addButton("enable all rays", this, &SensorCtrl::enableAllSensors);
@@ -185,8 +206,34 @@ void SensorCtrl::postGUI(){
 
 void SensorCtrl::update(){
 	updateLUT();
-	updateDistanceValues();
+	processSensorReadings();
 	
+	// check overall interactivity
+	numOfRaysHit = 0;
+	numOfAdjacentRaysHit = 0;
+	for (int i=0; i<TOTAL_RAYS; i++) {
+		int left = (i == 0) ? TOTAL_RAYS-1 : i - 1;
+		//int right = (i == TOTAL_RAYS-1) ? 0 : i + 1;
+		if (hit[i]) {
+			numOfRaysHit++;
+		}
+		if (hit[left] && hit[i]) {
+			numOfAdjacentRaysHit++;
+		}
+	}
+	
+	// calculate number of rays hit in time window
+	numOfRaysHitWindow[numOfRaysHitIndex] = numOfRaysHit;
+	numOfRaysHitIndex = (numOfRaysHitIndex + 1) % numOfRaysHitWindowSize;
+	numOfRaysHitInWindow = 0;
+	for(int i=0; i<numOfRaysHitWindowSize; i++)
+		numOfRaysHitInWindow += numOfRaysHitWindow[i];
+	
+	// determine whether there is a  user in proximity
+	_userInProximity = numOfRaysHit >= numOfRaysHitThresh || numOfAdjacentRaysHit >= numOfAdjacentRaysHitThresh || numOfRaysHitInWindow >= numOfRaysHitInWindowThresh;
+	
+	
+	// update sensors
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->update();
 }
@@ -211,7 +258,7 @@ void SensorCtrl::updateLUT(){
 	}
 }
 
-void SensorCtrl::updateDistanceValues(){
+void SensorCtrl::processSensorReadings(){
 	
 	if (_bgAdaptFactor > bgAdaptFactor) {
 		_bgAdaptFactor -= 0.01;
@@ -355,4 +402,8 @@ void SensorCtrl::getSensorsBetweenAngles(vector<Sensor*>& tempSensors, float sta
 			tempSensors.push_back(&sensor);
 		}
 	}
+}
+
+bool SensorCtrl::userInProximity(){
+	return _userInProximity;
 }

@@ -16,6 +16,7 @@ void Scene::setup(){
 	name = "Scene";
 	motorCtrl = Singleton<MotorCtrl>::instance();
 	sensorCtrl = Singleton<SensorCtrl>::instance();
+	enabled = false;
 }
 
 void Scene::setupGUI(){

@@ -13,11 +13,11 @@
     </SliderFloat_velocity>
     <SliderFloat_animationIndex>
         <name>animationIndex</name>
-        <value>-0.750000</value>
+        <value>0.000000</value>
     </SliderFloat_animationIndex>
     <SliderFloat_angle>
         <name>angle</name>
-        <value>22.499989</value>
+        <value>90.000000</value>
     </SliderFloat_angle>
     <ComboBox_animationMode>
         <name>animationMode</name>
@@ -31,4 +31,12 @@
         <name>Preset 2</name>
         <value>0</value>
     </Button_Preset_2>
+    <SliderInt_counter>
+        <name>counter</name>
+        <value>0</value>
+    </SliderInt_counter>
+    <SliderInt_maxCounter>
+        <name>maxCounter</name>
+        <value>2</value>
+    </SliderInt_maxCounter>
 </controls>

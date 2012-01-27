@@ -21,8 +21,13 @@ public:
 	static float maxAngleNSpeed;
 	static float userOffDelayTime; // time after no user detection to consider user still in proximity (to eliminate flickering)
 	
-	static int pulseMin;
-	static int pulseMax;
+	static int globalPulseMin;
+	static int globalPulseMax;
+	
+	static int calibrationMode; // 0: none, 1: pulse min, 2: pulse max
+	int pulseMin;			// pulse for setting panels to front (0 degrees)
+	int pulseMax;			// pulse for setting panels to back (180 degrees)
+	int pulse;				// pulse corresponding to angle
 	
 	int		index;			// index within motor array
 	float	angleN;			// normalized angle	of motor rotation
@@ -93,7 +98,6 @@ protected:
 	void setBackColor();
 	void setFrontColor();
 	void updateUserProximity();
-	//void setUserInProximity(bool b);
 	float getAngleN();
 	float getTgtAngleN();
 	void setTgtAngleN(float f);

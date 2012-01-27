@@ -1,11 +1,11 @@
 <controls>
     <SliderFloat_animationAngle>
         <name>animationAngle</name>
-        <value>25.818161</value>
+        <value>0.000000</value>
     </SliderFloat_animationAngle>
     <SliderFloat_velocity>
         <name>velocity</name>
-        <value>0.960784</value>
+        <value>1.000000</value>
     </SliderFloat_velocity>
     <SliderFloat_minAngle>
         <name>minAngle</name>
@@ -17,7 +17,7 @@
     </SliderFloat_maxAngle>
     <SliderInt_numWaves>
         <name>numWaves</name>
-        <value>11</value>
+        <value>1</value>
     </SliderInt_numWaves>
     <Button_Preset_1>
         <name>Preset 1</name>
@@ -35,4 +35,12 @@
         <name>Preset 4</name>
         <value>0</value>
     </Button_Preset_4>
+    <SliderInt_counter>
+        <name>counter</name>
+        <value>2</value>
+    </SliderInt_counter>
+    <SliderInt_maxCounter>
+        <name>maxCounter</name>
+        <value>3</value>
+    </SliderInt_maxCounter>
 </controls>

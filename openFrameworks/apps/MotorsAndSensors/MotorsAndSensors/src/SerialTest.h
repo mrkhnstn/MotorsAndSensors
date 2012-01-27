@@ -48,7 +48,7 @@ public:
 		if(ofGetElapsedTimeMillis() > nextSendTime){
 			
 			Motor& motor = *motorCtrl->motors[0];
-			int servoVal = ofMap(motor.angleN, 0, 1, Motor::pulseMin, Motor::pulseMax, true);
+			int servoVal = ofMap(motor.angleN, 0, 1, Motor::globalPulseMin, Motor::globalPulseMax, true);
 			
 			unsigned char lowByte = servoVal & 255;
 			unsigned char highByte = (servoVal >> 8) & 255;

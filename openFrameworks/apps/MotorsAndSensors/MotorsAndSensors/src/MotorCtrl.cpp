@@ -32,14 +32,9 @@ void MotorCtrl::setup(){
 
 void MotorCtrl::setupGUI(){
 	
+	
 	gui.page(1).addPageShortcut(gui.addPage("Motors"));
-	
 	gui.addSlider("userOffDelayTime", Motor::userOffDelayTime,0,3);
-	
-	gui.addTitle("servo limits");
-	gui.addSlider("servoMin", Motor::pulseMin, 550, 2350);
-	gui.addSlider("servoMax", Motor::pulseMax, 550, 2350);
-	
 	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,0.1,2);
 	gui.addSlider("distanceToCentre", Motor::distanceToCentre, 270, 350);
 	
@@ -67,34 +62,29 @@ void MotorCtrl::setupGUI(){
 		{
 			gui.addDebug("proximityValue_"+ofToString(i), motors[i]->proximityValue);
 		}
-		
-		/*
-		 gui.addTitle("bank").setNewColumn(true);
-		 for(int i=min; i<max && i < motors.size(); i++)
-		 {
-		 gui.addSlider("bank_"+ofToString(i), motors[i]->bank, 0, 3);
-		 }
-		 
-		 gui.addTitle("channel").setNewColumn(true);
-		 for(int i=min; i<max && i < motors.size(); i++)
-		 {
-		 gui.addSlider("channel_"+ofToString(i), motors[i]->ch, 1, 84);
-		 }
-		 
-		 gui.addTitle("enabled").setNewColumn(true);
-		 for(int i=min; i<max && i < motors.size(); i++)
-		 {
-		 gui.addToggle("enabled_"+ofToString(i), motors[i]->enabled);
-		 }
-		 */
-		
 	}
-	/*
-	 for (int i=0; i<motors.size(); i++) {
-	 motors[i]->setupGUI();
-	 }
-	 */
 	
+	// add calibration pages
+	gui.setPage("Motors");
+	gui.addTitle("calibration");
+	gui.page("Motors").addPageShortcut(gui.addPage("Calibrate_Pulse_Min"));
+	string calibrationChoices[3] = {"none","pulse min", "pulse max"};
+	gui.addComboBox("calibration mode", Motor::calibrationMode, 3, calibrationChoices);
+	gui.addSlider("globalPulseMin", Motor::globalPulseMin, 550, 2350);
+	gui.addButton("setAllToGlobal", this, &MotorCtrl::setAllToGlobalPulseMin);
+	for (int i=0; i<motors.size(); i++) {
+		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMin, 550, 2350);
+	}
+	
+	gui.page("Motors").addPageShortcut(gui.addPage("Calibrate_Pulse_Max"));
+	gui.addComboBox("calibration mode", Motor::calibrationMode, 3, calibrationChoices);
+	gui.addSlider("globalPulseMax", Motor::globalPulseMax, 550, 2350);
+	for (int i=0; i<motors.size(); i++) {
+		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMin, 550, 2350);
+	}
+	gui.addButton("setAllToGlobal", this, &MotorCtrl::setAllToGlobalPulseMax);
+	 
+	// add drawing parameters to gui
 	gui.setPage("Motors");
 	gui.addTitle("drawing");
 	
@@ -110,6 +100,7 @@ void MotorCtrl::setupGUI(){
 }
 
 void MotorCtrl::postGUI(){
+	Motor::calibrationMode = 0;
 	for (int i=0; i<motors.size(); i++) {
 		motors[i]->postGUI();
 	}
@@ -140,4 +131,15 @@ void MotorCtrl::draw3d(){
 	for (int i=0; i<motors.size(); i++) {
 		motors[i]->draw();
 	}
+}
+
+void MotorCtrl::setAllToGlobalPulseMin(ofEventArgs& e){
+	for(int i=0; i<motors.size(); i++)
+		motors[i]->pulseMin = Motor::globalPulseMin;
+}
+
+void MotorCtrl::setAllToGlobalPulseMax(ofEventArgs& e){
+	for(int i=0; i<motors.size(); i++)
+		motors[i]->pulseMin = Motor::globalPulseMax;
+
 }

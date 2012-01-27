@@ -3,14 +3,6 @@
         <name>userOffDelayTime</name>
         <value>1.500000</value>
     </SliderFloat_userOffDelayTime>
-    <SliderInt_servoMin>
-        <name>servoMin</name>
-        <value>600</value>
-    </SliderInt_servoMin>
-    <SliderInt_servoMax>
-        <name>servoMax</name>
-        <value>2300</value>
-    </SliderInt_servoMax>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
         <value>1.005294</value>
@@ -35,6 +27,14 @@
         <name>Motors_54-71</name>
         <value>0</value>
     </Button_Motors_54-71>
+    <Button_Calibrate_Pulse_Min>
+        <name>Calibrate_Pulse_Min</name>
+        <value>0</value>
+    </Button_Calibrate_Pulse_Min>
+    <Button_Calibrate_Pulse_Max>
+        <name>Calibrate_Pulse_Max</name>
+        <value>0</value>
+    </Button_Calibrate_Pulse_Max>
     <Toggle_draw>
         <name>draw</name>
         <value>1</value>

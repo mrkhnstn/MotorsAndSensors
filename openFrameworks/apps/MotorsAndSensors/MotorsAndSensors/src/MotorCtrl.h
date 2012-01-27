@@ -15,10 +15,6 @@ class MotorCtrl : public ofxBaseObject {
 public:
 	
 	vector<Motor*> motors;
-	
-	//int servoMin;
-	//int servoMax;
-	
 	float refTime;
 	
 	void setup();
@@ -27,5 +23,8 @@ public:
 	void update();
 	void draw();
 	void draw3d();
+	
+	void setAllToGlobalPulseMin(ofEventArgs& e);
+	void setAllToGlobalPulseMax(ofEventArgs& e);
 	
 };

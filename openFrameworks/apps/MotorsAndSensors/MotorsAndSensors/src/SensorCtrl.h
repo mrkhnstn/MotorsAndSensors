@@ -64,6 +64,16 @@ public:
 	float hitScoreIncFactor;
 	float hitScoreDecFactor;
 	
+	int numOfRaysHit;
+	int numOfRaysHitThresh;
+	int numOfAdjacentRaysHit;
+	int numOfAdjacentRaysHitThresh;
+	int numOfRaysHitWindowSize;
+	int* numOfRaysHitWindow;
+	int numOfRaysHitIndex;
+	int numOfRaysHitInWindow;
+	int numOfRaysHitInWindowThresh;
+						   
 	vector<Sensor*> sensors;
 	
 	void setup();
@@ -74,10 +84,13 @@ public:
 	void draw3d();
 
 	void updateLUT();
-	void updateDistanceValues();
+	void processSensorReadings();
 	void handleOscMessage(ofxOscMessage& message);
 	void getSensorsBetweenAngles(vector<Sensor*>& tempSensors, float startAngle, float endAngle);
 	
 	void enableAllSensors(ofEventArgs& e);
 	void disableAllSensors(ofEventArgs& e);
+	
+	bool _userInProximity;
+	bool userInProximity(); // returns true if a user is in proximity 
 };

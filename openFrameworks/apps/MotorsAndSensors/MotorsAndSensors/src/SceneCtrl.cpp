@@ -8,6 +8,7 @@
  */
 
 #include "SceneCtrl.h"
+#include "SensorCtrl.h"
 
 ////////////////////////////////////////////////////////////////
 
@@ -93,10 +94,20 @@ void SceneCtrl::postGUI(){
 	idleListPos = 0;
 	interactiveListPos = 0;
 	
-	getCurrentScene().start();
+	mode = SCENE_CTRL_IDLE;
+	_mode = SCENE_CTRL_IDLE;
+	
+	currentSceneId = 0;
+	_currentSceneId = 0;
+	
+	//getCurrentScene().start();
 }
 
 void SceneCtrl::update(){
+	
+	if (ofGetElapsedTimef() < 5) {
+		return; // don't display any scenes
+	}
 	
 	if (_mode != mode) {
 		setMode(_mode);
@@ -106,16 +117,9 @@ void SceneCtrl::update(){
 	if(_currentSceneId != currentSceneId)
 		setCurrentScene(_currentSceneId);
 	
-	// check user in proximity
-	_userInProximity = false;
-	vector<Motor*>& motors = Singleton<MotorCtrl>::instance()->motors;
-	// reset all motor proximity udpated flag
-	for(int i=0; i<motors.size(); i++){
-		if(motors[i]->userInProximity()){
-			_userInProximity = true;
-			lastUserInProximityTime = ofGetElapsedTimef();
-			break;
-		}
+	// update user activity
+	if(userInProximity()){
+		lastUserInProximityTime = ofGetElapsedTimef();
 	}
 	
 	switch (mode) {
@@ -138,7 +142,7 @@ void SceneCtrl::update(){
 		case SCENE_CTRL_IDLE:
 			// if a user is in proximity then switch to interactive mode
 			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
-				startNextIdleScene();
+				 startNextIdleScene();
 			}
 			break;
 		case SCENE_CTRL_INTERACTIVE:
@@ -231,6 +235,33 @@ void SceneCtrl::setMode(int newMode){
 	}
 }
 
+/*
+void SceneCtrl::checkUserInProximity(){
+
+	/*
+	_userInProximity = false;
+	vector<Motor*>& motors = Singleton<MotorCtrl>::instance()->motors;
+	// reset all motor proximity udpated flag
+	for(int i=0; i<motors.size(); i++){
+		if(motors[i]->userInProximity()){
+			_userInProximity = true;
+			lastUserInProximityTime = ofGetElapsedTimef();
+			break;
+		}
+	}
+	*/
+
+/*
+	_userInProximity = false;
+	vector<int> inProximity;
+	for(int i=0; i<motors.size(); i++){
+		if (motors[i]->userInProximity()) {
+			
+		}
+	}
+}
+*/
+
 bool SceneCtrl::userInProximity(){
-	return _userInProximity;
+	return Singleton<SensorCtrl>::instance()->userInProximity();
 }

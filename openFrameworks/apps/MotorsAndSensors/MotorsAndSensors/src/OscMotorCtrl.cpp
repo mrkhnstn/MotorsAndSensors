@@ -28,19 +28,14 @@ void OscMotorCtrl::update(){
 	
 	if(ofGetElapsedTimeMillis() > nextSendTime){
 		
-			int numSendChannels = 18;
-			
 			for(int bank=0; bank<4; bank++){
 			ofxOscMessage m;
 			m.setAddress("/servo");
 			m.addIntArg(Singleton<MotorsAndSensors>::instance()->arduinoId[bank]);		// bank
-			//m.addIntArg(4);
 			for (int i=bank*18; i<(bank+1)*18; i++) {
-				
 				Motor& motor = *motorCtrl->motors[i];
-				int servoVal = ofMap(motor.angleN, 0, 1, Motor::pulseMin, Motor::pulseMax, true);
-				m.addIntArg(servoVal);
-				
+				//int servoVal = ofMap(motor.angleN, 0, 1, Motor::globalPulseMin, Motor::globalPulseMax, true);
+				m.addIntArg(motor.pulse);
 			}
 			
 			oscSender.sendMessage(m);

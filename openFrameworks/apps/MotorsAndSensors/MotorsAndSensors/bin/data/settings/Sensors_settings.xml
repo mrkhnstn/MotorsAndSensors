@@ -1,4 +1,28 @@
 <controls>
+    <SliderInt_numOfRaysHit>
+        <name>numOfRaysHit</name>
+        <value>3</value>
+    </SliderInt_numOfRaysHit>
+    <SliderInt_numOfRaysHitThresh>
+        <name>numOfRaysHitThresh</name>
+        <value>3</value>
+    </SliderInt_numOfRaysHitThresh>
+    <SliderInt_numOfAdjacentRaysHit>
+        <name>numOfAdjacentRaysHit</name>
+        <value>1</value>
+    </SliderInt_numOfAdjacentRaysHit>
+    <SliderInt_numOfAdjacentRaysHitThresh>
+        <name>numOfAdjacentRaysHitThresh</name>
+        <value>10</value>
+    </SliderInt_numOfAdjacentRaysHitThresh>
+    <SliderInt_numOfRaysHitInWindow>
+        <name>numOfRaysHitInWindow</name>
+        <value>90</value>
+    </SliderInt_numOfRaysHitInWindow>
+    <SliderInt_numOfRaysHitInWindowThresh>
+        <name>numOfRaysHitInWindowThresh</name>
+        <value>10</value>
+    </SliderInt_numOfRaysHitInWindowThresh>
     <SliderFloat_userInProximityDistance>
         <name>userInProximityDistance</name>
         <value>124.117653</value>
@@ -45,7 +69,7 @@
     </SliderFloat_adjacentLerpStrength>
     <SliderFloat_bgAdaptFactor>
         <name>bgAdaptFactor</name>
-        <value>0.010000</value>
+        <value>0.000557</value>
     </SliderFloat_bgAdaptFactor>
     <SliderFloat_hitThreshold>
         <name>hitThreshold</name>

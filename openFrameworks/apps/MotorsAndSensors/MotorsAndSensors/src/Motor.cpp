@@ -22,8 +22,9 @@ bool Motor::doDraw3D = true;		// draw 3d box
 bool Motor::doDraw2D = false;		// draw 2d on null plane
 bool Motor::doDrawLabels = false; // draw ids of each motor
 
-int Motor::pulseMin = 600;
-int Motor::pulseMax = 2300;
+int Motor::globalPulseMin = 600;
+int Motor::globalPulseMax = 2300;
+int Motor::calibrationMode = 0;
 
 ofColor Motor::backColorLow;		// back side color of motor when NO user in proximity
 ofColor Motor::frontColorLow;		// front side color of motor when NO user in proximity
@@ -56,6 +57,10 @@ void Motor::setup(){
 	angleN = 0.5;
 	tgtAngleN = angleN;
 	
+	pulseMin = 600;
+	pulseMax = 2300;
+	pulse = pulseMin + (pulseMax - pulseMin) / 2;
+	
 	_userInProximity = false;
 	
 	bank = 0;
@@ -64,19 +69,16 @@ void Motor::setup(){
 	proximityValue = 0;
 	userInProximityOnTime = 0;
 	userInproximityOffTime = 0;
-	
-	
+		
 	relativePos = index * MOTOR_GAP;// position in relation to rays;
 	float minPos = relativePos - 2 * RAY_GAP;
 	float maxPos = relativePos + 2 * RAY_GAP;
 	
 	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
-	//vector<Sensor*>& sensors = sensorCtrls->sensors;
 	rayIds.clear();
 	for (int i=0; i<TOTAL_RAYS; i++) {
 		if (sensorCtrl.rayPos[i] >= minPos && sensorCtrl.rayPos[i] <= maxPos) {
 			rayIds.push_back(i);
-			ofLog(OF_LOG_VERBOSE, ofToString(index) + ">>" + ofToString(i));
 		}
 	}
 	
@@ -92,7 +94,9 @@ void Motor::setupGUI(){
 }
 
 void Motor::postGUI(){
-	updateSensors(); // needs to happen at least once after every thing has been setup
+	updateSensors(); // (obsolete) needs to happen at least once after every thing has been setup
+	angleN = 0;
+	tgtAngleN = 0;
 }
 
 void Motor::update(){
@@ -107,6 +111,20 @@ void Motor::update(){
 	float clampedDelta = dir * ofClamp(abs(delta),0,maxAngleNSpeed * elapsedTime);
 	angleN = angleN + clampedDelta;
 	
+	// update pulse
+	switch (calibrationMode) {
+		case 0:
+			pulse = ofMap(angleN, 0, 1, pulseMin, pulseMax, true);
+			break;
+		case 1:
+			pulse = pulseMin;
+			break;
+		case 2:
+			pulse = pulseMax;
+			break;
+		default:
+			break;
+	}
 	
 }
 
@@ -200,6 +218,8 @@ void Motor::draw(){
 }
 
 void Motor::updateSensors(){
+	// obsolete code
+	
 	sensors.clear();
 	
 	float minAngle = posAngle - 0.5 * sensorAngleRange;
@@ -214,6 +234,8 @@ void Motor::updateSensors(){
 }
 
 void Motor::updateUserProximity(){
+	
+	// check whether any of the rays registered with this motor are hit
 	bool temp = false;
 	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
 	for(int i=0; i<rayIds.size(); i++)
@@ -224,6 +246,7 @@ void Motor::updateUserProximity(){
 		}
 	}
 	
+	// if user in proximity state has changed then update relevant timestamps
 	if (_userInProximity != temp) {
 		_userInProximity = temp;
 		if (_userInProximity) {
@@ -232,6 +255,8 @@ void Motor::updateUserProximity(){
 			userInproximityOffTime = ofGetElapsedTimef();
 		}
 	}
+	
+	
 	/*
 	for(int i=0; i<sensors.size(); i++)
 		if (sensors[i]->userInProximity()) {
@@ -305,12 +330,6 @@ bool Motor::userInProximity(){
 		return ofGetElapsedTimef() < userInproximityOffTime + userOffDelayTime;
 	}
 }
-
-/*
-void Motor::setUserInProximity(bool b){
-	_userInProximity = b;
-}
-*/
 
 float Motor::getAngleN(){
 	return angleN;

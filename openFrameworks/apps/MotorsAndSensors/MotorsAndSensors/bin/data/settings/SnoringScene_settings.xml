@@ -31,4 +31,12 @@
         <name>snoringMode</name>
         <value>1</value>
     </Toggle_snoringMode>
+    <SliderInt_counter>
+        <name>counter</name>
+        <value>0</value>
+    </SliderInt_counter>
+    <SliderInt_maxCounter>
+        <name>maxCounter</name>
+        <value>3</value>
+    </SliderInt_maxCounter>
 </controls>
