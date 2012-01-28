@@ -17,8 +17,10 @@ class Motor : public ofxBaseObject {
 public:
 	
 	static float elapsedTime;
-	static float maxMotorSpeed;
-	static float maxAngleNSpeed;
+	
+	static float maxMotorSpeed; // in degrees per second
+	bool doLimitSpeed;
+	//static float maxAngleNSpeed;
 	static float userOffDelayTime; // time after no user detection to consider user still in proximity (to eliminate flickering)
 	
 	static int globalPulseMin;
@@ -30,8 +32,12 @@ public:
 	int pulse;				// pulse corresponding to angle
 	
 	int		index;			// index within motor array
-	float	angleN;			// normalized angle	of motor rotation
-	float	tgtAngleN;
+	//float	angleN;			// normalized angle	of motor rotation
+	//float	tgtAngleN;
+	
+	float angle;			// actual angle of motor in degrees from 0 to 180
+	float tgtAngle;			// targeted angle of motor in degrees from 0 to 180
+	
 	float	posAngle;		// position angle calculated out of index and numOfMotors
 	ofxVec2f	pos;		// position of motor in relation centre of cylinder
 	ofxVec2f	cartPos;	// position of motor converted to cartesian system used for cv
@@ -80,6 +86,7 @@ public:
 	void draw();
 	
 	void setAngle(float angle);
+	void setTgtAngle(float angle);
 	float getAngle();
 	ofxVec2f getPos();
 	float getPosAngle();
@@ -98,10 +105,12 @@ protected:
 	void setBackColor();
 	void setFrontColor();
 	void updateUserProximity();
+	/*
 	float getAngleN();
 	float getTgtAngleN();
 	void setTgtAngleN(float f);
 	void setAngleN(float f);
+	*/
 	
 	bool _userInProximity;
 	

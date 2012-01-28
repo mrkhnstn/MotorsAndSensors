@@ -125,31 +125,31 @@
     </SliderFloat_distance_34-171>
     <SliderFloat_distance_34-172>
         <name>distance_34-172</name>
-        <value>0.000001</value>
+        <value>0.000000</value>
     </SliderFloat_distance_34-172>
     <SliderFloat_distance_34-173>
         <name>distance_34-173</name>
-        <value>0.000005</value>
+        <value>0.000000</value>
     </SliderFloat_distance_34-173>
     <SliderFloat_distance_34-174>
         <name>distance_34-174</name>
-        <value>0.000051</value>
+        <value>0.000000</value>
     </SliderFloat_distance_34-174>
     <SliderFloat_distance_35-175>
         <name>distance_35-175</name>
-        <value>0.000477</value>
+        <value>0.000001</value>
     </SliderFloat_distance_35-175>
     <SliderFloat_distance_35-176>
         <name>distance_35-176</name>
-        <value>0.004503</value>
+        <value>0.000013</value>
     </SliderFloat_distance_35-176>
     <SliderFloat_distance_35-177>
         <name>distance_35-177</name>
-        <value>0.042459</value>
+        <value>0.000128</value>
     </SliderFloat_distance_35-177>
     <SliderFloat_distance_35-178>
         <name>distance_35-178</name>
-        <value>0.400375</value>
+        <value>0.001247</value>
     </SliderFloat_distance_35-178>
     <Toggle_enabled_32-160>
         <name>enabled_32-160</name>

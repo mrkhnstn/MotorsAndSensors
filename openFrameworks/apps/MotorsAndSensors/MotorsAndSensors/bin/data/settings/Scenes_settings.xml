@@ -61,7 +61,7 @@
     </SliderInt_Idle_List_Pos>
     <ComboBox_Idle_0>
         <name>Idle_0</name>
-        <value>2</value>
+        <value>9</value>
     </ComboBox_Idle_0>
     <ComboBox_Idle_1>
         <name>Idle_1</name>

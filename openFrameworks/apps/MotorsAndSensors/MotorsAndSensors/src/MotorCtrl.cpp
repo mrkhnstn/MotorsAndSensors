@@ -35,7 +35,7 @@ void MotorCtrl::setupGUI(){
 	
 	gui.page(1).addPageShortcut(gui.addPage("Motors"));
 	gui.addSlider("userOffDelayTime", Motor::userOffDelayTime,0,3);
-	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,0.1,2);
+	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,1,180);
 	gui.addSlider("distanceToCentre", Motor::distanceToCentre, 270, 350);
 	
 	// gui pages for individual elements
@@ -45,16 +45,16 @@ void MotorCtrl::setupGUI(){
 		int max = (j+1)*18;
 		gui.page("Motors").addPageShortcut(gui.addPage("Motors_"+ofToString(min)+"-"+ofToString(max-1)));
 		
-		gui.addTitle("angleN");
+		gui.addTitle("angle");
 		for(int i=min; i<max && i < motors.size(); i++)
 		{
-			gui.addSlider("angleN_"+ofToString(i), motors[i]->angleN, 0, 1);
+			gui.addSlider("angle_"+ofToString(i), motors[i]->angle, 0, 1);
 		}
 		
-		gui.addTitle("tgtAngleN").setNewColumn(true);
+		gui.addTitle("tgtAngle").setNewColumn(true);
 		for(int i=min; i<max && i < motors.size(); i++)
 		{
-			gui.addSlider("tgtAngleN_"+ofToString(i), motors[i]->tgtAngleN, 0, 1);
+			gui.addSlider("tgtAngle_"+ofToString(i), motors[i]->tgtAngle, 0, 1);
 		}
 		
 		gui.addTitle("proximityValue").setNewColumn(true);
@@ -107,9 +107,6 @@ void MotorCtrl::postGUI(){
 }
 
 void MotorCtrl::update(){
-	
-	// update max allowed speed
-	Motor::maxAngleNSpeed = 1 / (Motor::maxMotorSpeed * 3);
 	
 	// update elapsed time used by motors
 	if (refTime == -1) {

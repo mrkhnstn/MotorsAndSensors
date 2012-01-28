@@ -1,7 +1,7 @@
 <controls>
     <SliderInt_numOfRaysHit>
         <name>numOfRaysHit</name>
-        <value>3</value>
+        <value>1</value>
     </SliderInt_numOfRaysHit>
     <SliderInt_numOfRaysHitThresh>
         <name>numOfRaysHitThresh</name>
@@ -9,7 +9,7 @@
     </SliderInt_numOfRaysHitThresh>
     <SliderInt_numOfAdjacentRaysHit>
         <name>numOfAdjacentRaysHit</name>
-        <value>1</value>
+        <value>0</value>
     </SliderInt_numOfAdjacentRaysHit>
     <SliderInt_numOfAdjacentRaysHitThresh>
         <name>numOfAdjacentRaysHitThresh</name>
@@ -17,7 +17,7 @@
     </SliderInt_numOfAdjacentRaysHitThresh>
     <SliderInt_numOfRaysHitInWindow>
         <name>numOfRaysHitInWindow</name>
-        <value>90</value>
+        <value>30</value>
     </SliderInt_numOfRaysHitInWindow>
     <SliderInt_numOfRaysHitInWindowThresh>
         <name>numOfRaysHitInWindowThresh</name>
@@ -33,7 +33,7 @@
     </SliderFloat_distanceToCentre>
     <SliderFloat_angleBetweenRays>
         <name>angleBetweenRays</name>
-        <value>8.480392</value>
+        <value>5.000000</value>
     </SliderFloat_angleBetweenRays>
     <Button_enable_all_rays>
         <name>enable all rays</name>
@@ -145,11 +145,11 @@
     </Toggle_doDraw>
     <Toggle_doDrawRays>
         <name>doDrawRays</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDrawRays>
     <Toggle_doDrawHitPoints>
         <name>doDrawHitPoints</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_doDrawHitPoints>
     <Toggle_doDrawLabels>
         <name>doDrawLabels</name>

@@ -13,7 +13,7 @@
 
 float Motor::elapsedTime = 0;
 float Motor::maxMotorSpeed = 0.3;
-float Motor::maxAngleNSpeed = 1;
+//float Motor::maxAngleNSpeed = 1;
 float Motor::distanceToCentre = 300;
 int	  Motor::numMotors = 72;
 
@@ -54,12 +54,17 @@ void Motor::setup(){
 	pos.x = cosf(ofDegToRad(posAngle))*distanceToCentre;
 	pos.y = sinf(ofDegToRad(posAngle))*distanceToCentre;
 	
-	angleN = 0.5;
-	tgtAngleN = angleN;
+	//angleN = 0.5;
+	//tgtAngleN = angleN;
+	
+	angle = 90;
+	tgtAngle = angle;
 	
 	pulseMin = 600;
 	pulseMax = 2300;
 	pulse = pulseMin + (pulseMax - pulseMin) / 2;
+	
+	doLimitSpeed = true;
 	
 	_userInProximity = false;
 	
@@ -88,15 +93,15 @@ void Motor::setup(){
 void Motor::setupGUI(){
 	string indexS = ofToString(index);
 	gui.addTitle("motor_"+indexS);
-	gui.addSlider("angleN_"+indexS, angleN, 0, 1);
+	gui.addSlider("angle_"+indexS, angle, 0, 1);
 	gui.addSlider("bank_"+indexS, bank, 0, 3);
 	gui.addSlider("channel_"+indexS, ch,1,84);
 }
 
 void Motor::postGUI(){
 	updateSensors(); // (obsolete) needs to happen at least once after every thing has been setup
-	angleN = 0;
-	tgtAngleN = 0;
+	angle = 0;
+	tgtAngle = 0;
 }
 
 void Motor::update(){
@@ -106,15 +111,16 @@ void Motor::update(){
 	cartPos = Coordinates::fromPolar(pos);
 	
 	// limit motor motion to max motor speed
-	float delta = tgtAngleN - angleN;
-	float dir = delta < 0 ? -1 : 1;
-	float clampedDelta = dir * ofClamp(abs(delta),0,maxAngleNSpeed * elapsedTime);
-	angleN = angleN + clampedDelta;
-	
+	if (doLimitSpeed) {
+		float delta = tgtAngle - angle;
+		float dir = delta < 0 ? -1 : 1;
+		float clampedDelta = dir * ofClamp(abs(delta),0,maxMotorSpeed * elapsedTime);
+		angle = angle + clampedDelta;
+	}
 	// update pulse
 	switch (calibrationMode) {
 		case 0:
-			pulse = ofMap(angleN, 0, 1, pulseMin, pulseMax, true);
+			pulse = ofMap(angle, 0, 180, pulseMin, pulseMax, true);
 			break;
 		case 1:
 			pulse = pulseMin;
@@ -140,7 +146,7 @@ void Motor::draw(){
 	ofPushMatrix();
 	ofTranslate(distanceToCentre, 0, 0); // move from cylinder centre by cylinder radius
 	
-	ofRotate(ofMap(angleN, 0, 1, -90, 90, true), 0, 1, 0); // rotate motor around its own z axis
+	ofRotate(ofMap(angle, 0, 180, -90, 90, true), 0, 1, 0); // rotate motor around its own z axis
 	
 	if (doDraw2D) {
 		
@@ -195,10 +201,10 @@ void Motor::draw(){
 		ofRotate(180, 0, 0, 1);
 		ofRotate(90, 0, 1, 0);
 		ofScale(0.5, 0.5, 0.5);
-		glDisable(GL_DEPTH_TEST);
+		//glDisable(GL_DEPTH_TEST);
 		ofRectangle rect = font.getStringBoundingBox(ofToString(index), 0, 0);
 		font.drawString(ofToString(index), -rect.width * 0.5, rect.height * 0.5);
-		glEnable(GL_DEPTH_TEST);
+		//glEnable(GL_DEPTH_TEST);
 		//ofDrawBitmapString(ofToString(index), 0, 0); //TODO: fix in 3D
 		ofPopMatrix();
 	}
@@ -331,20 +337,28 @@ bool Motor::userInProximity(){
 	}
 }
 
+/*
 float Motor::getAngleN(){
 	return angleN;
 }
+*/
 
+/*
 float Motor::getTgtAngleN(){
 	return tgtAngleN;
 }
+*/
 
 void Motor::setAngle(float angle){
-	setTgtAngleN(ofMap(angle, 0, 180, 0, 1, true));
+	setTgtAngle(angle);
 }
 
 float Motor::getAngle(){
-	return tgtAngleN * 180;
+	return tgtAngle;
+}
+
+void Motor::setTgtAngle(float f){
+	tgtAngle = ofClamp(f,0,180);
 }
 
 ofxVec2f Motor::getPos(){
@@ -355,10 +369,10 @@ float Motor::getPosAngle(){
 	return posAngle;
 }
 
-void Motor::setTgtAngleN(float f){
-	tgtAngleN = ofClamp(f,0,1);
-}
 
+
+/*
 void Motor::setAngleN(float f){
 	angleN = ofClamp(f,0,1);
 }
+*/

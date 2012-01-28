@@ -1,7 +1,7 @@
 <controls>
     <SliderFloat_animationAngle>
         <name>animationAngle</name>
-        <value>0.000000</value>
+        <value>127.000000</value>
     </SliderFloat_animationAngle>
     <SliderFloat_velocity>
         <name>velocity</name>
@@ -37,7 +37,7 @@
     </Button_Preset_4>
     <SliderInt_counter>
         <name>counter</name>
-        <value>2</value>
+        <value>0</value>
     </SliderInt_counter>
     <SliderInt_maxCounter>
         <name>maxCounter</name>

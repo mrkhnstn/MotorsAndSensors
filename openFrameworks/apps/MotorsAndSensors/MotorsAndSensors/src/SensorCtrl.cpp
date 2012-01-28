@@ -280,7 +280,8 @@ void SensorCtrl::processSensorReadings(){
 		
 		
 		// dynamically adapt bg values
-		bgSubtract[i] = bgSubtract[i] * (1-_bgAdaptFactor) + rawValue * _bgAdaptFactor;
+		if(rawValue > hitThreshold[i]) // only adapt the bg if smaller then hit threshold (not sure
+			bgSubtract[i] = bgSubtract[i] * (1-_bgAdaptFactor) + rawValue * _bgAdaptFactor;
 		
 		//averageValues[i].addValue(bgSubValue);
 		
