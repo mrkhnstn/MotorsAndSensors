@@ -9,7 +9,7 @@
     </SliderFloat_velocity>
     <ComboBox_angleMode>
         <name>angleMode</name>
-        <value>0</value>
+        <value>1</value>
     </ComboBox_angleMode>
     <SliderInt_motorSelected>
         <name>motorSelected</name>

@@ -43,14 +43,14 @@
         <name>disable all rays</name>
         <value>0</value>
     </Button_disable_all_rays>
-    <SliderFloat_minDistance>
-        <name>minDistance</name>
-        <value>40.000000</value>
-    </SliderFloat_minDistance>
-    <SliderFloat_maxDistance>
-        <name>maxDistance</name>
-        <value>272.156860</value>
-    </SliderFloat_maxDistance>
+    <SliderFloat_distancePow>
+        <name>distancePow</name>
+        <value>1.000000</value>
+    </SliderFloat_distancePow>
+    <Toggle_doLUT>
+        <name>doLUT</name>
+        <value>0</value>
+    </Toggle_doLUT>
     <SliderFloat_adaptLerpStrength>
         <name>adaptLerpStrength</name>
         <value>0.400000</value>
@@ -59,6 +59,10 @@
         <name>adjacentLerpStrength</name>
         <value>0.001000</value>
     </SliderFloat_adjacentLerpStrength>
+    <Toggle_doAveraging>
+        <name>doAveraging</name>
+        <value>0</value>
+    </Toggle_doAveraging>
     <Toggle_doBgSubtract>
         <name>doBgSubtract</name>
         <value>0</value>
@@ -87,18 +91,54 @@
         <name>hitScoreDecFactor</name>
         <value>0.058529</value>
     </SliderFloat_hitScoreDecFactor>
-    <SliderFloat_distancePow>
-        <name>distancePow</name>
+    <Toggle_doDraw2D>
+        <name>doDraw2D</name>
+        <value>0</value>
+    </Toggle_doDraw2D>
+    <SliderFloat_drawScale>
+        <name>drawScale</name>
+        <value>6.088235</value>
+    </SliderFloat_drawScale>
+    <SliderFloat_drawX>
+        <name>drawX</name>
+        <value>-171.670593</value>
+    </SliderFloat_drawX>
+    <SliderFloat_drawY>
+        <name>drawY</name>
+        <value>10.000000</value>
+    </SliderFloat_drawY>
+    <SliderFloat_rayDrawScale>
+        <name>rayDrawScale</name>
         <value>1.000000</value>
-    </SliderFloat_distancePow>
-    <Toggle_doLUT>
-        <name>doLUT</name>
+    </SliderFloat_rayDrawScale>
+    <Toggle_doDrawRaw>
+        <name>doDrawRaw</name>
+        <value>1</value>
+    </Toggle_doDrawRaw>
+    <Toggle_doDrawBg>
+        <name>doDrawBg</name>
         <value>0</value>
-    </Toggle_doLUT>
-    <Toggle_doAveraging>
-        <name>doAveraging</name>
-        <value>0</value>
-    </Toggle_doAveraging>
+    </Toggle_doDrawBg>
+    <Toggle_doDrawAdapter>
+        <name>doDrawAdapter</name>
+        <value>1</value>
+    </Toggle_doDrawAdapter>
+    <Toggle_doDrawHitScore>
+        <name>doDrawHitScore</name>
+        <value>1</value>
+    </Toggle_doDrawHitScore>
+    <Toggle_doDraw3D>
+        <name>doDraw3D</name>
+        <value>1</value>
+    </Toggle_doDraw3D>
+    <Toggle_doDrawRays>
+        <name>doDrawRays</name>
+        <value>1</value>
+    </Toggle_doDrawRays>
+    <Toggle_doDrawLabels>
+        <name>doDrawLabels</name>
+        <value>1</value>
+    </Toggle_doDrawLabels>
     <Button_Sensors_0-3>
         <name>Sensors_0-3</name>
         <value>0</value>
@@ -135,24 +175,4 @@
         <name>Sensors_32-35</name>
         <value>0</value>
     </Button_Sensors_32-35>
-    <Toggle_doDraw>
-        <name>doDraw</name>
-        <value>1</value>
-    </Toggle_doDraw>
-    <Toggle_doDrawRays>
-        <name>doDrawRays</name>
-        <value>1</value>
-    </Toggle_doDrawRays>
-    <Toggle_doDrawHitPoints>
-        <name>doDrawHitPoints</name>
-        <value>0</value>
-    </Toggle_doDrawHitPoints>
-    <Toggle_doDrawLabels>
-        <name>doDrawLabels</name>
-        <value>1</value>
-    </Toggle_doDrawLabels>
-    <Toggle_drawOnlyInSensorZone>
-        <name>drawOnlyInSensorZone</name>
-        <value>0</value>
-    </Toggle_drawOnlyInSensorZone>
 </controls>

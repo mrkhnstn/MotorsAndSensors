@@ -7,3 +7,4 @@
 
 #include "SineWaveScene.h"
 
+int SineWaveScene::uniqueId = 0;

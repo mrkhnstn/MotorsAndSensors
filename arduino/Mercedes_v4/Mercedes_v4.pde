@@ -1,7 +1,7 @@
 #include <Servo.h>
 // configured to work with Arduino Mega 2560
 
-const int bank = 2; // this has to be individually set for each arduino!!
+const int bank = 1; // this has to be individually set for each arduino!!
 const int baudRate = 115200;
 const int numServos = 18;
 const int availServos = 18; // 8 for UNO, 18 for MEGA
@@ -18,7 +18,8 @@ const int availAnalogIns = 9; // 6 for UNO, 9 for MEGA
 const int numAnalogIns = 9;
 word analogValues[numAnalogIns];
 // bank 2: {0,2,4,5,7,8,10,12,14};
-int analogPins[] = {0,2,4,5,7,8,10,12,14};
+// bank 1: {0,2,4,5,7,8,10,12,15};
+int analogPins[] = {0,2,4,5,7,8,10,12,15};
 
 const int bufferSize = 38; // = 2 * numServos + 2 (two bytes per number, one extra number for initial command)
 byte readBuffer[bufferSize];

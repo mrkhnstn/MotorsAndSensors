@@ -15,22 +15,18 @@
         <name>toggle cursor [m]</name>
         <value>0</value>
     </Button_toggle_cursor>
-    <Button_setAllToGlobal>
-        <name>setAllToGlobal [o]</name>
+    <Button_setAllToPulseMin>
+        <name>setAllToPulseMin [,]</name>
         <value>0</value>
-    </Button_setAllToGlobal>
-    <Button_setAllToGlobal1>
-        <name>setAllToGlobal [,]</name>
+    </Button_setAllToPulseMin>
+    <Button_setAllToCentre>
+        <name>setAllToCentre [i]</name>
         <value>0</value>
-    </Button_setAllToGlobal1>
-    <Button_setAllToGlobal2>
-        <name>setAllToGlobal [p]</name>
+    </Button_setAllToCentre>
+    <Button_setAllToPulseMax>
+        <name>setAllToPulseMax [.]</name>
         <value>0</value>
-    </Button_setAllToGlobal2>
-    <Button_setAllToGlobal3>
-        <name>setAllToGlobal [.]</name>
-        <value>0</value>
-    </Button_setAllToGlobal3>
+    </Button_setAllToPulseMax>
     <Button_Shortcut_0>
         <name>Shortcut_0 [1]</name>
         <value>0</value>
@@ -71,12 +67,4 @@
         <name>Shortcut_9 [0]</name>
         <value>0</value>
     </Button_Shortcut_9>
-    <Button_Shortcut_81>
-        <name>Shortcut_8 [i]</name>
-        <value>0</value>
-    </Button_Shortcut_81>
-    <Button_Shortcut_91>
-        <name>Shortcut_9 [p]</name>
-        <value>0</value>
-    </Button_Shortcut_91>
 </controls>

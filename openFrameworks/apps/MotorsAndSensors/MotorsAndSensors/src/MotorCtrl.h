@@ -28,5 +28,6 @@ public:
 	void setAllToGlobalPulseMax(ofEventArgs& e);
 	
 	void setToPulseMin(ofEventArgs& e);
+	void setToCentre(ofEventArgs& e);
 	void setToPulseMax(ofEventArgs& e);
 };

@@ -9,3 +9,4 @@
 
 #include "InteractiveScene.h"
 
+int InteractiveScene::uniqueId = 0;

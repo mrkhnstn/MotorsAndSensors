@@ -41,6 +41,7 @@ ofTrueTypeFont Motor::font;
 int Motor::maxProximityValue = 30;
 int Motor::proximityOnThreshold = 5;
 float Motor::userOffDelayTime = 2;
+int Motor::adjacentMotors = 2;
 
 void Motor::setup(){
 	
@@ -56,7 +57,7 @@ void Motor::setup(){
 	pos.x = cosf(ofDegToRad(posAngle))*distanceToCentre;
 	pos.y = sinf(ofDegToRad(posAngle))*distanceToCentre;
 		
-	angle = 90;
+	angle = 0;
 	tgtAngle = angle;
 	
 	pulseMin = 600;
@@ -143,13 +144,16 @@ void Motor::update(){
 	// update pulse
 	switch (calibrationMode) {
 		case 0:
-			pulse = ofMap(angle, 0, 180, pulseMin, pulseMax, true);
+			pulse = ofMap(angle, 0, 180, pulseMax, pulseMin, true);
 			break;
 		case 1:
 			pulse = pulseMin;
 			break;
 		case 2:
 			pulse = pulseMax;
+			break;
+		case 3:
+			pulse = (int)(pulseMin + (pulseMax - pulseMin) * 0.5);
 			break;
 		default:
 			break;

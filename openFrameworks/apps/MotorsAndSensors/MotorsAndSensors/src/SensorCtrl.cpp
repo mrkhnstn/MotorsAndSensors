@@ -9,13 +9,14 @@
 
 #include "SensorCtrl.h"
 #include "MotorsAndSensors.h"
+#include "CvCtrl.h"
 
 void SensorCtrl::setup(){
 	
 	Singleton<ofxOscManager>::instance()->registerInterest(*this,SENSOR_OSC_TAG);
 	
 	minDistance = 40;
-	maxDistance = 300;
+	maxDistance = 270;
 	distancePow = 3;
 	//analogMin = 40;
 	//analogMax = 470;
@@ -89,6 +90,7 @@ void SensorCtrl::setupGUI(){
 	
 	gui.page(1).addPageShortcut(gui.addPage("Sensors"));
 	
+	gui.addTitle("user in proximity");
 	gui.addDebug("userInProximity", _userInProximity);
 	gui.addSlider("numOfRaysHit",numOfRaysHit,0,128);
 	gui.addSlider("numOfRaysHitThresh",numOfRaysHitThresh,0,128);
@@ -97,6 +99,8 @@ void SensorCtrl::setupGUI(){
 	gui.addSlider("numOfRaysHitInWindow",numOfRaysHitInWindow,0,256);
 	gui.addSlider("numOfRaysHitInWindowThresh",numOfRaysHitInWindowThresh,0,256);
 	gui.addSlider("userInProximityDistance", Sensor::userInProximityDistance, 40, 300);
+	
+	gui.addTitle("sensor positioning");
 	gui.addSlider("distanceToCentre", Sensor::distanceToCentre, 250, 350);
 	gui.addSlider("angleBetweenRays", Sensor::angleBetweenRays, 5, 10);
 	
@@ -107,13 +111,17 @@ void SensorCtrl::setupGUI(){
 	//gui.addSlider("analogMin", analogMin, 0, 1024);
 	//gui.addSlider("analogMax", analogMax, 0, 1024);
 	
-	gui.addSlider("minDistance", minDistance, 0, 400);
-	gui.addSlider("maxDistance", maxDistance, 0, 400);
-	
-	gui.addTitle("lerp smoothing");
-	
+	//gui.addSlider("minDistance", minDistance, 0, 400);
+	//gui.addSlider("maxDistance", maxDistance, 0, 400);
+	//
+	gui.addTitle("LUT");
+	gui.addSlider("distancePow", distancePow, 1, 5);
+	gui.addToggle("doLUT", doLUT);
+	//
+	gui.addTitle("smoothing");
 	gui.addSlider("adaptLerpStrength", adaptLerpStrength, 0.001, 0.5);
 	gui.addSlider("adjacentLerpStrength", adjLerpStrength, 0.001, 0.5);
+	gui.addToggle("doAveraging", doAveraging);
 	//
 	gui.addTitle("bg subtraction");
 	gui.addToggle("doBgSubtract", doBgSubtract);
@@ -125,10 +133,31 @@ void SensorCtrl::setupGUI(){
 	gui.addSlider("maxHitScore", maxHitScore, 1, 1024);
 	gui.addSlider("hitScoreIncFactor", hitScoreIncFactor,0.01,1);
 	gui.addSlider("hitScoreDecFactor", hitScoreDecFactor,0.01,1);
+	//
+	CvCtrl& cvCtrl = *Singleton<CvCtrl>::instance(); 
+	gui.addTitle("drawing 2D");
+	gui.addToggle("doDraw2D", cvCtrl.doDraw);
+	gui.addSlider("drawScale", cvCtrl.drawScale, 0.5, 10);
+	gui.addSlider("drawX",cvCtrl.drawX,-512,1024);
+	gui.addSlider("drawY",cvCtrl.drawY,-512, 1024);
 	
-	gui.addSlider("distancePow", distancePow, 1, 5);
-	gui.addToggle("doLUT", doLUT);
-	gui.addToggle("doAveraging", doAveraging);
+	//gui.addSlider("rayGap", rayGap, 1, 100);
+	gui.addSlider("rayDrawScale", cvCtrl.rayDrawScale, 0.1, 1);
+	gui.addToggle("doDrawRaw", cvCtrl.doDrawRaw);
+	gui.addToggle("doDrawBg", cvCtrl.doDrawBg);
+	gui.addToggle("doDrawAdapter", cvCtrl.doDrawAdapted);
+	gui.addToggle("doDrawHitScore", cvCtrl.doDrawHitScore);
+	//
+	gui.addTitle("drawing 3D");
+	gui.addToggle("doDraw3D", Sensor::doDraw);
+	gui.addToggle("doDrawRays", Sensor::doDrawRays);
+	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
+	
+	//gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
+
+	//gui.addToggle("drawOnlyInSensorZone", Sensor::drawOnlyInSensorZone);
+	//gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
+	
 	
 	
 	/*
@@ -167,19 +196,9 @@ void SensorCtrl::setupGUI(){
 		max += 20;
 	}
 	
-	
-	
 	for(int i=0; i<sensors.size(); i++)
 		sensors[i]->setupGUI();
 	
-	gui.setPage("Sensors");
-	gui.addTitle("drawing");
-	gui.addToggle("doDraw", Sensor::doDraw);
-	gui.addToggle("doDrawRays", Sensor::doDrawRays);
-	gui.addToggle("doDrawHitPoints", Sensor::doDrawHitPoints);
-	gui.addToggle("doDrawLabels", Sensor::doDrawLabels);
-	gui.addToggle("drawOnlyInSensorZone", Sensor::drawOnlyInSensorZone);
-	//gui.addToggle("doDrawSensorThreshold", Sensor::doDrawSensorThreshold);
 }
 
 void SensorCtrl::enableAllSensors(ofEventArgs& e){

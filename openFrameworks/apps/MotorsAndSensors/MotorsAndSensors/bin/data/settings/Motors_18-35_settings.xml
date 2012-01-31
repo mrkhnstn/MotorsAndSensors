@@ -25,27 +25,27 @@
     </SliderFloat_angle_23>
     <SliderFloat_angle_24>
         <name>angle_24</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_24>
     <SliderFloat_angle_25>
         <name>angle_25</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_25>
     <SliderFloat_angle_26>
         <name>angle_26</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_26>
     <SliderFloat_angle_27>
         <name>angle_27</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_27>
     <SliderFloat_angle_28>
         <name>angle_28</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_28>
     <SliderFloat_angle_29>
         <name>angle_29</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_angle_29>
     <SliderFloat_angle_30>
         <name>angle_30</name>
@@ -97,27 +97,27 @@
     </SliderFloat_tgtAngle_23>
     <SliderFloat_tgtAngle_24>
         <name>tgtAngle_24</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_24>
     <SliderFloat_tgtAngle_25>
         <name>tgtAngle_25</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_25>
     <SliderFloat_tgtAngle_26>
         <name>tgtAngle_26</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_26>
     <SliderFloat_tgtAngle_27>
         <name>tgtAngle_27</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_27>
     <SliderFloat_tgtAngle_28>
         <name>tgtAngle_28</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_28>
     <SliderFloat_tgtAngle_29>
         <name>tgtAngle_29</name>
-        <value>90.000000</value>
+        <value>180.000000</value>
     </SliderFloat_tgtAngle_29>
     <SliderFloat_tgtAngle_30>
         <name>tgtAngle_30</name>

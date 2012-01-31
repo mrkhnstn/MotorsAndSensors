@@ -33,7 +33,7 @@ void Sensor::setup(){
 		doStaticInit = false;
 	}
 	
-	posAngle = -index * 360 / numSensors - 7.5;
+	posAngle = -index * 360 / numSensors - 5;
 	
 	_userInProximity = false;
 }
@@ -84,11 +84,11 @@ void Sensor::draw(){
 	
 	if(!doDraw) return;
 	
-	/*
+	
 	ofPushStyle();
 	ofPushMatrix();
 	
-	ofRotate(posAngle, 0, 1, 0);
+	ofRotate(360-posAngle-2.5, 0, 1, 0);
 	
 	ofPushMatrix();
 	ofTranslate(distanceToCentre, 0, 0); // move from cylinder centre by cylinder radius
@@ -97,18 +97,20 @@ void Sensor::draw(){
 	ofSetColor(255, 255, 255); //TODO: make color variable
 	ofPushMatrix();
 	ofRotate(90, 1, 0, 0);
-	ofCircle(0, 0, 2);
+	ofNoFill();
+	ofCircle(0, 0, 0.5);
 	ofPopMatrix();
 	
 	
 	// draw rays using openGL transforms
+	ofScale(0.25, 0.25, 0.25);
 	for(int i=0; i<5; i++){
 		ofPushMatrix();
 		ofRotate(-2.5 * angleBetweenRays + i * angleBetweenRays, 0, 1, 0);
 		
 		float* temp = distanceValues[i];
 		
-		if (*temp < userInProximityDistance) {
+		//if (*temp < userInProximityDistance) {
 			
 			if(doDrawRays){
 				ofNoFill();
@@ -116,6 +118,7 @@ void Sensor::draw(){
 				ofLine(0, 0, *temp, 0);
 			}
 			
+			/*
 			if (doDrawHitPoints) {
 				ofSetLineWidth(0);
 				ofFill();
@@ -123,8 +126,9 @@ void Sensor::draw(){
 				ofRotate(90, 1, 0, 0);
 				ofCircle(0, 0, 5);
 			}
+			*/
 			
-		}
+		//}
 		
 		ofPopMatrix();
 	}
@@ -135,13 +139,13 @@ void Sensor::draw(){
 	if(doDrawLabels){
 		ofSetColor(255, 255, 255);
 		ofPushMatrix();
-		ofTranslate(distanceToCentre+15, 0, 0);
+		ofTranslate(distanceToCentre, 0, 0);
 		
 		//glDisable(GL_DEPTH_TEST);
 		//ofRotate(180, 0, 0, 1);
 		ofRotate(90, 0, 1, 0);
 		ofRotate(90, 1, 0, 0);
-		ofScale(0.5, 0.5, 0.5);
+		ofScale(0.75, 0.75, 0.75);
 		
 		ofRectangle rect = font.getStringBoundingBox(ofToString(index), 0, 0);
 		font.drawString(ofToString(index), -rect.width * 0.5, rect.height * 0.5);
@@ -154,14 +158,14 @@ void Sensor::draw(){
 	
 	ofPopMatrix();
 	 	ofPopStyle();
-	*/
 
 
+	/*
 	if(doDrawLabels){
 		ofSetColor(0, 255, 0);
 		ofPushMatrix();
 		ofTranslate(pos.x, 0, pos.y);
-		ofCircle(0, 0, 2);
+		//ofCircle(0, 0, 2);
 		ofRectangle rect = font.getStringBoundingBox(ofToString(index), 0, 0);
 		ofRotate(90, 1, 0, 0);
 		font.drawString(ofToString(index), -rect.width * 0.5, rect.height * 0.5);
@@ -195,6 +199,7 @@ void Sensor::draw(){
 			ofPopMatrix();
 			}
 		}
+	 */
 	
 
 }

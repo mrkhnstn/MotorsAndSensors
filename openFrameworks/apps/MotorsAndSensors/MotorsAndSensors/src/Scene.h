@@ -21,6 +21,7 @@ public:
 	float elapsedTime;
 	float startTime;
 	
+	Scene();
 	virtual void setup();	
 	virtual void setupGUI();	
 	virtual void postGUI();

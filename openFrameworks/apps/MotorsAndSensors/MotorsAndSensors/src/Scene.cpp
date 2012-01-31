@@ -11,9 +11,13 @@
 #include "Scene.h"
 #include "SceneCtrl.h"
 #include "Singleton.h"
+#include "Motor.h"
+
+Scene::Scene(){
+	name = "Scene";
+}
 
 void Scene::setup(){
-	name = "Scene";
 	motorCtrl = Singleton<MotorCtrl>::instance();
 	sensorCtrl = Singleton<SensorCtrl>::instance();
 	enabled = false;
@@ -90,7 +94,18 @@ float Scene::getMotorPosAngle(int motorId){
 
 // returns true if there is a user in front of the motor
 bool Scene::userInFrontOfMotor(int motorId){
-	return getMotor(motorId).userInProximity();
+	for (int i=motorId-Motor::adjacentMotors; i<=motorId+Motor::adjacentMotors; i++) {
+		int tempId = i;
+		if(tempId < 0)
+			tempId += getMotorCount();
+		else if (tempId >= getMotorCount())
+			tempId -= getMotorCount();
+		if (getMotor(tempId).userInProximity()) {
+			return true;
+		}
+	}
+	return false;
+	//return getMotor(motorId).userInProximity();
 }
 
 

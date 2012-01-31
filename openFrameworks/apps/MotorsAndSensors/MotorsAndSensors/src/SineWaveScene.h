@@ -21,21 +21,37 @@ public:
 	float minAngle, maxAngle;	// Motors rotation will range between minAngle and maxAngle
 	int numWaves;
 	
+	float fade;					// For smooth fading in and out
+	float fadeDuration;			// Duration of fading in and out
+	float duration;				// duration of scene
+	
 	int counter, maxCounter;
 	
 	// List of variable presets
 	bool setPreset1, setPreset2, setPreset3, setPreset4;
 	
+	static int uniqueId;
+	int id;
+	
 	void setup(){
 		Scene::setup();
-		name = "SineWaveScene";
-		
+		id = uniqueId++;
+		name = "SineWaveScene_"+ofToString(id);
 		counter = 0;
 		maxCounter = 3;
+		
+		fade = 0;
+		fadeDuration = 3;
+		duration = 10;
 	}
 	
 	void setupGUI(){
 		Scene::setupGUI();
+		gui.addSlider("sceneDuration", duration, 10, 300);
+		gui.addSlider("fadeDuration", fadeDuration, 0, 10);
+		gui.addDebug("fade", fade);
+		
+		gui.addTitle("Sine parameters");
 		gui.addSlider("animationAngle", animationAngle, 0, 360);
 		gui.addSlider("velocity", velocity, 0, 10);
 		gui.addSlider("minAngle", minAngle, 0, 180);
@@ -50,8 +66,9 @@ public:
 		gui.addButton("Preset 4", setPreset4);
 		
 		gui.addTitle("Playlist variables").setNewColumn(true);
-		gui.addSlider("counter", counter, 0, 100);
-		gui.addSlider("maxCounter", maxCounter, 1, 100);
+		//gui.addSlider("counter", counter, 0, 100);
+		//gui.addSlider("maxCounter", maxCounter, 1, 100);
+		
 	}
 	
 	void postGUI(){
@@ -78,7 +95,18 @@ public:
 	}
 	
 	void update(){
+		if(!enabled) return;
+		
 		Scene::update();
+		
+		// Adjust fade
+		if (elapsedTime < fadeDuration) {
+			fade = ofMap(elapsedTime, 0, fadeDuration, 0, 1, true);
+		} else if (elapsedTime > duration - fadeDuration){
+			fade = ofMap(elapsedTime, duration - fadeDuration, duration, 1, 0, true);
+		} else {
+			fade = 1;
+		}
 		
 		// Detect presets
 		if(setPreset1 == true)
@@ -97,10 +125,12 @@ public:
 		if (animationAngle > 360){
 			animationAngle = animationAngle-360;
 			
+			/*
 			// Scene playlist functionality
 			counter++;
 			if(counter >= maxCounter)
 				stop();
+			 */
 		}
 		
 		
@@ -111,9 +141,12 @@ public:
 		for(int i=0; i<getMotorCount(); i++){
 			phase = 5*(numWaves)*i;
 			sine = sin((animationAngle + phase ) *DEG_TO_RAD);
-			motorAngle = ofMap(sine, -1, 1, minAngle, maxAngle);
+			motorAngle = ofMap(sine, -1, 1, minAngle, maxAngle) * fade;
 			setMotorAngle(i, motorAngle);
 		}
+		
+		if(elapsedTime > duration + 3)
+			stop();
 		
 	}
 	

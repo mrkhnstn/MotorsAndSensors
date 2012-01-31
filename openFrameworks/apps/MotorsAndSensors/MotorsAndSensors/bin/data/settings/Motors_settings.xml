@@ -1,4 +1,8 @@
 <controls>
+    <SliderInt_adjacentMotors>
+        <name>adjacentMotors</name>
+        <value>2</value>
+    </SliderInt_adjacentMotors>
     <SliderFloat_userOffDelayTime>
         <name>userOffDelayTime</name>
         <value>1.500000</value>
@@ -31,6 +35,18 @@
         <name>Motors_54-71</name>
         <value>0</value>
     </Button_Motors_54-71>
+    <Button_setAllToPulseMin>
+        <name>setAllToPulseMin [,]</name>
+        <value>0</value>
+    </Button_setAllToPulseMin>
+    <Button_setAllToCentre>
+        <name>setAllToCentre [i]</name>
+        <value>0</value>
+    </Button_setAllToCentre>
+    <Button_setAllToPulseMax>
+        <name>setAllToPulseMax [.]</name>
+        <value>0</value>
+    </Button_setAllToPulseMax>
     <Button_Calibrate_Pulse_Min>
         <name>Calibrate_Pulse_Min</name>
         <value>0</value>
@@ -49,7 +65,7 @@
     </Toggle_draw3D>
     <Toggle_draw2D>
         <name>draw2D</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_draw2D>
     <Toggle_drawLabels>
         <name>drawLabels</name>
@@ -57,28 +73,28 @@
     </Toggle_drawLabels>
     <ColorPicker_backColorLow>
         <name>backColorLow</name>
-        <values_0>49.500000</values_0>
-        <values_1>49.500000</values_1>
-        <values_2>50.500000</values_2>
+        <values_0>200.500000</values_0>
+        <values_1>200.500000</values_1>
+        <values_2>200.500000</values_2>
         <values_3>255.000000</values_3>
     </ColorPicker_backColorLow>
     <ColorPicker_frontColorLow>
         <name>frontColorLow</name>
-        <values_0>199.500000</values_0>
-        <values_1>200.500000</values_1>
-        <values_2>199.500000</values_2>
+        <values_0>50.000000</values_0>
+        <values_1>50.000000</values_1>
+        <values_2>51.000000</values_2>
         <values_3>255.000000</values_3>
     </ColorPicker_frontColorLow>
     <ColorPicker_backColorHigh>
         <name>backColorHigh</name>
-        <values_0>100.500000</values_0>
-        <values_1>49.500000</values_1>
-        <values_2>50.500000</values_2>
+        <values_0>250.000000</values_0>
+        <values_1>150.000000</values_1>
+        <values_2>150.000000</values_2>
         <values_3>255.000000</values_3>
     </ColorPicker_backColorHigh>
     <ColorPicker_frontColorHigh>
         <name>frontColorHigh</name>
-        <values_0>255.000000</values_0>
+        <values_0>100.000000</values_0>
         <values_1>0.000000</values_1>
         <values_2>0.000000</values_2>
         <values_3>255.000000</values_3>

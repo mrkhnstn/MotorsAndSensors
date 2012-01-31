@@ -58,8 +58,6 @@ void CvCtrl::setupGUI(){
 	
 	//gui.addSlider("rayGap", rayGap, 1, 100);
 	gui.addSlider("rayDrawScale", rayDrawScale, 0.1, 1);
-	
-	
 	gui.addToggle("doDrawRaw", doDrawRaw);
 	gui.addToggle("doDrawBg", doDrawBg);
 	gui.addToggle("doDrawAdapter", doDrawAdapted);
@@ -97,10 +95,11 @@ void CvCtrl::setupGUI(){
 	gui.addSlider("minSensingZone", Coordinates::minSensingZone, 0, 1024);
 	gui.addSlider("maxSensingZone", Coordinates::maxSensingZone, 0, 1024);
 	
+	/*
 	gui.addTitle("motor proximity value");
 	gui.addSlider("proximityMax", Motor::maxProximityValue, 10, 100);
 	gui.addSlider("proximityThreshold", Motor::proximityOnThreshold, 0, 100);
-	
+	*/
 	
 }
 
@@ -185,9 +184,14 @@ void CvCtrl::update(){
 void CvCtrl::draw(){
 	if(!doDraw) return;
 	
+	float tempMotorGap = motorGap * drawScale;
+	float tempRayGap = rayGap * drawScale;
+	float tempSensorGap = sensorGap * drawScale;
+	float lineGap = 2;
+	
 	ofPushMatrix();
 	ofTranslate(drawX, drawY, 0);
-	ofScale(drawScale, 1, 1);
+	ofScale(1, 1, 1);
 	ofSetColor(255, 255, 0);
 	ofNoFill();
 	//ofRect(0,0,imgW,imgH);
@@ -214,7 +218,7 @@ void CvCtrl::draw(){
 		
 		ofPushMatrix();
 		
-		ofTranslate(i*motorGap, 0, 0);
+		ofTranslate(i*tempMotorGap, 0, 0);
 		ofLine(-crossSize, 0, crossSize, 0);
 		ofLine(0,-crossSize, 0, crossSize);
 		ofDrawBitmapString(ofToString(motor.index), 0, 0);	
@@ -253,7 +257,7 @@ void CvCtrl::draw(){
 		Sensor& sensor = *sensors[i];
 		//ofxVec2f cartPos = Coordinates::fromPolar(sensor.pos);
 		ofPushMatrix();
-		ofTranslate(sensorOffset + i * sensorGap, 0, 0);
+		ofTranslate(sensorOffset + i * tempSensorGap, 0, 0);
 		ofLine(-crossSize, 0, crossSize, 0);
 		ofLine(0,-crossSize, 0, crossSize);
 		//font.drawString(ofToString(sensor.index), -4, -4);
@@ -274,7 +278,7 @@ void CvCtrl::draw(){
 	if(doDrawRaw){
 		ofSetColor(0, 255, 0);
 		for(int j=0; j<TOTAL_RAYS; j++){
-			float x = rayOffset + j * rayGap - 1;
+			float x = rayOffset + j * tempRayGap - 2;
 			ofLine(x, 0, x, sensorCtrl.rawValues[j]);
 		}
 	}
@@ -282,7 +286,7 @@ void CvCtrl::draw(){
 	if(doDrawBg){
 		ofSetColor(0, 255, 255);
 		for(int j=0; j<TOTAL_RAYS; j++){
-			float x = rayOffset + j * rayGap - 2;
+			float x = rayOffset + j * tempRayGap - 4;
 			ofLine(x, 0, x, sensorCtrl.bgSubtract[j]);
 		}
 	}
@@ -295,14 +299,14 @@ void CvCtrl::draw(){
 			} else {
 				ofSetColor(255, 0, 255);
 			}
-			float x = rayOffset + j * rayGap + 0;
+			float x = rayOffset + j * tempRayGap + 0;
 			ofLine(x, 0, x, sensorCtrl.adaptedValues[j]);
 		}
 		
 		ofSetColor(255, 255, 0);
 		ofPushMatrix();
 		ofTranslate(0, sensorCtrl.globalHitThreshold, 0);
-		ofLine(0, 0, imgW, 0);
+		ofLine(0, 0, imgW * drawScale, 0);
 		ofDrawBitmapString("hit threshold", 0, 0);
 		ofPopMatrix();
 	}
@@ -311,21 +315,21 @@ void CvCtrl::draw(){
 		
 		for(int j=0; j<TOTAL_RAYS; j++){
 			ofSetColor(128, 128, 128);
-			float x = rayOffset + j * rayGap + 1;
+			float x = rayOffset + j * tempRayGap + 2;
 			ofLine(x, 0, x, sensorCtrl.hitScore[j]);
 		}
 		
 		ofSetColor(128, 128, 128);
 		ofPushMatrix();
 		ofTranslate(0, sensorCtrl.globalHitScoreThreshold, 0);
-		ofLine(0, 0, imgW, 0);
+		ofLine(0, 0, imgW * drawScale, 0);
 		ofDrawBitmapString("hit score threshold", 0, 0);
 		ofPopMatrix();
 		
 		ofSetColor(128, 128, 128);
 		ofPushMatrix();
 		ofTranslate(0, sensorCtrl.maxHitScore, 0);
-		ofLine(0, 0, imgW, 0);
+		ofLine(0, 0, imgW * drawScale, 0);
 		ofDrawBitmapString("max hit score", 0, 0);
 		ofPopMatrix();
 	}

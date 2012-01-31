@@ -1,15 +1,15 @@
 <controls>
     <Toggle_doDraw>
         <name>doDraw</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_doDraw>
     <SliderFloat_drawScale>
         <name>drawScale</name>
-        <value>6.591177</value>
+        <value>6.088235</value>
     </SliderFloat_drawScale>
     <SliderFloat_drawX>
         <name>drawX</name>
-        <value>10.000000</value>
+        <value>-171.670593</value>
     </SliderFloat_drawX>
     <SliderFloat_drawY>
         <name>drawY</name>
@@ -21,7 +21,7 @@
     </SliderFloat_rayDrawScale>
     <Toggle_doDrawRaw>
         <name>doDrawRaw</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDrawRaw>
     <Toggle_doDrawBg>
         <name>doDrawBg</name>
@@ -103,12 +103,4 @@
         <name>maxSensingZone</name>
         <value>480.000000</value>
     </SliderFloat_maxSensingZone>
-    <SliderInt_proximityMax>
-        <name>proximityMax</name>
-        <value>35</value>
-    </SliderInt_proximityMax>
-    <SliderInt_proximityThreshold>
-        <name>proximityThreshold</name>
-        <value>21</value>
-    </SliderInt_proximityThreshold>
 </controls>

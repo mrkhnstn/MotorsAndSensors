@@ -7,14 +7,10 @@
         <name>globalPulseMax</name>
         <value>2350</value>
     </SliderInt_globalPulseMax>
-    <Button_setAllToGlobal2>
-        <name>setAllToGlobal [p]</name>
+    <Button_setAllToGlobal>
+        <name>setAllToGlobal</name>
         <value>0</value>
-    </Button_setAllToGlobal2>
-    <Button_setAllToGlobal3>
-        <name>setAllToGlobal [.]</name>
-        <value>0</value>
-    </Button_setAllToGlobal3>
+    </Button_setAllToGlobal>
     <SliderInt_motor_0>
         <name>motor_0</name>
         <value>2331</value>

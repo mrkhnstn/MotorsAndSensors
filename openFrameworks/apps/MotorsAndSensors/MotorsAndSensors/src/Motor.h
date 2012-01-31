@@ -75,6 +75,8 @@ public:
 	static int proximityOnThreshold; // if proximity value of sensor is larger then proximityOnThreshold then a user is in proximity
 	bool proximityUpdated;
 	
+	static int adjacentMotors; // number of adjacent motors to open (e.g. 2 will open 6 in total because each sensor opens already two motors)
+	
 	float relativePos; // position in relation to rays;
 	vector<int> rayIds;
 	

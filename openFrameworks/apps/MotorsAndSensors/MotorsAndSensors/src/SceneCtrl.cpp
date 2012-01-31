@@ -89,10 +89,11 @@ void SceneCtrl::setupGUI(){
 	gui.addButton("Shortcut_8", '9', this, &SceneCtrl::shortcut_9);
 	gui.addButton("Shortcut_9", '0', this, &SceneCtrl::shortcut_0);
 	
+	/*
 	gui.addTitle("modes");
 	gui.addButton("Shortcut_8", 'i', this, &SceneCtrl::setToInteractiveOnlyMode);
 	gui.addButton("Shortcut_9", 'p', this, &SceneCtrl::setToPlaylistOnlyMode);
-	
+	*/
 }
 
 void SceneCtrl::postGUI(){

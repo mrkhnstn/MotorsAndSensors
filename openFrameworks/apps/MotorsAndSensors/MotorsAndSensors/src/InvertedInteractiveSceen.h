@@ -45,7 +45,7 @@ public:
 				if(userInFrontOfMotor(i) || userInFrontOfMotor(left) || userInFrontOfMotor(right))
 				{
 					getMotor(i).doLimitSpeed = false;
-					panelBack(i);
+					panelFront(i);
 				} else {
 					getMotor(i).doLimitSpeed = true;
 					panelOpen(i);
@@ -56,7 +56,7 @@ public:
 				if(userInFrontOfMotor(i))
 				{
 					getMotor(i).doLimitSpeed = false;
-					panelBack(i);
+					panelFront(i);
 				} else {
 					getMotor(i).doLimitSpeed = true;
 					panelOpen(i);

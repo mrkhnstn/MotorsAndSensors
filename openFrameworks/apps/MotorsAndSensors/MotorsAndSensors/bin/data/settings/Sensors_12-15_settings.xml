@@ -97,7 +97,7 @@
     </SliderFloat_distance_12-64>
     <SliderFloat_distance_13-65>
         <name>distance_13-65</name>
-        <value>0.000000</value>
+        <value>0.000001</value>
     </SliderFloat_distance_13-65>
     <SliderFloat_distance_13-66>
         <name>distance_13-66</name>

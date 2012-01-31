@@ -7,14 +7,10 @@
         <name>globalPulseMin</name>
         <value>721</value>
     </SliderInt_globalPulseMin>
-    <Button_setAllToGlobal>
-        <name>setAllToGlobal [o]</name>
+    <Button_setAllToGlobalPulseMin>
+        <name>setAllToGlobalPulseMin</name>
         <value>0</value>
-    </Button_setAllToGlobal>
-    <Button_setAllToGlobal1>
-        <name>setAllToGlobal [,]</name>
-        <value>0</value>
-    </Button_setAllToGlobal1>
+    </Button_setAllToGlobalPulseMin>
     <SliderInt_motor_0>
         <name>motor_0</name>
         <value>683</value>

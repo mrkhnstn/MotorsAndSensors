@@ -1,11 +1,11 @@
 <controls>
     <ComboBox_Current_Scene>
         <name>Current_Scene</name>
-        <value>11</value>
+        <value>2</value>
     </ComboBox_Current_Scene>
     <ComboBox_Current_Mode>
         <name>Current_Mode</name>
-        <value>4</value>
+        <value>2</value>
     </ComboBox_Current_Mode>
     <SliderFloat_switchToIdleTime>
         <name>switchToIdleTime</name>
@@ -15,26 +15,26 @@
         <name>IdleScene</name>
         <value>0</value>
     </Button_IdleScene>
-    <Button_PalindromeScene>
-        <name>PalindromeScene</name>
+    <Button_Static_Black>
+        <name>Static_Black</name>
         <value>0</value>
-    </Button_PalindromeScene>
+    </Button_Static_Black>
+    <Button_Static_Open>
+        <name>Static_Open</name>
+        <value>0</value>
+    </Button_Static_Open>
+    <Button_Static_White>
+        <name>Static_White</name>
+        <value>0</value>
+    </Button_Static_White>
     <Button_StepScene>
         <name>StepScene</name>
         <value>0</value>
     </Button_StepScene>
-    <Button_SimpleInteractiveScene>
-        <name>SimpleInteractiveScene</name>
-        <value>0</value>
-    </Button_SimpleInteractiveScene>
     <Button_ExampleScene>
         <name>ExampleScene</name>
         <value>0</value>
     </Button_ExampleScene>
-    <Button_InteractiveScene>
-        <name>InteractiveScene</name>
-        <value>0</value>
-    </Button_InteractiveScene>
     <Button_RotationRangeScene>
         <name>RotationRangeScene</name>
         <value>0</value>
@@ -43,10 +43,22 @@
         <name>MovingWaveScene</name>
         <value>0</value>
     </Button_MovingWaveScene>
-    <Button_SineWaveScene>
-        <name>SineWaveScene</name>
+    <Button_SineWaveScene_0>
+        <name>SineWaveScene_0</name>
         <value>0</value>
-    </Button_SineWaveScene>
+    </Button_SineWaveScene_0>
+    <Button_SineWaveScene_1>
+        <name>SineWaveScene_1</name>
+        <value>0</value>
+    </Button_SineWaveScene_1>
+    <Button_SineWaveScene_2>
+        <name>SineWaveScene_2</name>
+        <value>0</value>
+    </Button_SineWaveScene_2>
+    <Button_SineWaveScene_3>
+        <name>SineWaveScene_3</name>
+        <value>0</value>
+    </Button_SineWaveScene_3>
     <Button_OpenPortionScene>
         <name>OpenPortionScene</name>
         <value>0</value>
@@ -55,10 +67,10 @@
         <name>SnoringScene</name>
         <value>0</value>
     </Button_SnoringScene>
-    <Button_InvertedInteractiveScene>
-        <name>InvertedInteractiveScene</name>
+    <Button_SwipeScene>
+        <name>SwipeScene</name>
         <value>0</value>
-    </Button_InvertedInteractiveScene>
+    </Button_SwipeScene>
     <SliderInt_Idle_List_Pos>
         <name>Idle_List_Pos</name>
         <value>1</value>
@@ -187,12 +199,4 @@
         <name>Shortcut_9 [0]</name>
         <value>0</value>
     </Button_Shortcut_9>
-    <Button_Shortcut_81>
-        <name>Shortcut_8 [i]</name>
-        <value>0</value>
-    </Button_Shortcut_81>
-    <Button_Shortcut_91>
-        <name>Shortcut_9 [p]</name>
-        <value>0</value>
-    </Button_Shortcut_91>
 </controls>

@@ -16,6 +16,7 @@
 #include "OpenPortionScene.h"
 #include "SnoringScene.h"
 #include "InvertedInteractiveSceen.h"
+#include "SwipeScene.h"
 
 #include "SerialTest2.h"
 
@@ -37,17 +38,24 @@ int main( ){
 	// ADD SCENES
 	
 	Scene::add(new IdleScene());
-	Scene::add(new PalindromeScene());
-	Scene::add(new StepScene());
-	Scene::add(new SimpleInteractiveScene());
-	Scene::add(new ExampleScene());
 	Scene::add(new InteractiveScene());
+	Scene::add(new InteractiveScene());
+	Scene::add(new InteractiveScene());
+	//Scene::add(new InvertedInteractiveScene());
+	//Scene::add(new PalindromeScene());
+	Scene::add(new StepScene());
+	//Scene::add(new SimpleInteractiveScene());
+	Scene::add(new ExampleScene());
 	Scene::add(new RotationRangeScene());
 	Scene::add(new MovingWaveScene());
 	Scene::add(new SineWaveScene());
+	Scene::add(new SineWaveScene());
+	Scene::add(new SineWaveScene());
+	Scene::add(new SineWaveScene());
 	Scene::add(new OpenPortionScene());
 	Scene::add(new SnoringScene());
-	Scene::add(new InvertedInteractiveScene());
+	Scene::add(new SwipeScene());
+	
 	
 	//////////////////////////////////////////////
 	
