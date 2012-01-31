@@ -111,12 +111,19 @@ public:
 		
 		// reset all to black
 		if (elapsedTime > duration) {
-			for (int i=0; i<getMotorCount(); i++)
-				panelFront(i);
-		}
+			for (int i=0; i<getMotorCount(); i++){
+				if(userInFrontOfMotor(i))
+				{
+					getMotor(i).doLimitSpeed = false;
+					panelBack(i);
+				} else {
+					getMotor(i).doLimitSpeed = true;
+					panelOpen(i);
+				}
+			}		}
 
 		// stop this scene 3 seconds after duration to allow for reset
-		if (elapsedTime > duration + 3) {
+		if (elapsedTime > duration + 1.5) {
 			stop();
 		}
 	}

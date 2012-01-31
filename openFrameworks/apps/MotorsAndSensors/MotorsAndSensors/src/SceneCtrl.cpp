@@ -50,7 +50,7 @@ void SceneCtrl::setupGUI(){
 	
 	string modeChoices[SCENE_CTRL_NUM_MODES] = {"IDLE","INTERACTIVE","MANUAL","PLAYLIST_ONLY","INTERACTIVE_ONLY"};
 	gui.addComboBox("Current_Mode", _mode, SCENE_CTRL_NUM_MODES, modeChoices);
-	
+	 
 	gui.addSlider("switchToIdleTime", switchToIdleTime, 0, 30);
 	
 	string idleListChoices[scenes.size()+1];
@@ -70,11 +70,13 @@ void SceneCtrl::setupGUI(){
 		gui.addComboBox("Idle_"+ofToString(i), idleList[i], scenes.size()+1, idleListChoices);
 	}
 	
+	/*
 	gui.addTitle("Interactive_Playlist").setNewColumn(true);
 	gui.addSlider("Pnteractive_List_Pos", interactiveListPos, 0, NUM_IDLE_ITEMS-1);
 	for (int i=0; i<NUM_INTERACTIVE_ITEMS; i++) {
 		gui.addComboBox("Interactive_"+ofToString(i), interactiveList[i], scenes.size()+1, idleListChoices);
 	}
+	*/
 	
 	gui.addTitle("keyboard shortcuts").setNewColumn(true);
 	gui.addTitle("playlist");

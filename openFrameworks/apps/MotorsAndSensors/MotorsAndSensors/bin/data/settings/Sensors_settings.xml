@@ -71,6 +71,10 @@
         <name>bgAdaptFactor</name>
         <value>0.001765</value>
     </SliderFloat_bgAdaptFactor>
+    <SliderFloat_rawThreshold>
+        <name>rawThreshold</name>
+        <value>734.870605</value>
+    </SliderFloat_rawThreshold>
     <SliderFloat_hitThreshold>
         <name>hitThreshold</name>
         <value>411.607849</value>
@@ -93,7 +97,7 @@
     </SliderFloat_hitScoreDecFactor>
     <Toggle_doDraw2D>
         <name>doDraw2D</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDraw2D>
     <SliderFloat_drawScale>
         <name>drawScale</name>
@@ -101,7 +105,7 @@
     </SliderFloat_drawScale>
     <SliderFloat_drawX>
         <name>drawX</name>
-        <value>-171.670593</value>
+        <value>72.282349</value>
     </SliderFloat_drawX>
     <SliderFloat_drawY>
         <name>drawY</name>

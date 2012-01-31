@@ -59,6 +59,7 @@ public:
 	float _bgAdaptFactor;
 	float adaptLerpStrength;
 	float adjLerpStrength;
+	float rawThreshold;
 	float globalHitThreshold; //TODO: calculate each hit threshold out of maximum and minimum values of each sensor
 	float globalHitScoreThreshold;
 	float maxHitScore;

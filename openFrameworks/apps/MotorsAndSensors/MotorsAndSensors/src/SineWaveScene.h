@@ -77,11 +77,11 @@ public:
 		// Force settings (to be disabled at a later stage)
 		animationAngle = 0;
 		direction = 1;
-		velocity = 1;
+		//velocity = 1;
 		
-		minAngle = 0;
-		maxAngle = 180;
-		numWaves = 1;
+		//minAngle = 0;
+		//maxAngle = 180;
+		//numWaves = 1;
 		setPreset1 = false;
 		setPreset2 = false;
 		setPreset3 = false;
@@ -142,7 +142,14 @@ public:
 			phase = 5*(numWaves)*i;
 			sine = sin((animationAngle + phase ) *DEG_TO_RAD);
 			motorAngle = ofMap(sine, -1, 1, minAngle, maxAngle) * fade;
-			setMotorAngle(i, motorAngle);
+			if(userInFrontOfMotor(i))
+			{
+				getMotor(i).doLimitSpeed = false;
+				panelOpen(i);
+			} else {
+				getMotor(i).doLimitSpeed = true;
+				setMotorAngle(i, motorAngle);
+			}
 		}
 		
 		if(elapsedTime > duration + 3)

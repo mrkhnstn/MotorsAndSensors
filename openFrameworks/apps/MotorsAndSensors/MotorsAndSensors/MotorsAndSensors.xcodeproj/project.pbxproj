@@ -72,6 +72,7 @@
 		84B311E314AF91B100B74EA3 /* StepScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B311E214AF91B100B74EA3 /* StepScene.cpp */; };
 		84B312C314B0B70500B74EA3 /* SimpleInteractiveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */; };
 		84B4249314D7F43400D95BCB /* SwipeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B4249214D7F43400D95BCB /* SwipeScene.cpp */; };
+		84B4257E14D88F2D00D95BCB /* MovingWindowScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B4257D14D88F2D00D95BCB /* MovingWindowScene.cpp */; };
 		84BC75FE14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */; };
 		84CD78E614CCB1590032C8EF /* RotationRangeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78DD14CCB1590032C8EF /* RotationRangeScene.cpp */; };
 		84CD78E714CCB1590032C8EF /* MovingWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78DF14CCB1590032C8EF /* MovingWaveScene.cpp */; };
@@ -352,7 +353,7 @@
 		84A3C3FC12DF424C00DC1D7B /* ofxTCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPServer.h; sourceTree = "<group>"; };
 		84A3C3FD12DF424C00DC1D7B /* ofxUDPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUDPManager.cpp; sourceTree = "<group>"; };
 		84A3C3FE12DF424C00DC1D7B /* ofxUDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUDPManager.h; sourceTree = "<group>"; };
-		84B280E014A61B7B007CEC59 /* MotorsAndSensorsDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotorsAndSensorsDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B280E014A61B7B007CEC59 /* MotorsAndSensors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotorsAndSensors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B310FA14AF77F600B74EA3 /* ofxBaseContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBaseContainer.h; sourceTree = "<group>"; };
 		84B310FB14AF77F600B74EA3 /* ofxBaseContainer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxBaseContainer.cpp; sourceTree = "<group>"; };
 		84B3118C14AF8E2A00B74EA3 /* IdleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdleScene.h; sourceTree = "<group>"; };
@@ -365,6 +366,8 @@
 		84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleInteractiveScene.cpp; sourceTree = "<group>"; };
 		84B4249114D7F43400D95BCB /* SwipeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeScene.h; sourceTree = "<group>"; };
 		84B4249214D7F43400D95BCB /* SwipeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwipeScene.cpp; sourceTree = "<group>"; };
+		84B4257C14D88F2D00D95BCB /* MovingWindowScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingWindowScene.h; sourceTree = "<group>"; };
+		84B4257D14D88F2D00D95BCB /* MovingWindowScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MovingWindowScene.cpp; sourceTree = "<group>"; };
 		84BC75FC14D72B3700E3DF05 /* InvertedInteractiveSceen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvertedInteractiveSceen.h; sourceTree = "<group>"; };
 		84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvertedInteractiveSceen.cpp; sourceTree = "<group>"; };
 		84CD78DC14CCB1590032C8EF /* RotationRangeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationRangeScene.h; sourceTree = "<group>"; };
@@ -1154,6 +1157,8 @@
 				84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */,
 				84B4249114D7F43400D95BCB /* SwipeScene.h */,
 				84B4249214D7F43400D95BCB /* SwipeScene.cpp */,
+				84B4257C14D88F2D00D95BCB /* MovingWindowScene.h */,
+				84B4257D14D88F2D00D95BCB /* MovingWindowScene.cpp */,
 			);
 			name = CustomScenes;
 			sourceTree = "<group>";
@@ -1488,7 +1493,7 @@
 				847D5BF312DE391800B2FC48 /* addons */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
 				E45BE0360E8CC5DE009D7055 /* libs */,
-				84B280E014A61B7B007CEC59 /* MotorsAndSensorsDebug.app */,
+				84B280E014A61B7B007CEC59 /* MotorsAndSensors.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1595,7 +1600,7 @@
 			);
 			name = MotorsAndSensors;
 			productName = myOFApp;
-			productReference = 84B280E014A61B7B007CEC59 /* MotorsAndSensorsDebug.app */;
+			productReference = 84B280E014A61B7B007CEC59 /* MotorsAndSensors.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1760,6 +1765,7 @@
 				84CD78EA14CCB1590032C8EF /* SnoringScene.cpp in Sources */,
 				84BC75FE14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp in Sources */,
 				84B4249314D7F43400D95BCB /* SwipeScene.cpp in Sources */,
+				84B4257E14D88F2D00D95BCB /* MovingWindowScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

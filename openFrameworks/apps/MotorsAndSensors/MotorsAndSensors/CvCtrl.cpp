@@ -309,6 +309,13 @@ void CvCtrl::draw(){
 		ofLine(0, 0, imgW * drawScale, 0);
 		ofDrawBitmapString("hit threshold", 0, 0);
 		ofPopMatrix();
+		
+		ofSetColor(155, 155, 0);
+		ofPushMatrix();
+		ofTranslate(0, sensorCtrl.rawThreshold, 0);
+		ofLine(0, 0, imgW * drawScale, 0);
+		ofDrawBitmapString("raw threshold", 0, 0);
+		ofPopMatrix();
 	}
 	
 	if(doDrawHitScore){

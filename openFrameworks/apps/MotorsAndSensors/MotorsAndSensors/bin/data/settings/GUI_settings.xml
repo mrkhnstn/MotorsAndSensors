@@ -5,7 +5,7 @@
     </Button_save_settings>
     <Toggle_auto_save>
         <name>auto save</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_auto_save>
     <ComboBox_display_priority>
         <name>display priority</name>

@@ -1,7 +1,7 @@
 <controls>
     <Toggle_doDraw>
         <name>doDraw</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doDraw>
     <SliderFloat_drawScale>
         <name>drawScale</name>
@@ -9,7 +9,7 @@
     </SliderFloat_drawScale>
     <SliderFloat_drawX>
         <name>drawX</name>
-        <value>-171.670593</value>
+        <value>72.282349</value>
     </SliderFloat_drawX>
     <SliderFloat_drawY>
         <name>drawY</name>

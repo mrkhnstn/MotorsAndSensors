@@ -17,7 +17,7 @@
 #include "SnoringScene.h"
 #include "InvertedInteractiveSceen.h"
 #include "SwipeScene.h"
-
+#include "MovingWindowScene.h"
 #include "SerialTest2.h"
 
 int main( ){
@@ -38,23 +38,32 @@ int main( ){
 	// ADD SCENES
 	
 	Scene::add(new IdleScene());
+	Scene::add(new ExampleScene());
 	Scene::add(new InteractiveScene());
 	Scene::add(new InteractiveScene());
 	Scene::add(new InteractiveScene());
+	Scene::add(new SwipeScene());
+	Scene::add(new SwipeScene());
+	Scene::add(new SwipeScene());
 	//Scene::add(new InvertedInteractiveScene());
 	//Scene::add(new PalindromeScene());
-	Scene::add(new StepScene());
+	//Scene::add(new StepScene());
 	//Scene::add(new SimpleInteractiveScene());
-	Scene::add(new ExampleScene());
-	Scene::add(new RotationRangeScene());
+	
+	//Scene::add(new RotationRangeScene());
+	//Scene::add(new MovingWaveScene());
+	//Scene::add(new MovingWaveScene());
+	
+	Scene::add(new SineWaveScene());
+	Scene::add(new SineWaveScene());
+	Scene::add(new SineWaveScene());
+	Scene::add(new MovingWindowScene());
+	Scene::add(new MovingWindowScene());
+	Scene::add(new MovingWindowScene());
 	Scene::add(new MovingWaveScene());
-	Scene::add(new SineWaveScene());
-	Scene::add(new SineWaveScene());
-	Scene::add(new SineWaveScene());
-	Scene::add(new SineWaveScene());
 	Scene::add(new OpenPortionScene());
 	Scene::add(new SnoringScene());
-	Scene::add(new SwipeScene());
+	
 	
 	
 	//////////////////////////////////////////////

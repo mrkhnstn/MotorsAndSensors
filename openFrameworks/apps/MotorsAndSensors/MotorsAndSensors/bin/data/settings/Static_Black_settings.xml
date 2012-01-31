@@ -1,6 +1,6 @@
 <controls>
     <SliderFloat_duration>
         <name>duration</name>
-        <value>30.000000</value>
+        <value>20.000000</value>
     </SliderFloat_duration>
 </controls>

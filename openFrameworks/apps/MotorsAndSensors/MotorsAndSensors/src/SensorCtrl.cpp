@@ -29,6 +29,7 @@ void SensorCtrl::setup(){
 	maxHitScore = 50;
 	hitScoreIncFactor = 0.1;
 	hitScoreDecFactor = 0.1;
+	rawThreshold = 1024;
 	
 	numOfRaysHit = 0;
 	numOfRaysHitThresh = 3;
@@ -128,6 +129,7 @@ void SensorCtrl::setupGUI(){
 	gui.addSlider("bgAdaptFactor", bgAdaptFactor, 0, 0.1);
 	//
 	gui.addTitle("hit threshold");
+	gui.addSlider("rawThreshold", rawThreshold, 0, 1024);
 	gui.addSlider("hitThreshold", globalHitThreshold, 0, 1024);
 	gui.addSlider("hitScoreThreshold", globalHitScoreThreshold, 1, 1024);
 	gui.addSlider("maxHitScore", maxHitScore, 1, 1024);
@@ -335,7 +337,7 @@ void SensorCtrl::processSensorReadings(){
 			}	
 			hitScore[i] = ofClamp(hitScore[i], 0, maxHitScore);
 			
-			hit[i] = hitScore[i] > globalHitScoreThreshold;
+			hit[i] = hitScore[i] > globalHitScoreThreshold || rawValues[i] > rawThreshold;
 				
 			
 			/*

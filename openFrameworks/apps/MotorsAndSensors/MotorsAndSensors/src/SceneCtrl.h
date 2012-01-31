@@ -11,7 +11,7 @@
 #include "Includes.h"
 #include "Scene.h"
 
-#define NUM_IDLE_ITEMS		10
+#define NUM_IDLE_ITEMS		15
 #define NUM_INTERACTIVE_ITEMS	10
 
 #define SCENE_CTRL_IDLE				0	// iterate through idleList scenes

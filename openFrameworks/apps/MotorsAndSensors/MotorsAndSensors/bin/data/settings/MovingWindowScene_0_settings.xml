@@ -1,0 +1,22 @@
+<controls>
+    <SliderFloat_tickDuration>
+        <name>tickDuration</name>
+        <value>0.170588</value>
+    </SliderFloat_tickDuration>
+    <SliderInt_window_size>
+        <name>window size</name>
+        <value>5</value>
+    </SliderInt_window_size>
+    <ComboBox_windowState>
+        <name>windowState</name>
+        <value>1</value>
+    </ComboBox_windowState>
+    <ComboBox_wallState>
+        <name>wallState</name>
+        <value>0</value>
+    </ComboBox_wallState>
+    <SliderInt_max_revolutions>
+        <name>max revolutions</name>
+        <value>1</value>
+    </SliderInt_max_revolutions>
+</controls>

@@ -149,13 +149,25 @@ void MotorCtrl::setAllToGlobalPulseMax(ofEventArgs& e){
 }
 
 void MotorCtrl::setToPulseMin(ofEventArgs& e){
-	Motor::calibrationMode = 1;
+	if (Motor::calibrationMode  == 1) {
+		Motor::calibrationMode = 0;
+	} else {
+		Motor::calibrationMode = 1;
+	}
 }
 
 void MotorCtrl::setToPulseMax(ofEventArgs& e){
-	Motor::calibrationMode = 2;
+	if (Motor::calibrationMode  == 2) {
+		Motor::calibrationMode = 0;
+	} else {
+		Motor::calibrationMode = 2;
+	}
 }
 
 void MotorCtrl::setToCentre(ofEventArgs& e){
-	Motor::calibrationMode = 3;
+	if (Motor::calibrationMode  == 3) {
+		Motor::calibrationMode = 0;
+	} else {
+		Motor::calibrationMode = 3;
+	}
 }
