@@ -1,18 +1,18 @@
 <controls>
     <SliderInt_bank_0>
         <name>bank_0</name>
-        <value>1</value>
+        <value>0</value>
     </SliderInt_bank_0>
     <SliderInt_bank_1>
         <name>bank_1</name>
-        <value>2</value>
+        <value>1</value>
     </SliderInt_bank_1>
     <SliderInt_bank_2>
         <name>bank_2</name>
-        <value>0</value>
+        <value>2</value>
     </SliderInt_bank_2>
     <SliderInt_bank_3>
         <name>bank_3</name>
-        <value>0</value>
+        <value>3</value>
     </SliderInt_bank_3>
 </controls>

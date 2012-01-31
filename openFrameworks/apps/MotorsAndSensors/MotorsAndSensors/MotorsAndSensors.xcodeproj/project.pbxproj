@@ -71,6 +71,7 @@
 		84B311CF14AF901A00B74EA3 /* PalindromeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B311CE14AF901A00B74EA3 /* PalindromeScene.cpp */; };
 		84B311E314AF91B100B74EA3 /* StepScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B311E214AF91B100B74EA3 /* StepScene.cpp */; };
 		84B312C314B0B70500B74EA3 /* SimpleInteractiveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */; };
+		84BC75FE14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */; };
 		84CD78E614CCB1590032C8EF /* RotationRangeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78DD14CCB1590032C8EF /* RotationRangeScene.cpp */; };
 		84CD78E714CCB1590032C8EF /* MovingWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78DF14CCB1590032C8EF /* MovingWaveScene.cpp */; };
 		84CD78E814CCB1590032C8EF /* SineWaveScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CD78E114CCB1590032C8EF /* SineWaveScene.cpp */; };
@@ -361,6 +362,8 @@
 		84B311E214AF91B100B74EA3 /* StepScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StepScene.cpp; sourceTree = "<group>"; };
 		84B312C114B0B70500B74EA3 /* SimpleInteractiveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleInteractiveScene.h; sourceTree = "<group>"; };
 		84B312C214B0B70500B74EA3 /* SimpleInteractiveScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleInteractiveScene.cpp; sourceTree = "<group>"; };
+		84BC75FC14D72B3700E3DF05 /* InvertedInteractiveSceen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvertedInteractiveSceen.h; sourceTree = "<group>"; };
+		84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvertedInteractiveSceen.cpp; sourceTree = "<group>"; };
 		84CD78DC14CCB1590032C8EF /* RotationRangeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationRangeScene.h; sourceTree = "<group>"; };
 		84CD78DD14CCB1590032C8EF /* RotationRangeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotationRangeScene.cpp; sourceTree = "<group>"; };
 		84CD78DE14CCB1590032C8EF /* MovingWaveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovingWaveScene.h; sourceTree = "<group>"; };
@@ -626,8 +629,8 @@
 				84E160BD12DF50F000D6E27D /* utils */,
 				847D5CF012DE3AF600B2FC48 /* ofxBaseObject */,
 				849EEF8712E5AC15007A8058 /* ofxOscObjects */,
-				847D5CF412DE3AF600B2FC48 /* ofxTestBed */,
 				846339D912E0BD230041F43E /* ofxTimeline */,
+				847D5CF412DE3AF600B2FC48 /* ofxTestBed */,
 				847D5CE912DE3AF600B2FC48 /* ofxFBOTexture */,
 				84A3C3F112DF424C00DC1D7B /* ofxNetwork */,
 				84A3C3E912DF423300DC1D7B /* ofxDirList */,
@@ -1144,6 +1147,8 @@
 				84CD78E314CCB1590032C8EF /* OpenPortionScene.cpp */,
 				84CD78E414CCB1590032C8EF /* SnoringScene.h */,
 				84CD78E514CCB1590032C8EF /* SnoringScene.cpp */,
+				84BC75FC14D72B3700E3DF05 /* InvertedInteractiveSceen.h */,
+				84BC75FD14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp */,
 			);
 			name = CustomScenes;
 			sourceTree = "<group>";
@@ -1748,6 +1753,7 @@
 				84CD78E814CCB1590032C8EF /* SineWaveScene.cpp in Sources */,
 				84CD78E914CCB1590032C8EF /* OpenPortionScene.cpp in Sources */,
 				84CD78EA14CCB1590032C8EF /* SnoringScene.cpp in Sources */,
+				84BC75FE14D72B3700E3DF05 /* InvertedInteractiveSceen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,11 @@
 <controls>
     <SliderInt_numOfRaysHit>
         <name>numOfRaysHit</name>
-        <value>1</value>
+        <value>0</value>
     </SliderInt_numOfRaysHit>
     <SliderInt_numOfRaysHitThresh>
         <name>numOfRaysHitThresh</name>
-        <value>3</value>
+        <value>5</value>
     </SliderInt_numOfRaysHitThresh>
     <SliderInt_numOfAdjacentRaysHit>
         <name>numOfAdjacentRaysHit</name>
@@ -17,11 +17,11 @@
     </SliderInt_numOfAdjacentRaysHitThresh>
     <SliderInt_numOfRaysHitInWindow>
         <name>numOfRaysHitInWindow</name>
-        <value>30</value>
+        <value>0</value>
     </SliderInt_numOfRaysHitInWindow>
     <SliderInt_numOfRaysHitInWindowThresh>
         <name>numOfRaysHitInWindowThresh</name>
-        <value>10</value>
+        <value>20</value>
     </SliderInt_numOfRaysHitInWindowThresh>
     <SliderFloat_userInProximityDistance>
         <name>userInProximityDistance</name>
@@ -43,14 +43,6 @@
         <name>disable all rays</name>
         <value>0</value>
     </Button_disable_all_rays>
-    <SliderFloat_analogMin>
-        <name>analogMin</name>
-        <value>0.000000</value>
-    </SliderFloat_analogMin>
-    <SliderFloat_analogMax>
-        <name>analogMax</name>
-        <value>1024.000000</value>
-    </SliderFloat_analogMax>
     <SliderFloat_minDistance>
         <name>minDistance</name>
         <value>40.000000</value>
@@ -61,31 +53,35 @@
     </SliderFloat_maxDistance>
     <SliderFloat_adaptLerpStrength>
         <name>adaptLerpStrength</name>
-        <value>0.266155</value>
+        <value>0.400000</value>
     </SliderFloat_adaptLerpStrength>
     <SliderFloat_adjacentLerpStrength>
         <name>adjacentLerpStrength</name>
-        <value>0.035245</value>
+        <value>0.001000</value>
     </SliderFloat_adjacentLerpStrength>
+    <Toggle_doBgSubtract>
+        <name>doBgSubtract</name>
+        <value>0</value>
+    </Toggle_doBgSubtract>
     <SliderFloat_bgAdaptFactor>
         <name>bgAdaptFactor</name>
-        <value>0.000557</value>
+        <value>0.001765</value>
     </SliderFloat_bgAdaptFactor>
     <SliderFloat_hitThreshold>
         <name>hitThreshold</name>
-        <value>94.368629</value>
+        <value>411.607849</value>
     </SliderFloat_hitThreshold>
     <SliderFloat_hitScoreThreshold>
         <name>hitScoreThreshold</name>
-        <value>27.076471</value>
+        <value>21.459999</value>
     </SliderFloat_hitScoreThreshold>
     <SliderFloat_maxHitScore>
         <name>maxHitScore</name>
-        <value>131.382355</value>
+        <value>37.105885</value>
     </SliderFloat_maxHitScore>
     <SliderFloat_hitScoreIncFactor>
         <name>hitScoreIncFactor</name>
-        <value>0.097353</value>
+        <value>0.429294</value>
     </SliderFloat_hitScoreIncFactor>
     <SliderFloat_hitScoreDecFactor>
         <name>hitScoreDecFactor</name>
@@ -97,7 +93,7 @@
     </SliderFloat_distancePow>
     <Toggle_doLUT>
         <name>doLUT</name>
-        <value>1</value>
+        <value>0</value>
     </Toggle_doLUT>
     <Toggle_doAveraging>
         <name>doAveraging</name>

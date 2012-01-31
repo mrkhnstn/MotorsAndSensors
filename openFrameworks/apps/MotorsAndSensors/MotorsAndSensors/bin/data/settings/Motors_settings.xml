@@ -5,8 +5,12 @@
     </SliderFloat_userOffDelayTime>
     <SliderFloat_servoMaxSpeed>
         <name>servoMaxSpeed</name>
-        <value>180.000000</value>
+        <value>120.000000</value>
     </SliderFloat_servoMaxSpeed>
+    <SliderFloat_servoMaxUnlimitedSpeed>
+        <name>servoMaxUnlimitedSpeed</name>
+        <value>180.000000</value>
+    </SliderFloat_servoMaxUnlimitedSpeed>
     <SliderFloat_distanceToCentre>
         <name>distanceToCentre</name>
         <value>300.000000</value>

@@ -19,8 +19,8 @@ public:
 	static float elapsedTime;
 	
 	static float maxMotorSpeed; // in degrees per second
+	static float maxUnlimitedSpeed; //
 	bool doLimitSpeed;
-	//static float maxAngleNSpeed;
 	static float userOffDelayTime; // time after no user detection to consider user still in proximity (to eliminate flickering)
 	
 	static int globalPulseMin;
@@ -31,9 +31,8 @@ public:
 	int pulseMax;			// pulse for setting panels to back (180 degrees)
 	int pulse;				// pulse corresponding to angle
 	
-	int		index;			// index within motor array
-	//float	angleN;			// normalized angle	of motor rotation
-	//float	tgtAngleN;
+	int	index;			// index within motor array
+	int sensorIndex;
 	
 	float angle;			// actual angle of motor in degrees from 0 to 180
 	float tgtAngle;			// targeted angle of motor in degrees from 0 to 180

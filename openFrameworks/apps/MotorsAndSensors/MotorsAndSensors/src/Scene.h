@@ -18,6 +18,8 @@ public:
 	
 	MotorCtrl*	motorCtrl;	// points to MotorCtrl singleton
 	SensorCtrl* sensorCtrl; // points to SensorCtrl singleton
+	float elapsedTime;
+	float startTime;
 	
 	virtual void setup();	
 	virtual void setupGUI();	

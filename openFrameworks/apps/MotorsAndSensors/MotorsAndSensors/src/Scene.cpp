@@ -17,21 +17,28 @@ void Scene::setup(){
 	motorCtrl = Singleton<MotorCtrl>::instance();
 	sensorCtrl = Singleton<SensorCtrl>::instance();
 	enabled = false;
+	elapsedTime = 0;
 }
 
 void Scene::setupGUI(){
 	gui.page("Scenes").addPageShortcut(gui.addPage(name));
 	gui.addDebug("enabled", enabled);
+	gui.addDebug("elapsedTime", elapsedTime);
 }
 
 void Scene::postGUI(){}
 
-void Scene::update(){}
+void Scene::update(){
+	elapsedTime = ofGetElapsedTimef() - startTime;
+}
+
 
 void Scene::draw(){}
 
 void Scene::start(){
 	enabled = true;
+	elapsedTime = 0;
+	startTime = ofGetElapsedTimef();
 }
 
 void Scene::stop(){

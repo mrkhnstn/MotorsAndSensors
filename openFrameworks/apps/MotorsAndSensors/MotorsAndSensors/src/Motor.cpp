@@ -12,26 +12,25 @@
 #include "Coordinates.h"
 
 float Motor::elapsedTime = 0;
-float Motor::maxMotorSpeed = 0.3;
-//float Motor::maxAngleNSpeed = 1;
+float Motor::maxMotorSpeed = 60;
+float Motor::maxUnlimitedSpeed = 180;
 float Motor::distanceToCentre = 300;
 int	  Motor::numMotors = 72;
 
-bool Motor::doDraw = true;		// global draw flag
+bool Motor::doDraw = true;			// global draw flag
 bool Motor::doDraw3D = true;		// draw 3d box
 bool Motor::doDraw2D = false;		// draw 2d on null plane
-bool Motor::doDrawLabels = false; // draw ids of each motor
+bool Motor::doDrawLabels = false;	// draw ids of each motor
 
 int Motor::globalPulseMin = 600;
 int Motor::globalPulseMax = 2300;
-int Motor::calibrationMode = 0;
+int Motor::calibrationMode = 0;		// 0: none, 1: pulseMin, 2: pulseMax
 
 ofColor Motor::backColorLow;		// back side color of motor when NO user in proximity
 ofColor Motor::frontColorLow;		// front side color of motor when NO user in proximity
 
 ofColor Motor::backColorHigh;		// back side color of motor when user in proximity
-ofColor Motor::frontColorHigh;	// front side color of motor when user in proximity
-
+ofColor Motor::frontColorHigh;		// front side color of motor when user in proximity
 
 float Motor::sensorAngleRange = 10; 
 float Motor::panelWidth = 20;
@@ -44,19 +43,19 @@ int Motor::proximityOnThreshold = 5;
 float Motor::userOffDelayTime = 2;
 
 void Motor::setup(){
+	
 	if(doStaticInit)
 	{
 		font.loadFont("fonts/Hlcb____.ttf",12,true,true,true);
 		doStaticInit = false;
 	}
 	
+	sensorIndex = floor(index * 0.5);
+	
 	posAngle = -index * 360 / numMotors;
 	pos.x = cosf(ofDegToRad(posAngle))*distanceToCentre;
 	pos.y = sinf(ofDegToRad(posAngle))*distanceToCentre;
-	
-	//angleN = 0.5;
-	//tgtAngleN = angleN;
-	
+		
 	angle = 90;
 	tgtAngle = angle;
 	
@@ -68,9 +67,6 @@ void Motor::setup(){
 	
 	_userInProximity = false;
 	
-	bank = 0;
-	ch = 1;
-	
 	proximityValue = 0;
 	userInProximityOnTime = 0;
 	userInproximityOffTime = 0;
@@ -81,21 +77,42 @@ void Motor::setup(){
 	
 	SensorCtrl& sensorCtrl = *Singleton<SensorCtrl>::instance();
 	rayIds.clear();
+	
+	int rayOffset = sensorIndex * 5;
+	for (int i=0; i<5; i++) {
+		rayIds.push_back(rayOffset+i);
+	}
+	
+	/*
+	
+	if (index % 2 == 0) {
+		rayIds.push_back(rayOffset+0);
+		rayIds.push_back(rayOffset+1);
+		rayIds.push_back(rayOffset+2);
+	} else {
+		rayIds.push_back(rayOffset+2);
+		rayIds.push_back(rayOffset+3);
+		rayIds.push_back(rayOffset+4);
+	}
+	*/
+	
+	/*
 	for (int i=0; i<TOTAL_RAYS; i++) {
 		if (sensorCtrl.rayPos[i] >= minPos && sensorCtrl.rayPos[i] <= maxPos) {
 			rayIds.push_back(i);
 		}
-	}
-	
-	
+	*/
+
 }
 
 void Motor::setupGUI(){
+	/*
 	string indexS = ofToString(index);
 	gui.addTitle("motor_"+indexS);
 	gui.addSlider("angle_"+indexS, angle, 0, 1);
 	gui.addSlider("bank_"+indexS, bank, 0, 3);
 	gui.addSlider("channel_"+indexS, ch,1,84);
+	*/
 }
 
 void Motor::postGUI(){
@@ -111,12 +128,18 @@ void Motor::update(){
 	cartPos = Coordinates::fromPolar(pos);
 	
 	// limit motor motion to max motor speed
+	float delta = tgtAngle - angle;
+	float dir = delta < 0 ? -1 : 1;
+	
+	float clampedDelta;
 	if (doLimitSpeed) {
-		float delta = tgtAngle - angle;
-		float dir = delta < 0 ? -1 : 1;
-		float clampedDelta = dir * ofClamp(abs(delta),0,maxMotorSpeed * elapsedTime);
-		angle = angle + clampedDelta;
+		clampedDelta = dir * ofClamp(abs(delta),0,maxMotorSpeed * elapsedTime);
+	} else {
+		clampedDelta = dir * ofClamp(abs(delta),0,maxUnlimitedSpeed * elapsedTime);
 	}
+	angle = angle + clampedDelta;
+	
+	
 	// update pulse
 	switch (calibrationMode) {
 		case 0:

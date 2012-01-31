@@ -48,6 +48,7 @@ public:
 	
 	bool doAveraging;
 	bool doLUT;
+	bool doBgSubtract;
 	float minDistance;
 	float maxDistance;
 	float distancePow;

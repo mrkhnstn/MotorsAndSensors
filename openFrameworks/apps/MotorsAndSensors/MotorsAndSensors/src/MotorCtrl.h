@@ -27,4 +27,6 @@ public:
 	void setAllToGlobalPulseMin(ofEventArgs& e);
 	void setAllToGlobalPulseMax(ofEventArgs& e);
 	
+	void setToPulseMin(ofEventArgs& e);
+	void setToPulseMax(ofEventArgs& e);
 };

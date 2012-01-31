@@ -15,6 +15,7 @@
 #include "SineWaveScene.h"
 #include "OpenPortionScene.h"
 #include "SnoringScene.h"
+#include "InvertedInteractiveSceen.h"
 
 #include "SerialTest2.h"
 
@@ -46,6 +47,7 @@ int main( ){
 	Scene::add(new SineWaveScene());
 	Scene::add(new OpenPortionScene());
 	Scene::add(new SnoringScene());
+	Scene::add(new InvertedInteractiveScene());
 	
 	//////////////////////////////////////////////
 	

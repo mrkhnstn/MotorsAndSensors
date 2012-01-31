@@ -41,6 +41,7 @@ void SensorCtrl::setup(){
 	numOfRaysHitIndex = 0;
 	numOfRaysHitInWindow = 0;
 	numOfRaysHitInWindowThresh = 10;
+	doBgSubtract = true;
 	
 	// calculate look up table
 	updateLUT();
@@ -103,15 +104,22 @@ void SensorCtrl::setupGUI(){
 	gui.addButton("enable all rays", this, &SensorCtrl::enableAllSensors);
 	gui.addButton("disable all rays", this, &SensorCtrl::disableAllSensors);
 	
-	gui.addSlider("analogMin", analogMin, 0, 1024);
-	gui.addSlider("analogMax", analogMax, 0, 1024);
+	//gui.addSlider("analogMin", analogMin, 0, 1024);
+	//gui.addSlider("analogMax", analogMax, 0, 1024);
 	
 	gui.addSlider("minDistance", minDistance, 0, 400);
 	gui.addSlider("maxDistance", maxDistance, 0, 400);
 	
+	gui.addTitle("lerp smoothing");
+	
 	gui.addSlider("adaptLerpStrength", adaptLerpStrength, 0.001, 0.5);
 	gui.addSlider("adjacentLerpStrength", adjLerpStrength, 0.001, 0.5);
+	//
+	gui.addTitle("bg subtraction");
+	gui.addToggle("doBgSubtract", doBgSubtract);
 	gui.addSlider("bgAdaptFactor", bgAdaptFactor, 0, 0.1);
+	//
+	gui.addTitle("hit threshold");
 	gui.addSlider("hitThreshold", globalHitThreshold, 0, 1024);
 	gui.addSlider("hitScoreThreshold", globalHitScoreThreshold, 1, 1024);
 	gui.addSlider("maxHitScore", maxHitScore, 1, 1024);
@@ -270,9 +278,15 @@ void SensorCtrl::processSensorReadings(){
 		
 		float rawValue = ofClamp(rawValues[i], 0, 1023);
 		
-		float bgSubValue = rawValue - bgSubtract[i];
-		if(bgSubValue < 0) bgSubValue = 0;
 		
+		float bgSubValue;
+		
+		if(doBgSubtract){
+			bgSubValue = rawValue - bgSubtract[i];
+			if(bgSubValue < 0) bgSubValue = 0;
+		} else {
+			bgSubValue = rawValue;
+		}
 		// lerp adapted value towards bgSubValue
 		int left = (i == 0) ? TOTAL_RAYS-1 : i - 1;
 		int right = (i == TOTAL_RAYS-1) ? 0 : i + 1;

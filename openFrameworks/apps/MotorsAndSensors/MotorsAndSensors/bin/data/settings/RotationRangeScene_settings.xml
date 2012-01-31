@@ -33,7 +33,7 @@
     </Button_Preset_2>
     <SliderInt_counter>
         <name>counter</name>
-        <value>0</value>
+        <value>2</value>
     </SliderInt_counter>
     <SliderInt_maxCounter>
         <name>maxCounter</name>

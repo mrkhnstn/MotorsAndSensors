@@ -13,7 +13,7 @@
     </SliderInt_raw_0-2>
     <SliderInt_raw_0-3>
         <name>raw_0-3</name>
-        <value>258</value>
+        <value>0</value>
     </SliderInt_raw_0-3>
     <SliderInt_raw_0-4>
         <name>raw_0-4</name>
@@ -77,51 +77,51 @@
     </SliderInt_raw_3-18>
     <SliderFloat_distance_0-0>
         <name>distance_0-0</name>
-        <value>0.114143</value>
+        <value>0.000000</value>
     </SliderFloat_distance_0-0>
     <SliderFloat_distance_0-1>
         <name>distance_0-1</name>
-        <value>1.082883</value>
+        <value>0.000000</value>
     </SliderFloat_distance_0-1>
     <SliderFloat_distance_0-2>
         <name>distance_0-2</name>
-        <value>10.232204</value>
+        <value>0.000000</value>
     </SliderFloat_distance_0-2>
     <SliderFloat_distance_0-3>
         <name>distance_0-3</name>
-        <value>96.532822</value>
+        <value>0.000000</value>
     </SliderFloat_distance_0-3>
     <SliderFloat_distance_0-4>
         <name>distance_0-4</name>
-        <value>10.228053</value>
+        <value>0.000000</value>
     </SliderFloat_distance_0-4>
     <SliderFloat_distance_1-5>
         <name>distance_1-5</name>
-        <value>1.082933</value>
+        <value>0.000000</value>
     </SliderFloat_distance_1-5>
     <SliderFloat_distance_1-6>
         <name>distance_1-6</name>
-        <value>0.114494</value>
+        <value>0.000000</value>
     </SliderFloat_distance_1-6>
     <SliderFloat_distance_1-7>
         <name>distance_1-7</name>
-        <value>0.012077</value>
+        <value>0.000000</value>
     </SliderFloat_distance_1-7>
     <SliderFloat_distance_1-8>
         <name>distance_1-8</name>
-        <value>0.001270</value>
+        <value>0.000000</value>
     </SliderFloat_distance_1-8>
     <SliderFloat_distance_1-9>
         <name>distance_1-9</name>
-        <value>0.000133</value>
+        <value>0.000000</value>
     </SliderFloat_distance_1-9>
     <SliderFloat_distance_2-10>
         <name>distance_2-10</name>
-        <value>0.000014</value>
+        <value>0.000000</value>
     </SliderFloat_distance_2-10>
     <SliderFloat_distance_2-11>
         <name>distance_2-11</name>
-        <value>0.000001</value>
+        <value>0.000000</value>
     </SliderFloat_distance_2-11>
     <SliderFloat_distance_2-12>
         <name>distance_2-12</name>

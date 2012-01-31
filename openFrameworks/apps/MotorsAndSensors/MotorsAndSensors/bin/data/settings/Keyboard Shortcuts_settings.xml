@@ -15,4 +15,68 @@
         <name>toggle cursor [m]</name>
         <value>0</value>
     </Button_toggle_cursor>
+    <Button_setAllToGlobal>
+        <name>setAllToGlobal [o]</name>
+        <value>0</value>
+    </Button_setAllToGlobal>
+    <Button_setAllToGlobal1>
+        <name>setAllToGlobal [,]</name>
+        <value>0</value>
+    </Button_setAllToGlobal1>
+    <Button_setAllToGlobal2>
+        <name>setAllToGlobal [p]</name>
+        <value>0</value>
+    </Button_setAllToGlobal2>
+    <Button_setAllToGlobal3>
+        <name>setAllToGlobal [.]</name>
+        <value>0</value>
+    </Button_setAllToGlobal3>
+    <Button_Shortcut_0>
+        <name>Shortcut_0 [1]</name>
+        <value>0</value>
+    </Button_Shortcut_0>
+    <Button_Shortcut_1>
+        <name>Shortcut_1 [2]</name>
+        <value>0</value>
+    </Button_Shortcut_1>
+    <Button_Shortcut_2>
+        <name>Shortcut_2 [3]</name>
+        <value>0</value>
+    </Button_Shortcut_2>
+    <Button_Shortcut_3>
+        <name>Shortcut_3 [4]</name>
+        <value>0</value>
+    </Button_Shortcut_3>
+    <Button_Shortcut_4>
+        <name>Shortcut_4 [5]</name>
+        <value>0</value>
+    </Button_Shortcut_4>
+    <Button_Shortcut_5>
+        <name>Shortcut_5 [6]</name>
+        <value>0</value>
+    </Button_Shortcut_5>
+    <Button_Shortcut_6>
+        <name>Shortcut_6 [7]</name>
+        <value>0</value>
+    </Button_Shortcut_6>
+    <Button_Shortcut_7>
+        <name>Shortcut_7 [8]</name>
+        <value>0</value>
+    </Button_Shortcut_7>
+    <Button_Shortcut_8>
+        <name>Shortcut_8 [9]</name>
+        <value>0</value>
+    </Button_Shortcut_8>
+    <Button_Shortcut_9>
+        <name>Shortcut_9 [0]</name>
+        <value>0</value>
+    </Button_Shortcut_9>
+    <Button_Shortcut_81>
+        <name>Shortcut_8 [i]</name>
+        <value>0</value>
+    </Button_Shortcut_81>
+    <Button_Shortcut_91>
+        <name>Shortcut_9 [p]</name>
+        <value>0</value>
+    </Button_Shortcut_91>
 </controls>

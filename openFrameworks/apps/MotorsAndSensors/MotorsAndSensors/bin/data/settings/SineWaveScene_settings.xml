@@ -1,7 +1,7 @@
 <controls>
     <SliderFloat_animationAngle>
         <name>animationAngle</name>
-        <value>127.000000</value>
+        <value>0.000000</value>
     </SliderFloat_animationAngle>
     <SliderFloat_velocity>
         <name>velocity</name>

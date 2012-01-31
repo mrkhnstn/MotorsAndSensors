@@ -1,146 +1,146 @@
 <controls>
     <SliderFloat_angle_54>
         <name>angle_54</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_54>
     <SliderFloat_angle_55>
         <name>angle_55</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_55>
     <SliderFloat_angle_56>
         <name>angle_56</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_56>
     <SliderFloat_angle_57>
         <name>angle_57</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_57>
     <SliderFloat_angle_58>
         <name>angle_58</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_58>
     <SliderFloat_angle_59>
         <name>angle_59</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_59>
     <SliderFloat_angle_60>
         <name>angle_60</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_60>
     <SliderFloat_angle_61>
         <name>angle_61</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_61>
     <SliderFloat_angle_62>
         <name>angle_62</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_62>
     <SliderFloat_angle_63>
         <name>angle_63</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_63>
     <SliderFloat_angle_64>
         <name>angle_64</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_64>
     <SliderFloat_angle_65>
         <name>angle_65</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_65>
     <SliderFloat_angle_66>
         <name>angle_66</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_66>
     <SliderFloat_angle_67>
         <name>angle_67</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_67>
     <SliderFloat_angle_68>
         <name>angle_68</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_68>
     <SliderFloat_angle_69>
         <name>angle_69</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_69>
     <SliderFloat_angle_70>
         <name>angle_70</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_70>
     <SliderFloat_angle_71>
         <name>angle_71</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_angle_71>
     <SliderFloat_tgtAngle_54>
         <name>tgtAngle_54</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_54>
     <SliderFloat_tgtAngle_55>
         <name>tgtAngle_55</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_55>
     <SliderFloat_tgtAngle_56>
         <name>tgtAngle_56</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_56>
     <SliderFloat_tgtAngle_57>
         <name>tgtAngle_57</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_57>
     <SliderFloat_tgtAngle_58>
         <name>tgtAngle_58</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_58>
     <SliderFloat_tgtAngle_59>
         <name>tgtAngle_59</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_59>
     <SliderFloat_tgtAngle_60>
         <name>tgtAngle_60</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_60>
     <SliderFloat_tgtAngle_61>
         <name>tgtAngle_61</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_61>
     <SliderFloat_tgtAngle_62>
         <name>tgtAngle_62</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_62>
     <SliderFloat_tgtAngle_63>
         <name>tgtAngle_63</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_63>
     <SliderFloat_tgtAngle_64>
         <name>tgtAngle_64</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_64>
     <SliderFloat_tgtAngle_65>
         <name>tgtAngle_65</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_65>
     <SliderFloat_tgtAngle_66>
         <name>tgtAngle_66</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_66>
     <SliderFloat_tgtAngle_67>
         <name>tgtAngle_67</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_67>
     <SliderFloat_tgtAngle_68>
         <name>tgtAngle_68</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_68>
     <SliderFloat_tgtAngle_69>
         <name>tgtAngle_69</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_69>
     <SliderFloat_tgtAngle_70>
         <name>tgtAngle_70</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_70>
     <SliderFloat_tgtAngle_71>
         <name>tgtAngle_71</name>
-        <value>0.000000</value>
+        <value>90.000000</value>
     </SliderFloat_tgtAngle_71>
 </controls>

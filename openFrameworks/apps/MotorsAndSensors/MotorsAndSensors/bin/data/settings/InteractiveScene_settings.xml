@@ -1,6 +1,10 @@
 <controls>
     <Toggle_doAdjacent>
         <name>doAdjacent</name>
-        <value>0</value>
+        <value>1</value>
     </Toggle_doAdjacent>
+    <SliderFloat_duration>
+        <name>duration</name>
+        <value>19.666668</value>
+    </SliderFloat_duration>
 </controls>

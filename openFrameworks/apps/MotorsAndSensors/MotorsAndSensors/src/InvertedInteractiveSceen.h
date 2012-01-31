@@ -1,6 +1,6 @@
 #pragma once
 /*
- *  InteractiveScene.h
+ *  InvertedInteractiveScene.h
  *  MotorsAndSensors
  *
  *  Created by Mark Hauenstein on 22/01/2012.
@@ -14,7 +14,7 @@
 /*
  this scene opens all motors where a user proximity is detected
  */
-class InteractiveScene : public Scene {
+class InvertedInteractiveScene : public Scene {
 public:
 	
 	//float closeDelayTime;
@@ -24,21 +24,20 @@ public:
 	
 	void setup(){
 		Scene::setup();
-		name = "InteractiveScene";
+		name = "InvertedInteractiveScene";
 		doAdjacent = false;
 		//closeDelayTime = 3;
-		duration = 30;
 	}
 	
 	void setupGUI(){
 		Scene::setupGUI();
 		gui.addToggle("doAdjacent", doAdjacent);
-		gui.addSlider("duration", duration, 10, 300);
 		//gui.addSlider("closeDelayTime",closeDelayTime,0,10);
 	}
 	
 	void update(){
 		Scene::update();
+		
 		if(doAdjacent){
 			for (int i=0; i<getMotorCount(); i++){
 				int left = (i == 0) ? getMotorCount()-1 : i - 1;
@@ -46,10 +45,10 @@ public:
 				if(userInFrontOfMotor(i) || userInFrontOfMotor(left) || userInFrontOfMotor(right))
 				{
 					getMotor(i).doLimitSpeed = false;
-					panelOpen(i);
+					panelBack(i);
 				} else {
 					getMotor(i).doLimitSpeed = true;
-					panelBack(i);
+					panelOpen(i);
 				}
 			}
 		} else {
@@ -57,20 +56,19 @@ public:
 				if(userInFrontOfMotor(i))
 				{
 					getMotor(i).doLimitSpeed = false;
-					panelOpen(i);
+					panelBack(i);
 				} else {
 					getMotor(i).doLimitSpeed = true;
-					panelBack(i);
+					panelOpen(i);
 				}
 			}
-			
 		}
 		
 		if (elapsedTime > duration) {
 			stop();
 		}
 	}
-
+	
 	void start(){
 		Scene::start();
 		//Motor::doLimitSpeed = true;

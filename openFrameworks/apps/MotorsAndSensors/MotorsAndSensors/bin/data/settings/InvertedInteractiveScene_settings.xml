@@ -1,0 +1,6 @@
+<controls>
+    <Toggle_doAdjacent>
+        <name>doAdjacent</name>
+        <value>0</value>
+    </Toggle_doAdjacent>
+</controls>

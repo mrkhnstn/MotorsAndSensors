@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////
 
 void SceneCtrl::setup(){
-		
+	
 	for(int i=0; i<scenes.size(); i++)
 		scenes[i]->setup();
 	
@@ -46,12 +46,10 @@ void SceneCtrl::setupGUI(){
 		names[i] = scenes[i]->name;
 	}
 	
-	
-	
 	gui.addComboBox("Current_Scene", _currentSceneId, scenes.size(), names);
 	
-	string modeChoices[3] = {"IDLE","INTERACTIVE","MANUAL"};
-	gui.addComboBox("Current_Mode", _mode, 3, modeChoices);
+	string modeChoices[SCENE_CTRL_NUM_MODES] = {"IDLE","INTERACTIVE","MANUAL","PLAYLIST_ONLY","INTERACTIVE_ONLY"};
+	gui.addComboBox("Current_Mode", _mode, SCENE_CTRL_NUM_MODES, modeChoices);
 	
 	gui.addSlider("switchToIdleTime", switchToIdleTime, 0, 30);
 	
@@ -78,6 +76,22 @@ void SceneCtrl::setupGUI(){
 		gui.addComboBox("Interactive_"+ofToString(i), interactiveList[i], scenes.size()+1, idleListChoices);
 	}
 	
+	gui.addTitle("keyboard shortcuts").setNewColumn(true);
+	gui.addTitle("playlist");
+	gui.addButton("Shortcut_0", '1', this, &SceneCtrl::shortcut_1);
+	gui.addButton("Shortcut_1", '2', this, &SceneCtrl::shortcut_2);
+	gui.addButton("Shortcut_2", '3', this, &SceneCtrl::shortcut_3);
+	gui.addButton("Shortcut_3", '4', this, &SceneCtrl::shortcut_4);
+	gui.addButton("Shortcut_4", '5', this, &SceneCtrl::shortcut_5);
+	gui.addButton("Shortcut_5", '6', this, &SceneCtrl::shortcut_6);
+	gui.addButton("Shortcut_6", '7', this, &SceneCtrl::shortcut_7);
+	gui.addButton("Shortcut_7", '8', this, &SceneCtrl::shortcut_8);
+	gui.addButton("Shortcut_8", '9', this, &SceneCtrl::shortcut_9);
+	gui.addButton("Shortcut_9", '0', this, &SceneCtrl::shortcut_0);
+	
+	gui.addTitle("modes");
+	gui.addButton("Shortcut_8", 'i', this, &SceneCtrl::setToInteractiveOnlyMode);
+	gui.addButton("Shortcut_9", 'p', this, &SceneCtrl::setToPlaylistOnlyMode);
 	
 }
 
@@ -94,8 +108,8 @@ void SceneCtrl::postGUI(){
 	idleListPos = 0;
 	interactiveListPos = 0;
 	
-	mode = SCENE_CTRL_IDLE;
-	_mode = SCENE_CTRL_IDLE;
+	mode = SCENE_CTRL_PLAYLIST_ONLY;
+	_mode = SCENE_CTRL_PLAYLIST_ONLY;
 	
 	currentSceneId = 0;
 	_currentSceneId = 0;
@@ -117,6 +131,8 @@ void SceneCtrl::update(){
 	if(_currentSceneId != currentSceneId)
 		setCurrentScene(_currentSceneId);
 	
+	
+	// automatic mode switching (IDLE <-> INTERACTIVE)
 	// update user activity
 	if(userInProximity()){
 		lastUserInProximityTime = ofGetElapsedTimef();
@@ -129,33 +145,31 @@ void SceneCtrl::update(){
 				setMode(SCENE_CTRL_INTERACTIVE);
 			break;
 		case SCENE_CTRL_INTERACTIVE:
+			// if  no user in proximity for a while then switch back to idle mod
 			if(ofGetElapsedTimef() > lastUserInProximityTime + switchToIdleTime){
 				setMode(SCENE_CTRL_IDLE);
 			}
 			break;
-		case SCENE_CTRL_MANUAL: 
 		default:
 			break;
 	}	
 	
-	switch (mode) {
-		case SCENE_CTRL_IDLE:
-			// if a user is in proximity then switch to interactive mode
-			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
-				 startNextIdleScene();
-			}
-			break;
-		case SCENE_CTRL_INTERACTIVE:
-			if (!getCurrentScene().enabled) { // if current scene is not playing (not enabled)
-				startNextInteractiveScene();
-			}
-			break;
-		case SCENE_CTRL_MANUAL: // if current scene is not playing (not enabled) then restart it
-			if (!getCurrentScene().enabled) {
+	// if current scene is not playing (not enabled)
+	if (!getCurrentScene().enabled) { 
+		switch (mode) {
+			case SCENE_CTRL_IDLE:
+			case SCENE_CTRL_PLAYLIST_ONLY:
+				startNextIdleScene(); // start next scene from idle list
+				break;
+			case SCENE_CTRL_INTERACTIVE:
+			case SCENE_CTRL_INTERACTIVE_ONLY:
+				startNextInteractiveScene(); // start next scene from interactive list
+				break;
+			case SCENE_CTRL_MANUAL: // restart same scene
 				getCurrentScene().start();
-			}		
-		default:
-			break;
+			default:
+				break;
+		}
 	}
 	
 	getCurrentScene().update();
@@ -183,6 +197,8 @@ Scene& SceneCtrl::getCurrentScene(){
 }
 
 void SceneCtrl::setCurrentScene(int sceneId){
+	if(sceneId < 0 || sceneId > scenes.size()) return;
+	
 	getCurrentScene().stop();
 	currentSceneId = sceneId;
 	_currentSceneId = sceneId;
@@ -222,9 +238,11 @@ void SceneCtrl::setMode(int newMode){
 	_mode = newMode;
 	switch (mode) {
 		case SCENE_CTRL_IDLE:
+		case SCENE_CTRL_PLAYLIST_ONLY:
 			startNextIdleScene();
 			break;
 		case SCENE_CTRL_INTERACTIVE:
+		case SCENE_CTRL_INTERACTIVE_ONLY:
 			startNextInteractiveScene();
 			break;
 		case SCENE_CTRL_MANUAL:
@@ -235,33 +253,73 @@ void SceneCtrl::setMode(int newMode){
 	}
 }
 
-/*
-void SceneCtrl::checkUserInProximity(){
-
-	/*
-	_userInProximity = false;
-	vector<Motor*>& motors = Singleton<MotorCtrl>::instance()->motors;
-	// reset all motor proximity udpated flag
-	for(int i=0; i<motors.size(); i++){
-		if(motors[i]->userInProximity()){
-			_userInProximity = true;
-			lastUserInProximityTime = ofGetElapsedTimef();
-			break;
-		}
-	}
-	*/
-
-/*
-	_userInProximity = false;
-	vector<int> inProximity;
-	for(int i=0; i<motors.size(); i++){
-		if (motors[i]->userInProximity()) {
-			
-		}
-	}
+void SceneCtrl::setToInteractiveOnlyMode(ofEventArgs& e){
+	setMode(SCENE_CTRL_INTERACTIVE_ONLY);
 }
-*/
+
+void SceneCtrl::setToPlaylistOnlyMode(ofEventArgs& e){
+	setMode(SCENE_CTRL_PLAYLIST_ONLY);
+}
 
 bool SceneCtrl::userInProximity(){
 	return Singleton<SensorCtrl>::instance()->userInProximity();
 }
+
+void SceneCtrl::setShortcutScene(int i){
+	switch (mode) {
+		case SCENE_CTRL_IDLE:
+		case SCENE_CTRL_PLAYLIST_ONLY:
+		case SCENE_CTRL_MANUAL: // restart same scene
+			setCurrentScene(idleList[i]-1);
+			idleListPos = i;
+			break;
+		case SCENE_CTRL_INTERACTIVE:
+		case SCENE_CTRL_INTERACTIVE_ONLY:
+			setCurrentScene(interactiveList[i]-1);
+			interactiveListPos = i;
+			break;
+		default:
+			break;
+	}
+}
+
+void SceneCtrl::shortcut_1(ofEventArgs& e){
+	setShortcutScene(0);
+}
+
+void SceneCtrl::shortcut_2(ofEventArgs& e){
+	setShortcutScene(1);
+}
+
+void SceneCtrl::shortcut_3(ofEventArgs& e){
+	setShortcutScene(2);
+}
+
+void SceneCtrl::shortcut_4(ofEventArgs& e){
+	setShortcutScene(3);
+}
+
+void SceneCtrl::shortcut_5(ofEventArgs& e){
+	setShortcutScene(4);
+}
+
+void SceneCtrl::shortcut_6(ofEventArgs& e){
+	setShortcutScene(5);
+}
+
+void SceneCtrl::shortcut_7(ofEventArgs& e){
+	setShortcutScene(6);
+}
+
+void SceneCtrl::shortcut_8(ofEventArgs& e){
+	setShortcutScene(7);
+}
+
+void SceneCtrl::shortcut_9(ofEventArgs& e){
+	setShortcutScene(8);
+}
+
+void SceneCtrl::shortcut_0(ofEventArgs& e){
+	setShortcutScene(9);
+}
+

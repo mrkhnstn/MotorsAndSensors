@@ -26,7 +26,6 @@ void MotorCtrl::setup(){
 			bank++;
 		}
 	}
-	
 	refTime = -1;
 }
 
@@ -36,6 +35,7 @@ void MotorCtrl::setupGUI(){
 	gui.page(1).addPageShortcut(gui.addPage("Motors"));
 	gui.addSlider("userOffDelayTime", Motor::userOffDelayTime,0,3);
 	gui.addSlider("servoMaxSpeed", Motor::maxMotorSpeed,1,180);
+	gui.addSlider("servoMaxUnlimitedSpeed", Motor::maxUnlimitedSpeed,1,180);
 	gui.addSlider("distanceToCentre", Motor::distanceToCentre, 270, 350);
 	
 	// gui pages for individual elements
@@ -70,19 +70,22 @@ void MotorCtrl::setupGUI(){
 	gui.page("Motors").addPageShortcut(gui.addPage("Calibrate_Pulse_Min"));
 	string calibrationChoices[3] = {"none","pulse min", "pulse max"};
 	gui.addComboBox("calibration mode", Motor::calibrationMode, 3, calibrationChoices);
-	gui.addSlider("globalPulseMin", Motor::globalPulseMin, 550, 2350);
-	gui.addButton("setAllToGlobal", this, &MotorCtrl::setAllToGlobalPulseMin);
+	gui.addSlider("globalPulseMin", Motor::globalPulseMin, 500, 2400);
+	gui.addButton("setAllToGlobal", 'o',this, &MotorCtrl::setAllToGlobalPulseMin);
+		gui.addButton("setAllToGlobal", ',',this, &MotorCtrl::setToPulseMin);
 	for (int i=0; i<motors.size(); i++) {
-		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMin, 550, 2350);
+		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMin, 500, 2400);
 	}
 	
 	gui.page("Motors").addPageShortcut(gui.addPage("Calibrate_Pulse_Max"));
 	gui.addComboBox("calibration mode", Motor::calibrationMode, 3, calibrationChoices);
-	gui.addSlider("globalPulseMax", Motor::globalPulseMax, 550, 2350);
+	gui.addSlider("globalPulseMax", Motor::globalPulseMax, 500, 2400);
+	gui.addButton("setAllToGlobal", 'p',this, &MotorCtrl::setAllToGlobalPulseMax);
+	gui.addButton("setAllToGlobal", '.',this, &MotorCtrl::setToPulseMax);
 	for (int i=0; i<motors.size(); i++) {
-		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMin, 550, 2350);
+		gui.addSlider("motor_"+ofToString(i), motors[i]->pulseMax, 500, 2400);
 	}
-	gui.addButton("setAllToGlobal", this, &MotorCtrl::setAllToGlobalPulseMax);
+	
 	 
 	// add drawing parameters to gui
 	gui.setPage("Motors");
@@ -137,6 +140,14 @@ void MotorCtrl::setAllToGlobalPulseMin(ofEventArgs& e){
 
 void MotorCtrl::setAllToGlobalPulseMax(ofEventArgs& e){
 	for(int i=0; i<motors.size(); i++)
-		motors[i]->pulseMin = Motor::globalPulseMax;
+		motors[i]->pulseMax = Motor::globalPulseMax;
 
+}
+
+void MotorCtrl::setToPulseMin(ofEventArgs& e){
+	Motor::calibrationMode = 1;
+}
+
+void MotorCtrl::setToPulseMax(ofEventArgs& e){
+	Motor::calibrationMode = 2;
 }

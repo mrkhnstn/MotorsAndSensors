@@ -16,11 +16,11 @@
     </SliderFloat_camera_x>
     <SliderFloat_camera_y>
         <name>camera_y</name>
-        <value>219.607788</value>
+        <value>243.137207</value>
     </SliderFloat_camera_y>
     <SliderFloat_camera_z>
         <name>camera_z</name>
-        <value>564.705811</value>
+        <value>752.941162</value>
     </SliderFloat_camera_z>
     <SliderFloat_eye_x>
         <name>eye_x</name>

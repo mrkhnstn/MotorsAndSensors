@@ -33,10 +33,10 @@
     </Toggle_snoringMode>
     <SliderInt_counter>
         <name>counter</name>
-        <value>0</value>
+        <value>1</value>
     </SliderInt_counter>
     <SliderInt_maxCounter>
         <name>maxCounter</name>
-        <value>3</value>
+        <value>1</value>
     </SliderInt_maxCounter>
 </controls>
