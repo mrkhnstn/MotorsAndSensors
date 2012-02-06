@@ -337,7 +337,7 @@ void SensorCtrl::processSensorReadings(){
 			}	
 			hitScore[i] = ofClamp(hitScore[i], 0, maxHitScore);
 			
-			hit[i] = hitScore[i] > globalHitScoreThreshold || rawValues[i] > rawThreshold;
+			hit[i] = rayEnabled[i] && (hitScore[i] > globalHitScoreThreshold || rawValues[i] > rawThreshold);
 				
 			
 			/*

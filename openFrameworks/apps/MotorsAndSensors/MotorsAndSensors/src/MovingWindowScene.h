@@ -148,7 +148,7 @@ public:
 							if(userInFrontOfMotor(i))
 							{
 								getMotor(i).doLimitSpeed = false;
-								panelFront(i);
+								panelOpen(i);
 							} else {
 								getMotor(i).doLimitSpeed = true;
 								panelOpen(i);
@@ -183,7 +183,7 @@ public:
 							if(userInFrontOfMotor(i))
 							{
 								getMotor(i).doLimitSpeed = false;
-								panelFront(i);
+								panelOpen(i);
 							} else {
 								getMotor(i).doLimitSpeed = true;
 								panelOpen(i);

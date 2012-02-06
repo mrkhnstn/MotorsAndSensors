@@ -72,8 +72,7 @@ public:
 		if(!enabled) return;
 		Scene::update();
 		
-		if (ofGetElapsedTimef() > lastTickTime + tickDuration) {
-			lastTickTime = ofGetElapsedTimef();
+		
 			// do tick
 			
 			for (int i=0; i<getMotorCount(); i++){
@@ -159,6 +158,10 @@ public:
 						
 			//getMotor(motorCounter).setAngle(tgtAngles[tgtCounter]);
 			
+		
+		if (ofGetElapsedTimef() > lastTickTime + tickDuration) {
+			lastTickTime = ofGetElapsedTimef();
+			
 			motorCounter++;
 			if(motorCounter > 71){
 				motorCounter = 0;
@@ -168,8 +171,6 @@ public:
 					stop();
 				}
 			}
-			
-			
 		}
 	}
 	
